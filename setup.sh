@@ -1,2 +1,2 @@
 #!/bin/sh
-ln -s x/.gtkrc-2.0 ../.gtkrc-2.0
+ln -s $HOMEx/.gtkrc-2.0 $HOME/dotfiles/x/.gtkrc-2.0
