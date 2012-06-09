@@ -148,6 +148,6 @@ export LS_COLORS
 alias tvi='vim.tiny -u .tiny_vimrc'
 alias xx='startx'
 
-if [ -f ~/.local_zshrc ] then;
-  source .local_zshrc
+if [ -f ~/.local_zshrc ]; then
+  source ~/.local_zshrc
 fi
