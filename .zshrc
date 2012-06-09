@@ -147,3 +147,7 @@ LS_COLORS="no=00:fi=00:di=01;35:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;
 export LS_COLORS
 alias tvi='vim.tiny -u .tiny_vimrc'
 alias xx='startx'
+
+if [ -f ~/.local_zshrc ] then;
+  source .local_zshrc
+fi
