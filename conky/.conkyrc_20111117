@@ -1,0 +1,78 @@
+background yes
+
+use_xft yes
+xftfont Bitstream Vera Sans Mono:size=8
+xftalpha 0.8
+
+update_interval 3.0
+total_run_times 0
+
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+
+maximum_width 240
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+default_color white
+default_shade_color black
+default_outline_color black
+
+alignment top_right
+gap_x 12
+gap_y 48
+
+no_buffers yes
+
+uppercase no
+
+cpu_avg_samples 2
+#diskio_avg_samples 2
+#net_avg_samples 2
+
+override_utf8_locale yes
+#use_spacer none
+
+TEXT
+${font Bitstream Vera Sans:style=Bold:pixelsize=12}$nodename - $kernel${font}
+
+${color lightgrey}Uptime:$color $uptime $alignr${color lightgrey}Load:$color $loadavg
+
+${font Bitstream Vera Sans:style=Bold:pixelsize=12}CPU${font} ${hr 1}
+${color lightgrey}CPU: $color ${freq} Mhz ${color lightgrey} Usage:$color $cpu% ${color lightgrey} temp: $color${acpitemp}°C
+$color${cpugraph}
+${color lightgrey}Processes:$color ${alignr}$processes ($running_processes running)
+
+  ${color lightgrey}Highest CPU $alignr CPU% MEM%${color}
+  ${top name 1}$alignr${top cpu 1}${top mem 1}
+  ${top name 2}$alignr${top cpu 2}${top mem 2}
+  ${top name 3}$alignr${top cpu 3}${top mem 3}
+
+  ${font Bitstream Vera Sans:style=Bold:pixelsize=12}MEMORY${font} ${hr 1}
+  ${color lightgrey}RAM usage:$color $mem/$memmax - $memperc%
+  ${membar 4}
+  ${color lightgrey}swap usage:$color $swap/$swapmax - $swapperc%
+  ${swapbar 4}
+  ${color lightgrey}Highest MEM $alignr CPU% MEM%${color}
+  ${top_mem name 1}$alignr${top_mem cpu 1}${top_mem mem 1}
+  ${top_mem name 2}$alignr${top_mem cpu 2}${top_mem mem 2}
+  ${top_mem name 3}$alignr${top_mem cpu 3}${top_mem mem 3}
+
+  ${font Bitstream Vera Sans:style=Bold:pixelsize=12}DISK${font} ${hr 1}
+  ${color lightgrey}Root: $color${fs_free /} of ${fs_size /}
+  ${fs_bar 4 /}
+  ${color lightgrey}Home: $color${fs_free /home} of ${fs_size /home}
+  ${fs_bar 4 /home}
+  ${color lightgrey}Disk I/O Read:${alignr}${color}${diskio_read}
+  ${color lightgrey} Write:${alignr}${color}${diskio_write}
+
+  ${font Bitstream Vera Sans:style=Bold:pixelsize=12}NETWORK${font} ${hr 1}
+  ${color lightgrey}Down $color${downspeed eth0} k/s ${color lightgrey}${alignr}Up $color${upspeed eth0} k/s
+  ${downspeedgraph eth1 25,107 cccccc ffffff} ${alignr}${upspeedgraph eth1 25,107 cccccc ffffff}
+  ${color lightgrey}Total $color${totaldown eth1} ${color lightgrey}${alignr}Total $color${totalup eth1}
