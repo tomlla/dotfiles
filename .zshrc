@@ -151,3 +151,9 @@ alias xx='startx'
 if [ -f ~/.local_zshrc ]; then
   source ~/.local_zshrc
 fi
+
+#git alias
+alias gb="git branch"
+alias gc="git chekout"
+alias gs="git status"
+alias gco="git commit"
