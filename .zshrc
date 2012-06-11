@@ -154,6 +154,6 @@ fi
 
 #git alias
 alias gb="git branch"
-alias gc="git chekout"
+alias gc="git checkout"
 alias gs="git status"
 alias gco="git commit"
