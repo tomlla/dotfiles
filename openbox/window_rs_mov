@@ -1,0 +1,44 @@
+	<keybind key="W-Up">
+      <action name="GrowToEdgeNorth">
+    </action></keybind>
+    <keybind key="W-Down">
+      <action name="GrowToEdgeSouth">
+    </action></keybind>
+    <keybind key="W-Left">
+      <action name="GrowToEdgeWest">
+    </action></keybind>
+    <keybind key="W-Right">
+      <action name="GrowToEdgeEast">
+    </action></keybind>
+    <keybind key="A-W-Up">
+      <action name="MoveToEdgeNorth">
+    </action></keybind>
+    <keybind key="A-W-Down">
+      <action name="MoveToEdgeSouth">
+    </action></keybind>
+    <keybind key="A-W-Left">
+      <action name="MoveToEdgeWest">
+    </action></keybind>
+    <keybind key="A-W-Right">
+      <action name="MoveToEdgeEast">
+    </action></keybind>
+    <keybind key="A-Up">
+      <action name="ResizeRelative">
+        <bottom>-20</bottom>
+      </action>
+    </keybind>
+    <keybind key="A-Down">
+      <action name="ResizeRelative">
+        <bottom>20</bottom>
+      </action>
+    </keybind>
+    <keybind key="A-Left">
+      <action name="ResizeRelative">
+        <right>-20</right>
+      </action>
+    </keybind>
+    <keybind key="A-Right">
+      <action name="ResizeRelative">
+        <right>20</right>
+      </action>
+    </keybind>

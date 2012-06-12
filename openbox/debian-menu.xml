@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Automatically generated file. Do not edit (see /usr/share/doc/menu/html) -->
+
+<openbox_menu xmlns="http://openbox.org/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://openbox.org/
+                file:///usr/share/openbox/menu.xsd">
+
+<menu id='Debian' label='Debian'>
+  <menu id='アプリケーション' label='アプリケーション'>
+    <menu id='アクセシビリティ' label='アクセシビリティ'>
+      <item label='uim-im-switcher-gtk'>
+        <action name='Execute'><execute>/usr/bin/uim-im-switcher-gtk</execute></action>
+      </item>
+      <item label='uim-pref-gtk'>
+        <action name='Execute'><execute>/usr/bin/uim-pref-gtk</execute></action>
+      </item>
+      <item label='uim-toolbar-gtk'>
+        <action name='Execute'><execute>/usr/bin/uim-toolbar-gtk</execute></action>
+      </item>
+      <item label='Xmag'>
+        <action name='Execute'><execute>xmag</execute></action>
+      </item>
+      <item label='xvkbd'>
+        <action name='Execute'><execute>/usr/bin/xvkbd</execute></action>
+      </item>
+    </menu>
+    <menu id='エディタ' label='エディタ'>
+      <item label='Emacs 23 (text)'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Emacs 23 (text)&quot; -e sh -c &quot;/usr/bin/emacs23 -nw&quot;</execute></action>
+      </item>
+      <item label='Emacs 23 (X11)'>
+        <action name='Execute'><execute>/usr/bin/emacs23</execute></action>
+      </item>
+      <item label='Gedit'>
+        <action name='Execute'><execute>/usr/bin/gedit</execute></action>
+      </item>
+      <item label='GVIM'>
+        <action name='Execute'><execute>/usr/bin/vim.gtk -g -f</execute></action>
+      </item>
+      <item label='LeafPad'>
+        <action name='Execute'><execute>/usr/bin/leafpad</execute></action>
+      </item>
+      <item label='Xedit'>
+        <action name='Execute'><execute>xedit</execute></action>
+      </item>
+    </menu>
+    <menu id='オフィス' label='オフィス'>
+      <item label='gnumeric'>
+        <action name='Execute'><execute>/usr/bin/gnumeric</execute></action>
+      </item>
+      <item label='LyX Document Processor'>
+        <action name='Execute'><execute>lyx</execute></action>
+      </item>
+      <item label='OpenOffice.org Calc'>
+        <action name='Execute'><execute>/usr/bin/oocalc</execute></action>
+      </item>
+      <item label='OpenOffice.org Impress'>
+        <action name='Execute'><execute>/usr/bin/ooimpress</execute></action>
+      </item>
+      <item label='OpenOffice.org Writer'>
+        <action name='Execute'><execute>/usr/bin/oowriter</execute></action>
+      </item>
+    </menu>
+    <menu id='グラフィック' label='グラフィック'>
+      <item label='avidemux'>
+        <action name='Execute'><execute>/usr/bin/avidemux2_gtk</execute></action>
+      </item>
+      <item label='GNOME Screenshot Tool'>
+        <action name='Execute'><execute>/usr/bin/gnome-panel-screenshot</execute></action>
+      </item>
+      <item label='ImageMagick'>
+        <action name='Execute'><execute>/usr/bin/display logo:</execute></action>
+      </item>
+      <item label='Inkscape'>
+        <action name='Execute'><execute>/usr/bin/inkscape</execute></action>
+      </item>
+      <item label='OpenOffice.org Draw'>
+        <action name='Execute'><execute>/usr/bin/oodraw</execute></action>
+      </item>
+      <item label='Tgif'>
+        <action name='Execute'><execute>/usr/bin/tgif</execute></action>
+      </item>
+      <item label='The GIMP'>
+        <action name='Execute'><execute>/usr/bin/gimp</execute></action>
+      </item>
+      <item label='X Window Snapshot'>
+        <action name='Execute'><execute>xwd | xwud</execute></action>
+      </item>
+      <item label='Xcircuit'>
+        <action name='Execute'><execute>/usr/bin/xcircuit</execute></action>
+      </item>
+      <item label='XSane'>
+        <action name='Execute'><execute>/usr/bin/xsane</execute></action>
+      </item>
+    </menu>
+    <menu id='サウンド' label='サウンド'>
+      <item label='Audacious'>
+        <action name='Execute'><execute>/usr/bin/audacious2</execute></action>
+      </item>
+      <item label='Audacity'>
+        <action name='Execute'><execute>/usr/bin/audacity</execute></action>
+      </item>
+      <item label='Banshee'>
+        <action name='Execute'><execute>/usr/bin/banshee</execute></action>
+      </item>
+      <item label='Decibel Audio Player'>
+        <action name='Execute'><execute>/usr/bin/decibel-audio-player</execute></action>
+      </item>
+      <item label='easytag'>
+        <action name='Execute'><execute>/usr/bin/easytag</execute></action>
+      </item>
+      <item label='gmix (Gnome 2.0 Mixer)'>
+        <action name='Execute'><execute>/usr/bin/gnome-volume-control</execute></action>
+      </item>
+      <item label='grecord (GNOME 2.0 Recorder)'>
+        <action name='Execute'><execute>/usr/bin/gnome-sound-recorder</execute></action>
+      </item>
+      <item label='Sonata'>
+        <action name='Execute'><execute>/usr/bin/sonata</execute></action>
+      </item>
+    </menu>
+    <menu id='シェル' label='シェル'>
+      <item label='Bash'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Bash&quot; -e sh -c &quot;/bin/bash --login&quot;</execute></action>
+      </item>
+      <item label='Dash'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Dash&quot; -e sh -c &quot;/bin/dash -i&quot;</execute></action>
+      </item>
+      <item label='Sh'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Sh&quot; -e sh -c &quot;/bin/sh --login&quot;</execute></action>
+      </item>
+      <item label='tcsh'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;tcsh&quot; -e sh -c &quot;/bin/tcsh&quot;</execute></action>
+      </item>
+      <item label='Zsh'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Zsh&quot; -e sh -c &quot;/bin/zsh4&quot;</execute></action>
+      </item>
+    </menu>
+    <menu id='システム' label='システム'>
+      <menu id='システム管理' label='システム管理'>
+        <item label='Aptitude (terminal)'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Aptitude (terminal)&quot; -e sh -c &quot;/usr/bin/aptitude-curses&quot;</execute></action>
+        </item>
+        <item label='Debian Task selector'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Debian Task selector&quot; -e sh -c &quot;su-to-root -c tasksel&quot;</execute></action>
+        </item>
+        <item label='Editres'>
+          <action name='Execute'><execute>editres</execute></action>
+        </item>
+        <item label='Gnome Control Center'>
+          <action name='Execute'><execute>/usr/bin/gnome-control-center</execute></action>
+        </item>
+        <item label='GNOME partition editor'>
+          <action name='Execute'><execute>su-to-root -X -c /usr/sbin/gparted</execute></action>
+        </item>
+        <item label='Openbox Configuration Manager'>
+          <action name='Execute'><execute>/usr/bin/obconf</execute></action>
+        </item>
+        <item label='QtConfig'>
+          <action name='Execute'><execute>/usr/bin/qtconfig-qt4</execute></action>
+        </item>
+        <item label='Reportbug'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Reportbug&quot; -e sh -c &quot;/usr/bin/reportbug --exit-prompt&quot;</execute></action>
+        </item>
+        <item label='Reportbug (GTK+)'>
+          <action name='Execute'><execute>/usr/bin/reportbug --exit-prompt --ui gtk2</execute></action>
+        </item>
+        <item label='TeXconfig'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;TeXconfig&quot; -e sh -c &quot;/usr/bin/texconfig&quot;</execute></action>
+        </item>
+        <item label='Xclipboard'>
+          <action name='Execute'><execute>xclipboard</execute></action>
+        </item>
+        <item label='Xfontsel'>
+          <action name='Execute'><execute>xfontsel</execute></action>
+        </item>
+        <item label='Xkill'>
+          <action name='Execute'><execute>xkill</execute></action>
+        </item>
+        <item label='Xrefresh'>
+          <action name='Execute'><execute>xrefresh</execute></action>
+        </item>
+      </menu>
+      <menu id='ハードウェア' label='ハードウェア'>
+        <item label='Xvidtune'>
+          <action name='Execute'><execute>xvidtune</execute></action>
+        </item>
+      </menu>
+      <menu id='パッケージ管理' label='パッケージ管理'>
+        <item label='Opera Widget Manager'>
+          <action name='Execute'><execute>/usr/bin/opera-widget-manager</execute></action>
+        </item>
+        <item label='Synaptic Package Manager'>
+          <action name='Execute'><execute>/usr/bin/su-to-root -X -c /usr/sbin/synaptic</execute></action>
+        </item>
+      </menu>
+      <menu id='モニタリング' label='モニタリング'>
+        <item label='Conky'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Conky&quot; -e sh -c &quot;/usr/bin/conky&quot;</execute></action>
+        </item>
+        <item label='GNOME system monitor'>
+          <action name='Execute'><execute>/usr/bin/gnome-system-monitor</execute></action>
+        </item>
+        <item label='Pstree'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Pstree&quot; -e sh -c &quot;/usr/bin/pstree.x11&quot;</execute></action>
+        </item>
+        <item label='Top'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Top&quot; -e sh -c &quot;/usr/bin/top&quot;</execute></action>
+        </item>
+        <item label='Xconsole'>
+          <action name='Execute'><execute>xconsole -file /dev/xconsole</execute></action>
+        </item>
+        <item label='Xev'>
+          <action name='Execute'><execute>x-terminal-emulator -e xev</execute></action>
+        </item>
+        <item label='Xload'>
+          <action name='Execute'><execute>xload</execute></action>
+        </item>
+      </menu>
+      <menu id='言語環境' label='言語環境'>
+        <item label='Input Method Swicher'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Input Method Swicher&quot; -e sh -c &quot;/usr/bin/im-switch&quot;</execute></action>
+        </item>
+      </menu>
+    </menu>
+    <menu id='ターミナルエミュレータ' label='ターミナルエミュレータ'>
+      <item label='Gnome Terminal'>
+        <action name='Execute'><execute>/usr/bin/gnome-terminal</execute></action>
+      </item>
+      <item label='Kanji Terminal'>
+        <action name='Execute'><execute>/usr/bin/kterm</execute></action>
+      </item>
+      <item label='X-Terminal as root (GKsu)'>
+        <action name='Execute'><execute>/usr/bin/gksu -u root /usr/bin/x-terminal-emulator</execute></action>
+      </item>
+      <item label='XTerm'>
+        <action name='Execute'><execute>xterm</execute></action>
+      </item>
+      <item label='XTerm (Unicode)'>
+        <action name='Execute'><execute>uxterm</execute></action>
+      </item>
+    </menu>
+    <menu id='テキスト' label='テキスト'>
+      <item label='GNOME Dictionary'>
+        <action name='Execute'><execute>/usr/bin/gnome-dictionary</execute></action>
+      </item>
+      <item label='kasumi'>
+        <action name='Execute'><execute>/usr/bin/kasumi</execute></action>
+      </item>
+    </menu>
+    <menu id='データ管理' label='データ管理'>
+      <item label='OpenOffice.org Base'>
+        <action name='Execute'><execute>/usr/bin/oobase</execute></action>
+      </item>
+      <item label='Tomboy'>
+        <action name='Execute'><execute>/usr/bin/tomboy</execute></action>
+      </item>
+    </menu>
+    <menu id='ネットワーク' label='ネットワーク'>
+      <menu id='ウェブブラウジング' label='ウェブブラウジング'>
+        <item label='Epiphany web browser'>
+          <action name='Execute'><execute>/usr/bin/epiphany-browser</execute></action>
+        </item>
+        <item label='Google Chrome'>
+          <action name='Execute'><execute>/opt/google/chrome/google-chrome</execute></action>
+        </item>
+        <item label='JD'>
+          <action name='Execute'><execute>/usr/bin/jd</execute></action>
+        </item>
+        <item label='Lynx-cur'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Lynx-cur&quot; -e sh -c &quot;lynx&quot;</execute></action>
+        </item>
+        <item label='Midori'>
+          <action name='Execute'><execute>midori</execute></action>
+        </item>
+        <item label='Opera'>
+          <action name='Execute'><execute>/usr/bin/opera</execute></action>
+        </item>
+        <item label='w3m'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;w3m&quot; -e sh -c &quot;/usr/bin/w3m /usr/share/doc/w3m/MANUAL.html&quot;</execute></action>
+        </item>
+      </menu>
+      <menu id='コミュニケーション' label='コミュニケーション'>
+        <item label='Evolution'>
+          <action name='Execute'><execute>/usr/bin/evolution</execute></action>
+        </item>
+        <item label='Gwibber'>
+          <action name='Execute'><execute>/usr/bin/gwibber</execute></action>
+        </item>
+        <item label='Icedove Mail'>
+          <action name='Execute'><execute>icedove</execute></action>
+        </item>
+        <item label='Mutt'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Mutt&quot; -e sh -c &quot;/usr/bin/mutt&quot;</execute></action>
+        </item>
+        <item label='Telnet'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Telnet&quot; -e sh -c &quot;/usr/bin/telnet&quot;</execute></action>
+        </item>
+        <item label='Twisted SSH Client'>
+          <action name='Execute'><execute>/usr/bin/tkconch</execute></action>
+        </item>
+        <item label='Xbiff'>
+          <action name='Execute'><execute>xbiff</execute></action>
+        </item>
+      </menu>
+      <menu id='ファイル転送' label='ファイル転送'>
+        <item label='Deluge BitTorrent Client'>
+          <action name='Execute'><execute>/usr/bin/deluge</execute></action>
+        </item>
+        <item label='gFTP'>
+          <action name='Execute'><execute>/usr/bin/gftp-gtk</execute></action>
+        </item>
+      </menu>
+      <menu id='モニタリング' label='モニタリング'>
+        <item label='WICD'>
+          <action name='Execute'><execute>/usr/bin/wicd-gtk</execute></action>
+        </item>
+      </menu>
+    </menu>
+    <menu id='ビデオ' label='ビデオ'>
+      <item label='GNOME MPlayer'>
+        <action name='Execute'><execute>gnome-mplayer</execute></action>
+      </item>
+      <item label='Kmplayer'>
+        <action name='Execute'><execute>/usr/bin/kmplayer</execute></action>
+      </item>
+      <item label='Totem'>
+        <action name='Execute'><execute>/usr/bin/totem</execute></action>
+      </item>
+      <item label='VLC media player'>
+        <action name='Execute'><execute>/usr/bin/qvlc</execute></action>
+      </item>
+      <item label='xine Media Player'>
+        <action name='Execute'><execute>/usr/bin/xine</execute></action>
+      </item>
+    </menu>
+    <menu id='ビュワー' label='ビュワー'>
+      <item label='Adobe Reader'>
+        <action name='Execute'><execute>/usr/bin/acroread</execute></action>
+      </item>
+      <item label='apvlv'>
+        <action name='Execute'><execute>/usr/bin/apvlv</execute></action>
+      </item>
+      <item label='comix'>
+        <action name='Execute'><execute>/usr/bin/comix</execute></action>
+      </item>
+      <item label='Evince'>
+        <action name='Execute'><execute>/usr/bin/evince</execute></action>
+      </item>
+      <item label='Eye of GNOME'>
+        <action name='Execute'><execute>/usr/bin/eog</execute></action>
+      </item>
+      <item label='gThumb Image Viewer'>
+        <action name='Execute'><execute>/usr/bin/gthumb</execute></action>
+      </item>
+      <item label='GV'>
+        <action name='Execute'><execute>/usr/bin/gv</execute></action>
+      </item>
+      <item label='Xditview'>
+        <action name='Execute'><execute>xditview</execute></action>
+      </item>
+      <item label='XDvi'>
+        <action name='Execute'><execute>/usr/bin/xdvi</execute></action>
+      </item>
+      <item label='Xpdf'>
+        <action name='Execute'><execute>/usr/bin/xpdf</execute></action>
+      </item>
+    </menu>
+    <menu id='ファイル管理' label='ファイル管理'>
+      <item label='Brasero'>
+        <action name='Execute'><execute>/usr/bin/brasero</execute></action>
+      </item>
+      <item label='File-Roller'>
+        <action name='Execute'><execute>/usr/bin/file-roller</execute></action>
+      </item>
+      <item label='gmrun'>
+        <action name='Execute'><execute>/usr/bin/gmrun</execute></action>
+      </item>
+      <item label='grun'>
+        <action name='Execute'><execute>/usr/bin/grun</execute></action>
+      </item>
+      <item label='Nautilus'>
+        <action name='Execute'><execute>/usr/bin/nautilus</execute></action>
+      </item>
+      <item label='PCManFM'>
+        <action name='Execute'><execute>/usr/bin/pcmanfm</execute></action>
+      </item>
+    </menu>
+    <menu id='プログラミング' label='プログラミング'>
+      <item label='BeanShell (text)'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;BeanShell (text)&quot; -e sh -c &quot;/usr/bin/bsh&quot;</execute></action>
+      </item>
+      <item label='BeanShell (windowed)'>
+        <action name='Execute'><execute>/usr/bin/xbsh</execute></action>
+      </item>
+      <item label='GDB'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;GDB&quot; -e sh -c &quot;/usr/bin/gdb&quot;</execute></action>
+      </item>
+      <item label='Guile 1.6'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Guile 1.6&quot; -e sh -c &quot;/usr/bin/guile-1.6&quot;</execute></action>
+      </item>
+      <item label='Hugs'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Hugs&quot; -e sh -c &quot;/usr/bin/hugs&quot;</execute></action>
+      </item>
+      <item label='MonoDevelop'>
+        <action name='Execute'><execute>/usr/bin/monodevelop</execute></action>
+      </item>
+      <item label='Ocaml'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Ocaml&quot; -e sh -c &quot;/usr/bin/ocaml&quot;</execute></action>
+      </item>
+      <item label='Python (v2.6)'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Python (v2.6)&quot; -e sh -c &quot;/usr/bin/python2.6&quot;</execute></action>
+      </item>
+      <item label='Ruby (irb1.8)'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Ruby (irb1.8)&quot; -e sh -c &quot;/usr/bin/irb1.8&quot;</execute></action>
+      </item>
+      <item label='SWI-Prolog'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;SWI-Prolog&quot; -e sh -c &quot;/usr/bin/swipl&quot;</execute></action>
+      </item>
+      <item label='SWI-Prolog (with XPCE)'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;SWI-Prolog (with XPCE)&quot; -e sh -c &quot;/usr/bin/xpce&quot;</execute></action>
+      </item>
+      <item label='Tclsh8.4'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Tclsh8.4&quot; -e sh -c &quot;/usr/bin/tclsh8.4&quot;</execute></action>
+      </item>
+      <item label='TkWish8.4'>
+        <action name='Execute'><execute>x-terminal-emulator -e /usr/bin/wish8.4</execute></action>
+      </item>
+    </menu>
+    <menu id='科学' label='科学'>
+      <menu id='エンジニアリング' label='エンジニアリング'>
+        <item label='Dia'>
+          <action name='Execute'><execute>/usr/bin/dia-normal</execute></action>
+        </item>
+      </menu>
+      <menu id='数学' label='数学'>
+        <item label='Bc'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Bc&quot; -e sh -c &quot;/usr/bin/bc&quot;</execute></action>
+        </item>
+        <item label='Dc'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Dc&quot; -e sh -c &quot;/usr/bin/dc&quot;</execute></action>
+        </item>
+        <item label='Gnuplot'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Gnuplot&quot; -e sh -c &quot;/usr/bin/gnuplot&quot;</execute></action>
+        </item>
+        <item label='OpenOffice.org Math'>
+          <action name='Execute'><execute>/usr/bin/oomath</execute></action>
+        </item>
+        <item label='Xcalc'>
+          <action name='Execute'><execute>xcalc</execute></action>
+        </item>
+      </menu>
+      <menu id='電気工学' label='電気工学'>
+        <item label='gschem'>
+          <action name='Execute'><execute>/usr/bin/gschem</execute></action>
+        </item>
+        <item label='gspiceui'>
+          <action name='Execute'><execute>/usr/bin/gspiceui</execute></action>
+        </item>
+        <item label='gwave'>
+          <action name='Execute'><execute>/usr/bin/gwave</execute></action>
+        </item>
+        <item label='Xcircuit'>
+          <action name='Execute'><execute>/usr/bin/xcircuit</execute></action>
+        </item>
+      </menu>
+    </menu>
+    <menu id='教育' label='教育'>
+      <item label='Arithmetic Quiz'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Arithmetic Quiz&quot; -e sh -c &quot;sh -c &apos;arithmetic;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+      <item label='Qucs'>
+        <action name='Execute'><execute>/usr/bin/qucs</execute></action>
+      </item>
+    </menu>
+  </menu>
+  <menu id='ウィンドウマネージャ' label='ウィンドウマネージャ'>
+    <item label='awesome'>
+      <action name='Restart'><execute>/usr/bin/awesome</execute></action>
+    </item>
+    <item label='FVWM'>
+      <action name='Restart'><execute>/usr/bin/fvwm2</execute></action>
+    </item>
+    <item label='Openbox'>
+      <action name='Restart'><execute>/usr/bin/openbox</execute></action>
+    </item>
+    <item label='Twm'>
+      <action name='Restart'><execute>twm</execute></action>
+    </item>
+  </menu>
+  <menu id='ゲーム' label='ゲーム'>
+    <menu id='おもちゃ' label='おもちゃ'>
+      <item label='Oclock'>
+        <action name='Execute'><execute>oclock</execute></action>
+      </item>
+      <item label='Rain'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Rain&quot; -e sh -c &quot;rain&quot;</execute></action>
+      </item>
+      <item label='Worms'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Worms&quot; -e sh -c &quot;worms&quot;</execute></action>
+      </item>
+      <item label='Xclock (analog)'>
+        <action name='Execute'><execute>xclock -analog</execute></action>
+      </item>
+      <item label='Xclock (digital)'>
+        <action name='Execute'><execute>xclock -digital -update 1</execute></action>
+      </item>
+      <item label='Xeyes'>
+        <action name='Execute'><execute>xeyes</execute></action>
+      </item>
+      <item label='Xlogo'>
+        <action name='Execute'><execute>xlogo</execute></action>
+      </item>
+    </menu>
+    <menu id='アクション' label='アクション'>
+      <item label='Chromium B.S.U.'>
+        <action name='Execute'><execute>/usr/games/chromium-bsu</execute></action>
+      </item>
+      <item label='Robots'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Robots&quot; -e sh -c &quot;robots&quot;</execute></action>
+      </item>
+      <item label='Snake'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Snake&quot; -e sh -c &quot;sh -c &apos;snake;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+      <item label='Star Trek'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Star Trek&quot; -e sh -c &quot;trek&quot;</execute></action>
+      </item>
+      <item label='Worm'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Worm&quot; -e sh -c &quot;sh -c &apos;worm;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+    </menu>
+    <menu id='アドベンチャー' label='アドベンチャー'>
+      <item label='Adventure'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Adventure&quot; -e sh -c &quot;adventure&quot;</execute></action>
+      </item>
+      <item label='Battlestar'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Battlestar&quot; -e sh -c &quot;sh -c &apos;battlestar;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+      <item label='Hack'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Hack&quot; -e sh -c &quot;hack&quot;</execute></action>
+      </item>
+      <item label='Hunt the Wumpus'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Hunt the Wumpus&quot; -e sh -c &quot;wump&quot;</execute></action>
+      </item>
+      <item label='Phantasia'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Phantasia&quot; -e sh -c &quot;phantasia&quot;</execute></action>
+      </item>
+    </menu>
+    <menu id='カードゲーム' label='カードゲーム'>
+      <item label='Canfield'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Canfield&quot; -e sh -c &quot;canfield&quot;</execute></action>
+      </item>
+      <item label='Cribbage'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Cribbage&quot; -e sh -c &quot;cribbage&quot;</execute></action>
+      </item>
+      <item label='Go Fish'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Go Fish&quot; -e sh -c &quot;sh -c &apos;go-fish;echo;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+      <item label='Mille Bornes'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Mille Bornes&quot; -e sh -c &quot;mille&quot;</execute></action>
+      </item>
+    </menu>
+    <menu id='パズル' label='パズル'>
+      <item label='Boggle'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Boggle&quot; -e sh -c &quot;boggle&quot;</execute></action>
+      </item>
+      <item label='Hangman'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Hangman&quot; -e sh -c &quot;hangman&quot;</execute></action>
+      </item>
+    </menu>
+    <menu id='ブロック' label='ブロック'>
+      <item label='Bsd Tetris'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Bsd Tetris&quot; -e sh -c &quot;sh -c &apos;tetris-bsd;echo;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+      <item label='TINT Is Not Tetris(tm)'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;TINT Is Not Tetris(tm)&quot; -e sh -c &quot;sh -c &apos;/usr/games/tint -l 5;echo;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+    </menu>
+    <menu id='ボードゲーム' label='ボードゲーム'>
+      <item label='Backgammon'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Backgammon&quot; -e sh -c &quot;backgammon -pb&quot;</execute></action>
+      </item>
+      <item label='Gomoku'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Gomoku&quot; -e sh -c &quot;gomoku&quot;</execute></action>
+      </item>
+      <item label='Monopoly'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Monopoly&quot; -e sh -c &quot;monop&quot;</execute></action>
+      </item>
+    </menu>
+    <menu id='戦略ゲーム' label='戦略ゲーム'>
+      <item label='Air Traffic Controller'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Air Traffic Controller&quot; -e sh -c &quot;sh -c &apos;atc ; echo;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+      <item label='Sail'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Sail&quot; -e sh -c &quot;sail&quot;</execute></action>
+      </item>
+    </menu>
+  </menu>
+  <menu id='ヘルプ' label='ヘルプ'>
+    <item label='Info'>
+      <action name='Execute'><execute>x-terminal-emulator  -T &quot;Info&quot; -e sh -c &quot;info&quot;</execute></action>
+    </item>
+    <item label='TeXdoctk'>
+      <action name='Execute'><execute>/usr/bin/texdoctk</execute></action>
+    </item>
+    <item label='Xman'>
+      <action name='Execute'><execute>xman</execute></action>
+    </item>
+    <item label='yelp'>
+      <action name='Execute'><execute>/usr/bin/yelp</execute></action>
+    </item>
+  </menu>
+</menu>
+
+</openbox_menu>

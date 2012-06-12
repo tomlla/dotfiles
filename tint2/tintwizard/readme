@@ -1,0 +1,48 @@
+[ ABOUT ]
+
+tintwizard 0.3.4 (14th June 2010)
+
+Thank you for downloading tintwizard!
+
+See http://code.google.com/p/tintwizard/ for more information
+
+See http://code.google.com/p/tintwizard/wiki/Help for help
+
+Please report any problems by posting a bug report at 
+http://code.google.com/p/tintwizard/issues/entry
+
+This version of tintwizard should be up to date with the development
+version of tint2 at this moment in time [7th March 2010].
+
+[ HOW-TO ]
+
+Running tintwizard
+  1. Place tintwizard.py and tintwizard.conf in any folder.
+  2. a. Double-click on the tintwizard.py file to run
+     b. In a terminal, navigate to the folder where tintwizard.py is,
+        and type:
+            ./tintwizard.py
+        or:
+            python tintwizard.py
+  3. If neither of these steps work, please see "cannot run", below.
+
+Adding to Openbox menus
+  1. Run obmenu
+  2. Choose the sub-menu where you wish to add tintwizard
+  3. Click the 'New item' button
+  4. In the 'Label' field, enter an appropriate name
+  5. Click the '...' button next to the 'Execute' field and
+     locate the tintwizard.py file
+  6. Save your changes in obmenu
+  
+  The above steps can be adapted for other menu types, e.g. Gnome Menu.
+
+"I cannot run tintwizard"
+  1. Locate tintwizard.py in your file browser.
+  2. Right-click on the file and select 'Properties'
+  3. Select the 'Permissions' tab
+  4. Be sure that the program has permission to be executed
+  
+  1. Alternatively, open a terminal in the same directory as
+     tintwizard.py and type:
+         chmod +x tintwizard.py
