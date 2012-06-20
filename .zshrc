@@ -157,3 +157,6 @@ alias gs="git status"
 alias gd="git diff"
 alias gco="git commit"
 alias ghubp="git push -u origin master"
+
+#tags
+alias ctags='ctags -f .tags'
