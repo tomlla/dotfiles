@@ -32,6 +32,7 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
 #PATH setting
 PATH=/usr/local/bin:$PATH
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
@@ -86,7 +87,7 @@ setopt auto_list
 setopt list_packed
 
 # 補完キー（Tab, Ctrl+I) を連打するだけで順に補完候補を自動で補完
-setopt auto_menu
+#setopt auto_menu
 
 # カッコの対応などを自動的に補完
 setopt auto_param_keys
@@ -152,11 +153,53 @@ fi
 
 #git alias
 alias gb="git branch"
+alias ga="git add"
 alias gc="git checkout"
+alias gl="git log"
 alias gs="git status"
 alias gd="git diff"
+alias gs="git status"
 alias gco="git commit"
 alias ghubp="git push -u origin master"
 
 #tags
 alias ctags='ctags -f .tags'
+
+# gitのブランチ名と変更状況をプロンプトに表示する 
+autoload -Uz is-at-least
+if is-at-least 4.3.10; then
+  # バージョン管理システムとの連携を有効にする 
+  autoload -Uz vcs_info
+  autoload -Uz add-zsh-hook
+
+  zstyle ':vcs_info:*' enable git
+  zstyle ':vcs_info:git:*' check-for-changes true
+  zstyle ':vcs_info:git:*' stagedstr "+"
+  zstyle ':vcs_info:git:*' unstagedstr "-"
+  zstyle ':vcs_info:git:*' formats '@%b%u%c'
+  zstyle ':vcs_info:git:*' actionformats '@%b|%a%u%c'
+
+  # VCSの更新時にPROMPTを自動更新する
+  function _update_vcs_info_msg() {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+    psvar[2]=$(_git_not_pushed)
+  }
+  function _git_not_pushed() {
+  if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
+    head="$(git rev-parse HEAD)"
+    for x in $(git rev-parse --remotes)
+    do
+      if [ "$head" = "$x" ]; then
+        return 0
+      fi
+    done
+    echo "?"
+  fi
+  return 0
+  }
+add-zsh-hook precmd _update_vcs_info_msg
+fi
+
+alias go="cd /home/nt/workspace/lap/LapDevice/test"
