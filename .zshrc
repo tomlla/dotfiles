@@ -29,9 +29,9 @@ zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
-
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+zstyle ':completion:*' use-cache true
 
 #PATH setting
 PATH=/usr/local/bin:$PATH
@@ -53,7 +53,6 @@ alias psag='ps aux | grep'
 
 # 関数
 find-grep () { find . -type f -print | xargs grep -n --binary-files=without-match $@ }
-
 
 # プロンプトの設定 //上でしてるのでしない
 # PROMPT='%~$ '
