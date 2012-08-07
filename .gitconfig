@@ -1,0 +1,11 @@
+[user]
+	name = nobuyasu.tomura
+[credential]
+	helper = cache --timeout=3600
+[alias]
+	rhh = resert --hard HEAD^
+	rld = log origin/master..master
+	c = checkout
+	s = status 
+	d = diff
+	l = log
