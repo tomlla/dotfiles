@@ -10,6 +10,9 @@
  HISTSIZE=1000
  SAVEHIST=1000
  HISTFILE=~/.zsh_history
+ #--- 履歴関連 --#
+ # 履歴ファイルに時刻を記録
+ setopt extended_history
 
  # Use modern completion system
  autoload -Uz compinit
@@ -51,25 +54,9 @@
 	 alias e='exit'
 	 alias psag='ps aux | grep'
 
-	 # 関数
-	 find-grep () { find . -type f -print | xargs grep -n --binary-files=without-match $@ }
+# 関数
+find-grep () { find . -type f -print | xargs grep -n --binary-files=without-match $@ }
 
-	 # プロンプトの設定 //上でしてるのでしない
-	 # PROMPT='%~$ '
-	 # ヒストリの設定
-	 HISTFILE=~/.histfile
-	 HISTSIZE=10000
-	 SAVEHIST=10000
-
-
-	 #--- 履歴関連 --#
-	 # 履歴ファイルに時刻を記録
-	 setopt extended_history
-
-	 # 補完するかの質問は画面を超える時にのみに行う｡
-	 LISTMAX=0
-
-	 autoload -Uz compinit; compinit
 
 	 # sudo でも補完の対象
 	 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
@@ -140,7 +127,7 @@
 	 # C-s, C-qを無効にする。
 	 setopt no_flow_control
 
-	 #ls color setting
+ #ls color setting
 	 LS_COLORS="no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:ex=01;32:*.tar=01;31"
 	 export LS_COLORS
 	 alias tvi='vim.tiny -u .tiny_vimrc'
@@ -150,7 +137,7 @@
 		 source ~/.local_zshrc
 	 fi
 
-	 #git alias
+#git alias
 	 alias gb="git branch"
 	 alias ga="git add"
 	 alias gc="git checkout"
@@ -163,12 +150,9 @@
 	 alias go="cd ~/workspace/lap/LapDevice"
 
 	 # git completion
-	 # gitcompfile=$HOME/dotfiles/git-completion.bash
-	 # if [ -f $gitcompfile ]; then
-	 #   autoload bashcompinit
-	 #   bashcompinit
+	  gitcompfile=$HOME/dotfiles/git-completion.bash
+	  if [ -f $gitcompfile ]; then
+	    autoload bashcompinit
+	    bashcompinit
 	 #   source $gitcompfile
-	 # fi
-
-	 #tags
-	 alias ctags='ctags -f .tags'
+	  fi
