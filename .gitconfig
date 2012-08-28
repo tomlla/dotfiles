@@ -3,9 +3,20 @@
 [credential]
 	helper = cache --timeout=3600
 [alias]
-	rhh = resert --hard HEAD^
+	rhh = reset --hard HEAD^
 	rld = log origin/master..master
 	c = checkout
+	b = branch
+	bd = branch -d
 	s = status 
 	d = diff
 	l = log
+	rc = rm --cached
+	ca = commit -a
+	co = commit 
+	hp = push -u origin master
+[user]
+	name = nobuyasu.tomura
+[credential]
+	helper = cache --timeout=3600
+[alias]
