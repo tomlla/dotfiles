@@ -156,8 +156,6 @@ find-grep () { find . -type f -print | xargs grep -n --binary-files=without-matc
 	    bashcompinit
 	 #   source $gitcompfile
 	  fi
-#ssh alias
-alias ssh_sakura='ssh root@www20263ue.sakura.ne.jp -i /home/nobu/.ssh/ntskr'
 
 if [ -z `pgrep Xorg` ]; then
 	startx
