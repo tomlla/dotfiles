@@ -109,3 +109,5 @@ alias gs="git status"
 alias gco="git commit"
 alias ghubp="git push -u origin master"
 alias go="cd /home/nt/workspace/lap/LapDevice"
+
+alias setqs="export QUERY_STRING=\"mode=maclist\""
