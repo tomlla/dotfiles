@@ -156,3 +156,7 @@ find-grep () { find . -type f -print | xargs grep -n --binary-files=without-matc
 	    bashcompinit
 	 #   source $gitcompfile
 	  fi
+
+if [ -z `pgrep Xorg` ]; then
+	startx
+fi
