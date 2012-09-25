@@ -158,5 +158,7 @@ find-grep () { find . -type f -print | xargs grep -n --binary-files=without-matc
 	  fi
 
 if [ -z `pgrep Xorg` ]; then
-	startx
+	if [ -x "`whereis startx 2> /dev/null`"  ]; then
+		startx
+	fi
 fi
