@@ -114,14 +114,13 @@ alias gd="git diff"
 alias gs="git status"
 alias gco="git commit"
 alias ghubp="git push -u origin master"
-alias go="cd /home/nt/workspace/lap/LapDevice"
+alias lap="cd /home/nt/workspace/lap/LapDevice"
+alias lsx="cd /home/nt/workspace/sx-lap/na-splunk_64bit/na-splunk"
+alias wol="cd /home/nt/workspace/nawol"
 alias gm="git checkout master"
 
-alias setqs="export QUERY_STRING=\"mode=maclist\""
-alias s-ta-js='git show table_ctrl:rootfs/default/var/www/script/tableaction.js'
-alias s-ta-ca='git show table_ctrl:rootfs/default/var/www/template/camode_input.tpl'
-
 #show branch name
+color_prompt=yes;
 if [ "$color_prompt" = yes ]; then
 	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]    $(git_branch)  \t\n\$ '
 else

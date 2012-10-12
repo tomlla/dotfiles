@@ -1,0 +1,28 @@
+# enable color support of ls and also add handy aliases
+#alias dir='dir --color=auto'
+#alias vdir='vdir --color=auto'
+#alias fgrep='fgrep --color=auto'
+#alias egrep='egrep --color=auto'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+# some more ls aliases
+alias ll='ls -l'
+alias la='ls -A'
+alias lla='ls -lA'
+alias lcf='ls -CF'
+
+#git alias
+alias gb="git branch"
+alias ga="git add"
+alias gc="git checkout"
+alias gl="git log"
+alias gs="git status"
+alias gd="git diff"
+alias gs="git status"
+alias gco="git commit"
+alias ghubp="git push -u origin master"
+alias lap="cd /home/nt/workspace/lap/LapDevice"
+alias lsx="cd /home/nt/workspace/sx-lap/na-splunk_64bit/na-splunk"
+alias wol="cd /home/nt/workspace/nawol"
+alias gm="git checkout master"
