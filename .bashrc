@@ -83,12 +83,6 @@ if [ -x /usr/bin/dircolors ]; then
     #alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias lla='ls -lA'
-alias lcf='ls -CF'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -104,22 +98,8 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-#git alias
-alias gb="git branch"
-alias ga="git add"
-alias gc="git checkout"
-alias gl="git log"
-alias gs="git status"
-alias gd="git diff"
-alias gs="git status"
-alias gco="git commit"
-alias ghubp="git push -u origin master"
-alias lap="cd /home/nt/workspace/lap/LapDevice"
-alias lsx="cd /home/nt/workspace/sx-lap/na-splunk_64bit/na-splunk"
-alias wol="cd /home/nt/workspace/nawol"
-alias gm="git checkout master"
-
 #show branch name
+
 color_prompt=yes;
 if [ "$color_prompt" = yes ]; then
 	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]    $(git_branch)  \t\n\$ '
@@ -127,3 +107,10 @@ else
 	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w    $(git_branch)  \t\n\$ '
 fi
 unset color_prompt force_color_prompt
+
+if [ -f ~/.aliasrc ]; then
+    source ~/.aliasrc
+fi
+if [ -f ~/.local_shrc ]; then
+    source ~/.local_shrc
+fi

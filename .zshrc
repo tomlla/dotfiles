@@ -10,6 +10,7 @@
  HISTSIZE=1000
  SAVEHIST=1000
  HISTFILE=~/.zsh_history
+
  #--- 履歴関連 --#
  # 履歴ファイルに時刻を記録
  setopt extended_history
@@ -43,16 +44,7 @@
  export LANG=ja_JP.UTF-8
  #export LANG=ja_JP.eucJP
 
- # エイリアスの設定
-   #ls系のalias
-	 alias ls='ls --color=auto'
-	 alias ll='ls -ltr'
-	 alias lg='ls -g'
-	 alias la='ls -A'
-	 alias lm='ls | more'
-	 alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
-	 alias e='exit'
-	 alias psag='ps aux | grep'
+ alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
 
 # 関数
 find-grep () { find . -type f -print | xargs grep -n --binary-files=without-match $@ }
@@ -133,21 +125,6 @@ find-grep () { find . -type f -print | xargs grep -n --binary-files=without-matc
 	 alias tvi='vim.tiny -u .tiny_vimrc'
 	 alias xx='startx'
 
-	 if [ -f ~/.local_zshrc ]; then
-		 source ~/.local_zshrc
-	 fi
-
-#git alias
-	 alias gb="git branch"
-	 alias ga="git add"
-	 alias gc="git checkout"
-	 alias gl="git log"
-	 alias gs="git status"
-	 alias gd="git diff"
-	 alias gs="git status"
-	 alias gco="git commit"
-	 alias ghubp="git push -u origin master"
-	 alias go="cd ~/workspace/lap/LapDevice"
 
 	 # git completion
 	  gitcompfile=$HOME/dotfiles/git-completion.bash
@@ -161,4 +138,14 @@ if [ -z `pgrep Xorg` ]; then
 	if [ -x "`whereis startx 2> /dev/null`"  ]; then
 		startx
 	fi
+fi
+
+if [ -f ~/.aliasrc ]; then
+    source ~/.aliasrc
+fi
+if [ -f ~/.local_shrc ]; then
+    source ~/.local_shrc
+fi
+if [ -f ~/.local_zshrc ]; then
+  source ~/.local_zshrc
 fi
