@@ -36,9 +36,11 @@
  zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
  zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
  zstyle ':completion:*' use-cache true
+ zstyle ':vcs-info:*' disable
+ zstyle ':vcs-info:*' enable git
 
  #PATH setting
- PATH=/usr/local/bin:$PATH
+ PATH=/home/nt/bin:/usr/local/bin:$PATH
  export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
  #Language setting
  export LANG=ja_JP.UTF-8
