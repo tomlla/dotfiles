@@ -131,9 +131,9 @@ find-grep () { find . -type f -print | xargs grep -n --binary-files=without-matc
 	 # git completion
 	  gitcompfile=$HOME/dotfiles/git-completion.bash
 	  if [ -f $gitcompfile ]; then
-	    autoload bashcompinit
-	    bashcompinit
-	 #   source $gitcompfile
+			autoload bashcompinit
+			bashcompinit
+			source $gitcompfile
 	  fi
 
 if [ -z `pgrep Xorg` ]; then
