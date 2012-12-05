@@ -28,3 +28,5 @@ alias gco="git commit"
 alias ghubp="git push -u origin master"
 alias gm="git checkout master"
 
+#other alias 
+alias psg="ps aux | grep "
