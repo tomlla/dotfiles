@@ -1,5 +1,3 @@
-[user]
-	name = nobuyasu tomura
 [credential]
 	helper = cache --timeout=3600
 [alias]

@@ -40,7 +40,7 @@
  zstyle ':vcs-info:*' enable git
 
  #PATH setting
- PATH=/home/nt/bin:/usr/local/bin:$PATH
+ PATH=$HOME/bin:/usr/local/bin:$PATH
  export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
  #Language setting
  export LANG=ja_JP.UTF-8
