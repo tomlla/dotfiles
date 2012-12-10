@@ -31,3 +31,4 @@ alias gm="git checkout master"
 
 #other alias 
 alias psg="ps aux | grep "
+alias tmux-a="tmux attach"
