@@ -2,6 +2,7 @@
 	helper = cache --timeout=3600
 [alias]
 	rhh = reset --hard HEAD
+	rhh1 = reset --hard HEAD^
 	rld = log origin/master..master
 	c = checkout
 	cb = checkout -b
@@ -17,9 +18,13 @@
 	hp = push -u origin master
 	mm = merge master 
 	m = merge
-	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all
-	camd = commit --amend
+	g = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all 
+	graph = log --graph 
+	amd = commit --amend
 [core]
-	pager = less -c
+	pager = lv -c
 [color]
 	ui = auto
+[user]
+	name = nobuyasu tomura
+	email = nobuyasu.tomura@soliton.co.jp

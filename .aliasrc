@@ -28,7 +28,9 @@ alias gs="git status"
 alias gco="git commit"
 alias ghubp="git push -u origin master"
 alias gm="git checkout master"
+alias gg="git g | lv -c"
 
 #other alias 
 alias psg="ps aux | grep "
 alias tmux-a="tmux attach"
+alias google="w3m google.com"
