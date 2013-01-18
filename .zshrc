@@ -127,7 +127,6 @@ find-grep () { find . -type f -print | xargs grep -n --binary-files=without-matc
 	 LS_COLORS="no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:ex=01;32:*.tar=01;31"
 	 export LS_COLORS
 	 alias tvi='vim.tiny -u .tiny_vimrc'
-	 alias xx='startx'
 
 
 	 # git completion
