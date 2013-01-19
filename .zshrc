@@ -3,47 +3,55 @@
  promptinit
  prompt walters
 
- # Use emacs keybindings even if our EDITOR is set to vi
- bindkey -e
- bindkey ";5C" forward-word
- bindkey ";5D" backward-word
+ #PATH setting
+ PATH=$HOME/bin:/usr/local/bin:$PATH
+ export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
+ #Language setting
+ export LANG=ja_JP.UTF-8
+ #export LANG=ja_JP.eucJP
 
  # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
  HISTSIZE=1000
  SAVEHIST=1000
  HISTFILE=~/.zsh_history
 
+ # Use emacs keybindings even if our EDITOR is set to vi
+ bindkey -e
+ bindkey ";5C" forward-word
+ bindkey ";5D" backward-word
+
+
  #--- 履歴関連 --#
  # 履歴ファイルに時刻を記録
  setopt extended_history
 
-# # Use modern completion system
- autoload -Uz compinit
- compinit
- zstyle ':completion:*' auto-description 'specify: %d'
- zstyle ':completion:*' completer _expand _complete _correct _approximate
- zstyle ':completion:*' format 'Completing %d'
- zstyle ':completion:*' group-name ''
- zstyle ':completion:*' menu select=2
- eval "$(dircolors -b)"
- zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
- zstyle ':completion:*' list-colors ''
- zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
- zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
- zstyle ':completion:*' menu select=long
- zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
- zstyle ':completion:*' use-compctl false
- zstyle ':completion:*' verbose true
- zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
- zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
- zstyle ':completion:*' use-cache true
+# Use modern completion system
+	autoload -Uz compinit
+	compinit
+	zstyle ':completion:*' auto-description 'specify: %d'
+	zstyle ':completion:*' completer _expand _complete _correct _approximate
+	zstyle ':completion:*' format 'Completing %d'
+	zstyle ':completion:*' group-name ''
+	zstyle ':completion:*' menu select=2
+	eval "$(dircolors -b)"
+	zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+	zstyle ':completion:*' list-colors ''
+	zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+	zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+	zstyle ':completion:*' menu select=long
+	zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+	zstyle ':completion:*' use-compctl false
+	zstyle ':completion:*' verbose true
+	zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+	zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+	zstyle ':completion:*' use-cache true
 
 #sudo でも補完の対象
  zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 #ファイルリスト補完でもlsと同様に色をつける｡
  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-# VCS settings
+# VCS and Prompt settings
 autoload -Uz vcs_info
 precmd() {
   psvar=()
@@ -52,17 +60,8 @@ precmd() {
 }
 PROMPT=$'%2F%n@%m%f %1v\n%# '
 
- #PATH setting
- PATH=$HOME/bin:/usr/local/bin:$PATH
- export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
- #Language setting
- export LANG=ja_JP.UTF-8
- #export LANG=ja_JP.eucJP
-
-
-# 関数
-find-grep () { find . -type f -print | xargs grep -n --binary-files=without-match $@ }
-
+	# 関数
+	find-grep () { find . -type f -print | xargs grep -n --binary-files=without-match $@ }
 
 	 # 補完候補が複数ある時に、一覧表示
 	 setopt auto_list
@@ -133,12 +132,6 @@ find-grep () { find . -type f -print | xargs grep -n --binary-files=without-matc
 			bashcompinit
 			source $gitcompfile
 	  fi
-
-if [ -z `pgrep Xorg` ]; then
-	if [ -x "`which startx 2> /dev/null`"  ]; then
-		startx
-	fi
-fi
 
 if [ -f ~/.aliasrc ]; then
     source ~/.aliasrc
