@@ -1,6 +1,7 @@
 [credential]
 	helper = cache --timeout=3600
 [alias]
+	cv = cherry -v
 	rhh = reset --hard HEAD
 	rhh1 = reset --hard HEAD^
 	rld = log origin/master..master
