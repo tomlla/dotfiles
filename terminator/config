@@ -8,6 +8,7 @@
     background_type = transparent
     use_system_font = False
     foreground_color = "#443f3f"
+    show_titlebar = False
     font = Ricty 9
     background_color = "#c9baba"
 [layouts]
