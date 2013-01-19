@@ -23,6 +23,7 @@
 	amd = commit --amend
 [core]
 	pager = lv -c
+	editor = vim
 [color]
 	ui = auto
 [user]
