@@ -10,17 +10,19 @@
 	bd = branch -d
 	bdf = branch -D
 	s = status 
+	ss = status -s 
 	d = diff
 	l = log
-	rc = rm --cached
-	ca = commit -a
 	co = commit 
+	ca = commit -a
+	cam = commit -a -m
+	cm = commit -m
+	amd = commit --amend
 	hp = push -u origin master
 	mm = merge master 
 	m = merge
 	g = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all 
 	graph = log --graph 
-	amd = commit --amend
 [core]
 	pager = lv -c
 	editor = vim
