@@ -24,6 +24,8 @@
 	m = merge
 	g = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all 
 	graph = log --graph 
+	rb = rebase
+	rbi = rebase -i 
 [core]
 	pager = lv -c
 	editor = vim

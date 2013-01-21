@@ -35,3 +35,7 @@ alias psg="ps aux | grep "
 alias tmux-a="tmux attach"
 alias google="w3m google.com"
 alias w3b="w3m -B"
+#tmux back groud mode
+alias tb='tmux set-option -ag prefix C-u'
+#tmux foregroud mode
+alias tf='tmux set-option -ag prefix C-b'
