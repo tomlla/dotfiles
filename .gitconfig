@@ -23,6 +23,7 @@
 	mm = merge master 
 	m = merge
 	g = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all 
+	gs = log --graph --date-order -M -C
 	graph = log --graph 
 	rb = rebase
 	rbi = rebase -i 

@@ -118,19 +118,24 @@ PROMPT=$'%2F%n@%m%f %1v\n%# '
 	 # C-s, C-qを無効にする。
 	 setopt no_flow_control
 
- #ls color setting
+#ls color setting
 	 LS_COLORS="no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:ex=01;32:*.tar=01;31"
 	 export LS_COLORS
 	 alias tvi='vim.tiny -u .tiny_vimrc'
- alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
+	 alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
 
-	 # git completion
-	  gitcompfile=$HOME/dotfiles/git-completion.bash
-	  if [ -f $gitcompfile ]; then
-			autoload bashcompinit
-			bashcompinit
-			source $gitcompfile
-	  fi
+# git completion
+ gitcompfile=$HOME/dotfiles/git-completion.bash
+ if [ -f $gitcompfile ]; then
+ autoload bashcompinit
+ bashcompinit
+ source $gitcompfile
+ fi
+
+#gitで普通のファイル名補完を使うようにする。
+__git_files() { _files }
+#置き換え補完ではなく評価補完
+compdef g="git"
 
 if [ -f ~/.aliasrc ]; then
     source ~/.aliasrc
