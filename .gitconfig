@@ -19,19 +19,15 @@
 	cam = commit -a -m
 	cm = commit -m
 	amd = commit --amend
-	hp = push -u origin master
-	mm = merge master 
 	m = merge
 	g = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all 
-	gs = log --graph --date-order -M -C
 	graph = log --graph 
 	rb = rebase
 	rbi = rebase -i 
+	stl = stash list
+	st = git stash save
 [core]
 	pager = lv -c
 	editor = vim
 [color]
 	ui = auto
-[user]
-	name = nobuyasu tomura
-	email = nobuyasu.tomura@soliton.co.jp
