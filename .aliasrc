@@ -32,9 +32,9 @@ alias gss="git status -s"
 alias gco="git commit"
 alias ghubp="git push -u origin master"
 alias gm="git checkout master"
-alias gg="git g | lv -c"
 alias gpl="git pull"
 alias gps="git push"
+alias gg="git g"
 
 #other alias 
 alias psg="ps aux | grep "

@@ -119,7 +119,7 @@ else
 fi
 
 #gitで普通のファイル名補完を使うようにする。
-__git_files() { _files }
+#__git_files() { _files }
 #置き換え補完ではなく評価補完
 compdef g="git"
 
