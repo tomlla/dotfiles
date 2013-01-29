@@ -1,31 +1,36 @@
 [credential]
 	helper = cache --timeout=3600
 [alias]
-	cv = cherry -v
-	rhh = reset --hard HEAD
-	rhh1 = reset --hard HEAD^
-	rld = log origin/master..master
 	c = checkout
 	cb = checkout -b
 	b = branch
 	bd = branch -d
 	bdf = branch -D
+	bm = branch -m
 	s = status 
 	ss = status -s 
-	d = diff
-	l = log
+	cv = cherry -v
+	a = add
 	co = commit 
 	ca = commit -a
 	cam = commit -a -m
 	cm = commit -m
 	amd = commit --amend
-	m = merge
-	g = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all 
+	d = diff
+	l = log
 	graph = log --graph 
+	g = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all 
+	m = merge
 	rb = rebase
 	rbi = rebase -i 
+	rld = log origin/master..master
+	rhh = reset --hard HEAD
+	rhh1 = reset --hard HEAD^
 	stl = stash list
 	st = git stash save
+	ps = push
+	pl = pull
+	pr = pull --rebase
 [core]
 	pager = lv -c
 	editor = vim
