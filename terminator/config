@@ -1,18 +1,27 @@
 [global_config]
   title_transmit_bg_color = "#880002"
   title_inactive_bg_color = "#8e8e8e"
+  focus = mouse
+  borderless = True
 [keybindings]
 [profiles]
   [[default]]
+    scrollbar_position = hidden
     palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
     background_darkness = 0.89
     background_type = transparent
     use_system_font = False
     cursor_color = "#656565"
-    foreground_color = "#443f3f"
+    foreground_color = "#393939"
     show_titlebar = False
     font = Ricty 9
     background_color = "#c9baba"
+  [[dark]]
+    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+    font = VL ゴシック 9
+    background_color = "#393939"
+    use_system_font = False
+    foreground_color = "#dbdbdb"
 [layouts]
   [[default]]
     [[[child1]]]
