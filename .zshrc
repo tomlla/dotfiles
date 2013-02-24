@@ -4,7 +4,6 @@ promptinit
 prompt walters
 
 #PATH setting
-PATH=$HOME/bin:/usr/local/bin:$PATH
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 
 #Language setting
