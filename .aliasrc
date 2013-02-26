@@ -44,7 +44,7 @@ alias gpr="git pull --rebase"
 alias gps="git push"
 alias ghubp="git push -u origin master"
 alias gst="git stash "
-alias gstl="git stash list"
+alias gstl="git stash list | cat"
 alias gsts="git stash save"
 alias gstp="git stash pop"
 

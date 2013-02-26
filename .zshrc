@@ -113,8 +113,6 @@ if [ -f $gitcompfile ]; then
 	autoload bashcompinit
 	bashcompinit
 	zstyle ':completion:*:*:git:*' script $gitcompfile
-else
-	echo 'no!'
 fi
 
 #gitで普通のファイル名補完を使うようにする。

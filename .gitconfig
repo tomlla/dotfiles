@@ -26,7 +26,7 @@
 	rld = log origin/master..master
 	rhh = reset --hard HEAD
 	rhh1 = reset --hard HEAD^
-	stl = stash list
+	stl = stash list | cat 
 	st = git stash save
 	ps = push
 	pl = pull
