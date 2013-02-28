@@ -129,3 +129,6 @@ fi
 if [ -f ~/.local_zshrc ]; then
 	source ~/.local_zshrc
 fi
+if [ -d ~/bin ]; then
+	PATH=$HOME/bin:$PATH
+fi
