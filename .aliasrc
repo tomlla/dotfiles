@@ -3,7 +3,7 @@
 #alias dir='dir --color=auto'
 #alias vdir='vdir --color=auto'
 #alias fgrep='fgrep --color=auto'
-#alias egrep='egrep --color=auto'
+alias egrep='egrep --color=auto'
 
 if [ -x /usr/bin/dircolors ]; then
 	alias ls='ls --color=auto'
@@ -58,3 +58,5 @@ alias w3b="w3m -B"
 alias tpg='tmux set-option -ag prefix C-u'
 #prefix をC-bに
 alias tpb='tmux set-option -ag prefix C-b'
+
+alias grr='grep -Hnr '
