@@ -9,7 +9,7 @@ chmod 600 $idtfile
 
 cat >> ~/.ssh/config <<_EOT_
 
-Host bitbucket
+Host bitbucket.org
 	HostName bitbucket.org
 	IdentityFile ~/.ssh/bitbucket/$idtfile
 	User git
@@ -17,6 +17,7 @@ Host bitbucket
 	TCPKeepAlive yes
 	IdentitiesOnly yes
 _EOT_
+#caution: 'Host' need to suffix ".org" to dont use ssh-agent
 
 echo "paste this text(include mail address) to bitbucket add key form "
 cat $idtfile.pub
