@@ -21,7 +21,7 @@
     use_system_font = False
     foreground_color = "#dbdbdb"
     show_titlebar = False
-    font = Ricty 10
+    font = Ricty 11
     background_color = "#393939"
 [layouts]
   [[default]]
