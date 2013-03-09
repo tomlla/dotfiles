@@ -59,4 +59,4 @@ alias tpg='tmux set-option -ag prefix C-u'
 #prefix をC-bに
 alias tpb='tmux set-option -ag prefix C-b'
 
-alias grr='grep -Hnr '
+alias grr='grep -IHnr '
