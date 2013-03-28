@@ -60,3 +60,4 @@ alias tpg='tmux set-option -ag prefix C-u'
 alias tpb='tmux set-option -ag prefix C-b'
 
 alias grr='grep -IHnr '
+alias v="vim"
