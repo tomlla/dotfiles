@@ -222,14 +222,14 @@
         <execute>xterm -fa Ricty -fs 9</execute>
       </action>
     </keybind>
+    <keybind key="A-a">
+      <action name="Execute">
+        <execute>lxterminal</execute>
+      </action>
+    </keybind>
     <keybind key="A-n">
       <action name="Execute">
         <execute>terminator</execute>
-      </action>
-    </keybind>
-    <keybind key="A-r">
-      <action name="Execute">
-        <execute>lxterminal</execute>
       </action>
     </keybind>
     <keybind key="A-g">
