@@ -19,11 +19,12 @@
 !!cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
 !!green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
 
-#define S_base03        #EEEEEE
+#define S_base03        #333333
 #define S_base02        #073642
 #define S_base01        #586e75
 #define S_base00        #657b83
 #define MyS_base00      #444444
+#define MyS_base_front  #EEEEEE
 #define S_base0         #839496
 #define S_base1         #93a1a1
 #define S_base2         #eee8d5
@@ -38,7 +39,7 @@
 #define S_green         #859900
 
 *background:            S_base03
-*foreground:            MyS_base00
+*foreground:            MyS_base_front
 *fading:                40
 *fadeColor:             S_base03
 *cursorColor:           S_base1
@@ -81,5 +82,5 @@
 !!XTerm*VT100*faceName:Monospace
 XTerm*VT100*faceName:'Ricty'
 XTerm*VT100*faceNameDoublesize:'Ricty'
-XTerm*VT100*faceSize:9
 !!XTerm*VT100*geometry:80x25+300+100
+XTerm*ximFont: -misc-fixed-medium-r-normal--14-130-75-75-c-140-jisx0208.1983-0
