@@ -61,3 +61,4 @@ alias tpb='tmux set-option -ag prefix C-b'
 
 alias grr='grep -IHnr '
 alias v="vim"
+alias sv="sudo vim.tiny"
