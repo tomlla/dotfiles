@@ -19,12 +19,12 @@
 !!cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
 !!green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
 
-#define S_base03        #333333
+#define S_base03        #282828
 #define S_base02        #073642
 #define S_base01        #586e75
 #define S_base00        #657b83
 #define MyS_base00      #444444
-#define MyS_base_front  #EEEEEE
+#define MyS_base_front  #F8F8F8
 #define S_base0         #839496
 #define S_base1         #93a1a1
 #define S_base2         #eee8d5
