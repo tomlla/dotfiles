@@ -10,6 +10,10 @@ export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 export LANG=ja_JP.UTF-8
 #export LANG=ja_JP.eucJP
 
+#ls color setting
+LS_COLORS="no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:ex=01;32:*.tar=01;31"
+export LS_COLORS
+
 #--- 履歴関連 --#
 # 履歴ファイルに時刻を記録
 setopt extended_history
@@ -97,15 +101,11 @@ setopt print_eight_bit
 # Ctrl+wで､直前の/までを削除する｡
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 # cd をしたときにlsを実行する
-function chpwd() { ls }
+function chpwd() { ls --color=auto }
 # ディレクトリ名だけで､ディレクトリの移動をする｡
 setopt auto_cd
 # C-s, C-qを無効にする。
 setopt no_flow_control
-
-#ls color setting
-LS_COLORS="no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:ex=01;32:*.tar=01;31"
-export LS_COLORS
 
 # git completion
 gitcompfile=$HOME/dotfiles/git-completion.bash
