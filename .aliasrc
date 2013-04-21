@@ -50,7 +50,7 @@ alias gstp="git stash pop"
 
 #other alias 
 alias psg="ps aux | grep "
-alias tmux-a="tmux attach"
+alias ta="tmux attach"
 alias google="w3m 'http://google.co.jp/'"
 alias ggl="w3m 'http://google.co.jp/'"
 alias w3b="w3m -B"
