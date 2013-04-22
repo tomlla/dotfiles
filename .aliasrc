@@ -47,7 +47,6 @@ alias gst="git stash "
 alias gstl="git stash list | cat"
 alias gsts="git stash save"
 alias gstp="git stash pop"
-
 #other alias 
 alias psg="ps aux | grep "
 alias ta="tmux attach"
@@ -62,3 +61,4 @@ alias tpb='tmux set-option -ag prefix C-b'
 alias grr='grep -IHnr '
 alias v="vim"
 alias sv="sudo vim.tiny"
+alias getbranch="git branch | grep \"*\" | awk '{print \$2}'"
