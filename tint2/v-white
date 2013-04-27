@@ -10,18 +10,18 @@
 # BACKGROUND AND BORDER
 #---------------------------------------------
 rounded = 0
-border_width = 1
-background_color = #FFFFFF 0
-border_color = #FFFFFF 20
-
-rounded = 0
 border_width = 0
-background_color = #ffffff 20
+background_color = #CCCCCC 50
+border_color = #222222 20
+
+rounded = 1
+border_width = 0
+background_color = #888888 20
 border_color = #ffffff 20
 
-rounded = 0
+rounded = 2
 border_width = 0
-background_color = #ffffff 0
+background_color = #CCCCCC 0
 border_color = #ffffff 0
 
 #---------------------------------------------
@@ -33,7 +33,7 @@ panel_size = 92% 28
 panel_margin = 0 0
 panel_padding = 7 0
 font_shadow = 0
-panel_background_id = 0
+panel_background_id = 2
 
 #---------------------------------------------
 # TASKBAR
