@@ -1,0 +1,32 @@
+# /etc/sudoers
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# See the man page for details on how to write a sudoers file.
+#
+
+Defaults	env_reset
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+
+# User privilege specification
+root	ALL=(ALL) ALL
+nobu	ALL=(ALL) ALL
+nobu	ALL=(ALL) NOPASSWD: /sbin/shutdown
+nobu	ALL=(ALL) NOPASSWD: /sbin/ifconfig
+nobu	ALL=(ALL) NOPASSWD: /bin/mount
+nt	ALL=(ALL) ALL
+nt	ALL=(ALL) NOPASSWD: /sbin/shutdown
+nt	ALL=(ALL) NOPASSWD: /sbin/ifconfig
+nt	ALL=(ALL) NOPASSWD: /bin/mount
+
+# Allow members of group sudo to execute any command
+# (Note that later entries override this, so you might need to move
+# it further down)
+%sudo ALL=(ALL) ALL
+#
+#includedir /etc/sudoers.d
