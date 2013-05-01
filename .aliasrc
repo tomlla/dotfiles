@@ -19,6 +19,7 @@ alias lm='ls | more'
 
 #git alias
 alias g="git"
+alias gsb="git submodule"
 alias gc="git checkout"
 alias gcb="git checkout -b"
 alias gb="git branch"
