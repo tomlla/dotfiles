@@ -64,3 +64,6 @@ alias getbranch="git branch | grep \"*\" | awk '{print \$2}'"
 
 alias gs="git status -s"
 alias ghostscript="/usr/bin/gs"
+alias ag="apt-get"
+alias ac="apt-cache"
+alias acs="apt-cache search"
