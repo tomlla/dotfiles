@@ -7,7 +7,7 @@ prompt walters
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 
 #Language setting
-export LANG=ja_JP.UTF-8
+#export LANG=ja_JP.UTF-8
 #export LANG=ja_JP.eucJP
 
 #ls color setting
