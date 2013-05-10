@@ -219,7 +219,7 @@
     </keybind>
     <keybind key="A-q">
       <action name="Execute">
-        <execute>xterm -fa Ricty -fs 9</execute>
+        <execute>xterm -fa Ricty -fs 6</execute>
       </action>
     </keybind>
     <keybind key="A-a">
