@@ -1,4 +1,5 @@
 # Set up the prompt
+export TERM=xterm-256color #need to install ncurses or ncurses-term
 autoload -Uz promptinit
 promptinit
 prompt walters
