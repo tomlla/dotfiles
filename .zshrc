@@ -1,5 +1,7 @@
 # Set up the prompt
-export TERM=xterm-256color #need to install ncurses or ncurses-term
+if [ -e /usr/share/terminfo/x/xterm+256color ]; then
+	export TERM=xterm-256color #need to install ncurses or ncurses-term
+fi
 autoload -Uz promptinit
 promptinit
 prompt walters
