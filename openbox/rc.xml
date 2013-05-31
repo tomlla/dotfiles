@@ -220,12 +220,7 @@
     </keybind>
     <keybind key="A-q">
       <action name="Execute">
-				<execute>xfce4-terminal</execute>
-      </action>
-    </keybind>
-    <keybind key="A-a">
-      <action name="Execute">
-        <execute>lxterminal</execute>
+				<execute>lxterminal</execute>
       </action>
     </keybind>
     <keybind key="A-n">
