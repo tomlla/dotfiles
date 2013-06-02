@@ -6,7 +6,7 @@
 
 # Background definitions
 # ID 1
-rounded = 43
+rounded = 0
 border_width = 0
 background_color = #000000 100
 border_color = #FFFFFF 100
@@ -20,7 +20,7 @@ border_color = #FFFFFF 100
 # Panel
 panel_monitor = all
 panel_position = bottom left vertical
-panel_size = 0 30
+panel_size = 0 40
 panel_margin = 0 0
 panel_padding = 0 0 0
 panel_dock = 0
@@ -37,16 +37,16 @@ strut_policy = none
 
 # Taskbar
 taskbar_mode = multi_desktop
-taskbar_padding = 0 0 2
+taskbar_padding = 0 0 0
 taskbar_background_id = 0
 #taskbar_active_background_id = 0
 
 # Tasks
 urgent_nb_of_blink = 7
 task_icon = 1
-task_text = 0
-task_centered = 0
-task_maximum_size = 100 20
+task_text = 1
+task_centered = 1
+task_maximum_size = 200 32
 task_padding = 0 0
 task_background_id = 0
 task_active_background_id = 0
@@ -56,8 +56,8 @@ task_iconified_background_id = 0
 # Task Icons
 task_icon_asb = 100 0 0
 task_active_icon_asb = 100 0 0
-task_urgent_icon_asb = 30 0 0
-task_iconified_icon_asb = 30 0 0
+task_urgent_icon_asb = 100 0 0
+task_iconified_icon_asb = 100 0 0
 
 # Fonts
 task_font = Sans 12
@@ -77,16 +77,15 @@ systray_icon_asb = 100 0 0
 
 # Clock
 time1_format = %H:%M
-time1_font = Droid Sans Thai 9
-time2_format = %b %d 
-time2_font = Sans 8
+time1_font = Sans 12
+time2_format = %a %d %b
+time2_font = Sans 12
 clock_font_color = #FFFFFF 100
-clock_tooltip = %a
 clock_padding = 0 0
 clock_background_id = 0
 
 # Tooltips
-tooltip = 1
+tooltip = 0
 tooltip_padding = 0 0
 tooltip_show_timeout = 0
 tooltip_hide_timeout = 0
