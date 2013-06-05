@@ -16,6 +16,7 @@ alias la='ls -A'
 alias lla='ls -lA'
 alias lcf='ls -CF'
 alias lm='ls | more'
+alias l1='ls -1'
 
 #git alias
 alias g="git"
