@@ -33,7 +33,7 @@
 	pl = pull
 	pr = pull --rebase
 [core]
-	pager = lv -c
+	pager = less
 	editor = vim -c \"set fenc=utf-8\"
 [color]
 	ui = auto
