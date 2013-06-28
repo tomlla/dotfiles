@@ -132,6 +132,6 @@ fi
 if [ -f ~/.local_zshrc ]; then
 	source ~/.local_zshrc
 fi
-if [ -d ~/bin ]; then
+if [ -d ~/bin -a -z "`echo $PATH | grep $HOME/bin`" ]; then
 	PATH=$HOME/bin:$PATH
 fi
