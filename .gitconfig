@@ -38,4 +38,4 @@
 [color]
 	ui = auto
 [include]
-	path = .gitconfig.local
+	path = .local.gitconfig
