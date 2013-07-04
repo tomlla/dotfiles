@@ -10,6 +10,7 @@
 	s = status 
 	ss = status -s 
 	cv = cherry -v
+	cp = cherry-pick
 	a = add
 	co = commit 
 	ca = commit -a
