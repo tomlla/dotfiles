@@ -63,7 +63,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion:*' use-cache true
 
 #sudo でも補完の対象
-zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+zstyle ':completion:*:sudo:*' command-path /usr/local/bin /usr/bin /sbin /bin
 #ファイルリスト補完でもlsと同様に色をつける｡
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # 補完候補が複数ある時に、一覧表示
