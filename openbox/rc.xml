@@ -37,7 +37,7 @@
     <primaryMonitor/>
   </placement>
   <theme>
-    <name>OB-glossy</name>
+    <name>Peptide</name>
     <titleLayout>SNLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -49,8 +49,8 @@
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
-    <keepBorder>yes</keepBorder>
-    <animateIconify>yes</animateIconify>
+    <keepBorder>no</keepBorder>
+    <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
       <name>Sans</name>
       <size>7</size>
@@ -372,7 +372,7 @@
     <!-- Keybindings for running applications -->
   </keyboard>
   <mouse>
-    <dragThreshold>8</dragThreshold>
+    <dragThreshold>26</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
     <doubleClickTime>200</doubleClickTime>
     <!-- in milliseconds (1000 = 1 second) -->
