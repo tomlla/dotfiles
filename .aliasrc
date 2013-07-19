@@ -74,3 +74,5 @@ alias ghostscript="/usr/bin/gs"
 alias acs="apt-cache search"
 alias S="sudo "
 alias tailog="sudo tailf /var/log/messages"
+
+alias datefilename="date +%Y-%m%d-%H%M"
