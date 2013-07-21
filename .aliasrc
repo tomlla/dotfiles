@@ -69,8 +69,6 @@ alias grr='grep -IHnr '
 alias sv="sudo vim.tiny -u NONE"
 alias v="vim.tiny -u NONE"
 
-alias gs="git status -s"
-alias ghostscript="/usr/bin/gs"
 alias acs="apt-cache search"
 alias S="sudo "
 alias tailog="sudo tailf /var/log/messages"

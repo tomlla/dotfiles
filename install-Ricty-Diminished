@@ -1,0 +1,11 @@
+#!/bin/sh
+url="http://save.sys.t.u-tokyo.ac.jp/~yusa/fonts/archives/RictyDiminished-3.2.2.tar.gz"
+file=/tmp/RictyDiminishe.tgz
+deploydir=/usr/local/share/fonts/RictyDiminished
+
+wget $url -O $file
+if [ -f $file ]; then
+	mkfir -p $deploydir
+	sudo cp $file $deploydir
+	fc-cache fv
+fi
