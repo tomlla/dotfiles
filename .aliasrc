@@ -75,3 +75,7 @@ alias S="sudo "
 alias tailog="sudo tailf /var/log/messages"
 
 alias datefilename="date +%Y-%m%d-%H%M"
+alias sgrh="sudo git reset --hard HEAD"
+alias sgc="sudo git checkout"
+alias sgcm="sudo git commit -m"
+alias sgf="sudo git fetch"
