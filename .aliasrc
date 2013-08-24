@@ -67,6 +67,7 @@ alias tpg='tmux set-option -ag prefix C-u'
 alias tpb='tmux set-option -ag prefix C-b'
 
 alias grr='grep -IHnr '
+alias f="find"
 alias sv="sudo vim.tiny -u NONE"
 alias v="vim.tiny -u NONE"
 
