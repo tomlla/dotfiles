@@ -80,3 +80,6 @@ alias sgrh="sudo git reset --hard HEAD"
 alias sgc="sudo git checkout"
 alias sgcm="sudo git commit -m"
 alias sgf="sudo git fetch"
+alias his="history"
+
+alias c="cut -d' ' -f "
