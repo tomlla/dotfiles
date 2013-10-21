@@ -83,6 +83,9 @@ alias sgf="sudo git fetch"
 alias thunderbird-address="thunderbird -addressbook"
 alias his="history"
 
-alias vag='vagrant'
+alias vg='vagrant'
+alias vgb='vagrant box'
+alias vgs='vagrant status'
+alias vgd='vagrant destroy'
 
 alias c="cut -d' ' -f "
