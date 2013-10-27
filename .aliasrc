@@ -56,6 +56,14 @@ alias gsts="git stash save"
 alias gstp="git stash pop"
 alias getbranch="git branch | grep \"*\" | awk '{print \$2}'"
 
+#lxc
+alias lxcr='sudo lxc-create -n '
+alias lxd='sudo lxc-destroy -n '
+alias lxs='sudo lxc-start -n '
+alias lxstop='sudo lxc-stop -n '
+alias lxl='sudo lxc-list'
+alias lxcon='sudo lxc-console -n '
+
 #other alias 
 alias psg="ps aux | grep "
 alias ta="tmux attach"
@@ -89,3 +97,9 @@ alias vags='vagrant status'
 alias vagd='vagrant destroy'
 
 alias c="cut -d' ' -f "
+alias vag=vagrant
+
+
+#variables
+export lxc=/var/lib/lxc
+
