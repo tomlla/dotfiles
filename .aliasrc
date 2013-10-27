@@ -5,12 +5,13 @@
 #alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+###################
+# some more ls aliases
+###################
 if [ -x /usr/bin/dircolors ]; then
 	alias ls='ls --color=auto'
 	alias grep='grep --color=auto'
 fi
-
-# some more ls aliases
 alias ll='ls -l'
 alias la='ls -A'
 alias lla='ls -lA'
@@ -18,7 +19,9 @@ alias lcf='ls -CF'
 alias lm='ls | more'
 alias l1='ls -1'
 
+###################
 #git alias
+###################
 alias g="git"
 alias gsb="git submodule"
 alias gc="git checkout"
@@ -55,8 +58,14 @@ alias gstl="git stash list | cat"
 alias gsts="git stash save"
 alias gstp="git stash pop"
 alias getbranch="git branch | grep \"*\" | awk '{print \$2}'"
+alias sgrh="sudo git reset --hard HEAD"
+alias sgc="sudo git checkout"
+alias sgcm="sudo git commit -m"
+alias sgf="sudo git fetch"
 
+###################
 #lxc
+###################
 alias lxcr='sudo lxc-create -n '
 alias lxd='sudo lxc-destroy -n '
 alias lxs='sudo lxc-start -n '
@@ -64,40 +73,46 @@ alias lxstop='sudo lxc-stop -n '
 alias lxl='sudo lxc-list'
 alias lxcon='sudo lxc-console -n '
 
-#other alias 
-alias psg="ps aux | grep "
+###################
+# vagrant
+###################
+alias vag='vagrant'
+alias vagb='vagrant box'
+alias vags='vagrant status'
+alias vagd='vagrant destroy'
+
+#########################
+# tmux aliases
+#########################
 alias ta="tmux attach"
-alias ggl="w3m 'http://google.co.jp/'"
-alias w3b="w3m -B"
 #prefix をC-gに
 alias tpg='tmux set-option -ag prefix C-u'
 #prefix をC-bに
 alias tpb='tmux set-option -ag prefix C-b'
 
-alias grr='grep -IHnr '
-alias f="find"
+######################
+#vim alias
+######################
 alias sv="sudo vim.tiny -u NONE"
 alias v="vim.tiny -u NONE"
+
+###############
+# other alias 
+###############
+alias psg="ps aux | grep "
+alias ggl="w3m 'http://google.co.jp/'"
+alias w3b="w3m -B"
+alias grr='grep -IHnr '
+alias f="find"
+alias c="cut -d' ' -f "
 
 alias acs="apt-cache search"
 alias S="sudo "
 alias tailog="sudo tailf /var/log/messages"
 
 alias datefilename="date +%Y-%m%d-%H%M"
-alias sgrh="sudo git reset --hard HEAD"
-alias sgc="sudo git checkout"
-alias sgcm="sudo git commit -m"
-alias sgf="sudo git fetch"
 alias thunderbird-address="thunderbird -addressbook"
 alias his="history"
-
-alias vag='vagrant'
-alias vagb='vagrant box'
-alias vags='vagrant status'
-alias vagd='vagrant destroy'
-
-alias c="cut -d' ' -f "
-alias vag=vagrant
 
 
 #variables
