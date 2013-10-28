@@ -109,6 +109,9 @@ function chpwd() { ls --color=auto }
 setopt auto_cd
 # C-s, C-qを無効にする。
 setopt no_flow_control
+function mkcd(){
+	mkdir -p $1 && cd $1
+}
 
 # git completion
 gitcompfile=$HOME/dotfiles/git-completion.bash
