@@ -66,7 +66,6 @@ alias sgf="sudo git fetch"
 ###################
 #lxc
 ###################
-alias lxcr='sudo lxc-create -n '
 alias lxd='sudo lxc-destroy -n '
 alias lxs='sudo lxc-start -n '
 alias lxstop='sudo lxc-stop -n '
