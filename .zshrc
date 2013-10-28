@@ -123,8 +123,7 @@ __git_files() { _files }
 #置き換え補完ではなく評価補完
 compdef g="git"
 
-mkdir -p $HOME/gohome
-export GOPATH=$HOME/gohome
+[ -d $HOME/gohome ] && export GOPATH=$HOME/gohome
 
 if [ -f ~/.aliasrc ]; then
 	source ~/.aliasrc
