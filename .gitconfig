@@ -21,7 +21,7 @@
 	l = log
 	lst = log --stat
 	graph = log --graph 
-	g = log --graph --date-order -C -M --pretty=format:\"<%h> %ar [%an] %Cgreen%d%Creset %s\" --all 
+	g = log --graph --date-order -C -M --pretty=format:\" %h [%ar] [%an] %Cgreen%d%Creset %s\" --all 
 	m = merge
 	rb = rebase
 	rbi = rebase -i 

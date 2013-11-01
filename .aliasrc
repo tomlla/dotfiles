@@ -114,6 +114,7 @@ alias datefilename="date +%Y-%m%d-%H%M"
 alias thunderbird-address="thunderbird -addressbook"
 alias his="history"
 
+[ -f $HOME/note/todo.md ] && alias vit="vim ~/note/todo.md"
 
 #variables
 export lxc=/var/lib/lxc

@@ -1,0 +1,8 @@
+alias fablist="fab --list"
+acti() {
+	. $1/bin/activate
+}
+
+deac() {
+	deactivate
+}
