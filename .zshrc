@@ -126,6 +126,9 @@ __git_files() { _files }
 #置き換え補完ではなく評価補完
 compdef g="git"
 
+#zsh専用のalias
+alias -g L='| less'
+
 [ -d $HOME/gohome ] && export GOPATH=$HOME/gohome
 
 if [ -f ~/.aliasrc ]; then
