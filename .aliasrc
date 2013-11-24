@@ -115,6 +115,8 @@ alias his="history"
 
 [ -f $HOME/note/todo.md ] && alias vit="vim ~/note/todo.md"
 
+alias ssh-ka='ssh -o ServerAliveInterval=60'
+
 #variables
 export lxc=/var/lib/lxc
 
