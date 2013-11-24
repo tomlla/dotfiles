@@ -15,6 +15,7 @@ ln -s $symlinksourcepath/.zshrc .zshrc
 ln -s $symlinksourcepath/.gitconfig .gitconfig
 ln -s $symlinksourcepath/.aliasrc .aliasrc
 ln -s $symlinksourcepath/.pythonrc .pythonrc
+ln -s $symlinksourcepath/.rubyrc .rubyrc
 
 #x
 #ln -s $HOME/dotfiles/x/.gtkrc-2.0 $HOME/.gtkrc-2.0
