@@ -6,8 +6,6 @@ acti() {
 deac() {
 	deactivate
 }
-if [ -z "${WORKON_HOME}" ]; then
-	[ -f "$(which virtualenvwrapper.sh)" ] && source "$(which virtualenvwrapper.sh)"
-	export WORKON_HOME=$HOME/.virtualenvs
-	export PIP_RESPECT_VIRTUALENV=true
-fi
+[ -f "$(which virtualenvwrapper.sh)" ] && source "$(which virtualenvwrapper.sh)"
+export WORKON_HOME=$HOME/.virtualenvs
+export PIP_RESPECT_VIRTUALENV=true
