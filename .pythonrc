@@ -6,6 +6,6 @@ acti() {
 deac() {
 	deactivate
 }
-[ -f "$(which virtualenvwrapper.sh)" ] && source "$(which virtualenvwrapper.sh)"
+[ -f "$(which virtualenvwrapper.sh)" ] && source "$(which virtualenvwrapper.sh)" >/dev/null
 export WORKON_HOME=$HOME/.virtualenvs
 export PIP_RESPECT_VIRTUALENV=true
