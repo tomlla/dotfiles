@@ -21,7 +21,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+Q kill
+bindsym $mod+Q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -90,7 +90,8 @@ bindsym $mod+0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+exclam move container to workspace 1
-bindsym $mod+Shift+quotedbl move container to workspace 2
+#bindsym $mod+Shift+quotedbl move container to workspace 2
+bindsym $mod+Shift+at move container to workspace 2
 bindsym $mod+Shift+numbersign move container to workspace 3
 bindsym $mod+Shift+dollar move container to workspace 4
 bindsym $mod+Shift+percent move container to workspace 5
@@ -116,7 +117,7 @@ mode "resize" {
 			# These bindings trigger as soon as you enter the resize mode
 
 			# Pressing left will shrink the window’s width.
-			# Pressing right will grow the window’s width.
+			# Pressing right will grow the window’s widthlf.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
