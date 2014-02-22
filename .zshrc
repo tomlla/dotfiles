@@ -1,7 +1,13 @@
 # Created by newuser for 5.0.2
 
+# setting about history
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
 # 履歴ファイルに時刻を記録
 setopt extended_history
+# シェルのプロセスごとに履歴を共有
+setopt share_history
 # 複数の zsh を同時に使う時など history ファイルに上書きせず追加
 setopt append_history
 # 直前と同じコマンドラインはヒストリに追加しない
@@ -10,6 +16,7 @@ setopt hist_ignore_dups
 setopt hist_no_store
 # ヒストリを呼び出してから実行する間に一旦編集できる状態になる
 setopt hist_verify
+
 #sudo でも補完の対象
 zstyle ':completion:*:sudo:*' command-path /usr/local/bin /usr/bin /sbin /bin
 #ファイルリスト補完でもlsと同様に色をつける｡
