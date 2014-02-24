@@ -114,6 +114,8 @@ alias datefilename="date +%Y-%m%d-%H%M"
 alias thunderbird-address="thunderbird -addressbook"
 alias his="history"
 
+alias ipad="ip addr show"
+
 [ -f $HOME/note/todo.md ] && alias vit="vim ~/note/todo.md"
 
 alias ssh-ka='ssh -o ServerAliveInterval=60'
