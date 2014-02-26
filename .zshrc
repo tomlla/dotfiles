@@ -1,5 +1,10 @@
 # Created by newuser for 5.0.2
 
+if [ -e /usr/share/terminfo/x/xterm+256color ]; then
+	export TERM=xterm-256color #need to install ncurses or ncurses-term
+fi
+export PATH=$HOME/bin:$PATH
+
 # setting about history
 HISTSIZE=1000
 SAVEHIST=1000
