@@ -40,7 +40,7 @@ setopt auto_cd
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # git completion
-fpath=(~/.zsh/completion $fpath)
+fpath=(~/.dotfiles/completion $fpath)
 autoload -U compinit
 compinit -u
 
