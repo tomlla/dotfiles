@@ -1,0 +1,13 @@
+
+https://gist.github.com/juno/5546179
+
+
+mkcd ~/.zsh/completion
+$ curl -O https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
+$ curl -O https://raw.github.com/git/git/master/contrib/completion/git-completion.zsh
+ln -s git-completion.zsh _git
+
+以下の記述を.zshrcに追加
+fpath=(~/.zsh/completion $fpath)
+autoload -U compinit
+compinit -u

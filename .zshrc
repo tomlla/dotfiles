@@ -39,6 +39,11 @@ setopt auto_cd
 # Ctrl+wで､直前の/までを削除する｡
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
+# git completion
+fpath=(~/.zsh/completion $fpath)
+autoload -U compinit
+compinit -u
+
 # myfunctions
 function mkcd(){ mkdir -p $1 && cd $1 }
 function load_if_exist() { [ -f "$1" ] && source $1 }
