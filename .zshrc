@@ -1,4 +1,5 @@
 # Created by newuser for 5.0.2
+[ -d $HOME/note/shscript/bin ] && export PATH=$PATH:$HOME/note/shscript/bin
 
 if [ -e /usr/share/terminfo/x/xterm+256color ]; then
 	export TERM=xterm-256color #need to install ncurses or ncurses-term
@@ -63,6 +64,7 @@ PROMPT=$'%2F%n@%m%f %1v\n%# '
 load_if_exist ~/.aliasrc
 load_if_exist ~/.pythonrc
 load_if_exist ~/.rubyrc
+load_if_exist ~/.android-developrc
 load_if_exist ~/.local_shrc
 load_if_exist ~/.local_zshrc
 load_if_exist ~/.local.shrc
