@@ -103,6 +103,7 @@ alias ggl="w3m 'http://google.co.jp/'"
 alias w3b="w3m -B"
 alias grr='grep -IHnr '
 alias f="find"
+alias fn="find ./ -name "
 alias c="cut -d' ' -f "
 
 alias acs="sudo apt-cache search"
