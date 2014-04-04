@@ -3,6 +3,13 @@ export PATH="/home/nbyst/.rbenv/shims:${PATH}"
 export RBENV_SHELL=zsh
 source $HOME'/.rbenv/libexec/../completions/rbenv.zsh'
 rbenv rehash 2>/dev/null
+
+export RBENV_ROOT="${HOME}/.rbenv"
+if [ -d "${RBENV_ROOT}" ]; then
+  export PATH="${RBENV_ROOT}/bin:${PATH}"
+  eval "$(rbenv init -)"
+fi
+
 rbenv() {
   local command
   command="$1"
