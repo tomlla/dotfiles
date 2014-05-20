@@ -106,6 +106,7 @@ alias f="find"
 alias fn="find ./ -name "
 alias c="cut -d' ' -f "
 alias sq="sudo shutdown -h now"
+alias emacsn="emacs -nw"
 
 alias acs="sudo apt-cache search"
 alias agi="sudo apt-get install -y"
