@@ -77,7 +77,8 @@ alias lxcon='sudo lxc-console -n '
 ###################
 alias dk="docker"
 alias di="docker images"
-alias dl="docker ps -l"
+alias dl="docker ps -lq"
+alias dlip="docker inspect `dl` | jq -r '.[0].NetworkSettings.IPAddress'"
 
 ###################
 # vagrant
