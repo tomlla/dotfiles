@@ -103,12 +103,15 @@ alias tv="sudo vim.tiny -u NONE"
 alias v="vim.tiny -u NONE"
 
 ###############
+# Grep alias
+###############
+alias grr='grep -IHnr '
+###############
 # other alias 
 ###############
 alias psg="ps aux | grep "
 alias ggl="w3m 'http://google.co.jp/'"
 alias w3b="w3m -B"
-alias grr='grep -IHnr '
 alias f="find"
 alias fn="find ./ -name "
 alias c="cut -d' ' -f "
@@ -127,9 +130,9 @@ alias his="history"
 
 alias ipad="ip addr show"
 
-[ -f $HOME/note/todo.md ] && alias vit="vim ~/note/todo.md"
-
 alias ssh-ka='ssh -o ServerAliveInterval=60'
 
-#variables
+###############
+# variables
+###############
 export lxc=/var/lib/lxc
