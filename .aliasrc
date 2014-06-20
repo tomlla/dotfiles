@@ -99,7 +99,7 @@ alias tpb='tmux set-option -ag prefix C-b'
 ######################
 # vim alias
 ######################
-alias sv="sudo vim.tiny -u NONE"
+alias tv="sudo vim.tiny -u NONE"
 alias v="vim.tiny -u NONE"
 
 ###############
