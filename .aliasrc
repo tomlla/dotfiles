@@ -6,7 +6,7 @@
 alias egrep='egrep --color=auto'
 
 ###################
-# some more ls aliases
+# ls aliases
 ###################
 if [ -x /usr/bin/dircolors ]; then
 	alias ls='ls --color=auto'
@@ -20,7 +20,7 @@ alias lm='ls | more'
 alias l1='ls -1'
 
 ###################
-#git alias
+# git alias
 ###################
 alias g="git"
 alias gsb="git submodule"
@@ -64,13 +64,20 @@ alias sgcm="sudo git commit -m"
 alias sgf="sudo git fetch"
 
 ###################
-#lxc
+# lxc
 ###################
 alias lxd='sudo lxc-destroy -n '
 alias lxs='sudo lxc-start -n '
 alias lxstop='sudo lxc-stop -n '
 alias lxl='sudo lxc-list'
 alias lxcon='sudo lxc-console -n '
+
+###################
+# docker
+###################
+alias dk="docker"
+alias di="docker images"
+alias dl="docker ps -l"
 
 ###################
 # vagrant
@@ -90,7 +97,7 @@ alias tpg='tmux set-option -ag prefix C-u'
 alias tpb='tmux set-option -ag prefix C-b'
 
 ######################
-#vim alias
+# vim alias
 ######################
 alias sv="sudo vim.tiny -u NONE"
 alias v="vim.tiny -u NONE"
@@ -126,4 +133,3 @@ alias ssh-ka='ssh -o ServerAliveInterval=60'
 
 #variables
 export lxc=/var/lib/lxc
-
