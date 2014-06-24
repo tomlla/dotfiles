@@ -81,9 +81,21 @@ alias dk="docker"
 alias di="docker images"
 alias dp="docker ps"
 alias dl="docker ps -lq"
+alias dlip="docker inspect $(docker ps -lq) | jq -r '.[0].NetworkSettings.IPAddress'"
 alias dinb="docker images | grep nbyst"
 [ -x "`which jq`" ] && alias dlip="docker inspect $(dl) | jq -r '.[0].NetworkSettings.IPAddress'"
-
+di-q() {
+	local imagename=$1
+	[ -z "$imagename" ] && return 1
+	python -c "\
+import docker
+import sys
+try:
+    print(filter( lambda i: i['RepoTags'] == [u'$imagename'], docker.Client().images())[0]['Id'])
+except Exception, e:
+    sys.exit(1)
+"
+}
 ###################
 # vagrant
 ###################
