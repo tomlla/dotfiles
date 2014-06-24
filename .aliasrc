@@ -81,6 +81,7 @@ alias dk="docker"
 alias di="docker images"
 alias dl="docker ps -lq"
 alias dlip="docker inspect `dl` | jq -r '.[0].NetworkSettings.IPAddress'"
+alias dinb="docker images `dl` | grep nbyst"
 
 ###################
 # vagrant
