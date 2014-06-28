@@ -15,8 +15,9 @@ mkdir -p $RBENV_ROOT/plugins
 [ -d "$RBENV_ROOT/plugins/ruby-build" ] || \
   git clone git://github.com/sstephenson/ruby-build.git $RBENV_ROOT/plugins/ruby-build
 
+
 echo "export RBENV_ROOT=$RBENV_ROOT" > $RBENV_PROFILE
-echo "export PATH=$RBENV_ROOT/bin:$PATH" >> $RBENV_PROFILE
+echo 'export PATH=$RBENV_ROOT/bin:$PATH' >> $RBENV_PROFILE
 echo 'eval "$(rbenv init -)"' >> $RBENV_PROFILE
 
 echo "rbenv installing may success."
