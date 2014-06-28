@@ -1,10 +1,16 @@
 # Created by newuser for 5.0.2
-[ -d $HOME/note/shscript/bin ] && export PATH=$PATH:$HOME/note/shscript/bin
+# - PATHではなくpath を使うこと
+# - exportはしないこと path があとでPATHに含まれる
+typeset -U path
+path=(
+  $HOME/bin(N-/)
+  $HOME/note/shscript/bin(N-/)
+  $path
+)
 
 if [ -e /usr/share/terminfo/x/xterm+256color ]; then
 	export TERM=xterm-256color #need to install ncurses or ncurses-term
 fi
-export PATH=$HOME/bin:$PATH
 
 # setting about history
 HISTSIZE=1000
