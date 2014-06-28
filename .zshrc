@@ -73,5 +73,5 @@ load_if_exist ~/.rubyrc
 load_if_exist ~/.gorc
 #load_if_exist ~/.android-developrc
 load_if_exist ~/.local_shrc
-load_if_exist ~/.local_zshrc
 load_if_exist ~/.local.shrc
+load_if_exist ~/.local.aliasrc
