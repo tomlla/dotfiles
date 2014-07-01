@@ -23,6 +23,7 @@ nt	ALL=(ALL) ALL
 nt	ALL=(ALL) NOPASSWD: /sbin/shutdown
 nt	ALL=(ALL) NOPASSWD: /sbin/ifconfig
 nt	ALL=(ALL) NOPASSWD: /bin/mount
+#nt ALL=(ALL) NOPASSWD:ALL 
 
 # Allow members of group sudo to execute any command
 # (Note that later entries override this, so you might need to move
