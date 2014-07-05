@@ -1,3 +1,13 @@
+#mkdir -p ~/repos
+#ge_go_bin() {
+#  case "$(uanme -m)" in
+#    "i686")
+#      wget -O /tmp/go.tar.gz 'http://golang.org/dl/go1.3.linux-386.tar.gz'
+#    "x86_64")
+#      wget -O /tmp/go.tar.gz 'http://golang.org/dl/go1.3.linux-amd64.tar.gz'
+#  esac
+#  tar xf -C ~/repos /tmp/go.tar.gz
+#}
 export GOROOT=$HOME/repos/go
 export PATH=$PATH:$GOROOT/bin
 
