@@ -67,7 +67,6 @@ promptinit
 prompt walters
 PROMPT=$'%2F%n@%m%f %1v\n%# '
 
-load_if_exist ~/.aliasrc
 load_if_exist ~/.pythonrc
 load_if_exist ~/.rubyrc
 load_if_exist ~/.gorc
@@ -75,3 +74,4 @@ load_if_exist ~/.gorc
 load_if_exist ~/.local_shrc
 load_if_exist ~/.local.shrc
 load_if_exist ~/.local.aliasrc
+load_if_exist ~/.aliasrc
