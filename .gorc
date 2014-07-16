@@ -7,9 +7,17 @@
 #      wget -O /tmp/go.tar.gz 'http://golang.org/dl/go1.3.linux-amd64.tar.gz'
 #  esac
 #  tar xf -C ~/repos /tmp/go.tar.gz
+#  for gobin in `ls -1 ~/repos/go/bin`; do
+#    set -x
+#    sudo ln -s `pwd`/$gobin /usr/local/bin
+#    sudo chmod +x /usr/local/bin/go*
+#  done
 #}
-export GOROOT=$HOME/repos/go
-export PATH=$PATH:$GOROOT/bin
-
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
+
+if [ -z "$(go env GOROOT)" ]; then
+  export GOROOT=$HOME/repos/go
+  export PATH=$PATH:$GOROOT/bin
+fi
+
