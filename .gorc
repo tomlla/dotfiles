@@ -13,11 +13,13 @@
 #    sudo chmod +x /usr/local/bin/go*
 #  done
 #}
+
+# サードパーティーライブラリのPATH(gopathの設定)
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 
-if [ -z "$(go env GOROOT)" ]; then
+# go本体
+if [ -z "$(go env GOROOT 2>/dev/null)" ]; then
   export GOROOT=$HOME/repos/go
   export PATH=$PATH:$GOROOT/bin
 fi
-
