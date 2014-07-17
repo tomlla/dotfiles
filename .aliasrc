@@ -129,6 +129,7 @@ alias grr='grep -IHnr '
 ###############
 alias psg="ps aux | grep "
 alias ggl="w3m 'http://google.co.jp/'"
+alias wbn="w3m 'http://bing.co.jp/'"
 alias w3b="w3m -B"
 alias f="find"
 alias fn="find ./ -name "
@@ -156,6 +157,15 @@ alias showPATH='echo "$PATH" | sed "s/:/\n/g"'
 # ruby
 ############
 alias be='bundle exec'
+function gem(){
+    $HOME/.rbenv/shims/gem $*
+    if [ "$1" = "install" ] || [ "$1" = "i" ] || [ "$1" = "uninstall" ] || [ "$1" = "uni" ]
+    then
+        rbenv rehash
+        rehash
+    fi
+}
+
 
 ###############
 # variables
