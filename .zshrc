@@ -47,7 +47,7 @@ setopt auto_cd
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # git completion
-fpath=(~/.dotfiles/completion $fpath)
+#fpath=(~/.dotfiles/completion $fpath)
 autoload -U compinit
 compinit -u
 
@@ -71,7 +71,6 @@ load_if_exist ~/.pythonrc
 load_if_exist ~/.rubyrc
 load_if_exist ~/.gorc
 #load_if_exist ~/.android-developrc
-load_if_exist ~/.local_shrc
 load_if_exist ~/.local.shrc
 load_if_exist ~/.local.aliasrc
 load_if_exist ~/.aliasrc
