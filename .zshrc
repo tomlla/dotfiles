@@ -74,3 +74,8 @@ load_if_exist ~/.gorc
 load_if_exist ~/.local.shrc
 load_if_exist ~/.local.aliasrc
 load_if_exist ~/.aliasrc
+
+#if (which zprof > /dev/null) ;then
+#  zprof | less
+#fi
+
