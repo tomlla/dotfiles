@@ -5,6 +5,7 @@ typeset -U path
 path=(
   $HOME/bin(N-/)
   $HOME/note/shscript/bin(N-/)
+  /opt/play-1.2.7
   $path
 )
 
@@ -50,6 +51,8 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 #fpath=(~/.dotfiles/completion $fpath)
 autoload -U compinit
 compinit -u
+
+stty stop undef
 
 # myfunctions
 function mkcd(){ mkdir -p $1 && cd $1 }

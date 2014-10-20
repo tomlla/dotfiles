@@ -131,6 +131,7 @@ alias grr='grep -IHnr '
 ###############
 # other alias 
 ###############
+alias wh="which"
 alias psg="ps aux | grep "
 alias ggl="w3m 'http://google.co.jp/'"
 alias wbn="w3m 'http://bing.co.jp/'"
