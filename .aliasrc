@@ -8,9 +8,13 @@ alias egrep='egrep --color=auto'
 ###################
 # ls aliases
 ###################
-if [ -x /usr/bin/dircolors ]; then
-	alias ls='ls --color=auto'
-	alias grep='grep --color=auto'
+if [ "$(uname)" = Darwin ]; then
+	alias ls='ls -G'
+else
+	if [ -x /usr/bin/dircolors -o "$(uname)" = Darwin ]; then
+		alias ls='ls --color=auto'
+		alias grep='grep --color=auto'
+	fi
 fi
 alias ll='ls -l'
 alias la='ls -A'
