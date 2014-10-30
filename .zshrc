@@ -9,7 +9,7 @@ path=(
   $path
 )
 
-if [ -e /usr/share/terminfo/x/xterm+256color ]; then
+if [ -e /usr/share/terminfo/x/xterm+256color -o "$(uname)" = Darwin ]; then
 	export TERM=xterm-256color #need to install ncurses or ncurses-term
 fi
 

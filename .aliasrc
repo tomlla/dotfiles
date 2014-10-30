@@ -10,6 +10,7 @@ alias egrep='egrep --color=auto'
 ###################
 if [ "$(uname)" = Darwin ]; then
 	alias ls='ls -G'
+	alias grep='grep --color=auto'
 else
 	if [ -x /usr/bin/dircolors -o "$(uname)" = Darwin ]; then
 		alias ls='ls --color=auto'
