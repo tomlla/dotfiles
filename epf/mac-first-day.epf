@@ -1,4 +1,4 @@
-#Tue Nov 04 15:47:31 JST 2014
+#Tue Nov 04 16:12:47 JST 2014
 /instance/org.eclipse.jdt.ui/sp_cleanup.add_missing_annotations=true
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.formatter.comment.indent_parameter_description=false
 @org.eclipse.ui.editors=3.8.200.v20140401-1310
@@ -275,6 +275,7 @@
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.formatter.alignment_for_expressions_in_array_initializer=0
 /instance/org.eclipse.jdt.ui/sp_cleanup.qualify_static_member_accesses_through_subtypes_with_declaring_class=true
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.classpathVariable.JRE_LIB=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar
+/instance/org.eclipse.ui.editors/showEnclosedSpaces=false
 /instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
 /instance/org.eclipse.jdt.ui/sp_cleanup.qualify_static_member_accesses_with_declaring_class=false
 /instance/org.eclipse.jdt.ui/sp_cleanup.remove_trailing_whitespaces=true
