@@ -48,6 +48,13 @@ alias gl="git log"
 alias glst="git log --stat"
 alias gg="git g"
 alias gd="git diff"
+gls() {
+	# for additionalargs
+	# case
+	# [ $1 == "-c" -o ] && with_cachefile=ON
+	# [ $1 == "-u" ] && with_cachefile=ON
+	git status -s  | grep -e " M" | awk '{print $2}'
+}
 alias gdc="git diff --cached"
 alias gss="git status -s"
 alias gssh="git status -s|head"
@@ -142,6 +149,7 @@ alias ggl="w3m 'http://google.co.jp/'"
 alias wbn="w3m 'http://bing.co.jp/'"
 alias w3b="w3m -B"
 alias f="find"
+alias fjava='find . -name "*.java"'
 alias fn="find ./ -name "
 alias c="cut -d' ' -f "
 alias sq="sudo shutdown -h now"
