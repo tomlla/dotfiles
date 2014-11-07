@@ -1,4 +1,3 @@
-#!/bin/sh
 # enable color support of ls and also add handy aliases
 #alias dir='dir --color=auto'
 #alias vdir='vdir --color=auto'
@@ -170,6 +169,16 @@ alias ipad="ip addr show"
 alias ssh-ka='ssh -o ServerAliveInterval=60'
 alias showPATH='echo "$PATH" | sed "s/:/\n/g"'
 
+##########
+# play!
+##########
+alias p="play"
+alias pec="play ec"
+alias pc="play clean"
+alias pr="play run"
+alias pd="play deps"
+alias pdcs="play deps --clearcache --sync"
+alias pat="play autotest"
 
 ############
 # ruby
