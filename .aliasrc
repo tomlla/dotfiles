@@ -205,3 +205,8 @@ alias gosh="rlwrap -b '(){}[],#\";| ' gosh"
 export lxc=/var/lib/lxc
 
 [ -f ~/.dotfiles/http-status-alias ] && source ~/.dotfiles/http-status-alias
+
+###############
+# java alias
+###############
+alias exejh=/usr/libexec/java_home
