@@ -6,6 +6,7 @@ path=(
   $HOME/bin(N-/)
   $HOME/note/shscript/bin(N-/)
   /opt/play-1.2.7
+  /opt/eclipse/eclipse
   $path
 )
 

@@ -146,6 +146,7 @@ alias v="vim.tiny -u NONE"
 # Grep alias
 ###############
 alias grr='grep -IHnr '
+alias pag='ps aux | ag'
 ###############
 # other alias 
 ###############
