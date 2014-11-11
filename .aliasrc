@@ -203,3 +203,5 @@ alias gosh="rlwrap -b '(){}[],#\";| ' gosh"
 # variables
 ###############
 export lxc=/var/lib/lxc
+
+[ -f ~/.dotfiles/http-status-alias ] && source ~/.dotfiles/http-status-alias
