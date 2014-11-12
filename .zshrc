@@ -71,6 +71,7 @@ promptinit
 prompt walters
 PROMPT=$'%2F%n@%m%f %1v\n%# '
 
+load_if_exist ~/.groovyrc
 load_if_exist ~/.pythonrc
 load_if_exist ~/.rubyrc
 load_if_exist ~/.gorc
@@ -82,4 +83,3 @@ load_if_exist ~/.aliasrc
 #if (which zprof > /dev/null) ;then
 #  zprof | less
 #fi
-
