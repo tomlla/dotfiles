@@ -150,6 +150,7 @@ alias pag='ps aux | ag'
 ###############
 # other alias 
 ###############
+alias susp="sudo pm-suspend"
 alias wh="which"
 alias psg="ps aux | grep "
 alias ggl="w3m 'http://google.co.jp/'"
