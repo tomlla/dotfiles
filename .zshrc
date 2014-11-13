@@ -62,9 +62,9 @@ function load_if_exist() { [ -f "$1" ] && source $1 }
 # prompt
 autoload -Uz vcs_info
 precmd() {
-	psvar=()
-		LANG=en_US.UTF-8 vcs_info
-		psvar[1]=$vcs_info_msg_0_"$(git config user.name)<$(git config user.email)>"
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    psvar[1]=$vcs_info_msg_0_"$(git config user.name)<$(git config user.email)>"
 }
 autoload -Uz promptinit
 promptinit
