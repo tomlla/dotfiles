@@ -219,3 +219,13 @@ export lxc=/var/lib/lxc
 # java alias
 ###############
 alias exejh=/usr/libexec/java_home
+grsh() {
+    local specific_java_home=$1
+    local current_jver=$(java -version 2>&1 | grep 'java version' | awk -F"\"" '{print $2}' || awk -F\. '{print $1.$2}')
+    if [ -z "$specific_java_home" -a -x /usr/libexec/java_home ]; then
+        specific_java_home=`/usr/libexec/java_home -v 1.7`
+    fi
+    echo "current_jver: $current_jver"
+    echo "specific_java_home : $specific_java_home"
+    JAVA_HOME=$specific_java_home groovysh
+}
