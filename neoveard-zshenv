@@ -1,0 +1,11 @@
+#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+# - PATHではなくpath を使うこと
+# - exportはしないこと path があとでPATHに含まれる
+typeset -U path
+path=(
+  $HOME/bin(N-/)
+  $HOME/note/shscript/bin(N-/)
+  /opt/play-1.2.7
+  /opt/eclipse/eclipse
+  $path
+)
