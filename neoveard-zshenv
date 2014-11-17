@@ -7,5 +7,7 @@ path=(
   $HOME/note/shscript/bin(N-/)
   /opt/play-1.2.7
   /opt/eclipse/eclipse
+  $HOME/.linuxbrew/bin
   $path
 )
+export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
