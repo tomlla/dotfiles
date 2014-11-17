@@ -84,9 +84,3 @@ load_if_exist ~/.aliasrc
 #if (which zprof > /dev/null) ;then
 #  zprof | less
 #fi
-
-# Unlimited Sushi Works
-if [ "$THE_END_OF_SUSHI_WORLD" != "/dev/null" ]; then
-    ruby -e 'C=`stty size`.scan(/\d+/)[1].to_i;S="\xf0\x9f\x8d\xa3";a={};puts "\033[2J";loop{a[rand(C)]=0;a.each{|x,o|;a[x]+=1;print "\033[#{o};#{x}H \033[#{a[x]};#{x}H#{S} \033[0;0H"};$stdout.flush;sleep 0.01}'
-fi
-# 参考 :http://nagatani.hatenablog.jp/entry/2014/05/01/Mac%E3%81%AE%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%E3%81%A7%E5%AF%BF%E5%8F%B8%E3%81%8C%E9%99%8D%E3%82%8B%EF%BC%88%E3%83%9E%E3%82%B0%E3%83%AD%E8%B5%A4%E8%BA%AB%E9%99%90%E5%AE%9A%EF%BC%89
