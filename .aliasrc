@@ -176,7 +176,7 @@ alias his="history"
 alias ipad="ip addr show"
 
 alias ssh-ka='ssh -o ServerAliveInterval=60'
-alias showPATH='echo "$PATH" | sed "s/:/\n/g"'
+alias showPATH="echo '$PATH' | tr ':' '\n'"
 
 ##########
 # play!
