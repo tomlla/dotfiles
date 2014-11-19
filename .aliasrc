@@ -95,9 +95,9 @@ alias lxcon='sudo lxc-console -n '
 ###################
 # docker
 ###################
-if [ -x '`which docker`' ]; then
+if [ -x "$(which docker)" ]; then
     alias dk="docker"
-elif [ -x '`which docker.io`' ]; then
+elif [ -x "$(which docker.io)" ]; then
     alias dk="docker.io"
 fi
 alias di="dk images"
@@ -176,7 +176,7 @@ alias his="history"
 alias ipad="ip addr show"
 
 alias ssh-ka='ssh -o ServerAliveInterval=60'
-alias showPATH="echo '$PATH' | tr ':' '\n'"
+alias showPATH="echo \$PATH | tr ':' '\n'"
 
 ##########
 # play!
