@@ -1,0 +1,14 @@
+#!/bin/sh
+# Shell Script that yank every platform
+
+case $(uname) in
+    "Linux")
+        cmd='xsel --input --clipboard'
+        ;;
+    "Darwin")
+        cmd="reattach-to-user-namespace pbcopy"
+        ;;
+esac
+
+$( $cmd < /dev/stdin )
+
