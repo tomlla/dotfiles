@@ -8,7 +8,8 @@ typeset -U path
 path=(
   $HOME/bin(N-/)
   $HOME/note/shscript/bin(N-/)
-  /opt/play-1.2.7(N-/)
+ # /opt/play-1.2.7(N-/)
+  /opt/play-1.2.5(N-/)
   /opt/eclipse/eclipse(N-/)
   $HOME/.linuxbrew/bin(N-/)
   $path
