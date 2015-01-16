@@ -8,7 +8,9 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 #
 # for IMC DEV play projects
 
-# for $play ex:deployapi and $play ex:deployplugin
+# for $play deployapi and $play deployplugin
 export PLAY_REPO="$HOME/play_repo"
 
+export JAVA6_HOME="`/usr/libexec/java_home -v 1.6`"
+export PLAY6_HOME=/opt/play-1.2.5
 export JAVA_OPTS="$JAVA_OPTS -Dsoliton.play.modules.playrepo=${PLAY_REPO}"
