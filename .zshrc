@@ -1,12 +1,11 @@
 # Created by newuser for 5.0.2
 #typeset -U path
-#path=(
-#  $HOME/bin(N-/)
-#  $HOME/note/shscript/bin(N-/)
-#  /opt/play-1.2.7
-#  /opt/eclipse/eclipse
-#  $path
-#)
+path=(
+  $HOME/bin(N-/)
+  $HOME/note/shscript/bin(N-/)
+  $path
+  $HOME/.dotfiles/bin
+)
 
 if [ -e /usr/share/terminfo/x/xterm+256color -o "$(uname)" = Darwin ]; then
 	export TERM=xterm-256color #need to install ncurses or ncurses-term
