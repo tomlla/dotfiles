@@ -23,6 +23,11 @@ alias lcf='ls -CF'
 alias lm='ls | more'
 alias l1='ls -1'
 
+#####
+# hg alias
+####
+alias -g hgs='hg status'
+
 ###################
 # git alias
 ###################
@@ -220,7 +225,7 @@ export lxc=/var/lib/lxc
 ###############
 # java alias
 ###############
-alias exejh=/usr/libexec/java_home
+alias jh=/usr/libexec/java_home
 grsh() {
     local specific_java_home=$1
     local current_jver=$(java -version 2>&1 | grep 'java version' | awk -F"\"" '{print $2}' || awk -F\. '{print $1.$2}')
