@@ -19,6 +19,6 @@ if [ "$(uname)" = 'Linux' -a -d $HOME/.linuxbrew ]; then
     export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
 fi
 
-if [ -d $HOME/.local.zshenv ]; then
+if [ -f $HOME/.local.zshenv ]; then
     source $HOME/.local.zshenv
 fi
