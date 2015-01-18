@@ -1,5 +1,8 @@
+#ファイル名は./office-imac-zshenvだけどmac系ならこれを共有して使おう
+
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+# javacがばけるから入れた
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
 #export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
@@ -12,5 +15,6 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PLAY_REPO="$HOME/play_repo"
 
 export JAVA6_HOME="`/usr/libexec/java_home -v 1.6`"
-export PLAY6_HOME=/opt/play-1.2.5
-export JAVA_OPTS="$JAVA_OPTS -Dsoliton.play.modules.playrepo=${PLAY_REPO}"
+export JAVA8_HOME="`/usr/libexec/java_home -v 1.8`"
+export PLAY6_HOME=/opt/play-1.2.5.3
+export PLAY8_HOME=/opt/play8/
