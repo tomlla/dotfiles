@@ -11,6 +11,7 @@ path=(
   /opt/play(N-/)
   /opt/eclipse/eclipse(N-/)
   $HOME/.linuxbrew/bin(N-/)
+  $GOPATH/bin(N-/)
   $path
 )
 typeset -U path
