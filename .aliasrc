@@ -49,6 +49,7 @@ alias gcm="git commit -m"
 alias gcam="git commit -am"
 alias gf="git fetch"
 alias gl="git log"
+alias glo='git log --oneline'
 alias glst="git log --stat"
 alias gg="git g"
 alias gd="git diff"
@@ -236,6 +237,8 @@ grsh() {
     JAVA_HOME=$specific_java_home groovysh
 }
 
+alias p-idl='play idealize'
+
 function grepRoute() {
     grep -n -v -e "^#\|^$" $1 | awk '{ printf("%-10s %-80s %-30s \n", $1, $2, $3) }' | less
 }
@@ -248,3 +251,6 @@ function psg() {
     ps aux | grep "$@" | grep -v grep
 }
 alias agpj='ag --ignore modules --java'
+
+alias sbcll=' rlwrap -c -q=\" -b="(){}[].,;|" sbcl'
+
