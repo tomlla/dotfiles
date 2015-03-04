@@ -159,7 +159,6 @@ alias pag='ps aux | ag'
 alias cx='chmod +x'
 alias susp="sudo pm-suspend"
 alias wh="which"
-alias psg="ps aux | grep "
 alias ggl="w3m 'http://google.co.jp/'"
 alias wbn="w3m 'http://bing.co.jp/'"
 alias w3b="w3m -B"
@@ -239,4 +238,11 @@ grsh() {
 
 function grepRoute() {
     grep -n -v -e "^#\|^$" $1 | awk '{ printf("%-10s %-80s %-30s \n", $1, $2, $3) }' | less
+}
+alias cutn='cut -d" " -f '
+function awkn() {
+    awk '{print $'$1'}'
+}
+function psg() {
+    ps aux | grep "$@" | grep -v grep
 }
