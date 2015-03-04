@@ -1,6 +1,7 @@
 #ファイル名は./office-imac-zshenvだけどmac系ならこれを共有して使おう
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export HOMEBREW_GITHUB_API_TOKEN=529308a5f7b8ecb2510e9082d565b5524eacd947
 
 # javacがばけるから入れた
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
