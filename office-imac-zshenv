@@ -1,8 +1,6 @@
 #ファイル名は./office-imac-zshenvだけどmac系ならこれを共有して使おう
 
 
-
-
 # javacがばけるから入れた
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
@@ -19,5 +17,3 @@ export JAVA6_HOME="`/usr/libexec/java_home -v 1.6`"
 export JAVA8_HOME="`/usr/libexec/java_home -v 1.8`"
 export PLAY6_HOME=/opt/play-1.2.5.3
 export PLAY8_HOME=/opt/play8/
-
-export GOPATH=/Users/ntomlla/gopath
