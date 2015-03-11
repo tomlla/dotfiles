@@ -21,6 +21,7 @@ set shiftwidth=2
 set helplang=en
 set wildmenu
 set wildmode=longest:full
+set fdm=indent
 syntax enable
 
 colorscheme desert
