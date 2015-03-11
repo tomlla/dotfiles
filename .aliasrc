@@ -190,11 +190,13 @@ alias showPATH="echo \$PATH | tr ':' '\n'"
 ##########
 alias p="play"
 alias pec="play ec"
+alias p-idl='play idealize'
 alias pc="play clean"
 alias pr="play run"
 alias pd="play deps"
 alias pdcs="play deps --clearcache --sync"
 alias pat="play autotest"
+alias ppgrep="ps aux | grep play | grep java"
 
 ############
 # ruby
@@ -237,7 +239,6 @@ grsh() {
     JAVA_HOME=$specific_java_home groovysh
 }
 
-alias p-idl='play idealize'
 
 function grepRoute() {
     grep -n -v -e "^#\|^$" $1 | awk '{ printf("%-10s %-80s %-30s \n", $1, $2, $3) }' | less
