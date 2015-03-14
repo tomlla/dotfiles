@@ -13,6 +13,7 @@ path=(
   $HOME/.linuxbrew/bin(N-/)
   $GOPATH/bin(N-/)
   $path
+  $(npm bin -g 2>/dev/null)
 )
 typeset -U path
 
