@@ -57,6 +57,18 @@ stty stop undef
 function mkcd(){ mkdir -p $1 && cd $1 }
 function load_if_exist() { [ -f "$1" ] && source $1 }
 
+# ghq and peco
+function peco-src () {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src
+bindkey '^]' peco-src
+
 # prompt
 autoload -Uz vcs_info
 precmd() {
