@@ -1,0 +1,20 @@
+#!/bin/sh
+
+#TODO: trapを使ってJAVA_HOMEをもとに戻す
+
+set -x
+set -e
+
+PLUGIN_NAME=play-jade
+PLUGIN_PRJ_ROOT=~/ghqroot/github.com/tomlla/${PLUGIN_NAME}
+VER=0.1
+
+origin_java_home=$(/usr/libexec/java_home)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
+
+play deployplugin $PLUGIN_PRJ_ROOT
+rm  -rf ~/backlog/fileshare/modules/$PLUGIN_NAME-$VER
+mkdir  ~/backlog/fileshare/modules/$PLUGIN_NAME-$VER
+unzip  "$PLUGIN_PRJ_ROOT/dist/$PLUGIN_NAME-${VER}.zip"  -d ~/backlog/fileshare/modules/$PLUGIN_NAME-$VER
+
+export JAVA_HOME=$origin_java_home
