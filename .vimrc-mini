@@ -27,13 +27,7 @@ nnoremap k   gk
 nnoremap j   gj
 vnoremap k   gk
 vnoremap j   gj
-nnoremap gk  k
-nnoremap gj  j
-vnoremap gk  k
-vnoremap gj  j
 
-cnoremap <C-f>  <Right>
-cnoremap <C-b>  <Left>
 cnoremap <C-a>  <C-b>
 cnoremap <C-e>  <C-e>
 
