@@ -1,0 +1,67 @@
+filetype off
+
+set rtp+=$GOPATH/src/github.com/nsf/gocode/vim
+
+call plug#begin('~/.vim/plugged') "-----------------------------
+
+Plug 'junegunn/vim-easy-align'
+Plug 'Shougo/neocomplete.vim'
+source ~/neocomplete-config.vim
+Plug 'google/vim-ft-go'
+Plug 'vim-jp/vim-go-extra'
+
+Plug 'nanotech/jellybeans.vim'
+
+
+call plug#end() "----------------------------------------------
+
+colorscheme jellybeans
+set nocompatible
+set nu
+set list
+set listchars=tab:>_,trail:-,nbsp:%,extends:>,precedes:<
+set incsearch
+set hlsearch
+set showmatch
+set whichwrap=h,l
+set ignorecase
+set smartcase
+set hidden
+set history=2000
+set autoindent
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set wildmenu
+set completeopt=menu,preview
+
+nnoremap k   gk
+nnoremap j   gj
+vnoremap k   gk
+vnoremap j   gj
+
+cnoremap <C-a>  <C-b>
+cnoremap <C-e>  <C-e>
+
+set formatoptions+=mM  "日本語の行の連結時には空白を入力しない。
+set ambiwidth=double  "□や○の文字があってもカーソル位置がずれないようにする。
+
+augroup MyAutoGroup
+    au BufRead,BufNewFile Makefile setfiletype make
+    autocmd FileType java setl shiftwidth=4 softtabstop=4 tabstop=4
+    autocmd FileType php setl shiftwidth=4 softtabstop=4 tabstop=4
+    autocmd FileType python setlocal ts=4 sw=4 sts=4 sta ai completeopt-=preview
+    autocmd FileType ruby setlocal ts=4 sw=4 sts=4 sta ai
+    autocmd FileType html setlocal ai smartindent
+    autocmd FileType htmljinja setlocal ai smartindent
+    autocmd FileType smarty setlocal et ai
+    autocmd FileType scheme setlocal autoindent
+    autocmd FileType vim setlocal autoindent
+    autocmd FileType go setlocal noexpandtab
+    autocmd FileType c setlocal noexpandtab
+    autocmd FileType cpp setlocal noexpandtab
+    au FileType javascript set ts=2 sw=2
+    au BufNewFile *.js set ft=javascript fenc=utf-8
+augroup END
+
+filetype plugin indent on
