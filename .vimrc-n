@@ -6,7 +6,7 @@ call plug#begin('~/.vim/plugged') "-----------------------------
 
 Plug 'junegunn/vim-easy-align'
 Plug 'Shougo/neocomplete.vim'
-source ~/neocomplete-config.vim
+"source ~/neocomplete-config.vim
 Plug 'google/vim-ft-go'
 Plug 'vim-jp/vim-go-extra'
 
