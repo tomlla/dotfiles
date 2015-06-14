@@ -41,7 +41,6 @@ alias gbd="git branch -d"
 alias gbdf="git branch -D"
 alias gbm="git branch -m"
 alias ga="git add"
-alias gcp="git cherry-pick"
 alias gco="git commit"
 alias gca="git commit -a"
 alias gcm="git commit -m"
@@ -246,4 +245,4 @@ function psg() {
 alias agpj='ag --ignore modules --java'
 
 alias sbcll=' rlwrap -c -q=\" -b="(){}[].,;|" sbcl'
-
+alias ccll='rlwrap -c -q=\" -b="(){}[].,;|" ccl' 
