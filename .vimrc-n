@@ -15,7 +15,7 @@ Plug 'nanotech/jellybeans.vim'
 
 call plug#end() "----------------------------------------------
 
-colorscheme jellybeans
+colorscheme default
 set nocompatible
 set nu
 set list
