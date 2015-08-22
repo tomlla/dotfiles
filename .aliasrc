@@ -33,6 +33,7 @@ alias -g hgs='hg status'
 ###################
 alias g="git"
 alias gsb="git submodule"
+alias gp="git cherry-pick"
 alias gc="git checkout"
 alias gcb="git checkout -b"
 alias gm="git checkout master"
