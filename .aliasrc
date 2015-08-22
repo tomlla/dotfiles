@@ -247,3 +247,16 @@ alias agpj='ag --ignore modules --java'
 
 alias sbcll=' rlwrap -c -q=\" -b="(){}[].,;|" sbcl'
 alias ccll='rlwrap -c -q=\" -b="(){}[].,;|" ccl' 
+
+mvn-my-generate() {
+    local usage=
+    [ $# -lt 2 ] && echo  \
+        "usage: \n  $ $0 <group id> <project name>" >&2 && return 1
+    local group_id=$1
+    local project_name=$2
+    mvn archetype:generate \
+        -DarchetypeArtifactId=maven-archetype-quickstart \
+        -DinteractiveMode=false \
+        -DgroupId=${group_id} \
+        -DartifactId=${project_name}
+}
