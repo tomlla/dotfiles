@@ -255,8 +255,17 @@ mvn-my-generate() {
     local group_id=$1
     local project_name=$2
     mvn archetype:generate \
-        -DarchetypeArtifactId=maven-archetype-quickstart \
         -DinteractiveMode=false \
+        -DarchetypeGroupId=pl.org.miki \
+        -DarchetypeArtifactId=java8-quickstart-archetype \
         -DgroupId=${group_id} \
-        -DartifactId=${project_name}
+        -DartifactId=${project_name}\
+        -Dversion=1.0-SNAPSHOT \
+        -Dpackage=${group_id} \
+        -Dpackaging=jar
+#    mvn archetype:generate \
+#        -DarchetypeArtifactId=maven-archetype-quickstart \
+#        -DinteractiveMode=false \
+#        -DgroupId=${group_id} \
+#        -DartifactId=${project_name}
 }
