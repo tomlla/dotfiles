@@ -269,3 +269,21 @@ mvn-my-generate() {
 #        -DgroupId=${group_id} \
 #        -DartifactId=${project_name}
 }
+
+
+## gene simple english words search
+if [ -f $HOME"/note/learn-english/gene-utf8.txt" ]; then
+    # 辞書には
+    # english word
+    # 日本語
+    # というじゅんで書かれている
+    function sear-j() {
+        enword=$1
+        ag -A1 $enword ~/note/learn-english/gene-utf8.txt
+    }
+    function sear-e() {
+        jpword=$1
+        ag -B1 $jpword ~/note/learn-english/gene-utf8.txt
+    }
+fi
+
