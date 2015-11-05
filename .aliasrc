@@ -277,11 +277,11 @@ if [ -f $HOME"/note/learn-english/gene-utf8.txt" ]; then
     # english word
     # 日本語
     # というじゅんで書かれている
-    function sear-j() {
+    function dict-j() {
         enword=$1
         ag -A1 $enword ~/note/learn-english/gene-utf8.txt
     }
-    function sear-e() {
+    function dict-e() {
         jpword=$1
         ag -B1 $jpword ~/note/learn-english/gene-utf8.txt
     }
