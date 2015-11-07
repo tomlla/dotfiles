@@ -287,3 +287,6 @@ if [ -f $HOME"/note/learn-english/gene-utf8.txt" ]; then
     }
 fi
 
+function today-diary() {
+    vim ~/note/diary/$(date "+%Y-%m-%d.md")
+}
