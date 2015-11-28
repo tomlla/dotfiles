@@ -15,6 +15,7 @@ path=(
   $path
   $(npm bin -g 2>/dev/null)
   $HOME/packer(N-/)
+  /opt/kotlinc/bin(N-/)
 )
 typeset -U path
 
