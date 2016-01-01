@@ -9,3 +9,6 @@ deac() {
 [ -f "$(which virtualenvwrapper.sh)" ] && source "$(which virtualenvwrapper.sh)" >/dev/null
 export WORKON_HOME=$HOME/.virtualenvs
 export PIP_RESPECT_VIRTUALENV=true
+
+export PYENV_ROOT=$HOME/.pyenv
+eval "$(pyenv init -)"
