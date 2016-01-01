@@ -164,7 +164,7 @@ command! -nargs=+ Vg :call Vgrep(<f-args>)
 " ファイル名変更 :Rename {newfilename}  !を付けると強制保存して変更
 command! -nargs=+ -bang -complete=file Rename let pbnr=fnamemodify(bufname('%'), ':p')|exec 'f '.escape(<q-args>, ' ')|w<bang>|call delete(pbnr)
 
-function! LoadSourceIfExist(path)
+function! s:LoadSourceIfExist(path)
     let expandedPath = expand(a:path)
     if filereadable(expandedPath)
         exec 'source ' . expandedPath
@@ -219,7 +219,7 @@ let g:quickrun_config['go'] = {
 let g:previm_open_cmd = 'open -a Google\ Chrome'
 
 " > unite.vim
-call LoadSourceIfExist('~/.vim/myrc/unite.vimrc')
+call s:LoadSourceIfExist('~/.vim/myrc/unite.vimrc')
 let g:ref_phpmanual_path = $HOME.'/doc/php-chunked-xhtml'
 let g:ref_sqlitemanual_path = $HOME.'/doc/sqlite-doc'
 nnoremap ,uo :Unite -no-quit -vertical -winwidth=50 outline<CR>
@@ -236,11 +236,11 @@ nnoremap <silent> <Space>gd :Gdiff<CR>
 nnoremap <silent> <Space>gs :Gstatus<CR>
 
 " > jedi-vim
-call LoadSourceIfExist('~/.vim/myrc/jedi-and-neocomplete.vimrc')
+call s:LoadSourceIfExist('~/.vim/myrc/jedi-and-neocomplete.vimrc')
 
 " === machine local vimrc ===
 
-call LoadSourceIfExist('~/.local.vimrc')
+call s:LoadSourceIfExist('~/.local.vimrc')
 
 " === TODO ===
 "  * gocodeの設定 >> たぶんこれいらない
