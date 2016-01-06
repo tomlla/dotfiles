@@ -229,8 +229,8 @@ nnoremap ,uoq :Unite -no-quit -vertical -winwidth=50 outline<CR>:q<CR>
 
 " > scrooloose/nerdcommenter
 let NERDSpaceDelims = 1 " コメントした後に挿入するスペースの数
-nnoremap <Leader>c <Plug>NERDCommenterToggle
-vnoremap <Leader>c <Plug>NERDCommenterToggle
+nmap <Leader>c <Plug>NERDCommenterToggle
+vmap <Leader>c <Plug>NERDCommenterToggle
 
 " > vim-fugitive
 nnoremap <silent> <Space>gb :Gblame<CR>
