@@ -136,14 +136,16 @@ nnoremap qn :cnext<CR>
 nnoremap qp :cprevious<CR>
 nnoremap qo :copen<CR>
 
-cnoremap <C-j> <Down>
-cnoremap <C-k> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-p> <Up>
 cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
+
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-k> <esc>C
 nnoremap Fn :echo expand("%:p")<CR>
 
 "範囲内検索
