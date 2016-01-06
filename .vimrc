@@ -45,11 +45,13 @@ Plug 'Shougo/unite-outline'
 " Plug 'Shougo/vimfiler'
 " Plug 'Shougo/vimshell'
 "
-" Plug 'sorah/unite-ghq'
+Plug 'sorah/unite-ghq'
 
 " === others ====
+Plug  'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ujihisa/quickrun'
+
 "'tpope/vim-classpath'
 "'artur-shaik/vim-javacomplete2'
 
@@ -251,6 +253,5 @@ call s:LoadSourceIfExist('~/.local.vimrc')
 "
 "  * snipmate or neosnip
 "
-"  * majutsushi/tagbar
 "  * tpope/vim-surround
 "  * slimv
