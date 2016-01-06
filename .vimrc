@@ -84,13 +84,11 @@ set mouse=a
 set cindent
 set autoindent 
 set tabstop=4 sw=4 sts=4
-"set tabpagemax=15
 set showmatch
 set incsearch
-"status line関連
-"set wildmenu
-"set wrap
-"set wildmode=list:longest 
+set wildmenu
+set wildmode=list:longest 
+
 
 "encording関係
 if has('win32') || has('win64') || split(system('uname'),'_')[0] == 'MINGW32'
@@ -154,6 +152,7 @@ nnoremap Fn :echo expand("%:p")<CR>
 vnoremap z/ <ESC>/\%V
 
 colorscheme jellybeans
+"colorscheme desert
 highlight Normal ctermbg=none
 
 "===== おれおれ関数/コマンド =====
