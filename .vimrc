@@ -48,6 +48,7 @@ Plug 'Shougo/unite-outline'
 Plug 'sorah/unite-ghq'
 
 " === others ====
+Plug 'vim-jp/vimdoc-ja'
 Plug  'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ujihisa/quickrun'
