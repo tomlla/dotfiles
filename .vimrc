@@ -123,12 +123,18 @@ set directory=/tmp
 " ===== Key Mapping =====
 
 nnoremap ,vr :edit $MYVIMRC<CR>
+nnoremap ,s :source %<cr>
 nnoremap Y y$
 nnoremap <leader>d i<C-R>=strftime("%Y/%m/%d %H:%M")<CR><CR>
 
 " F1を無効化
 nnoremap <F1> <Nop>
 inoremap <F1> <Nop>
+nnoremap <Space>j  :update<CR>
+nnoremap <Space>q  :q<CR>
+
+nnoremap <c-n> gt
+nnoremap <c-p> gT
 
 nnoremap j gj
 nnoremap k gk
@@ -237,8 +243,8 @@ nnoremap ,uoq :Unite -no-quit -vertical -winwidth=50 outline<CR>:q<CR>
 
 " > scrooloose/nerdcommenter
 let NERDSpaceDelims = 1 " コメントした後に挿入するスペースの数
-nmap <Leader>c <Plug>NERDCommenterToggle
-vmap <Leader>c <Plug>NERDCommenterToggle
+nmap <Leader>cm <Plug>NERDCommenterToggle
+vmap <Leader>cm <Plug>NERDCommenterToggle
 
 " > vim-fugitive
 nnoremap <silent> <Space>gb :Gblame<CR>
