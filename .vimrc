@@ -155,6 +155,12 @@ colorscheme jellybeans
 "colorscheme desert
 highlight Normal ctermbg=none
 
+"netrwは常にtree view
+let g:netrw_liststyle = 3
+" 'v'でファイルを開くときは右側に開く。(デフォルトが左側なので入れ替え)
+let g:netrw_altv = 1
+
+
 "===== おれおれ関数/コマンド =====
 
 " vimgrep
