@@ -17,6 +17,7 @@ path=(
   $HOME/packer(N-/)
   /opt/kotlinc/bin(N-/)
   $HOME/.pyenv/bin(N-/)
+  /usr/local/sbin(N-/)
 )
 typeset -U path
 
