@@ -1,5 +1,4 @@
 syn enable
-colorscheme desert
 
 nnoremap ,s :source %<cr>
 nnoremap Y y$
