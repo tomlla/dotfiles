@@ -16,7 +16,7 @@ else
 		alias grep='grep --color=auto'
 	fi
 fi
-alias ll='ls -l'
+alias ll='ls -lF'
 alias la='ls -A'
 alias lla='ls -lA'
 alias lcf='ls -CF'
@@ -226,6 +226,7 @@ alias l='lein'
 # java alias
 ###############
 alias jh=/usr/libexec/java_home
+alias delom="java -jar ~/jars/lombok.jar delombok -p "
 grsh() {
     local specific_java_home=$1
     local current_jver=$(java -version 2>&1 | grep 'java version' | awk -F"\"" '{print $2}' || awk -F\. '{print $1.$2}')
