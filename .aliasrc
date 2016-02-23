@@ -140,6 +140,7 @@ alias tpb='tmux set-option -ag prefix C-b'
 ######################
 alias tv="sudo vim.tiny -u NONE"
 alias v="vim.tiny -u NONE"
+alias n="nvim"
 
 ###############
 # Grep alias
@@ -215,6 +216,11 @@ alias gosh="rlwrap -b '(){}[],#\";| ' gosh"
 export lxc=/var/lib/lxc
 
 [ -f ~/.dotfiles/http-status-alias ] && source ~/.dotfiles/http-status-alias
+
+###############
+# clojure alias
+###############
+alias l='lein'
 
 ###############
 # java alias
