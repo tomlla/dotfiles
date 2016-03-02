@@ -220,7 +220,7 @@ export lxc=/var/lib/lxc
 ###############
 # clojure alias
 ###############
-alias l='lein'
+alias le='lein'
 
 ###############
 # java alias
