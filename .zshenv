@@ -28,3 +28,5 @@ fi
 if [ -f $HOME/.local.zshenv ]; then
     source $HOME/.local.zshenv
 fi
+
+[ -f ~/.dotfiles/http-status-alias ] && source ~/.dotfiles/http-status-alias

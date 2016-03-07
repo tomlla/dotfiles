@@ -1,9 +1,3 @@
-# enable color support of ls and also add handy aliases
-#alias dir='dir --color=auto'
-#alias vdir='vdir --color=auto'
-#alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
 ###################
 # ls aliases
 ###################
@@ -12,8 +6,6 @@ alias ll='ls -lF'
 alias la='ls -A'
 alias lla='ls -lA'
 alias lcf='ls -CF'
-alias lm='ls | more'
-alias l1='ls -1'
 
 #####
 # hg alias
@@ -49,7 +41,6 @@ alias gdc="git diff --cached"
 alias gss="git status -s"
 alias gssh="git status -s|head"
 alias gr="git rebase"
-alias sgr-origmaster="echo 'sudo git rebase origin/master'; sudo git rebase origin/master"
 alias gri="git rebase -i"
 alias gpl="git pull"
 alias gpr="git pull --rebase"
@@ -69,10 +60,6 @@ gstd() {
 }
 alias gstv="git stash show -v"
 alias getbranch="git branch | grep \"*\" | awk '{print \$2}'"
-alias sgrh="sudo git reset --hard HEAD"
-alias sgc="sudo git checkout"
-alias sgcm="sudo git commit -m"
-alias sgf="sudo git fetch"
 alias glsu="git ls-files --others --exclude-standard"
 ###################
 # lxc
@@ -149,39 +136,27 @@ alias ggl="w3m 'http://google.co.jp/'"
 alias wbn="w3m 'http://bing.co.jp/'"
 alias w3b="w3m -B"
 alias f="find"
-alias fjava='find . -name "*.java"'
-alias fn="find ./ -name "
-alias c="cut -d' ' -f "
 alias sq="sudo shutdown -h now"
 alias emc="emacs -nw"
-alias pst="pstree"
 
 alias acs="sudo apt-cache search"
 alias agi="sudo apt-get install -y"
 alias s="sudo "
 alias tailog="sudo tailf /var/log/messages"
 
-alias datefilename="date +%Y-%m%d-%H%M"
-alias thunderbird-address="thunderbird -addressbook"
+#alias datefilename="date +%Y-%m%d-%H%M"
+#alias thunderbird-address="thunderbird -addressbook"
 alias his="history"
 
 alias ipad="ip addr show"
 
-alias ssh-ka='ssh -o ServerAliveInterval=60'
+#alias ssh-ka='ssh -o ServerAliveInterval=60'
 alias showPATH="echo \$PATH | tr ':' '\n'"
 
 ##########
 # play!
 ##########
 alias p="play"
-alias pec="play ec"
-alias p-idl='play idealize'
-alias pc="play clean"
-alias pr="play run"
-alias pd="play deps"
-alias pdcs="play deps --clearcache --sync"
-alias pat="play autotest"
-alias ppgrep="ps aux | grep play | grep java"
 
 ############
 # ruby
@@ -195,19 +170,10 @@ function gem(){
         rehash
     fi
 }
-
 ################
 # scheme
 ################
 alias gosh="rlwrap -b '(){}[],#\";| ' gosh"
-
-
-###############
-# variables
-###############
-export lxc=/var/lib/lxc
-
-[ -f ~/.dotfiles/http-status-alias ] && source ~/.dotfiles/http-status-alias
 
 ###############
 # clojure alias
@@ -286,7 +252,3 @@ if [ -f $HOME"/note/learn-english/gene-utf8.txt" ]; then
         ag -B1 $jpword ~/note/learn-english/gene-utf8.txt
     }
 fi
-
-function today-diary() {
-    vim ~/note/diary/$(date "+%Y-%m-%d.md")
-}
