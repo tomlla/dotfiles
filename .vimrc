@@ -1,5 +1,22 @@
-call plug#begin('~/.vim/plugged')
+" === vim options ===
+set nocompatible
+set incsearch
+set list
+set listchars=tab:»_,trail:-
+set laststatus=2
 
+set expandtab 
+set tabstop=4 sw=4 sts=4
+set modeline
+
+"set formatoptions+=mM    "日本語の行の連結時には空白を入力しない。
+"set ambiwidth=double     "□や○の文字があってもカーソル位置がずれないようにする。
+
+set clipboard+=unnamed
+set pastetoggle=<F2>
+
+
+call plug#begin('~/.vim/plugged')
 "--- color scheme ---
 Plug 'nanotech/jellybeans.vim'
 Plug 'vim-scripts/desertEx'
@@ -117,22 +134,6 @@ inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
-" === vim options ===
-set nocompatible
-set incsearch
-set list
-set listchars=tab:»_,trail:-
-set laststatus=2
-
-set expandtab 
-set tabstop=4 sw=4 sts=4
-set modeline
-
-"set formatoptions+=mM    "日本語の行の連結時には空白を入力しない。
-"set ambiwidth=double     "□や○の文字があってもカーソル位置がずれないようにする。
-
-set clipboard+=unnamed
-set pastetoggle=<F2>
 
 function! Vgrep(str)
     let key = a:str
