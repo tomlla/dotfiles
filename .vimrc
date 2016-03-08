@@ -29,6 +29,7 @@ Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 
 " --- dev-support for specific language ---
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'kovisoft/slimv', {'for': 'lisp'}
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'fatih/vim-go', { 'for': 'go' }
@@ -79,6 +80,8 @@ Plug 'mattn/benchvimrc-vim'
 
 Plug 'itchyny/lightline.vim'
 call plug#end()
+
+colorscheme jellybeans
 
 " ==== plugin settings ===
 let g:netrw_liststyle = 3
@@ -142,6 +145,7 @@ endfunction
 command! -nargs=+ Vg :call Vgrep(<f-args>)
 
 command! -nargs=+ -bang -complete=file Rename let pbnr=fnamemodify(bufname('%'), ':p')|exec 'f '.escape(<q-args>, ' ')|w<bang>|call delete(pbnr)
+
 
 filetype plugin indent on
 syntax enable
