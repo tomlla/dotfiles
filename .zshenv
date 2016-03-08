@@ -1,7 +1,4 @@
-# zmodload zsh/zprof && zprof
-#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
-
-#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+#zmodload zsh/zprof && zprof
 # - PATHではなくpath を使うこと
 # - exportはしないこと path があとでPATHに含まれる
 path=(
@@ -21,12 +18,26 @@ path=(
 )
 typeset -U path
 
-if [ "$(uname)" = 'Linux' -a -d $HOME/.linuxbrew ]; then
-    export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
+myuname=$(uname)
+if [ $myuname = 'Linux' ]; then 
+    #export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+    #export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+    [ -d $HOME/.linuxbrew ] && export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
+fi
+if [ $myuname = 'Darwin' -a -d $HOME/.linuxbrew ]; then
+    export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
+    export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+    # 10.11 (El Capitan) にしてから java 1.6がけされてるなくなったっぽいのでコメントアウト
+    #export JAVA6_HOME="`/usr/libexec/java_home -v 1.6`"
+    #export PLAY6_HOME=/opt/play-1.2.5.3
+    export PLAY_REPO="$HOME/play_repo"
+    export JAVA8_HOME="`/usr/libexec/java_home -v 1.8`"
+    export PLAY8_HOME=/opt/play8/
 fi
 
 if [ -f $HOME/.local.zshenv ]; then
     source $HOME/.local.zshenv
 fi
 
-[ -f ~/.dotfiles/http-status-alias ] && source ~/.dotfiles/http-status-alias
+source ~/.dotfiles/zsh/http-status

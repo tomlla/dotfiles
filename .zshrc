@@ -1,12 +1,4 @@
 # Created by newuser for 5.0.2
-#typeset -U path
-#path=(
-#  $HOME/bin(N-/)
-#  $HOME/note/shscript/bin(N-/)
-#  /opt/play-1.2.7
-#  /opt/eclipse/eclipse
-#  $path
-#)
 
 if [ -e /usr/share/terminfo/x/xterm+256color -o "$(uname)" = Darwin ]; then
 	export TERM=xterm-256color #need to install ncurses or ncurses-term
@@ -49,7 +41,7 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 # git completion
 #fpath=(~/.dotfiles/completion $fpath)
 autoload -U compinit
-compinit -u
+compinit -u -C
 
 stty stop undef
 
@@ -85,15 +77,14 @@ prompt walters
 PROMPT=$'%2F%n@%m%f %1v\n%# '
 
 #load_if_exist ~/.groovyrc
-load_if_exist ~/.pythonrc
-load_if_exist ~/.rubyrc
-load_if_exist ~/.gorc
+. ~/.pythonrc
+#. ~/.rubyrc
+. ~/.gorc
 #load_if_exist ~/.android-developrc
 load_if_exist ~/.local.shrc
 load_if_exist ~/.local.aliasrc
-load_if_exist ~/.aliasrc
-load_if_exist ~/.dotfiles/zsh/*
+. ~/.aliasrc
 
-#if (which zprof > /dev/null) ;then
-#  zprof | less
-#fi
+if (which zprof > /dev/null); then
+  zprof | less
+fi
