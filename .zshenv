@@ -24,7 +24,7 @@ if [ $myuname = 'Linux' ]; then
     #export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
     [ -d $HOME/.linuxbrew ] && export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
 fi
-if [ $myuname = 'Darwin' -a -d $HOME/.linuxbrew ]; then
+if [ $myuname = 'Darwin' ]; then
     export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
     export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
