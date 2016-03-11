@@ -24,7 +24,7 @@ Plug 'vim-scripts/desertEx'
 " --- syntax highlight ---
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
-Plug 'digitaltoad/vim-jade', {'for': 'jade'}
+Plug 'digitaltoad/vim-jade', {'for': ['jade', 'pug']}
 Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 
@@ -123,6 +123,9 @@ nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mr
 
 " ==== my keymapping ===
 cnoremap <C-a> <Home>
+nnoremap qn :cnext<CR>
+nnoremap qp :cprevious<CR>
+nnoremap qo :copen<CR>
 nnoremap j gj
 nnoremap k gk
 nnoremap <C-a> <Home>
