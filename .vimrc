@@ -59,7 +59,7 @@ if has('lua') && (v:version >= 704)
 endif
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'honza/vim-snippets'
+"Plug 'honza/vim-snippets'
 
 " others
 Plug 'kannokanno/previm', { 'for': ['mkd','md','markdown']}
@@ -141,6 +141,7 @@ nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mr
 " === neocomplete ===
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#auto_completion_start_length=2
+"let g:neocomplete#enable_auto_select = 1
 
 let g:neocomplete#enable_smart_case = 0 " 大文字、小文字の区別をするかどうか1なら区別しない。
 let g:neocomplete#sources#syntax#min_keyword_length = 2 " Set minimum syntax keyword length.
@@ -170,6 +171,8 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>"
 
 "=== neosnippet ===
+let g:neosnippet#snippets_directory = '~/.vim/mysnippets'
+
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
