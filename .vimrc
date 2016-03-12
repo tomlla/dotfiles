@@ -91,13 +91,19 @@ call plug#end()
 colorscheme jellybeans
 
 " ==== plugin settings ===
+
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
+
 let g:lightline = { 'colorscheme': 'wombat' }
+
 let g:previm_open_cmd = 'open -a Google\ Chrome'
+
 "let NERDSpaceDelims = 1 " コメントした後に挿入するスペースの数
 "nmap <Leader>c <Plug>NERDCommenterToggle
 "vmap <Leader>c <Plug>NERDCommenterToggle
+
+" === quickrun ===
 nnoremap r :QuickRun<CR>
 let g:quickrun_config={'*': {'split': ''}} "quickrunで横分割
 if exists("g:quickrun_config")
@@ -115,11 +121,15 @@ let g:quickrun_config['go'] = {
             \    'command': 'go',
             \    'exec': ['go run %s',]
             \}
+
+" === slimv ===
 let g:slimv_lisp='/usr/local/bin/sbcl'
 if has('mac')
     " osx + iTermの場合
     let g:slimv_swank_cmd='!osascript -e "tell application \"iTerm\"" -e "tell the first terminal" -e "set mysession to current session" -e "launch session \"Default Session\"" -e "tell the last session" -e "exec command \"/bin/bash\"" -e "write text \"sbcl --load ~/.vim/plugged/slimv/slime/start-swank.lisp\"" -e "end tell" -e "select mysession" -e "end tell" -e "end tell"'
 endif
+
+" === unite ===
 nnoremap ,uo :Unite -no-quit -vertical -winwidth=50 outline<CR>
 nnoremap ,uoq :Unite -no-quit -vertical -winwidth=50 outline<CR>:q<CR>
 nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
@@ -127,35 +137,15 @@ nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> ,ug :<C-u>Unite ghq<CR>
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-let g:neocomplete#enable_at_startup = 1
 
+" === neocomplete ===
+let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#auto_completion_start_length=2
 
-"辞書ファイルからの補完
-let g:neocomplete#dictionary#dictionaries=  { 
-  \ 'default' : '~/.vim/dictionary/default.dict',
-  \ 'c' : '~/.vim/dictionary/c.dict',
-  \ 'cpp' : '~/.vim/dictionary/cpp.dict',
-  \ 'php' : '~/.vim/dictionary/php.dict',
-  \ 'tex' : '~/.vim/dictionary/tex.dict',
-  \ 'haskell' : '~/.vim/dictionary/haskell.dict',
-  \ 'html' : '~/.vim/dictionary/html.dict'
-\}
+let g:neocomplete#enable_smart_case = 0 " 大文字、小文字の区別をするかどうか1なら区別しない。
+let g:neocomplete#sources#syntax#min_keyword_length = 2 " Set minimum syntax keyword length.
 
-" 大文字、小文字の区別をするかどうか1なら区別しない。
-let g:neocomplete#enable_smart_case = 0
-" 自動的に一番上の候補を選ぶ(この動作はAutoComplpopと似た動作になる)
-"let g:neocomplete#enable_auto_select = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 2
-
-" Set manual completion length.
-" neocomplete になってからこれを設定する必要があるか未確認
-"let g:neocompletemanual_completion_start_length = 9 "旧
-"g:neocomplete#manual_completion_start_length = 9
-
-"補完ウィンドウの設定 :help completeopt
-set completeopt=menuone
+set completeopt=menuone "補完ウィンドウの設定 :help completeopt
 
 let g:neocomplete#keyword_patterns = {}
 let g:neocomplete#keyword_patterns['gosh-repl'] = "[[:alpha:]+*/@$_=.!?-][[:alnum:]+*/@$_:=.!?-]*"
@@ -175,6 +165,27 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
 endif
 let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
 
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>"
+
+"=== neosnippet ===
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+"if has('conceal')
+"      set conceallevel=2 concealcursor=niv
+"endif
 
 " ==== my keymapping ===
 cnoremap <C-a> <Home>
