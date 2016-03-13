@@ -105,7 +105,8 @@ let g:previm_open_cmd = 'open -a Google\ Chrome'
 
 " === quickrun ===
 nnoremap r :QuickRun<CR>
-let g:quickrun_config={'*': {'split': ''}} "quickrunで横分割
+"let g:quickrun_config={'*': {'split': ''}} "quickrunで横分割
+let g:quickrun_config={}
 if exists("g:quickrun_config")
     let g:quickrun_config = {}
 endif
@@ -172,20 +173,10 @@ inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>"
 
 "=== neosnippet ===
 let g:neosnippet#snippets_directory = '~/.vim/mysnippets'
-
-" Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
 "if has('conceal')
 "      set conceallevel=2 concealcursor=niv
 "endif
@@ -200,6 +191,7 @@ nnoremap k gk
 nnoremap <C-a> <Home>
 nnoremap <C-e> <End>
 nnoremap <Space>j  :update<CR>
+nnoremap <Space>q  :quit<CR>
 nnoremap ,vr :edit $MYVIMRC<CR>
 nnoremap Y y$
 nnoremap <leader>d i<C-R>=strftime("%Y/%m/%d %H:%M")<CR><CR><Esc>
