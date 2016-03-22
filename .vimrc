@@ -34,6 +34,7 @@ Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'kovisoft/slimv', {'for': 'lisp'}
+Plug 'tpope/vim-classpath', { 'for': ['clojure','java']}
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
