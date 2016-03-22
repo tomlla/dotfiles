@@ -14,10 +14,12 @@ set modeline
 
 set clipboard+=unnamed
 set pastetoggle=<F2>
+set fdm=indent
 
 
 call plug#begin('~/.vim/plugged')
 "--- color scheme ---
+Plug 'jdkanani/vim-material-theme'
 Plug 'nanotech/jellybeans.vim'
 Plug 'vim-scripts/desertEx'
 
@@ -30,6 +32,7 @@ Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 
 " --- dev-support for specific language ---
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'kovisoft/slimv', {'for': 'lisp'}
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'fatih/vim-go', { 'for': 'go' }
@@ -37,9 +40,8 @@ Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 " 'vim-scripts/IndentAnything'
 "Plug 'felixge/vim-nodejs-errorformat', {'for': ['javascript', 'coffee']}
 "Plug 'tyru/open-browser.vim', {'for': [ 'html', 'xml', 'markdown', 'mkd' , 'textile']}
-"Plug 'fatih/vim-go', {'for': 'go'}
 "Plug 'mitsuhiko/vim-jinja', { 'for': ['htmljinja']}
-"Plug 'davidhalter/jedi-vim', {'for' :['python']}
+Plug 'davidhalter/jedi-vim', {'for' :['python']}
 "Plug 'kevinw/pyflakes-vim', { 'for' :['python']}
 "Plug 'nvie/vim-flake8', { 'for' :['python']}
 "Plug 'vim-ruby/vim-ruby', {'for' :['ruby']}
@@ -59,19 +61,19 @@ if has('lua') && (v:version >= 704)
 endif
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
-"Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 
 " others
 Plug 'kannokanno/previm', { 'for': ['mkd','md','markdown']}
 "Plug 'vim-voom/VOoM', { 'for': ['mkd','md','markdown']}
 
 "Plug 'mattn/webapi-vim'
-Plug 'mattn/emmet-vim', {'for': 'html'}
+Plug 'mattn/emmet-vim', {'for': ['html', 'xml']}
 Plug 'ujihisa/quickrun'
 Plug 'vim-jp/vimdoc-ja'
 "Plug 'thinca/vim-ref'
 
-"Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 "Plug 'cohama/agit.vim'
 
 "Plug 'scrooloose/nerdcommenter'
@@ -122,6 +124,10 @@ let g:quickrun_config['go'] = {
             \    'command': 'go',
             \    'exec': ['go run %s',]
             \}
+let g:quickrun_config['rust'] = {
+            \    'command': 'rust',
+            \    'exec': ['rust run %s',]
+            \}
 
 " === slimv ===
 let g:slimv_lisp='/usr/local/bin/sbcl'
@@ -165,13 +171,15 @@ let g:neocomplete#force_omni_input_patterns.java = '\%(\h\w*\|)\)\.\w*'
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
 endif
-let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
+"let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
+let g:neocomplete#sources#omni#input_patterns.go = '\h\w\.\w*'
 
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>"
 
 "=== neosnippet ===
+let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory = '~/.vim/mysnippets'
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -181,16 +189,24 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expan
 "      set conceallevel=2 concealcursor=niv
 "endif
 
+"=== git plugin ===
+nnoremap <space>gd :Gdiff<CR>
+
 " ==== my keymapping ===
+nnoremap <Up> <C-w>1-
+nnoremap <Down> <C-w>1+
+nnoremap <Left> <C-w>1<
+nnoremap <Right> <C-w>1>
 cnoremap <C-a> <Home>
 nnoremap qn :cnext<CR>
 nnoremap qp :cprevious<CR>
 nnoremap qo :copen<CR>
 nnoremap j gj
 nnoremap k gk
+nnoremap J gJ
 nnoremap <C-a> <Home>
 nnoremap <C-e> <End>
-nnoremap <Space>j  :update<CR>
+nnoremap <Space>i  :update<CR>
 nnoremap <Space>q  :quit<CR>
 nnoremap ,vr :edit $MYVIMRC<CR>
 nnoremap Y y$
@@ -209,7 +225,6 @@ endfunction
 command! -nargs=+ Vg :call Vgrep(<f-args>)
 
 command! -nargs=+ -bang -complete=file Rename let pbnr=fnamemodify(bufname('%'), ':p')|exec 'f '.escape(<q-args>, ' ')|w<bang>|call delete(pbnr)
-
 
 filetype plugin indent on
 syntax enable
