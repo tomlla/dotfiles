@@ -15,6 +15,8 @@ path=(
   /opt/kotlinc/bin(N-/)
   $HOME/.pyenv/bin(N-/)
   /usr/local/sbin(N-/)
+  $HOME/.cargo/bin(N-/)
+  /Applications/Postgres.app/Contents/MacOS/bin(N-/)
 )
 typeset -U path
 
