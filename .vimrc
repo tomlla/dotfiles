@@ -1,5 +1,6 @@
 " === vim options ===
 set nocompatible
+set nu
 set incsearch
 set list
 set listchars=tab:»_,trail:-
