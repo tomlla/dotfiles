@@ -1,7 +1,9 @@
 ###################
 # ls aliases
 ###################
-alias ls='ls --color'
+if  [ "$(uname)" = "Darwin" ]; then
+    alias ls='gls --color'
+fi
 alias ll='ls -lF'
 alias la='ls -A'
 alias lla='ls -lA'
