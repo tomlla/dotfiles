@@ -79,7 +79,7 @@ PROMPT=$'%2F%n@%m%f %1v\n%# '
 #load_if_exist ~/.groovyrc
 . ~/.pythonrc
 #. ~/.rubyrc
-. ~/.gorc
+load_if_exist ~/.gorc
 #load_if_exist ~/.android-developrc
 load_if_exist ~/.local.shrc
 load_if_exist ~/.local.aliasrc
