@@ -44,5 +44,3 @@
 	path = ~/.local.gitconfig
 [merge]
 	tool = vimdiff
-[ghq]
-	root = ~/ghqroot

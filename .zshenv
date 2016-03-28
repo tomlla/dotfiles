@@ -1,4 +1,7 @@
 #zmodload zsh/zprof && zprof
+
+export GOPATH=~/dev
+
 # - PATHではなくpath を使うこと
 # - exportはしないこと path があとでPATHに含まれる
 path=(
