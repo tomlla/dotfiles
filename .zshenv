@@ -30,7 +30,7 @@ if [ $myuname = 'Linux' ]; then
     [ -d $HOME/.linuxbrew ] && export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
 fi
 if [ $myuname = 'Darwin' ]; then
-    export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
+    #export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
     export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
     # 10.11 (El Capitan) にしてから java 1.6がけされてるなくなったっぽいのでコメントアウト

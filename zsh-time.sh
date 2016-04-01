@@ -1,4 +1,5 @@
 #!/bin/sh
+echo "zsh: $(which zsh)"
 echo '===== /usr/bin/time zsh    -c exit ====='
 /usr/bin/time zsh    -c exit
 

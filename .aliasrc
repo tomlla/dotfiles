@@ -12,7 +12,7 @@ alias lcf='ls -CF'
 #####
 # hg alias
 ####
-alias -g hgs='hg status'
+alias hgs='hg status'
 
 ###################
 # git alias
@@ -254,3 +254,6 @@ if [ -f $HOME"/note/learn-english/gene-utf8.txt" ]; then
         ag -B1 $jpword ~/note/learn-english/gene-utf8.txt
     }
 fi
+
+alias vpn=/opt/cisco/vpn/bin/vpn
+alias vpn-connect='vpn connect cva510.soliton.co.jp'
