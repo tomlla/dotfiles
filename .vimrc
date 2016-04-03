@@ -9,6 +9,7 @@ set laststatus=2
 set expandtab 
 set tabstop=4 sw=4 sts=4
 set modeline
+"set showcmd "normal modeでの押したキーを表示してくれるやつ。いらないけど
 
 "set formatoptions+=mM    "日本語の行の連結時には空白を入力しない。
 "set ambiwidth=double     "□や○の文字があってもカーソル位置がずれないようにする。
@@ -76,7 +77,7 @@ Plug 'vim-jp/vimdoc-ja'
 "Plug 'thinca/vim-ref'
 
 Plug 'tpope/vim-fugitive'
-"Plug 'cohama/agit.vim'
+Plug 'cohama/agit.vim'
 
 "Plug 'scrooloose/nerdcommenter'
 
@@ -137,6 +138,9 @@ if has('mac')
     " osx + iTermの場合
     let g:slimv_swank_cmd='!osascript -e "tell application \"iTerm\"" -e "tell the first terminal" -e "set mysession to current session" -e "launch session \"Default Session\"" -e "tell the last session" -e "exec command \"/bin/bash\"" -e "write text \"sbcl --load ~/.vim/plugged/slimv/slime/start-swank.lisp\"" -e "end tell" -e "select mysession" -e "end tell" -e "end tell"'
 endif
+
+" === neomru ===
+let g:neomru#follow_links = 1
 
 " === unite ===
 nnoremap ,uo :Unite -no-quit -vertical -winwidth=50 outline<CR>
