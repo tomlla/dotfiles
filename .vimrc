@@ -18,6 +18,10 @@ set clipboard+=unnamed
 set pastetoggle=<F2>
 set fdm=indent
 
+set backup
+set backupdir=~/.dotfiles/var/vim/backup
+set swapfile
+set directory=~/.dotfiles/var/vim/swap
 
 call plug#begin('~/.vim/plugged')
 "--- color scheme ---
