@@ -51,10 +51,12 @@ Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 Plug 'davidhalter/jedi-vim', {'for' :['python']}
 "Plug 'kevinw/pyflakes-vim', { 'for' :['python']}
 "Plug 'nvie/vim-flake8', { 'for' :['python']}
-"Plug 'vim-ruby/vim-ruby', {'for' :['ruby']}
-"Plug 'bbatsov/rubocop', {'for' :['ruby']}
-"Plug 'aharisu/vim_goshrepl', {'for' :['ruby']}
+Plug 'vim-ruby/vim-ruby', {'for' :['ruby']}
+Plug 'bbatsov/rubocop', {'for' :['ruby']}
+Plug 'aharisu/vim_goshrepl', {'for' :['ruby']}
 "Plug 'kchmck/vim-coffee-script', {'for' :['coffee']}
+Plug 'scrooloose/syntastic', {'for': 'javascript'}
+let g:syntastic_javascript_checkers=['eslint']
 
 " === unite ware ===
 Plug 'Shougo/vimproc'
@@ -74,11 +76,11 @@ Plug 'honza/vim-snippets'
 Plug 'kannokanno/previm', { 'for': ['mkd','md','markdown']}
 "Plug 'vim-voom/VOoM', { 'for': ['mkd','md','markdown']}
 
-"Plug 'mattn/webapi-vim'
+Plug 'mattn/webapi-vim'
 Plug 'mattn/emmet-vim', {'for': ['html', 'xml']}
 Plug 'ujihisa/quickrun'
 Plug 'vim-jp/vimdoc-ja'
-"Plug 'thinca/vim-ref'
+Plug 'thinca/vim-ref'
 
 Plug 'tpope/vim-fugitive'
 Plug 'cohama/agit.vim'
@@ -95,6 +97,9 @@ Plug 'mattn/benchvimrc-vim'
 "Plug 'vim-scripts/taglist.vim'
 
 Plug 'itchyny/lightline.vim'
+"Plug 'lambdalisue/vim-gista'
+Plug 'mattn/gist-vim'
+Plug 'mattn/vim-soundcloud'
 call plug#end()
 
 colorscheme jellybeans
