@@ -53,11 +53,8 @@ Plug 'davidhalter/jedi-vim', {'for' :['python']}
 "Plug 'nvie/vim-flake8', { 'for' :['python']}
 Plug 'tpope/vim-haml', {'for' :['haml']}
 Plug 'tpope/vim-rails', {'for' :['ruby', 'haml', 'erb']}
-Plug 'tpope/vim-bundler', {'for' :['ruby', 'haml', 'erb']}
-Plug 'vim-ruby/vim-ruby', {'for' :['ruby']}
-Plug 'bbatsov/rubocop', {'for' :['ruby']}
-Plug 'aharisu/vim_goshrepl', {'for' :['ruby']}
-Plug 'kchmck/vim-coffee-script', {'for' :['coffee']}
+"Plug 'tpope/vim-bundler', {'for' :['ruby', 'haml', 'erb']} "ruby file開くと遅い
+Plug 'kchmck/vim-coffee-script', {'for' :['coffee']} 
 Plug 'scrooloose/syntastic', {'for': 'javascript'}
 let g:syntastic_javascript_checkers=['eslint']
 
@@ -94,7 +91,9 @@ Plug 'rking/ag.vim'
 Plug 'vim-scripts/sudo.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'JazzCore/ctrlp-cmatcher', { 'do': 'sh install.sh' }
-"Plug 'nixprime/cpsm', { 'do': 'sh install.sh' } "はやいけどびるどが面倒
+Plug 'nixprime/cpsm', { 'do': './install.sh > /tmp/x 2>&1' } "はやいけどびるどが面倒
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'mattn/benchvimrc-vim'
 
 "Plug  'majutsushi/tagbar'
