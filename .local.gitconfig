@@ -10,8 +10,6 @@
     email = nobuyasu.tomura@soliton.co.jp
 [ghq]
     root = "~/dev/src"
-[credential]
-    helper = osxkeychain
 [merge]
     tool = vimdiff
 [alias]
