@@ -27,6 +27,7 @@ call plug#begin('~/.vim/plugged')
 "--- color scheme ---
 Plug 'jdkanani/vim-material-theme'
 Plug 'nanotech/jellybeans.vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/desertEx'
 
 " --- syntax highlight ---
