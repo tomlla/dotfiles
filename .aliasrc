@@ -164,6 +164,7 @@ alias p="play"
 # ruby
 ############
 alias be='bundle exec'
+alias bes='bundle exec spring'
 function gem(){
     $HOME/.rbenv/shims/gem $*
     if [ "$1" = "install" ] || [ "$1" = "i" ] || [ "$1" = "uninstall" ] || [ "$1" = "uni" ]
@@ -254,3 +255,9 @@ if [ -f $HOME"/note/learn-english/gene-utf8.txt" ]; then
         ag -B1 $jpword ~/note/learn-english/gene-utf8.txt
     }
 fi
+
+
+function fp() {
+    finddir=${1:-.}
+    find $finddir | peco
+}
