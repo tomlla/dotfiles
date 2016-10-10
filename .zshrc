@@ -83,7 +83,7 @@ load_if_exist ~/.rubyrc
 load_if_exist ~/.local.shrc
 load_if_exist ~/.local.aliasrc
 . ~/.aliasrc
-. ~/.dotfiles/.nvmrc
+load_if_exist ~/.nvmrc
 
 if (which zprof > /dev/null); then
   zprof | less
