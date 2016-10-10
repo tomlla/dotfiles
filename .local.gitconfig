@@ -1,3 +1,8 @@
+[user]
+    name = nobuyasu tomura
+    email = ntomura92@gmail.com
+[ghq]
+    root = ~/dev/src
 [core]
     excludesfile = /Users/ntomura1/.gitignore_global
     pager = lv -c
@@ -5,11 +10,6 @@
     quotepath = false
 [color]
     ui = auto
-[user]
-    name = nobuyasu tomura
-    email = nobuyasu.tomura@soliton.co.jp
-[ghq]
-    root = "~/dev/src"
 [merge]
     tool = vimdiff
 [alias]

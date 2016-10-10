@@ -45,4 +45,4 @@ if [ -f $HOME/.local.zshenv ]; then
     source $HOME/.local.zshenv
 fi
 
-source ~/.dotfiles/zsh/http-status
+[ -e '~/dotfiles/zsh/http-status' ] && source ~/dotfiles/zsh/http-status
