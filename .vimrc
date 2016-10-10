@@ -45,16 +45,19 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 " 'vim-scripts/IndentAnything'
-"Plug 'felixge/vim-nodejs-errorformat', {'for': ['javascript', 'coffee']}
+Plug 'felixge/vim-nodejs-errorformat', {'for': ['javascript', 'coffee']}
 "Plug 'tyru/open-browser.vim', {'for': [ 'html', 'xml', 'markdown', 'mkd' , 'textile']}
 "Plug 'mitsuhiko/vim-jinja', { 'for': ['htmljinja']}
 Plug 'davidhalter/jedi-vim', {'for' :['python']}
 "Plug 'kevinw/pyflakes-vim', { 'for' :['python']}
 "Plug 'nvie/vim-flake8', { 'for' :['python']}
+Plug 'tpope/vim-haml', {'for' :['haml']}
+Plug 'tpope/vim-rails', {'for' :['ruby', 'haml', 'erb']}
+Plug 'tpope/vim-bundler', {'for' :['ruby', 'haml', 'erb']}
 Plug 'vim-ruby/vim-ruby', {'for' :['ruby']}
 Plug 'bbatsov/rubocop', {'for' :['ruby']}
 Plug 'aharisu/vim_goshrepl', {'for' :['ruby']}
-"Plug 'kchmck/vim-coffee-script', {'for' :['coffee']}
+Plug 'kchmck/vim-coffee-script', {'for' :['coffee']}
 Plug 'scrooloose/syntastic', {'for': 'javascript'}
 let g:syntastic_javascript_checkers=['eslint']
 
@@ -90,6 +93,8 @@ Plug 'cohama/agit.vim'
 Plug 'rking/ag.vim'
 Plug 'vim-scripts/sudo.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'JazzCore/ctrlp-cmatcher', { 'do': 'sh install.sh' }
+"Plug 'nixprime/cpsm', { 'do': 'sh install.sh' } "はやいけどびるどが面倒
 Plug 'mattn/benchvimrc-vim'
 
 "Plug  'majutsushi/tagbar'
@@ -148,6 +153,12 @@ if has('mac')
     let g:slimv_swank_cmd='!osascript -e "tell application \"iTerm\"" -e "tell the first terminal" -e "set mysession to current session" -e "launch session \"Default Session\"" -e "tell the last session" -e "exec command \"/bin/bash\"" -e "write text \"sbcl --load ~/.vim/plugged/slimv/slime/start-swank.lisp\"" -e "end tell" -e "select mysession" -e "end tell" -e "end tell"'
 endif
 
+" use cpsm
+"let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+
+" use ctrlp-cmatcher
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+
 " === neomru ===
 let g:neomru#follow_links = 1
 
@@ -190,8 +201,8 @@ endif
 let g:neocomplete#sources#omni#input_patterns.go = '\h\w\.\w*'
 
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>"
+"inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+"inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>"
 
 "=== neosnippet ===
 let g:neosnippet#enable_snipmate_compatibility = 1
@@ -208,10 +219,12 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expan
 nnoremap <space>gd :Gdiff<CR>
 
 " ==== my keymapping ===
+nnoremap <C-l> gt
+nnoremap <C-h> gT
 nnoremap <Up> <C-w>1-
 nnoremap <Down> <C-w>1+
-nnoremap <Left> <C-w>1<
-nnoremap <Right> <C-w>1>
+nnoremap <Left> <C-w>1>
+nnoremap <Right> <C-w>1<
 cnoremap <C-a> <Home>
 nnoremap qn :cnext<CR>
 nnoremap qp :cprevious<CR>
@@ -243,3 +256,8 @@ command! -nargs=+ -bang -complete=file Rename let pbnr=fnamemodify(bufname('%'),
 
 filetype plugin indent on
 syntax enable
+
+augroup rbsyntaxcheck
+  autocmd!
+  autocmd BufWrite *.rb w !ruby -c
+augroup END
