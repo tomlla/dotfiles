@@ -4,7 +4,7 @@
 [ghq]
     root = ~/dev/src
 [core]
-    excludesfile = /Users/ntomura1/.gitignore_global
+    excludesfile = ~/.gitignore_global
     pager = lv -c
     editor = vim -c \"set fenc=utf-8\"
     quotepath = false

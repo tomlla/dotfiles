@@ -1,5 +1,5 @@
 export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="/home/nbyst/.rbenv/shims:${PATH}"
+export PATH="$HOME/.rbenv/shims:${PATH}"
 export RBENV_SHELL=zsh
 source $HOME'/.rbenv/libexec/../completions/rbenv.zsh'
 rbenv rehash 2>/dev/null

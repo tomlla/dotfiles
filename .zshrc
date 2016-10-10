@@ -77,8 +77,8 @@ prompt walters
 PROMPT=$'%2F%n@%m%f %1v\n%# '
 
 #load_if_exist ~/.groovyrc
-. ~/.pythonrc
-#. ~/.rubyrc
+load_if_exist ~/.pythonrc
+load_if_exist ~/.rubyrc
 #load_if_exist ~/.android-developrc
 load_if_exist ~/.local.shrc
 load_if_exist ~/.local.aliasrc
