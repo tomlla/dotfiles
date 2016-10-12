@@ -66,7 +66,7 @@ Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite-outline'
 Plug 'sorah/unite-ghq'
 
-if has('lua') && (v:version >= 704)
+if has('nvim') || (has('lua') && (v:version >= 704))
     Plug 'Shougo/neocomplete'
 endif
 Plug 'Shougo/neosnippet'
@@ -246,6 +246,10 @@ inoremap <C-e> <End>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 
+"範囲内検索
+vnoremap z/ <ESC>/\%V
+
+
 function! Vgrep(str)
     let key = a:str
     execute 'vimgrep /' . l:key .'/ % | cw'
@@ -261,3 +265,7 @@ augroup rbsyntaxcheck
   autocmd!
   autocmd BufWrite *.rb w !ruby -c
 augroup END
+
+if filereadable(expand('~/.local.vimrc'))
+    source ~/.local.vimrc
+endif
