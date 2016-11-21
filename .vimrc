@@ -147,7 +147,7 @@ let g:quickrun_config['go'] = {
             \}
 let g:quickrun_config['rust'] = {
             \    'command': 'rust',
-            \    'exec': ['rust run %s',]
+            \    'exec': ['rust-run %s',]
             \}
 
 " === slimv ===
