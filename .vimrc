@@ -23,7 +23,11 @@ set backupdir=~/var/vim/backup
 set swapfile
 set directory=~/var/vim/swap
 
-call plug#begin('~/.vim/plugged')
+if has("nvim")
+    call plug#begin('~/.config/nvim/plugged')
+else
+    call plug#begin('~/.vim/plugged')
+end
 "--- color scheme ---
 Plug 'jdkanani/vim-material-theme'
 Plug 'nanotech/jellybeans.vim'
