@@ -94,9 +94,9 @@ Plug 'cohama/agit.vim'
 
 Plug 'rking/ag.vim'
 Plug 'vim-scripts/sudo.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'JazzCore/ctrlp-cmatcher', { 'do': 'sh install.sh' }
-Plug 'nixprime/cpsm', { 'do': './install.sh > /tmp/x 2>&1' } "はやいけどびるどが面倒
+"Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'JazzCore/ctrlp-cmatcher', { 'do': 'sh install.sh' }
+"Plug 'nixprime/cpsm', { 'do': './install.sh > /tmp/x 2>&1' } "はやいけどびるどが面倒
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/benchvimrc-vim'
@@ -161,7 +161,7 @@ endif
 "let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 
 " use ctrlp-cmatcher
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+"let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " === neomru ===
 let g:neomru#follow_links = 1
@@ -218,6 +218,10 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expan
 "if has('conceal')
 "      set conceallevel=2 concealcursor=niv
 "endif
+"
+"# fzf
+nnoremap <C-p> :FZF<cr>
+
 
 "=== git plugin ===
 nnoremap <space>gd :Gdiff<CR>
@@ -244,6 +248,8 @@ nnoremap ,vr :edit $MYVIMRC<CR>
 nnoremap Y y$
 nnoremap <leader>d i<C-R>=strftime("%Y/%m/%d %H:%M")<CR><CR><Esc>
 nnoremap Fn :echo expand("%:p")<CR>
+nnoremap <C-g><C-r> :LAg<space><C-r><C-w><space>
+nnoremap <C-g><C-g> :LAg<space>
 
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
@@ -252,8 +258,6 @@ inoremap <C-f> <Right>
 
 "範囲内検索
 vnoremap z/ <ESC>/\%V
-
-
 function! Vgrep(str)
     let key = a:str
     execute 'vimgrep /' . l:key .'/ % | cw'
