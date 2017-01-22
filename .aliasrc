@@ -1,13 +1,16 @@
 ###################
 # ls aliases
 ###################
+alias l1='ls -1'
 if  [ "$(uname)" = "Darwin" ]; then
-    alias ls='gls --color'
+    alias ls='gls --color -F'
 fi
 alias ll='ls -lF'
 alias la='ls -A'
 alias lla='ls -lA'
 alias lcf='ls -CF'
+
+alias cdf='tpath=$(fzf) && cd $(dirname $tpath)'
 
 #####
 # hg alias
@@ -173,6 +176,7 @@ function gem(){
         rehash
     fi
 }
+alias bi-path--vendor-bundle='bundle install -j4 --path=vendor/bundle'
 ################
 # scheme
 ################
@@ -261,3 +265,7 @@ function fp() {
     finddir=${1:-.}
     find $finddir | peco
 }
+
+alias h='heroku'
+alias tf="tail -f "
+alias ya='yarn'
