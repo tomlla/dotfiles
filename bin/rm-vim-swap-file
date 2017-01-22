@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -ue
+set -x
+vimswapdir=$HOME/var/vim/swap
+
+filepath=$1
+swapfile=$vimswapdir/$(basename $filepath).swp
+
+rm -i $swapfile
