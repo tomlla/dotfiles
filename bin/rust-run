@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rustc $1
+binary=$(basename $1 .rs) 
+./$binary

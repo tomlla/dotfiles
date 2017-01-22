@@ -1,22 +1,27 @@
 " === vim options ===
+set binary noeol
 set nocompatible
 set nu
 set incsearch
 set list
 set listchars=tab:»_,trail:-
 set laststatus=2
+"set cursorcolumn
+set nowrap
 
 set expandtab 
 set tabstop=4 sw=4 sts=4
 set modeline
 "set showcmd "normal modeでの押したキーを表示してくれるやつ。いらないけど
 
-"set formatoptions+=mM    "日本語の行の連結時には空白を入力しない。
-"set ambiwidth=double     "□や○の文字があってもカーソル位置がずれないようにする。
+set formatoptions+=mM    "日本語の行の連結時には空白を入力しない。
+set ambiwidth=double     "□や○の文字があってもカーソル位置がずれないようにする。
 
 set clipboard+=unnamed
 set pastetoggle=<F2>
 set fdm=indent
+
+set autoindent
 
 set backup
 set backupdir=~/var/vim/backup
@@ -111,7 +116,10 @@ Plug 'mattn/gist-vim'
 Plug 'mattn/vim-soundcloud'
 call plug#end()
 
-colorscheme jellybeans
+ set background=dark
+"set background=light
+colorscheme solarized
+"colorscheme jellybeans
 
 " ==== plugin settings ===
 
@@ -226,9 +234,15 @@ nnoremap <C-p> :FZF<cr>
 "=== git plugin ===
 nnoremap <space>gd :Gdiff<CR>
 
+"=rust==
+set hidden
+let g:racer_cmd = '$HOME/.cargo/bin/racer'
+let $RUST_SRC_PATH="$HOME/src/rustc/src"
+
+"let g:rustfmt_autosave = 1
+let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+
 " ==== my keymapping ===
-nnoremap <C-l> gt
-nnoremap <C-h> gT
 nnoremap <Up> <C-w>1-
 nnoremap <Down> <C-w>1+
 nnoremap <Left> <C-w>1>
@@ -271,9 +285,8 @@ syntax enable
 
 augroup rbsyntaxcheck
   autocmd!
-  autocmd BufWrite *.rb w !ruby -c
+  autocmd BufWrite *.rb w !ruby -sc
+  autocmd BufWrite *.rake w !ruby -sc
+  autocmd BufWrite *.ru w !ruby -sc
+  autocmd BufWrite *.ru w !ruby -sc
 augroup END
-
-if filereadable(expand('~/.local.vimrc'))
-    source ~/.local.vimrc
-endif
