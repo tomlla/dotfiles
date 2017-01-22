@@ -90,3 +90,9 @@ if (which zprof > /dev/null); then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.http-status ] && source ~/.http-status
+load_if_exist /usr/local/bin/aws_zsh_completer.sh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/tomlla/.sdkman"
+[[ -s "/Users/tomlla/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/tomlla/.sdkman/bin/sdkman-init.sh"
