@@ -1,11 +1,11 @@
 [user]
-    name = nobuyasu tomura
+    name = Nobuyasu Tomura
     email = ntomura92@gmail.com
 [ghq]
     root = ~/dev/src
 [core]
     excludesfile = ~/.gitignore_global
-    pager = lv -c
+    #pager = lv -c
     editor = vim -c \"set fenc=utf-8\"
     quotepath = false
 [color]

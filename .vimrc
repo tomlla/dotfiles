@@ -265,10 +265,10 @@ nnoremap Fn :echo expand("%:p")<CR>
 nnoremap <C-g><C-r> :LAg<space><C-r><C-w><space>
 nnoremap <C-g><C-g> :LAg<space>
 
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
-inoremap <C-b> <Left>
-inoremap <C-f> <Right>
+" inoremap <C-a> <Home>
+" inoremap <C-e> <End>
+" inoremap <C-b> <Left>
+" inoremap <C-f> <Right>
 
 "範囲内検索
 vnoremap z/ <ESC>/\%V
