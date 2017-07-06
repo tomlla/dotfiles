@@ -143,3 +143,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+bindsym $win+Up exec /usr/bin/amixer set Master 2+
+bindsym $win+Down exec /usr/bin/amixer set Master 2-
