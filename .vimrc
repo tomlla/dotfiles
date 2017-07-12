@@ -17,7 +17,9 @@ set modeline
 set formatoptions+=mM    "日本語の行の連結時には空白を入力しない。
 set ambiwidth=double     "□や○の文字があってもカーソル位置がずれないようにする。
 
-set clipboard+=unnamed
+"set clipboard+=unnamed
+set clipboard&
+set clipboard^=unnamedplus
 set pastetoggle=<F2>
 set fdm=indent
 
