@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-if [ "$#" -ne 2 ]; then
+if [ "$#" -lt 2 ]; then
     echo "USAGE:"
     echo "$(basename $0) <group_and_package> <artifact>"
     exit 1
@@ -7,6 +7,9 @@ fi
 
 group_and_package=$1
 artifact=$2
+shift ; shift
+
+set -x
 mvn archetype:generate -DinteractiveMode=false \
                        -DarchetypeGroupId=pl.org.miki \
                        -DarchetypeArtifactId=java8-quickstart-archetype \
@@ -14,4 +17,5 @@ mvn archetype:generate -DinteractiveMode=false \
                        -DartifactId=$artifact \
                        -Dversion=1.0-SNAPSHOT \
                        -Dpackage=$group_and_package \
-                       -Dpackaging=jar
+                       -Dpackaging=jar \
+                       $@

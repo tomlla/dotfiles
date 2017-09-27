@@ -1,0 +1,1 @@
+puts File.read("git-alias.fish").split("\n").map{|l| l.split(" ",3) }.map{|l| "alias #{l[1]} \"git #{l[2]}\"" }.join("\n")
