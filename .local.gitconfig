@@ -12,6 +12,8 @@
     ui = auto
 [merge]
     tool = vimdiff
+[diff]
+    git config diff.wsErrorHighlight all
 [alias]
     c = checkout
     cb = checkout -b
