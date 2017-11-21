@@ -13,7 +13,7 @@
 [merge]
     tool = vimdiff
 [diff]
-    git config diff.wsErrorHighlight all
+	wsErrorHighlight = all
 [alias]
     c = checkout
     cb = checkout -b
