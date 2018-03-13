@@ -70,6 +70,8 @@ Plug 'kchmck/vim-coffee-script', {'for' :['coffee']}
 Plug 'scrooloose/syntastic', {'for': 'javascript'}
 let g:syntastic_javascript_checkers=['eslint']
 
+Plug 'editorconfig/editorconfig-vim'
+
 " === unite ware ===
 Plug 'Shougo/vimproc'
 Plug 'Shougo/unite.vim'
