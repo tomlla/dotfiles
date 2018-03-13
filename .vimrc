@@ -130,7 +130,20 @@ let g:netrw_altv = 1
 
 let g:lightline = { 'colorscheme': 'wombat' }
 
-let g:previm_open_cmd = 'open -a Google\ Chrome'
+if has('unix')
+    let s:uname = system('uname')
+    if s:uname == "Darwin\n"
+        let s:os = "Darwin"
+    elseif s:uname == "Linux\n"
+        let s:os = "Linux"
+    endif
+endif
+
+if s:os == 'Darwin'
+    let g:previm_open_cmd = 'open -a Google\ Chrome'
+elseif s:os == 'Linux'
+    let g:previm_open_cmd = 'xdg-open -a Google\ Chrome'
+endif
 
 "let NERDSpaceDelims = 1 " コメントした後に挿入するスペースの数
 "nmap <Leader>c <Plug>NERDCommenterToggle
@@ -175,6 +188,7 @@ endif
 
 " === neomru ===
 let g:neomru#follow_links = 1
+let g:neomru#file_mru_limit = 50
 
 " === unite ===
 nnoremap ,uo :Unite -no-quit -vertical -winwidth=50 outline<CR>
