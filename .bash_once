@@ -48,6 +48,20 @@ showPath() {
     echo $PATH | sed 's/:/\n/g'
 }
 
-PS1='[\u@\h \W]\n\$ '
+PS1='\u@\h \W\n\$ '
+
+# -- [configure git completion and promppt]
+source /usr/share/git/completion/git-completion.bash
+__git_complete g __git_main
+
+source /usr/share/git/completion/git-prompt.sh
+
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM=auto
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWSTASHSTATE=1
+
+PS1='\u@\h \w$(__git_ps1)\n\$ '
+
 
 set +x
