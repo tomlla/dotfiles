@@ -1,0 +1,53 @@
+# vim: set ft=sh:
+
+# echo "loading ~/.bash_once [flags: $-]"
+
+if [ -z "${USER_PATH_ADDED}" ]; then
+
+echo "[add user path]"
+
+export PATH="\
+${HOME}/.cargo/bin:\
+${HOME}/.dotfiles/bin:\
+${HOME}/.anyenv/bin:\
+${HOME}/dev/bin:\
+/opt/yarn-global/bin:\
+/opt/bin:\
+/opt/sbt/bin:\
+${PATH}" && export USER_PATH_ADDED=true
+
+fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if [ -z "${ANYANV_EVALUATED}" ]; then
+    echo "[init anyenv]"
+    eval "$(anyenv init -)" && export ANYANV_EVALUATED=true
+fi
+
+alias ls='ls --color=auto -F'
+alias ll='ls -l'
+alias wh=which
+alias s=sudo
+
+alias p='sudo pacman'
+alias yao='yarn'
+
+alias g="git"
+alias dk=docker
+alias dkc=docker-compose
+alias cci=circleci
+
+alias y=yarn
+alias be='bundle execc'
+
+# -- functions
+alias pbcopy='xsel --clipboard --input'
+
+showPath() {
+    echo $PATH | sed 's/:/\n/g'
+}
+
+PS1='[\u@\h \W]\n\$ '
+
+set +x
