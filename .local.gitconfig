@@ -15,6 +15,7 @@
 [diff]
 	wsErrorHighlight = all
 [alias]
+    f = fetch
     c = checkout
     cb = checkout -b
     b = branch
