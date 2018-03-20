@@ -27,15 +27,18 @@ if [ -z "${ANYANV_EVALUATED}" ]; then
     eval "$(anyenv init -)" && export ANYANV_EVALUATED=true
 fi
 
+alias a=alias
 alias ls='ls --color=auto -F'
 alias ll='ls -l'
 alias wh=which
+alias ty=type
 alias s=sudo
+alias tm=tmux
 
 alias p='sudo pacman'
-alias yao='yarn'
+alias yao=yaourt
 
-alias g="git"
+alias g=git
 alias dk=docker
 alias dkc=docker-compose
 alias cci=circleci
