@@ -68,5 +68,11 @@ GIT_PS1_SHOWSTASHSTATE=1
 
 PS1='\u@\h \w$(__git_ps1)\n\$ '
 
+fzf-ghq-widget ()
+{
+    local selected=`ghq list --full-path | fzf` || return $?
+    READLINE_LINE="${READLINE_LINE:0:$READLINE_POINT}$selected${READLINE_LINE:$READLINE_POINT}";
+    READLINE_POINT=$(( READLINE_POINT + ${#selected} ));
+}
+bind -x '"\C-g": "fzf-ghq-widget"'
 
-set +x
