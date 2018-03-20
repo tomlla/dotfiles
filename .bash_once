@@ -2,6 +2,8 @@
 
 # echo "loading ~/.bash_once [flags: $-]"
 
+shopt -s autocd
+
 if [ -z "${USER_PATH_ADDED}" ]; then
 
 echo "[add user path]"
