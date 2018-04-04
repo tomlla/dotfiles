@@ -47,7 +47,7 @@ alias dkc=docker-compose
 alias cci=circleci
 
 alias y=yarn
-alias be='bundle execc'
+alias be='bundle exec'
 
 # -- functions
 alias pbcopy='xsel --clipboard --input'
