@@ -25,9 +25,9 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-if [ -z "${ANYANV_EVALUATED}" ]; then
+if [ -z "${ANYENV_EVALUATED}" ]; then
     echo "[init anyenv]"
-    eval "$(anyenv init -)" && export ANYANV_EVALUATED=true
+    eval "$(anyenv init -)" && export ANYENV_EVALUATED=true
 fi
 
 alias a=alias
