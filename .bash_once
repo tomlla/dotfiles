@@ -79,3 +79,15 @@ fzf-ghq-widget ()
 }
 bind -x '"\C-g": "fzf-ghq-widget"'
 
+load-gcp-sdk () {
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then
+    source '/opt/google-cloud-sdk/completion.bash.inc'
+    source '/opt/google-cloud-sdk/path.bash.inc'
+    alias gcl-interactive="gcloud alpha interactive"
+fi
+}
+mkcd () {
+    mkdir -p $1 && cd $1
+}
