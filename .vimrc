@@ -1,4 +1,5 @@
 " === vim options ===
+" binding.pry
 set binary noeol
 set nocompatible
 set nu
@@ -47,8 +48,13 @@ Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
 Plug 'digitaltoad/vim-jade', {'for': ['jade', 'pug']}
 Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 Plug 'derekwyatt/vim-scala', {'for': ['scala']}
+Plug 'leafgarland/typescript-vim', {'for':['typescript'] }
 
 " --- dev-support for specific language ---
+Plug 'mcasper/vim-infer-debugger'
+Plug 'ngmy/vim-rubocop'
+Plug 'justmao945/vim-clang'
+Plug 'Shougo/neoinclude.vim'
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'kovisoft/slimv', {'for': 'lisp'}
@@ -67,13 +73,25 @@ Plug 'tpope/vim-haml', {'for' :['haml']}
 Plug 'tpope/vim-rails', {'for' :['ruby', 'haml', 'erb']}
 "Plug 'tpope/vim-bundler', {'for' :['ruby', 'haml', 'erb']} "ruby file開くと遅い
 Plug 'kchmck/vim-coffee-script', {'for' :['coffee']} 
-Plug 'scrooloose/syntastic', {'for': 'javascript'}
+Plug 'scrooloose/syntastic', {'for': ['javascript', 'ruby']}
+Plug 'posva/vim-vue', {'for': 'vue'}
 let g:syntastic_javascript_checkers=['eslint']
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:vimrubocop_config = '/home/nt/dev/src/github.com/Rakushifu/rakushifu/.rubocop.yml'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_ruby_checkers=['rubocop', 'mri']
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
 
 Plug 'editorconfig/editorconfig-vim'
 
 " === unite ware ===
-Plug 'Shougo/vimproc'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite-outline'
@@ -96,6 +114,7 @@ Plug 'ujihisa/quickrun'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
 
+Plug 'lambdalisue/gina.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'cohama/agit.vim'
 
@@ -115,6 +134,8 @@ Plug 'mattn/benchvimrc-vim'
 "Plug 'vim-scripts/taglist.vim'
 
 Plug 'itchyny/lightline.vim'
+
+Plug 'itchyny/lightline.vim'
 "Plug 'lambdalisue/vim-gista'
 Plug 'mattn/gist-vim'
 Plug 'mattn/vim-soundcloud'
@@ -122,10 +143,17 @@ call plug#end()
 
  set background=dark
 "set background=light
-colorscheme solarized
-"colorscheme jellybeans
+"colorscheme solarized
+colorscheme jellybeans
 
 " ==== plugin settings ===
+
+let g:debugger_array = [
+            \['\.rb', 'require "pry"; binding.pry'],
+            \['\.rake', 'require "pry"; binding.pry'],
+            \['\.js$', 'debugger;'],
+            \]
+nmap <Leader>p :call AddDebugger("o")<cr>
 
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
@@ -200,6 +228,7 @@ nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> ,ug :<C-u>Unite ghq<CR>
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <C-g>i :Gina<space>
 
 " === neocomplete ===
 let g:neocomplete#enable_at_startup = 1
@@ -230,12 +259,11 @@ endif
 "let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
 let g:neocomplete#sources#omni#input_patterns.go = '\h\w\.\w*'
 
-" <C-h>, <BS>: close popup and delete backword char.
-"inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 "inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>"
 
 "=== neosnippet ===
-let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#enable_snipmate_compatibility = 0
+let g:neosnippet#snippets_directory = '~/.vim/plugged/neosnippet-snippets'
 let g:neosnippet#snippets_directory = '~/.vim/mysnippets'
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -247,7 +275,6 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expan
 "
 "# fzf
 nnoremap <C-p> :FZF<cr>
-
 
 "=== git plugin ===
 nnoremap <space>gd :Gdiff<CR>
@@ -274,21 +301,19 @@ nnoremap k gk
 nnoremap J gJ
 nnoremap <C-a> <Home>
 nnoremap <C-e> <End>
-nnoremap <Space>i  :update<CR>
-nnoremap <Space>q  :quit<CR>
+nnoremap <space>i  :update<CR>
+nnoremap <space>q  :quit<CR>
+nnoremap <space><space>  :update<CR>:quit<cr>
 nnoremap ,vr :edit $MYVIMRC<CR>
 nnoremap Y y$
 nnoremap <leader>d i<C-R>=strftime("%Y/%m/%d %H:%M")<CR><CR><Esc>
 nnoremap Fn :echo expand("%:p")<CR>
 nnoremap <C-g><C-r> :LAg<space><C-r><C-w><space>
 nnoremap <C-g><C-g> :LAg<space>
+nnoremap <F4> :SyntasticReset<cr>
 
-" inoremap <C-a> <Home>
-" inoremap <C-e> <End>
-" inoremap <C-b> <Left>
-" inoremap <C-f> <Right>
+inoremap <C-b> binding.pry
 
-"範囲内検索
 vnoremap z/ <ESC>/\%V
 function! Vgrep(str)
     let key = a:str
@@ -308,3 +333,11 @@ augroup rbsyntaxcheck
   autocmd BufWrite *.ru w !ruby -sc
   autocmd BufWrite *.ru w !ruby -sc
 augroup END
+
+autocmd FileType vue syntax sync fromstart
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+
+let s:localvimrc = expand("~/.local.vimrc")
+if file_readable(s:localvimrc)
+    execute 'source '.s:localvimrc
+endif
