@@ -35,6 +35,7 @@
     cm = commit -m
     amd = commit --amend
     d = diff
+    dc = diff --cached
     l = log
     lst = log --stat
     g = log --graph --date-order -C -M --pretty=format:'%h [%ar] [%an] %Cgreen%d%Creset %s' --all
