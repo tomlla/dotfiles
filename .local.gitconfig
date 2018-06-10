@@ -14,6 +14,8 @@
     tool = vimdiff
 [diff]
 	wsErrorHighlight = all
+[fetch]
+    prune = true
 [alias]
     f = fetch
     c = checkout
