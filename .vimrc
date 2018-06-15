@@ -80,13 +80,16 @@ Plug 'posva/vim-vue', {'for': 'vue'}
 
 let g:ale_sign_error = '✗ '
 let g:ale_sign_warning = '⚠ '
-highlight ALEWarning ctermbg=DarkMagenta
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format='[%linter%](%severity%) %code: %%s'
+let g:ale_open_list = 1
 
 
-let g:syntastic_javascript_checkers=['eslint']
+"let g:syntastic_javascript_checkers=['eslint']
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 " let g:syntastic_always_populate_loc_list = 0
 " let g:syntastic_auto_loc_list = 0
