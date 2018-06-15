@@ -73,20 +73,32 @@ Plug 'tpope/vim-haml', {'for' :['haml']}
 Plug 'tpope/vim-rails', {'for' :['ruby', 'haml', 'erb']}
 "Plug 'tpope/vim-bundler', {'for' :['ruby', 'haml', 'erb']} "ruby file開くと遅い
 Plug 'kchmck/vim-coffee-script', {'for' :['coffee']} 
-Plug 'scrooloose/syntastic', {'for': ['javascript', 'ruby']}
+"Plug 'scrooloose/syntastic', {'for': ['javascript', 'ruby']}
+Plug 'w0rp/ale'
 Plug 'posva/vim-vue', {'for': 'vue'}
+
+
+let g:ale_sign_error = '✗ '
+let g:ale_sign_warning = '⚠ '
+highlight ALEWarning ctermbg=DarkMagenta
+
+
 let g:syntastic_javascript_checkers=['eslint']
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:vimrubocop_config = '/home/nt/dev/src/github.com/Rakushifu/rakushifu/.rubocop.yml'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_ruby_checkers=['rubocop', 'mri']
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+" let g:syntastic_always_populate_loc_list = 0
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_ruby_checkers=['rubocop', 'mri']
+" let g:syntastic_ruby_checkers=['rubocop']
+" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+" let g:syntastic_error_symbol='✗ '
+" let g:syntastic_style_error_symbol = '✗ '
+" let g:syntastic_warning_symbol = '⚠ '
+" let g:syntastic_style_warning_symbol = '⚠ '
 
 Plug 'editorconfig/editorconfig-vim'
 
@@ -109,7 +121,7 @@ Plug 'kannokanno/previm', { 'for': ['mkd','md','markdown']}
 "Plug 'vim-voom/VOoM', { 'for': ['mkd','md','markdown']}
 
 Plug 'mattn/webapi-vim'
-Plug 'mattn/emmet-vim', {'for': ['html', 'xml']}
+Plug 'mattn/emmet-vim', {'for': ['html', 'xml', 'eruby']}
 Plug 'ujihisa/quickrun'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
@@ -149,7 +161,7 @@ colorscheme jellybeans
 " ==== plugin settings ===
 
 let g:debugger_array = [
-            \['\.rb', 'require "pry"; binding.pry'],
+            \['\.rb', 'binding.pry'],
             \['\.rake', 'require "pry"; binding.pry'],
             \['\.js$', 'debugger;'],
             \]
@@ -326,13 +338,13 @@ command! -nargs=+ -bang -complete=file Rename let pbnr=fnamemodify(bufname('%'),
 filetype plugin indent on
 syntax enable
 
-augroup rbsyntaxcheck
-  autocmd!
-  autocmd BufWrite *.rb w !ruby -sc
-  autocmd BufWrite *.rake w !ruby -sc
-  autocmd BufWrite *.ru w !ruby -sc
-  autocmd BufWrite *.ru w !ruby -sc
-augroup END
+" augroup rbsyntaxcheck
+"   autocmd!
+"   autocmd BufWrite *.rb w !ruby -sc
+"   autocmd BufWrite *.rake w !ruby -sc
+"   autocmd BufWrite *.ru w !ruby -sc
+"   autocmd BufWrite *.ru w !ruby -sc
+" augroup END
 
 autocmd FileType vue syntax sync fromstart
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
