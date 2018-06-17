@@ -328,7 +328,9 @@ nnoremap <leader>d i<C-R>=strftime("%Y/%m/%d %H:%M")<CR><CR><Esc>
 nnoremap Fn :echo expand("%:p")<CR>
 nnoremap <C-g><C-r> :LAg<space><C-r><C-w><space>
 nnoremap <C-g><C-g> :LAg<space>
-nnoremap <F4> :SyntasticReset<cr>
+" nnoremap <F4> :SyntasticReset<cr>
+
+nnoremap <F9> :ALEToggle<cr>
 
 inoremap <C-b> binding.pry
 
