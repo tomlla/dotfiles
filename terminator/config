@@ -1,35 +1,34 @@
 [global_config]
-  title_transmit_bg_color = "#880002"
-  title_inactive_bg_color = "#8e8e8e"
-  focus = mouse
   borderless = True
+  focus = mouse
+  title_inactive_bg_color = "#8e8e8e"
+  title_transmit_bg_color = "#880002"
 [keybindings]
-[profiles]
-  [[default]]
-    scrollbar_position = hidden
-    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
-    background_darkness = 0.89
-    background_type = transparent
-    use_system_font = False
-    cursor_color = "#656565"
-    foreground_color = "#393939"
-    show_titlebar = False
-    font = Ricty 9
-    background_color = "#c9baba"
-  [[dark]]
-    palette = "#000000:#cd0000:#00cd00:#cdcd00:#1e90ff:#cd00cd:#00cdcd:#e5e5e5:#4c4c4c:#ff0000:#00ff00:#ffff00:#4682b4:#ff00ff:#00ffff:#ffffff"
-    use_system_font = False
-    foreground_color = "#dbdbdb"
-    show_titlebar = False
-    font = Ricty 11
-    background_color = "#1e1e1e"
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
       profile = default
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_color = "#c9baba"
+    background_darkness = 0.89
+    cursor_color = "#656565"
+    font = Ricty 9
+    foreground_color = "#393939"
+    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+    scrollbar_position = hidden
+    show_titlebar = False
+  [[dark]]
+    background_color = "#1e1e1e"
+    cursor_color = "#dbdbdb"
+    font = Ricty 11
+    foreground_color = "#dbdbdb"
+    palette = "#000000:#cd0000:#00cd00:#cdcd00:#1e90ff:#cd00cd:#00cdcd:#e5e5e5:#4c4c4c:#ff0000:#00ff00:#ffff00:#4682b4:#ff00ff:#00ffff:#ffffff"
+    scrollbar_position = hidden
+    show_titlebar = False
