@@ -33,6 +33,9 @@ if [ -z "${ANYENV_EVALUATED}" ]; then
     eval "$(anyenv init -)" && export ANYENV_EVALUATED=true
 fi
 
+eval "$(direnv hook bash)"
+
+
 alias a=alias
 alias ls='ls --color=auto -F'
 alias ll='ls -l'
