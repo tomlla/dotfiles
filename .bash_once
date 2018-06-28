@@ -74,8 +74,15 @@ GIT_PS1_SHOWSTASHSTATE=1
 
 PS1='\u@\h \w$(__git_ps1)\n\$ '
 
-fzf-ghq-widget ()
-{
+fbr() {
+  local branches branch
+  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+fzf-ghq-widget () {
     local selected=`ghq list --full-path | fzf` || return $?
     READLINE_LINE="${READLINE_LINE:0:$READLINE_POINT}$selected${READLINE_LINE:$READLINE_POINT}";
     READLINE_POINT=$(( READLINE_POINT + ${#selected} ));
