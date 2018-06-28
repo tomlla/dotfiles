@@ -35,8 +35,11 @@ fi
 
 eval "$(direnv hook bash)"
 
+export JAVA_HOME=/opt/java/java-home-symlink
+export GOPATH=$HOME/dev
 
 alias a=alias
+alias v=vim
 alias ls='ls --color=auto -F'
 alias ll='ls -l'
 alias wh=which
@@ -46,14 +49,20 @@ alias tm=tmux
 
 alias p='sudo pacman'
 alias yao=yaourt
+alias stl=systemctl
 
 alias g=git
 alias dk=docker
 alias dkc=docker-compose
 alias cci=circleci
+alias ktl=kubectl
 
 alias y=yarn
+alias r='rails'
 alias be='bundle exec'
+alias rac='bundle exec rails c'
+alias racs='bundle exec rails c --sandbox'
+alias ras='bundle exec rails s'
 
 # -- functions
 alias pbcopy='xsel --clipboard --input'
@@ -93,14 +102,21 @@ fzf-ghq-widget () {
 bind -x '"\C-g": "fzf-ghq-widget"'
 
 load-gcp-sdk () {
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then
-    source '/opt/google-cloud-sdk/completion.bash.inc'
-    source '/opt/google-cloud-sdk/path.bash.inc'
-    alias gcl-interactive="gcloud alpha interactive"
-fi
+    # The next line enables shell command completion for gcloud.
+    if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then
+        source '/opt/google-cloud-sdk/completion.bash.inc'
+        source '/opt/google-cloud-sdk/path.bash.inc'
+        alias gcl-interactive="gcloud alpha interactive"
+    fi
 }
+load-gcp-sdk
+function kubectl-set-ns() {
+  kubectl config set-context $(kubectl config current-context) --namespace=$1
+}
+function kubectl-get-ns() {
+  kubectl config view | grep namespace
+}
+
 mkcd () {
     mkdir -p $1 && cd $1
 }
