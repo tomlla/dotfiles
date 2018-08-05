@@ -1,0 +1,37 @@
+#/usr/bin/env bash
+
+# vim: set ft=sh :
+
+function g_cbr_f() {
+  if [ "$1" = "" ]; then
+      echo "\$1 is feature_name" >&2
+      exit 1
+  fi
+  local today="$(date "+%Y%m%d")"
+  local feature_name="$(echo $1 | tr '-' '_')"
+  local branch="feature/${today}_${feature_name}"
+  git fetch
+  set -x
+  git checkout -b $branch origin/develop
+  set +x
+}
+
+function g_cbr_r() {
+  echo "Not Implemented yet."
+}
+
+case "$1" in
+    f)
+        g_cbr_f $2
+        ;;
+    r)
+        g_cbr_r $2
+        ;;
+    *)
+        cat << EOS
+Usage:
+    $(basename $0) f <name>
+    $(basename $0) r [name]
+EOS
+
+esac

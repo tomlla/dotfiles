@@ -1,6 +1,8 @@
 [user]
     name = Nobuyasu Tomura
     email = ntomura92@gmail.com
+[gpg]
+    program = gpg2
 [ghq]
     root = ~/dev/src
 [core]

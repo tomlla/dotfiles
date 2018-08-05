@@ -1,5 +1,4 @@
 " === vim options ===
-" binding.pry
 set binary noeol
 set nocompatible
 set nu
@@ -42,7 +41,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/desertEx'
 
-" --- syntax highlight ---
+" --- dev-support for specific language ---
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
 Plug 'digitaltoad/vim-jade', {'for': ['jade', 'pug']}
@@ -50,11 +49,9 @@ Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 Plug 'leafgarland/typescript-vim', {'for':['typescript'] }
 
-" --- dev-support for specific language ---
 Plug 'mcasper/vim-infer-debugger'
-Plug 'ngmy/vim-rubocop'
-Plug 'justmao945/vim-clang'
-Plug 'Shougo/neoinclude.vim'
+" Plug 'justmao945/vim-clang'
+" Plug 'Shougo/neoinclude.vim'
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'kovisoft/slimv', {'for': 'lisp'}
@@ -69,46 +66,25 @@ Plug 'felixge/vim-nodejs-errorformat', {'for': ['javascript', 'coffee']}
 Plug 'davidhalter/jedi-vim', {'for' :['python']}
 "Plug 'kevinw/pyflakes-vim', { 'for' :['python']}
 "Plug 'nvie/vim-flake8', { 'for' :['python']}
-Plug 'tpope/vim-haml', {'for' :['haml']}
-Plug 'tpope/vim-rails', {'for' :['ruby', 'haml', 'erb']}
+
+Plug 'ngmy/vim-rubocop', {'for': ['ruby', 'erb', 'haml', 'slim']}
+Plug 'osyo-manga/vim-monster', {'for': ['ruby', 'erb', 'haml', 'slim']}
+let g:monster#completion#backend = 'solargraph'
+let g:neocomplete#sources#omni#input_patterns = {
+      \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+      \}
+"Plug 'tpope/vim-haml', {'for' :['haml']}
+Plug 'slim-template/vim-slim', { 'for': ['slim'] }
+Plug 'tpope/vim-rails', {'for' :['ruby', 'haml', 'erb', 'slim']}
 "Plug 'tpope/vim-bundler', {'for' :['ruby', 'haml', 'erb']} "ruby file開くと遅い
-Plug 'kchmck/vim-coffee-script', {'for' :['coffee']} 
-"Plug 'scrooloose/syntastic', {'for': ['javascript', 'ruby']}
-Plug 'w0rp/ale'
+"Plug 'kchmck/vim-coffee-script', {'for' :['coffee']}
 Plug 'posva/vim-vue', {'for': 'vue'}
 
-
-let g:ale_sign_error = '✗ '
-let g:ale_sign_warning = '⚠ '
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format='[%linter%](%severity%) %code: %%s'
-let g:ale_open_list = 1
-let g:ale_linters = {
-      \   'ruby': ['rubocop', 'reek'],
-      \}
-
-
-"let g:syntastic_javascript_checkers=['eslint']
-
-set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 0
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_ruby_checkers=['rubocop', 'mri']
-" let g:syntastic_ruby_checkers=['rubocop']
-" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
-" let g:syntastic_error_symbol='✗ '
-" let g:syntastic_style_error_symbol = '✗ '
-" let g:syntastic_warning_symbol = '⚠ '
-" let g:syntastic_style_warning_symbol = '⚠ '
-
+" === general ===
+"Plug 'scrooloose/syntastic', {'for': ['javascript', 'ruby']}
+Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
 
-" === unite ware ===
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim'
@@ -152,12 +128,40 @@ Plug 'mattn/benchvimrc-vim'
 "Plug 'vim-scripts/taglist.vim'
 
 Plug 'itchyny/lightline.vim'
-
-Plug 'itchyny/lightline.vim'
 "Plug 'lambdalisue/vim-gista'
 Plug 'mattn/gist-vim'
-Plug 'mattn/vim-soundcloud'
+"Plug 'mattn/vim-soundcloud'
 call plug#end()
+
+highlight ALEWarning ctermbg=DarkMagenta
+let g:ale_sign_error = '✗ '
+let g:ale_sign_warning = '⚠ '
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format='[%linter%](%severity%) %code: %%s'
+let g:ale_open_list = 1
+let g:ale_linters = {
+      \   'ruby': ['rubocop'],
+      \}
+"   'ruby': ['rubocop', 'reek']
+
+"let g:syntastic_javascript_checkers=['eslint']
+
+set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 0
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_ruby_checkers=['rubocop', 'mri']
+" let g:syntastic_ruby_checkers=['rubocop']
+" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+" let g:syntastic_error_symbol='✗ '
+" let g:syntastic_style_error_symbol = '✗ '
+" let g:syntastic_warning_symbol = '⚠ '
+" let g:syntastic_style_warning_symbol = '⚠ '
+
 
  set background=dark
 "set background=light
@@ -330,6 +334,7 @@ nnoremap <C-g><C-r> :LAg<space><C-r><C-w><space>
 nnoremap <C-g><C-g> :LAg<space>
 " nnoremap <F4> :SyntasticReset<cr>
 
+nnoremap <F3> :set wrap!<cr>
 nnoremap <F9> :ALEToggle<cr>
 
 inoremap <C-b> binding.pry

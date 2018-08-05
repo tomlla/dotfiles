@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+filename=$HOME/ss/ss-$(date '+%Y%m%d-%H%M%S').png
+scrot --select $filename
+
+google-chrome-stable $filename

@@ -18,6 +18,7 @@ set -x PATH \
     ~/.dotfiles/bin \
     ~/.anyenv/bin \
     ~/dev/bin \
+    $HOME/.cargo/bin \
     $PATH
 
 # java
@@ -49,7 +50,7 @@ alias yao "yaourt"
 alias be "bundle exec"
 
 # === alias:js ===
-alias yn "yarn"
+alias y "yarn"
 
 # ===== docker ======
 alias dk "docker"
@@ -77,5 +78,8 @@ function fish_prompt
   echo $status_face
 end
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/nt/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/home/nt/google-cloud-sdk/path.fish.inc'; else; . '/home/nt/google-cloud-sdk/path.fish.inc'; end; end
+# In default, this file is not loaded.
+# if you need `set -U IMINGCP true` for using GCP
+if [ $IMINGCP ]
+    if [ -f '/home/nt/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/home/nt/google-cloud-sdk/path.fish.inc'; else; . '/home/nt/google-cloud-sdk/path.fish.inc'; end; end
+end
