@@ -44,15 +44,19 @@ alias a=alias
 alias v=vim
 alias ls='ls --color=auto -F'
 alias ll='ls -l'
+alias la='ls -a'
 alias wh=which
 alias ty=type
 alias s=sudo
 alias tm=tmux
+alias tl=tail
+alias tlf='tail -f'
 
 alias p='sudo pacman'
 alias yao=yaourt
 alias stl=systemctl
 
+alias mt=multitail
 alias g=git
 alias dk=docker
 alias dkc=docker-compose
@@ -65,6 +69,7 @@ alias be='bundle exec'
 alias rac='bundle exec rails c'
 alias racs='bundle exec rails c --sandbox'
 alias ras='bundle exec rails s'
+alias rbo='bundle exec rubocop'
 
 # -- functions
 alias pbcopy='xsel --clipboard --input'
@@ -131,7 +136,6 @@ function kubectl-get-ns() {
 mkcd () {
     mkdir -p $1 && cd $1
 }
-alias delim='echo "--------------$(date)------------"  >> ~/dev/src/github.com/Rakushifu/rakushifu/log/development.log'
 
 function ignore-bidning-pry() {
     echo "Lint/Debugger:" >> ./.rubocop_todo.yml
@@ -143,4 +147,4 @@ function rec() {
   byzanz-record $filename --cursor --x=1366 -d 10 && google-chrome-stable $filename
 }
 
-source $HOME/rakushifu.sh
+source $HOME/localrc.d/*
