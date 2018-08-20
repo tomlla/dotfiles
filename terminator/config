@@ -16,19 +16,19 @@
 [plugins]
 [profiles]
   [[default]]
+    background_color = "#1e1e1e"
+    cursor_color = "#dbdbdb"
+    font = Ricty 11
+    foreground_color = "#dbdbdb"
+    palette = "#000000:#cd0000:#00cd00:#cdcd00:#1e90ff:#cd00cd:#00cdcd:#e5e5e5:#4c4c4c:#ff0000:#00ff00:#ffff00:#4682b4:#ff00ff:#00ffff:#ffffff"
+    scrollbar_position = hidden
+    show_titlebar = False
+  [[light]]
     background_color = "#c9baba"
     background_darkness = 0.89
     cursor_color = "#656565"
     font = Ricty 9
     foreground_color = "#393939"
     palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
-    scrollbar_position = hidden
-    show_titlebar = False
-  [[dark]]
-    background_color = "#1e1e1e"
-    cursor_color = "#dbdbdb"
-    font = Ricty 11
-    foreground_color = "#dbdbdb"
-    palette = "#000000:#cd0000:#00cd00:#cdcd00:#1e90ff:#cd00cd:#00cdcd:#e5e5e5:#4c4c4c:#ff0000:#00ff00:#ffff00:#4682b4:#ff00ff:#00ffff:#ffffff"
     scrollbar_position = hidden
     show_titlebar = False
