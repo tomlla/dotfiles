@@ -1,13 +1,13 @@
-#!/bin/sh
-#export GTK2_RC_FILES="$HOME/.gtkrc-2.0" #this line no need?
+setxkbmap -option ctrl:nocaps
+# setxkbmap -option japan:hztg_escape
 
-~/touchpad.sh
+xset r rate 160 60
 
-DEFAULT_SESSION=openbox-session
-case $1 in
-openbox) exec openbox-session ;;
-dwm)
-    #feh --bg-tile .config/wallpapers/assassinsCreed.jpeg
-    exec ck-launch-session dwm ;;
-*) exec $DEFAULT_SESSION  ;;
-esac
+export DefaultImModule=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export LC_CTYPE=ja_JP.utf8
+fcitx -d
+
+exec i3
