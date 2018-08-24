@@ -2,10 +2,13 @@
 
 # echo "loading ~/.bash_once [flags: $-]"
 
-HISTSIZE=50000
-HISTTIMEFORMAT='%Y/%m/%d %H:%M:%S '
-
 shopt -s autocd
+
+export HISTFILESIZE=-1
+export HISTSIZE=-1
+export HISTTIMEFORMAT="[%F %T] "
+export HISTFILE=~/.bash_eternal_history
+# PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 if [ -z "${USER_PATH_ADDED}" ]; then
 echo "[add user path]"
