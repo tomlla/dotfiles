@@ -148,8 +148,9 @@ function ignore-bidning-pry() {
 }
 
 function rec() {
+  SEC=${1:-10}
   local filename="$HOME/screencast/$(date '+%Y-%m-%d_%H%M%S').gif"
-  byzanz-record $filename --cursor --x=1366 -d 10 && google-chrome-stable $filename
+  byzanz-record $filename --cursor --x=1366 -d $SEC && google-chrome-stable $filename
 }
 
 source $HOME/localrc.d/*
