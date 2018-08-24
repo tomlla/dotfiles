@@ -171,7 +171,7 @@ colorscheme jellybeans
 " ==== plugin settings ===
 
 let g:debugger_array = [
-            \['\.rb', 'binding.pry'],
+            \['\.rb', '    binding.pry # rubocop:disable Lint/Debugger'],
             \['\.rake', 'require "pry"; binding.pry'],
             \['\.js$', 'debugger;'],
             \]
