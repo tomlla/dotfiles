@@ -44,6 +44,7 @@ export JAVA_HOME=/opt/java/java-home-symlink
 export GOPATH=$HOME/dev
 
 alias a=alias
+alias sq='sudo shutdown -h now'
 alias v=vim
 alias ls='ls --color=auto -F'
 alias ll='ls -l'
@@ -57,15 +58,14 @@ alias tlf='tail -f'
 
 alias p='sudo pacman'
 alias yao=yaourt
-alias stl=systemctl
+alias sc='sudo systemctl'
 
 alias mt=multitail
 alias g=git
 alias dk=docker
 alias dkc=docker-compose
 alias cci=circleci
-K=kubectl
-Kpods='kubectl get pods'
+alias ggl='w3m https://google.com'
 
 alias y=yarn
 alias r='rails'
@@ -78,6 +78,9 @@ alias rbo='bundle exec rubocop'
 # -- functions
 alias pbcopy='xsel --clipboard --input'
 alias wa="watch"
+
+K=kubectl
+Kpods='kubectl get pods'
 
 showPath() {
     echo $PATH | sed 's/:/\n/g'
