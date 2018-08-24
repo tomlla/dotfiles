@@ -64,7 +64,8 @@ alias g=git
 alias dk=docker
 alias dkc=docker-compose
 alias cci=circleci
-alias k=kubectl
+K=kubectl
+Kpods='kubectl get pods'
 
 alias y=yarn
 alias r='rails'
@@ -76,6 +77,7 @@ alias rbo='bundle exec rubocop'
 
 # -- functions
 alias pbcopy='xsel --clipboard --input'
+alias wa="watch"
 
 showPath() {
     echo $PATH | sed 's/:/\n/g'
