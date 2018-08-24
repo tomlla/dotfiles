@@ -1,6 +1,8 @@
 [user]
     name = Nobuyasu Tomura
     email = ntomura92@gmail.com
+[credential]
+	helper = store
 [gpg]
     program = gpg2
 [ghq]
@@ -10,6 +12,8 @@
     #pager = lv -c
     editor = vim -c \"set fenc=utf-8\"
     quotepath = false
+[push]
+    default = matching
 [color]
     ui = auto
 [merge]
