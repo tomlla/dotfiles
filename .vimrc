@@ -29,6 +29,7 @@ set backup
 set backupdir=~/var/vim/backup
 set swapfile
 set directory=~/var/vim/swap
+set hlsearch
 
 if has("nvim")
     call plug#begin('~/.config/nvim/plugged')
@@ -44,6 +45,7 @@ Plug 'vim-scripts/desertEx'
 " --- dev-support for specific language ---
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
+Plug 'wavded/vim-stylus', {'for': ['stylus', 'styl']}
 Plug 'digitaltoad/vim-jade', {'for': ['jade', 'pug']}
 Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
 Plug 'derekwyatt/vim-scala', {'for': ['scala']}
@@ -134,6 +136,7 @@ Plug 'mattn/gist-vim'
 call plug#end()
 
 highlight ALEWarning ctermbg=DarkMagenta
+let g:ale_list_window_size = 4
 let g:ale_sign_error = '✗ '
 let g:ale_sign_warning = '⚠ '
 let g:ale_echo_msg_error_str = 'E'
@@ -144,6 +147,8 @@ let g:ale_linters = {
       \   'ruby': ['rubocop'],
       \}
 "   'ruby': ['rubocop', 'reek']
+let g:ale_fixers = { 'javascript': ['prettier', 'eslint'] }
+nnoremap <leader>f :ALEFix<cr>
 
 "let g:syntastic_javascript_checkers=['eslint']
 
@@ -174,6 +179,7 @@ let g:debugger_array = [
             \['\.rb', '    binding.pry # rubocop:disable Lint/Debugger'],
             \['\.rake', 'require "pry"; binding.pry'],
             \['\.js$', 'debugger;'],
+            \['\.vue$', 'debugger;'],
             \]
 nmap <Leader>p :call AddDebugger("o")<cr>
 
@@ -360,7 +366,7 @@ syntax enable
 " augroup END
 
 autocmd FileType vue syntax sync fromstart
-autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+" autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
 let s:localvimrc = expand("~/.local.vimrc")
 if file_readable(s:localvimrc)
