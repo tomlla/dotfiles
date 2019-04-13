@@ -21,6 +21,7 @@ ${HOME}/dev/bin:\
 /opt/sbt/bin:\
 /opt/platform-tools:\
 ${HOME}/.dotfiles/bin:\
+/var/lib/snapd/snap/bin:\
 ${PATH}" && export USER_PATH_ADDED=true
 fi
 
@@ -40,10 +41,10 @@ fi
 
 eval "$(direnv hook bash)"
 
+# export JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on, -Dswing.aatext=true'
 export JAVA_HOME=/opt/java/java-home-symlink
 export GOPATH=$HOME/dev
 
-alias a=alias
 alias sq='sudo shutdown -h now'
 alias v=vim
 alias ls='ls --color=auto -F'
@@ -58,7 +59,11 @@ alias tlf='tail -f'
 
 alias p='sudo pacman'
 alias yao=yaourt
-alias sc='sudo systemctl'
+function sc() {
+    service=${1}
+    action=${2:-status}
+    sudo systemctl $action $service
+}
 
 alias mt=multitail
 alias g=git
@@ -77,28 +82,29 @@ alias rbo='bundle exec rubocop'
 
 # -- functions
 alias pbcopy='xsel --clipboard --input'
-alias wa="watch"
+alias wa="/usr/bin/watch"
 
-K=kubectl
-Kpods='kubectl get pods'
+alias k=kubectl
+alias h=heroku
+
+alias flux="xflux -l 35 -g 139"
+alias psysh=~/.config/composer/vendor/bin/psysh
+TML="${HOME}/dev/src/github.com/tomlla"
 
 showPath() {
     echo $PATH | sed 's/:/\n/g'
 }
 
-PS1='\u@\h \W\n\$ '
+# PS1='\u@\h \W\n\$ '
 
 # -- [configure git completion and promppt]
 source /usr/share/git/completion/git-completion.bash
 __git_complete g __git_main
-
 source /usr/share/git/completion/git-prompt.sh
-
-GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWUPSTREAM=auto
-GIT_PS1_SHOWUNTRACKEDFILES=1
-GIT_PS1_SHOWSTASHSTATE=1
-
+# GIT_PS1_SHOWDIRTYSTATE=1
+# GIT_PS1_SHOWUPSTREAM=auto
+# GIT_PS1_SHOWUNTRACKEDFILES=1
+# GIT_PS1_SHOWSTASHSTATE=1
 PS1='\u@\h \w$(__git_ps1)\n\$ '
 
 gcd() {
@@ -120,18 +126,10 @@ fzf-ghq-widget () {
 }
 bind -x '"\C-g": "fzf-ghq-widget"'
 
-load-gcp-sdk () {
-    echo "[$date] google-cloud-sdk loaded"
-    # The next line enables shell command completion for gcloud.
-    if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then
-        source '/opt/google-cloud-sdk/completion.bash.inc'
-        source '/opt/google-cloud-sdk/path.bash.inc'
-        alias gcl-interactive="gcloud alpha interactive"
-    fi
-}
-if [ -z "${GC_SDK_LOADED}" ]; then
-    load-gcp-sdk
-    export GC_SDK_LOADED=true
+if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then
+    source '/opt/google-cloud-sdk/completion.bash.inc'
+    source '/opt/google-cloud-sdk/path.bash.inc'
+    alias gcl-interactive="gcloud alpha interactive"
 fi
 
 function kubectl-set-ns() {
@@ -156,4 +154,20 @@ function rec() {
   byzanz-record $filename --cursor --x=1366 -d $SEC && google-chrome-stable $filename
 }
 
-source $HOME/localrc.d/*
+for f in $(find ~/localrc.d -type f -o -type l); do
+    source $f
+done
+
+function stopwatch() {
+    local date1=`date +%s`
+    while true; do
+        echo -ne "$(date -u --date @$((`date +%s` - ${date1})) +%H:%M:%S)\r"
+        sleep 0.1
+    done
+}
+
+
+xranup() {
+    # xrandr --output DP1 --mode 2560x1440 --above eDP1
+    xrandr --output DP1 --mode 2560x1440 --left-of eDP1
+}

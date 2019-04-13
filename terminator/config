@@ -1,6 +1,8 @@
 [global_config]
-  borderless = True
+  extra_styling = False
   focus = mouse
+  handle_size = 11
+  inactive_color_offset = 1.0
   title_inactive_bg_color = "#8e8e8e"
   title_transmit_bg_color = "#880002"
 [keybindings]
@@ -23,8 +25,9 @@
     palette = "#000000:#cd0000:#00cd00:#cdcd00:#1e90ff:#cd00cd:#00cdcd:#e5e5e5:#4c4c4c:#ff0000:#00ff00:#ffff00:#4682b4:#ff00ff:#00ffff:#ffffff"
     scrollbar_position = hidden
     show_titlebar = False
+    use_system_font = False
   [[light]]
-    background_color = "#c9baba"
+    background_color = "#eeeeec"
     background_darkness = 0.89
     cursor_color = "#656565"
     font = Ricty 9

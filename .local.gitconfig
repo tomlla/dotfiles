@@ -1,6 +1,8 @@
 [user]
     name = Nobuyasu Tomura
     email = ntomura92@gmail.com
+[branch "master"]
+    mergeoptions = --no-ff
 [credential]
 	helper = store
 [gpg]
@@ -13,7 +15,7 @@
     editor = vim -c \"set fenc=utf-8\"
     quotepath = false
 [push]
-    default = matching
+    default = current
 [color]
     ui = auto
 [merge]
@@ -36,6 +38,7 @@
     cp = cherry-pick
     a = add
     co = commit
+    com = commit -m
     ca = commit -a
     cam = commit -a -m
     cm = commit -m

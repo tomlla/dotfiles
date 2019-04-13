@@ -5,6 +5,7 @@ set nu
 set incsearch
 set list
 set listchars=tab:»_,trail:-
+"set listchars=eol:$,tab:»_,trail:-
 set laststatus=2
 "set cursorcolumn
 set nowrap
@@ -41,6 +42,7 @@ Plug 'jdkanani/vim-material-theme'
 Plug 'nanotech/jellybeans.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/desertEx'
+Plug 'dracula/vim'
 
 " --- dev-support for specific language ---
 Plug 'keith/swift.vim', {'for': 'swift'}
@@ -59,28 +61,30 @@ Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'kovisoft/slimv', {'for': 'lisp'}
 Plug 'tpope/vim-classpath', { 'for': ['clojure','java']}
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'fatih/vim-go', { 'for': 'go' }
+" Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 " 'vim-scripts/IndentAnything'
 Plug 'felixge/vim-nodejs-errorformat', {'for': ['javascript', 'coffee']}
-"Plug 'tyru/open-browser.vim', {'for': [ 'html', 'xml', 'markdown', 'mkd' , 'textile']}
+Plug 'tyru/open-browser.vim', {'for': [ 'html', 'xml', 'markdown', 'mkd' , 'textile']}
 "Plug 'mitsuhiko/vim-jinja', { 'for': ['htmljinja']}
 Plug 'davidhalter/jedi-vim', {'for' :['python']}
-"Plug 'kevinw/pyflakes-vim', { 'for' :['python']}
-"Plug 'nvie/vim-flake8', { 'for' :['python']}
+Plug 'kevinw/pyflakes-vim', { 'for' :['python']}
+Plug 'nvie/vim-flake8', { 'for' :['python']}
 
 Plug 'ngmy/vim-rubocop', {'for': ['ruby', 'erb', 'haml', 'slim']}
 Plug 'osyo-manga/vim-monster', {'for': ['ruby', 'erb', 'haml', 'slim']}
 let g:monster#completion#backend = 'solargraph'
-let g:neocomplete#sources#omni#input_patterns = {
-      \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
-      \}
+" let g:neocomplete#sources#omni#input_patterns = {
+"       \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+"       \}
 "Plug 'tpope/vim-haml', {'for' :['haml']}
 Plug 'slim-template/vim-slim', { 'for': ['slim'] }
 Plug 'tpope/vim-rails', {'for' :['ruby', 'haml', 'erb', 'slim']}
 "Plug 'tpope/vim-bundler', {'for' :['ruby', 'haml', 'erb']} "ruby file開くと遅い
 "Plug 'kchmck/vim-coffee-script', {'for' :['coffee']}
 Plug 'posva/vim-vue', {'for': 'vue'}
+Plug 'digitaltoad/vim-pug', {'for': ['pug', 'vue']}
 
 " === general ===
 "Plug 'scrooloose/syntastic', {'for': ['javascript', 'ruby']}
@@ -102,10 +106,12 @@ Plug 'honza/vim-snippets'
 
 " others
 Plug 'kannokanno/previm', { 'for': ['mkd','md','markdown']}
+Plug 'suan/vim-instant-markdown'
 "Plug 'vim-voom/VOoM', { 'for': ['mkd','md','markdown']}
 
 Plug 'mattn/webapi-vim'
 Plug 'mattn/emmet-vim', {'for': ['html', 'xml', 'eruby']}
+Plug 'alvan/vim-closetag', {'for': ['html']}
 Plug 'ujihisa/quickrun'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
@@ -113,6 +119,7 @@ Plug 'thinca/vim-ref'
 Plug 'lambdalisue/gina.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'cohama/agit.vim'
+Plug 'prettier/vim-prettier', { 'for': ['html', 'javascript']}
 
 "Plug 'scrooloose/nerdcommenter'
 
@@ -168,10 +175,12 @@ set statusline+=%*
 " let g:syntastic_style_warning_symbol = '⚠ '
 
 
- set background=dark
+set background=dark
 "set background=light
 "colorscheme solarized
 colorscheme jellybeans
+"colorscheme desert
+"colorscheme default
 
 " ==== plugin settings ===
 
@@ -256,7 +265,7 @@ nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> ,ug :<C-u>Unite ghq<CR>
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-nnoremap <C-g>i :Gina<space>
+nnoremap <C-g>i :GoImport<space>
 
 " === neocomplete ===
 let g:neocomplete#enable_at_startup = 1
@@ -266,26 +275,26 @@ let g:neocomplete#auto_completion_start_length=2
 let g:neocomplete#enable_smart_case = 0 " 大文字、小文字の区別をするかどうか1なら区別しない。
 let g:neocomplete#sources#syntax#min_keyword_length = 2 " Set minimum syntax keyword length.
 
-set completeopt=menuone "補完ウィンドウの設定 :help completeopt
+" set completeopt=menuone "補完ウィンドウの設定 :help completeopt
 
 let g:neocomplete#keyword_patterns = {}
 let g:neocomplete#keyword_patterns['gosh-repl'] = "[[:alpha:]+*/@$_=.!?-][[:alnum:]+*/@$_:=.!?-]*"
 
-if !exists('g:neocomplete#omni_patterns')
-    let g:neocomplete#omni_patterns = {}
-endif
-let g:neocomplete#omni_patterns.go = '\h\w*\.\?'
+" if !exists('g:neocomplete#omni_patterns')
+"     let g:neocomplete#omni_patterns = {}
+" endif
+" let g:neocomplete#omni_patterns.go = '\h\w*\.\?'
 
-if !exists('g:neocomplete#force_omni_input_patterns')
-    let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.java = '\%(\h\w*\|)\)\.\w*'
+" if !exists('g:neocomplete#force_omni_input_patterns')
+"     let g:neocomplete#force_omni_input_patterns = {}
+" endif
+" let g:neocomplete#force_omni_input_patterns.java = '\%(\h\w*\|)\)\.\w*'
 
-if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
-endif
-"let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
-let g:neocomplete#sources#omni#input_patterns.go = '\h\w\.\w*'
+" if !exists('g:neocomplete#sources#omni#input_patterns')
+"     let g:neocomplete#sources#omni#input_patterns = {}
+" endif
+" "let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
+" let g:neocomplete#sources#omni#input_patterns.go = '\h\w\.\w*'
 
 "inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>"
 

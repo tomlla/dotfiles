@@ -33,18 +33,21 @@ floating_modifier $mod
 # start a terminal
 bindsym $win+Return exec i3-sensible-terminal
 
-bindsym $win+w exec google-chrome-stable
+bindsym $win+w exec google-chrome-unstable
 bindsym $win+Shift+w exec chromium
 
 # kill focused window
 bindsym $mod+q kill
 
+bindsym $mod+d exec dmenu_run 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# pacman -S rofi
+# bindsym $win+d exec "rofi -combi-modi window,drun,ssh -theme solarized -font 'hack 10' -show combi"
 
 # change focus
 bindsym $mod+h focus left
@@ -147,10 +150,10 @@ bar {
         status_command i3status
 }
 
-#bindsym $win+Up exec /usr/bin/amixer set Master 2+
-#bindsym $win+Down exec /usr/bin/amixer set Master 2-
-bindsym $win+Up exec pamixer -i 5
-bindsym $win+Down exec pamixer -d 5
+bindsym $win+Up exec /usr/bin/amixer set Master 2+
+bindsym $win+Down exec /usr/bin/amixer set Master 2-
+# bindsym $win+Up exec pamixer -i 5
+# bindsym $win+Down exec pamixer -d 5
 
 # see github.com/tomlla/bl
 bindsym $win+Right exec sudo bl inc
