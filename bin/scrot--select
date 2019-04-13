@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
+delay=${1:-0}
+echo "delay: $delay"
 filename=$HOME/ss/ss-$(date '+%Y%m%d-%H%M%S').png
-scrot --select $filename
+scrot --select $filename -d $delay
 
-google-chrome-stable $filename
+nohup feh $filename -d > /dev/null 2>&1 &
