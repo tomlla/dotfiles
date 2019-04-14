@@ -1,4 +1,12 @@
 ; vim: ft=gitconfig
+
+; # How to  use
+; include this file from ~/.gitconfig
+; ```
+; [include]
+;   path = << path to this file >>
+; ```
+
 [user]
     name = Nobuyasu Tomura
     email = ntomura92@gmail.com
