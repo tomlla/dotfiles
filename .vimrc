@@ -143,7 +143,7 @@ call plug#end()
 
 highlight ALEWarning ctermbg=DarkMagenta
 let g:ale_list_window_size = 4
-let g:ale_sign_error = '✗ '
+let g:ale_sign_error = '✖ '
 let g:ale_sign_warning = '⚠ '
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
@@ -183,12 +183,12 @@ colorscheme jellybeans
 
 " ==== plugin settings ===
 
-let g:debugger_array = [
-            \['\.rb', '    binding.pry # rubocop:disable Lint/Debugger'],
-            \['\.rake', 'require "pry"; binding.pry'],
-            \['\.js$', 'debugger;'],
-            \['\.vue$', 'debugger;'],
-            \]
+let g:user_debugger_dictionary = {
+    \ '\.rb': 'binding.pry # rubocop:disable Lint/Debugger',
+    \ '\.rake': 'require "pry"; binding.pry',
+    \ '\.js$': 'debugger;',
+    \ '\.vue$': 'debugger;',
+    \ }
 nmap <Leader>p :call AddDebugger("o")<cr>
 
 let g:netrw_liststyle = 3
