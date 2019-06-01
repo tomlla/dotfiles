@@ -1,5 +1,6 @@
 " === vim options ===
-set binary noeol
+set binary
+set eol
 set nocompatible
 set nu
 set incsearch
