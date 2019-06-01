@@ -77,11 +77,6 @@ Plug 'kevinw/pyflakes-vim', { 'for' :['python']}
 Plug 'nvie/vim-flake8', { 'for' :['python']}
 
 Plug 'ngmy/vim-rubocop', {'for': ['ruby', 'erb', 'haml', 'slim']}
-Plug 'osyo-manga/vim-monster', {'for': ['ruby', 'erb', 'haml', 'slim']}
-let g:monster#completion#backend = 'solargraph'
-" let g:neocomplete#sources#omni#input_patterns = {
-"       \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
-"       \}
 "Plug 'tpope/vim-haml', {'for' :['haml']}
 Plug 'slim-template/vim-slim', { 'for': ['slim'] }
 Plug 'tpope/vim-rails', {'for' :['ruby', 'haml', 'erb', 'slim']}
@@ -351,7 +346,6 @@ nnoremap <leader>d i<C-R>=strftime("%Y/%m/%d %H:%M")<CR><CR><Esc>
 nnoremap Fn :echo expand("%:p")<CR>
 nnoremap <C-g><C-r> :LAg<space><C-r><C-w><space>
 nnoremap <C-g><C-g> :LAg<space>
-" nnoremap <F4> :SyntasticReset<cr>
 
 set pastetoggle=<F2>
 nnoremap <F3> :set wrap!<cr>
