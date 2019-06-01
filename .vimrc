@@ -25,7 +25,7 @@ set encoding=utf-8
 set clipboard&
 set clipboard=unnamed
 set clipboard^=unnamedplus
-set pastetoggle=<F2>
+
 set fdm=indent
 
 set autoindent
@@ -353,6 +353,7 @@ nnoremap <C-g><C-r> :LAg<space><C-r><C-w><space>
 nnoremap <C-g><C-g> :LAg<space>
 " nnoremap <F4> :SyntasticReset<cr>
 
+set pastetoggle=<F2>
 nnoremap <F3> :set wrap!<cr>
 nnoremap <F9> :ALEToggle<cr>
 
