@@ -159,4 +159,7 @@ bindsym $win+Down exec /usr/bin/amixer set Master 2-
 bindsym $win+Right exec sudo bl inc
 bindsym $win+Left exec sudo bl dec
 
+# screenshot
+bindsym $mod+Shift+F4 exec /home/nt/dotfiles/bin/scrot--select
+
 new_window 1pixel
