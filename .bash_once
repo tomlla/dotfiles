@@ -1,8 +1,11 @@
+#!/bin/bash
 # vim: ft=sh
 
 # echo "loading ~/.bash_once [flags: $-]"
 
 shopt -s autocd
+
+uname_value=$(uname)
 
 export HISTFILESIZE=-1
 export HISTSIZE=-1
@@ -47,7 +50,11 @@ export GOPATH=$HOME/dev
 
 alias sq='sudo shutdown -h now'
 alias v=vim
-alias ls='ls --color=auto -F'
+if [ $uname_value = 'Darwin' ]; then
+  alias ls='ls -G -F' # Mac
+else
+  alias ls='ls --color=auto -F' # Linux
+fi
 alias ll='ls -l'
 alias la='ls -a'
 alias wh=which
