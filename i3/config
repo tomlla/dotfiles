@@ -33,8 +33,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $win+Return exec i3-sensible-terminal
 
-bindsym $win+w exec google-chrome-unstable
-bindsym $win+Shift+w exec chromium
+bindsym $win+w exec i3-sensible-browser
 
 # kill focused window
 bindsym $mod+q kill
@@ -150,14 +149,14 @@ bar {
         status_command i3status
 }
 
-bindsym $win+Up exec /usr/bin/amixer set Master 2+
-bindsym $win+Down exec /usr/bin/amixer set Master 2-
-# bindsym $win+Up exec pamixer -i 5
-# bindsym $win+Down exec pamixer -d 5
+# bindsym $win+Up exec /usr/bin/amixer set Master 2+
+# bindsym $win+Down exec /usr/bin/amixer set Master 2-
+bindsym $win+Up exec pamixer -i 5
+bindsym $win+Down exec pamixer -d 5
 
 # see github.com/tomlla/bl
-bindsym $win+Right exec sudo bl inc
-bindsym $win+Left exec sudo bl dec
+bindsym $win+Right exec sudo /home/nt/dev/bin/bl inc
+bindsym $win+Left exec sudo /home/nt/dev/bin/bl dec
 
 # screenshot
 bindsym $mod+Shift+F4 exec /home/nt/dotfiles/bin/scrot--select
