@@ -6,7 +6,7 @@ set nu
 set incsearch
 set list
 set listchars=tab:»_,trail:-
-"set listchars=eol:$,tab:»_,trail:-
+" set listchars=eol:$,tab:»_,trail:-
 set laststatus=2
 "set cursorcolumn
 set nowrap
@@ -49,6 +49,8 @@ Plug 'vim-scripts/desertEx'
 Plug 'dracula/vim'
 
 " --- dev-support for specific language ---
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
 Plug 'wavded/vim-stylus', {'for': ['stylus', 'styl']}
@@ -104,8 +106,10 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
 
 " others
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm', { 'for': ['mkd','md','markdown']}
-Plug 'suan/vim-instant-markdown'
+" Plug 'suan/vim-instant-markdown'
 "Plug 'vim-voom/VOoM', { 'for': ['mkd','md','markdown']}
 
 Plug 'mattn/webapi-vim'
@@ -114,6 +118,7 @@ Plug 'alvan/vim-closetag', {'for': ['html']}
 Plug 'ujihisa/quickrun'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
+Plug 'thinca/vim-showtime'
 
 Plug 'lambdalisue/gina.vim'
 Plug 'tpope/vim-fugitive'
@@ -314,6 +319,10 @@ nnoremap <C-p> :FZF<cr>
 
 "=== git plugin ===
 nnoremap <space>gd :Gdiff<CR>
+nnoremap <space>s :Gina status<CR>
+nnoremap <space>c :Gina commit<CR>
+nnoremap <space>p :Gina push<CR>
+nnoremap <space>f :Gina fetch<CR>
 
 "=rust==
 set hidden
@@ -386,7 +395,22 @@ syntax enable
 autocmd FileType vue syntax sync fromstart
 " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
+if executable('solargraph')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'solargraph',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
+        \ 'initialization_options': {"diagnostics": "true"},
+        \ 'whitelist': ['ruby'],
+        \ })
+endif
+
 let s:localvimrc = expand("~/.local.vimrc")
 if file_readable(s:localvimrc)
     execute 'source '.s:localvimrc
 endif
+let g:lsp_diagnostics_enabled = 0
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+
+set eol
