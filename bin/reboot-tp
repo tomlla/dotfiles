@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# A solution for touchpad doesn't work afeter sleep(hibernate?)
+
+set -x
+sudo modprobe -r i2c_hid
+sudo modprobe i2c_hid
+tp # go get github.com/tomlla/xinput-touchpad/cmd/tp
