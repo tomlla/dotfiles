@@ -108,7 +108,7 @@ Plug 'honza/vim-snippets'
 " others
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'kannokanno/previm', { 'for': ['mkd','md','markdown']}
+Plug 'iamcco/markdown-preview.vim'
 " Plug 'suan/vim-instant-markdown'
 "Plug 'vim-voom/VOoM', { 'for': ['mkd','md','markdown']}
 
