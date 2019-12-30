@@ -4,6 +4,7 @@
 # echo "loading ~/.bash_once [flags: $-]"
 
 shopt -s autocd
+export UNAME=$(uname)
 
 uname_value=$(uname)
 
@@ -89,11 +90,13 @@ alias ras='bundle exec rails s'
 alias rbo='bundle exec rubocop'
 
 # -- functions
-alias pbcopy='xsel --clipboard --input'
+[ "$UNAME" = "Linux" ] && alias pbcopy='xsel --clipboard --input'
+
 alias wa="/usr/bin/watch"
 
 alias k=kubectl
 alias h=heroku
+alias kn=kubens
 
 alias flux="xflux -l 35 -g 139"
 alias psysh=~/.config/composer/vendor/bin/psysh
@@ -145,11 +148,11 @@ fzf-ghq-widget () {
 }
 bind -x '"\C-g": "fzf-ghq-widget"'
 
-if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then
-    source '/opt/google-cloud-sdk/completion.bash.inc'
-    source '/opt/google-cloud-sdk/path.bash.inc'
-    alias gcl-interactive="gcloud alpha interactive"
-fi
+# if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then
+#     source '/opt/google-cloud-sdk/completion.bash.inc'
+#     source '/opt/google-cloud-sdk/path.bash.inc'
+#     alias gcl-interactive="gcloud alpha interactive"
+# fi
 
 function kubectl-set-ns() {
   kubectl config set-context $(kubectl config current-context) --namespace=$1
