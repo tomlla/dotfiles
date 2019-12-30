@@ -68,7 +68,6 @@ Plug 'kovisoft/slimv', {'for': 'lisp'}
 Plug 'tpope/vim-classpath', { 'for': ['clojure','java']}
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 " 'vim-scripts/IndentAnything'
 Plug 'felixge/vim-nodejs-errorformat', {'for': ['javascript', 'coffee']}
@@ -156,6 +155,7 @@ let g:ale_echo_msg_format='[%linter%](%severity%) %code: %%s'
 let g:ale_open_list = 1
 let g:ale_linters = {
       \   'ruby': ['rubocop'],
+      \ 'go': ['gopls'],
       \}
 "   'ruby': ['rubocop', 'reek']
 let g:ale_fixers = { 'javascript': ['prettier', 'eslint'] }
@@ -402,6 +402,16 @@ if executable('solargraph')
         \ 'initialization_options': {"diagnostics": "true"},
         \ 'whitelist': ['ruby'],
         \ })
+endif
+if executable('gopls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'gopls',
+        \ 'cmd': {server_info->['gopls']},
+        \ 'whitelist': ['go'],
+        \ })
+    autocmd FileType go setlocal omnifunc=lsp#complete
+    autocmd BufWritePre *.go LspDocumentFormatSync
+    autocmd FileType go nmap <buffer> <C-]> <plug>(lsp-definition)
 endif
 
 let s:localvimrc = expand("~/.local.vimrc")
