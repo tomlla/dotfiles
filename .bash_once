@@ -3,6 +3,7 @@
 # echo "loading ~/.bash_once [flags: $-]"
 
 shopt -s autocd
+export UNAME=$(uname)
 
 export HISTFILESIZE=-1
 export HISTSIZE=-1
@@ -81,11 +82,13 @@ alias ras='bundle exec rails s'
 alias rbo='bundle exec rubocop'
 
 # -- functions
-alias pbcopy='xsel --clipboard --input'
+[ "$UNAME" = "Linux" ] && alias pbcopy='xsel --clipboard --input'
+
 alias wa="/usr/bin/watch"
 
 alias k=kubectl
 alias h=heroku
+alias kn=kubens
 
 alias flux="xflux -l 35 -g 139"
 alias psysh=~/.config/composer/vendor/bin/psysh
@@ -126,11 +129,11 @@ fzf-ghq-widget () {
 }
 bind -x '"\C-g": "fzf-ghq-widget"'
 
-if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then
-    source '/opt/google-cloud-sdk/completion.bash.inc'
-    source '/opt/google-cloud-sdk/path.bash.inc'
-    alias gcl-interactive="gcloud alpha interactive"
-fi
+# if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then
+#     source '/opt/google-cloud-sdk/completion.bash.inc'
+#     source '/opt/google-cloud-sdk/path.bash.inc'
+#     alias gcl-interactive="gcloud alpha interactive"
+# fi
 
 function kubectl-set-ns() {
   kubectl config set-context $(kubectl config current-context) --namespace=$1
@@ -154,7 +157,7 @@ function rec() {
   byzanz-record $filename --cursor --x=1366 -d $SEC && google-chrome-stable $filename
 }
 
-for f in $(find ~/localrc.d -type f -o -type l); do
+for f in $(find ~/localrc.d -type f -o -type l 2> /dev/null); do
     source $f
 done
 
