@@ -173,7 +173,7 @@ function rec() {
   byzanz-record $filename --cursor --x=1366 -d $SEC && google-chrome-stable $filename
 }
 
-for f in $(find ~/localrc.d -type f -o -type l); do
+for f in $(find ~/localrc.d -type f -o -type l 2> /dev/null); do
     source $f
 done
 
@@ -189,7 +189,3 @@ xranup() {
     # xrandr --output DP1 --mode 2560x1440 --above eDP1
     xrandr --output DP1 --mode 2560x1440 --left-of eDP1
 }
-
-if [ -d $HOME/localrc.d/ ]; then
-  source $HOME/localrc.d/*
-fi
