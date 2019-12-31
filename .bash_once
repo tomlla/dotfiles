@@ -4,7 +4,6 @@
 # echo "loading ~/.bash_once [flags: $-]"
 
 shopt -s autocd
-export UNAME=$(uname)
 
 uname_value=$(uname)
 
@@ -90,7 +89,7 @@ alias ras='bundle exec rails s'
 alias rbo='bundle exec rubocop'
 
 # -- functions
-[ "$UNAME" = "Linux" ] && alias pbcopy='xsel --clipboard --input'
+[ "$uname_value" = "Linux" ] && alias pbcopy='xsel --clipboard --input'
 
 alias wa="/usr/bin/watch"
 
