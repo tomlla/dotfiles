@@ -28,7 +28,7 @@ ${HOME}/.dotfiles/bin:\
 ${PATH}" && export USER_PATH_ADDED=true
 fi
 
-type -p anyenv
+type -p anyenv > /dev/null
 if [ -z "${ANYENV_EVALUATED}" -a  $? = 0 ]; then
     echo -n "[init anyenv] ..."
     eval "$(anyenv init -)" && export ANYENV_EVALUATED=true
