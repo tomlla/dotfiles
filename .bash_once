@@ -126,7 +126,6 @@ fi
 PS1='\u@\h \w$(__git_ps1)\n\$ '
 # 
 # PS1='\u@\h \w$(__git_ps1)\n\$ '
-source /usr/local/etc/bash_completion.d/git-completion.bash
 
 gcd() {
   local branches branch
