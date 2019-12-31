@@ -1,9 +1,12 @@
+#!/bin/bash
 # vim: ft=sh
 
 # echo "loading ~/.bash_once [flags: $-]"
 
 shopt -s autocd
 export UNAME=$(uname)
+
+uname_value=$(uname)
 
 export HISTFILESIZE=-1
 export HISTSIZE=-1
@@ -26,7 +29,8 @@ ${HOME}/.dotfiles/bin:\
 ${PATH}" && export USER_PATH_ADDED=true
 fi
 
-if [ -z "${ANYENV_EVALUATED}" ]; then
+type -p anyenv
+if [ -z "${ANYENV_EVALUATED}" -a  $? = 0 ]; then
     echo -n "[init anyenv] ..."
     eval "$(anyenv init -)" && export ANYENV_EVALUATED=true
 fi
@@ -40,7 +44,7 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-eval "$(direnv hook bash)"
+type -p direnv > /dev/null && eval "$(direnv hook bash)"
 
 # export JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on, -Dswing.aatext=true'
 export JAVA_HOME=/opt/java/java-home-symlink
@@ -48,7 +52,11 @@ export GOPATH=$HOME/dev
 
 alias sq='sudo shutdown -h now'
 alias v=vim
-alias ls='ls --color=auto -F'
+if [ $uname_value = 'Darwin' ]; then
+  alias ls='ls -G -F' # Mac
+else
+  alias ls='ls --color=auto -F' # Linux
+fi
 alias ll='ls -l'
 alias la='ls -a'
 alias wh=which
@@ -100,21 +108,31 @@ showPath() {
 
 # PS1='\u@\h \W\n\$ '
 
-# -- [configure git completion and promppt]
-source /usr/share/git/completion/git-completion.bash
-__git_complete g __git_main
-source /usr/share/git/completion/git-prompt.sh
+
+# # -- [configure git completion and promppt]
+
+if [ $uname_value = "Darwin" ]; then
+  source /usr/local/etc/bash_completion.d/git-prompt.sh
+  source /usr/local/etc/bash_completion.d/git-completion.bash
+else
+  # for Linux
+  source /usr/share/git/completion/git-completion.bash
+  source /usr/share/git/completion/git-prompt.sh
+fi
+# 
 # GIT_PS1_SHOWDIRTYSTATE=1
 # GIT_PS1_SHOWUPSTREAM=auto
 # GIT_PS1_SHOWUNTRACKEDFILES=1
 # GIT_PS1_SHOWSTASHSTATE=1
 PS1='\u@\h \w$(__git_ps1)\n\$ '
+# 
+# PS1='\u@\h \w$(__git_ps1)\n\$ '
+source /usr/local/etc/bash_completion.d/git-completion.bash
 
 gcd() {
   local branches branch
   branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  branch=$(echo "$branches" |fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
@@ -126,6 +144,7 @@ fzf-ghq-widget () {
     local selected=`ghq list --full-path | fzf` || return $?
     READLINE_LINE="${READLINE_LINE:0:$READLINE_POINT}$selected${READLINE_LINE:$READLINE_POINT}";
     READLINE_POINT=$(( READLINE_POINT + ${#selected} ));
+    cd $selected
 }
 bind -x '"\C-g": "fzf-ghq-widget"'
 
@@ -168,7 +187,6 @@ function stopwatch() {
         sleep 0.1
     done
 }
-
 
 xranup() {
     # xrandr --output DP1 --mode 2560x1440 --above eDP1

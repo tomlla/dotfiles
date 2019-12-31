@@ -62,6 +62,7 @@ Plug 'dracula/vim'
 " --- dev-support for specific language ---
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-icons'
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
 Plug 'wavded/vim-stylus', {'for': ['stylus', 'styl']}
@@ -79,7 +80,6 @@ Plug 'kovisoft/slimv', {'for': 'lisp'}
 Plug 'tpope/vim-classpath', { 'for': ['clojure','java']}
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 " 'vim-scripts/IndentAnything'
 Plug 'felixge/vim-nodejs-errorformat', {'for': ['javascript', 'coffee']}
 Plug 'tyru/open-browser.vim', {'for': [ 'html', 'xml', 'markdown', 'mkd' , 'textile']}
@@ -108,9 +108,9 @@ Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite-outline'
 Plug 'sorah/unite-ghq'
 
-if has('nvim') || (has('lua') && (v:version >= 704))
-    Plug 'Shougo/neocomplete'
-endif
+" if has('nvim') || (has('lua') && (v:version >= 704))
+"     Plug 'Shougo/neocomplete'
+" endif
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
@@ -420,10 +420,21 @@ if executable('gopls')
         \ 'cmd': {server_info->['gopls']},
         \ 'whitelist': ['go'],
         \ })
-    autocmd FileType go setlocal omnifunc=lsp#complete
-    autocmd BufWritePre *.go LspDocumentFormatSync
-    autocmd FileType go nmap <buffer> <C-]> <plug>(lsp-definition)
 endif
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    nmap <buffer> <C-]> <plug>(lsp-definition)
+    nmap <buffer> <f2> <plug>(lsp-rename)
+    inoremap <expr> <cr> pumvisible() ? "\<c-y>\<cr>" : "\<cr>"
+endfunction
+augroup lsp_install
+    au!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+    autocmd BufWritePre *.go LspDocumentFormatSync
+augroup END
+
 
 let s:localvimrc = expand("~/.local.vimrc")
 if file_readable(s:localvimrc)
@@ -433,6 +444,5 @@ endif
 let g:lsp_diagnostics_enabled = 0
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/vim-lsp.log')
-let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 
 set eol
