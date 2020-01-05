@@ -368,16 +368,6 @@ nnoremap Fn :echo expand("%:p")<CR>
 nnoremap <C-g><C-r> :LAg<space><C-r><C-w><space>
 nnoremap <C-g><C-g> :LAg<space>
 
-function! IssueNumber()
-    " e.g.) fix_#2090_change_xx_to_yy or feature_2090_implement_z --> return 2010
-    let l:current_branch = vimproc#system2('git symbolic-ref --short HEAD')
-    let l:issue_num = split(current_branch, '_\|-')[1] " split by `_` or `-`
-    return join(split(issue_num, "#"))
-endfunction
-
-nnoremap <leader>g :call setline('.', printf('[#%d]', IssueNumber()))<cr>
-
-
 set pastetoggle=<F2>
 nnoremap <F3> :set wrap!<cr>
 nnoremap <F9> :ALEToggle<cr>
