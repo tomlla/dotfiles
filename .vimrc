@@ -60,6 +60,7 @@ Plug 'vim-scripts/desertEx'
 Plug 'dracula/vim'
 
 " --- dev-support for specific language ---
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-icons'
@@ -367,16 +368,6 @@ nnoremap Fn :echo expand("%:p")<CR>
 nnoremap <C-g><C-r> :LAg<space><C-r><C-w><space>
 nnoremap <C-g><C-g> :LAg<space>
 
-function! IssueNumber()
-    " e.g.) fix_#2090_change_xx_to_yy or feature_2090_implement_z --> return 2010
-    let l:current_branch = vimproc#system2('git symbolic-ref --short HEAD')
-    let l:issue_num = split(current_branch, '_\|-')[1] " split by `_` or `-`
-    return join(split(issue_num, "#"))
-endfunction
-
-nnoremap <leader>g :call setline('.', printf('[#%d]', IssueNumber()))<cr>
-
-
 set pastetoggle=<F2>
 nnoremap <F3> :set wrap!<cr>
 nnoremap <F9> :ALEToggle<cr>
@@ -434,15 +425,24 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
     autocmd BufWritePre *.go LspDocumentFormatSync
 augroup END
+let g:lsp_diagnostics_enabled = 0
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
 
+augroup VimGoSetup
+    autocmd!
+    autocmd FileType go nmap <leader>t  <Plug>(go-test)
+    autocmd FileType go nmap <leader>cv <Plug>(go-coverage-toggle)
+    autocmd FileType go nmap <leader>i <Plug>(go-info)
+    autocmd FileType go nmap <leader>b <Plug>(go-build)
+augroup END
+set updatetime=100
+let g:go_auto_type_info = 1
+
+set eol
 
 let s:localvimrc = expand("~/.local.vimrc")
 if file_readable(s:localvimrc)
     execute 'source '.s:localvimrc
 endif
 
-let g:lsp_diagnostics_enabled = 0
-let g:lsp_log_verbose = 1
-let g:lsp_log_file = expand('~/vim-lsp.log')
-
-set eol
