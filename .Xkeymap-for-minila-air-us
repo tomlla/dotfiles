@@ -1,0 +1,7 @@
+keycode 51 = grave asciitilde
+keycode 49 = backslash bar
+
+! How to use
+! ```
+! xmodmap ./.Xkeymap_for_minilla_air
+! ```
