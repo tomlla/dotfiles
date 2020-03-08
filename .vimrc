@@ -171,7 +171,10 @@ let g:ale_linters = {
       \ 'go': ['gopls'],
       \}
 "   'ruby': ['rubocop', 'reek']
-let g:ale_fixers = { 'javascript': ['prettier', 'eslint'] }
+let g:ale_fixers = { 
+    \ 'javascript': ['prettier', 'eslint'],
+    \ 'typescript': ['prettier', 'eslint'],
+    \ }
 nnoremap <leader>f :ALEFix<cr>
 
 "let g:syntastic_javascript_checkers=['eslint']
