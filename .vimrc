@@ -158,6 +158,18 @@ Plug 'mattn/gist-vim'
 "Plug 'mattn/vim-soundcloud'
 call plug#end()
 
+if $GIT_EXEC_PATH != ''
+    function! IssueNumber()
+        " e.g.) fix_#2090_change_xx_to_yy or feature_2090_implement_z --> return 2010
+        let l:current_branch = vimproc#system2('git symbolic-ref --short HEAD')
+        let l:issue_num = split(current_branch, '_\|-')[1] " split by `_` or `-`
+        return join(split(issue_num, "#"))
+    endfunction
+    nnoremap <leader>g :call setline('.', printf('[#%d]', IssueNumber()))<cr>A<space>
+    finish
+endif
+
+
 highlight ALEWarning ctermbg=DarkMagenta
 let g:ale_list_window_size = 4
 let g:ale_sign_error = '✖ '
