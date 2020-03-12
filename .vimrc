@@ -42,7 +42,7 @@ function! IssueNumber()
     let l:issue_num = split(current_branch, '_\|-')[1] " split by `_` or `-`
     return join(split(issue_num, "#"))
 endfunction
-nnoremap <leader>g :call setline('.', printf('[#%d]', IssueNumber()))<cr>
+nnoremap <leader>g :call setline('.', printf('[#%d]', IssueNumber()))<cr>A<space>
 
 if $GIT_EXEC_PATH != ''
     finish
