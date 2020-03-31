@@ -41,9 +41,11 @@ end
 
 function fish_prompt
   if [ $status -eq 0 ]
-    set status_face (set_color green)"(*'-') "
+    # set status_face (set_color green)"(*'-') "
+    set status_face (set_color green)"\$ "
   else
-    set status_face (set_color blue)"(*;-;) "
+    # set status_face (set_color blue)"(*;-;) "
+    set status_face (set_color blue)"\$ "
   end
 
   set current_branch_name (set_color cyan)(git rev-parse --abbrev-ref HEAD 2> /dev/null)
