@@ -428,6 +428,45 @@ if executable('gopls')
         \ 'whitelist': ['go'],
         \ })
 endif
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd']},
+        \ 'whitelist': ['c', 'cpp'],
+        \ })
+endif
+
+if executable('vls')
+  augroup LspVls
+    au!
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'vue-language-server',
+        \ 'cmd': {server_info->['vls']},
+        \ 'whitelist': ['vue'],
+        \ 'initialization_options': {
+        \         'config': {
+        \             'html': {},
+        \              'vetur': {
+        \                  'validation': {}
+        \              }
+        \         }
+        \     }
+        \ })
+
+    " omnifunc
+    au FileType vue setlocal omnifunc=lsp#complete
+    " map
+    au FileType vue nnoremap <buffer><silent> gd :<C-u>LspDefinition<CR>
+    au FileType vue nnoremap <buffer><silent> gD :<C-u>LspReferences<CR>
+    au FileType vue nnoremap <buffer><silent> gs :<C-u>LspDocumentSymbol<CR>
+    au FileType vue nnoremap <buffer><silent> gS :<C-u>LspWorkspaceSymbol<CR>
+    au FileType vue nnoremap <buffer><silent> gQ :<C-u>LspDocumentFormat<CR>
+    au FileType vue vnoremap <buffer><silent> gQ :LspDocumentRangeFormat<CR>
+    au FileType vue nnoremap <buffer><silent> K :<C-u>LspHover<CR>
+    au FileType vue nnoremap <buffer><silent> <F1> :<C-u>LspImplementation<CR>
+    au FileType vue nnoremap <buffer><silent> <F2> :<C-u>LspRename<CR>
+  augroup end
+endif
 
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
