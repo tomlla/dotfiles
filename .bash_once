@@ -20,10 +20,12 @@ ${HOME}/.cargo/bin:\
 ${HOME}/.anyenv/bin:\
 ${HOME}/.local/bin:\
 ${HOME}/dev/bin:\
+${HOME}/flutter/bin:\
 /opt/bin:\
 /opt/sbt/bin:\
 /opt/platform-tools:\
 ${HOME}/.dotfiles/bin:\
+/usr/local/gobin:\
 /var/lib/snapd/snap/bin:\
 ${PATH}" && export USER_PATH_ADDED=true
 fi
@@ -50,7 +52,7 @@ export JAVA_HOME=/opt/java/java-home-symlink
 export GOPATH=$HOME/dev
 
 alias sq='sudo shutdown -h now'
-alias v=vim
+alias v='vim -u NONE'
 if [ $uname_value = 'Darwin' ]; then
   alias ls='ls -G -F' # Mac
 else
@@ -105,27 +107,30 @@ showPath() {
     echo $PATH | sed 's/:/\n/g'
 }
 
-# PS1='\u@\h \W\n\$ '
-
-
-# # -- [configure git completion and promppt]
+function load_if_exist {
+    [ -e $1 ] && source $1
+}
 
 if [ $uname_value = "Darwin" ]; then
-  source /usr/local/etc/bash_completion.d/git-prompt.sh
-  source /usr/local/etc/bash_completion.d/git-completion.bash
-else
-  # for Linux
-  source /usr/share/git/completion/git-completion.bash
-  source /usr/share/git/completion/git-prompt.sh
+  load_if_exist /usr/local/etc/bash_completion.d/git-prompt.sh
+  load_if_exist /usr/local/etc/bash_completion.d/git-completion.bash
+elif [ $uname_value = "Linux" ]; then
+  load_if_exist /usr/share/git/completion/git-completion.bash
+  load_if_exist /usr/share/git/completion/git-prompt.sh
+
+  load_if_exist /usr/lib/git-core/git-sh-prompt
+  load_if_exist /usr/share/bash-completion/completions/git
+
+  load_if_exist /usr/share/git/completion/git-prompt.sh
 fi
-# 
+
 # GIT_PS1_SHOWDIRTYSTATE=1
 # GIT_PS1_SHOWUPSTREAM=auto
 # GIT_PS1_SHOWUNTRACKEDFILES=1
 # GIT_PS1_SHOWSTASHSTATE=1
+
 PS1='\u@\h \w$(__git_ps1)\n\$ '
-# 
-# PS1='\u@\h \w$(__git_ps1)\n\$ '
+#PS1='\u@\h \w\n\$ '
 
 gcd() {
   local branches branch
