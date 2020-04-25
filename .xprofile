@@ -3,7 +3,7 @@
 setxkbmap -option ctrl:nocaps
 # setxkbmap -option japan:hztg_escape
 
-xset r rate 200 100
+xset r rate 160 100
 xmodmap $HOME/dotfiles/.Xkeymap-for-minila-air-us
 
 echo $(date) > /tmp/dot-xprofile-executed
