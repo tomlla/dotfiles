@@ -129,8 +129,11 @@ fi
 # GIT_PS1_SHOWUNTRACKEDFILES=1
 # GIT_PS1_SHOWSTASHSTATE=1
 
-PS1='\u@\h \w$(__git_ps1)\n\$ '
-#PS1='\u@\h \w\n\$ '
+# export PS1='\n\$ '
+# export PS1='\u@\h \w\n\$ '
+# export PS1='$(__git_ps1)\n\$ '
+export PS1='\n\w$(__git_ps1)\n\$ '
+# export PS1='\u@\h \w$(__git_ps1)\n\$ '
 
 gcd() {
   local branches branch
