@@ -88,7 +88,7 @@ Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
 
 " === general ===
 Plug 'prabirshrestha/vim-lsp'
-Plug 'w0rp/ale'
+"Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'prabirshrestha/async.vim'
@@ -361,8 +361,6 @@ nnoremap qo :copen<CR>
 nnoremap j gj
 nnoremap k gk
 nnoremap J gJ
-nnoremap <C-a> <Home>
-nnoremap <C-e> <End>
 nnoremap <space>i  :update<CR>
 nnoremap <space>q  :quit<CR>
 nnoremap <space><space>  :update<CR>:quit<cr>
@@ -376,6 +374,8 @@ nnoremap <C-g><C-g> :LAg<space>
 set pastetoggle=<F2>
 nnoremap <F3> :set wrap!<cr>
 nnoremap <F9> :ALEToggle<cr>
+
+nnoremap RM :!rm %<cr>:bdelete<cr>
 
 inoremap <C-b> binding.pry
 
