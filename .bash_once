@@ -110,6 +110,7 @@ showPath() {
 function load_if_exist {
     [ -e $1 ] && source $1
 }
+eval "`npm completion`"
 
 if [ $uname_value = "Darwin" ]; then
   load_if_exist /usr/local/etc/bash_completion.d/git-prompt.sh
