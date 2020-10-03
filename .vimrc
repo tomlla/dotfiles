@@ -4,9 +4,11 @@ set eol
 set nocompatible
 set nu
 set incsearch
-set list
-set listchars=tab:»_,trail:-
-" set listchars=eol:$,tab:»_,trail:-
+
+"set listchars=tab:»_,trail:-
+"set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+"set list
+
 set laststatus=2
 "set cursorcolumn
 set nowrap
@@ -47,7 +49,6 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/desertEx'
 Plug 'dracula/vim'
-Plug 'morhetz/gruvbox'
 
 " === dev-support for specific language ===
 
@@ -58,6 +59,8 @@ Plug 'wavded/vim-stylus', {'for': ['stylus', 'styl']}
 Plug 'prettier/vim-prettier', { 'for': ['html', 'javascript']}
 Plug 'posva/vim-vue', {'for': 'vue'}
 Plug 'digitaltoad/vim-pug', {'for': ['pug', 'vue']}
+Plug 'cakebaker/scss-syntax.vim', {'for': ['css', 'scss', 'vue']}
+
 
 " --- python ---
 "Plug 'mitsuhiko/vim-jinja', { 'for': ['htmljinja']}
@@ -125,7 +128,7 @@ Plug 'lambdalisue/gina.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'cohama/agit.vim'
 
-"Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 Plug 'rking/ag.vim'
 Plug 'vim-scripts/sudo.vim'
@@ -171,7 +174,8 @@ let g:ale_linters = {
       \ 'go': ['gopls'],
       \}
 "   'ruby': ['rubocop', 'reek']
-let g:ale_fixers = { 
+"
+let g:ale_fixers = {
     \ 'javascript': ['prettier', 'eslint'],
     \ 'typescript': ['prettier', 'eslint'],
     \ }
@@ -198,10 +202,9 @@ set statusline+=%*
 set background=dark
 "set background=light
 "colorscheme solarized
-"colorscheme jellybeans
+colorscheme jellybeans
 "colorscheme desert
 "colorscheme default
-colorscheme gruvbox
 
 " ==== plugin settings ===
 
@@ -209,6 +212,7 @@ let g:user_debugger_dictionary = {
     \ '\.rb': 'binding.pry # rubocop:disable Lint/Debugger',
     \ '\.rake': 'require "pry"; binding.pry',
     \ '\.js$': 'debugger;',
+    \ '\.ts$': 'debugger;',
     \ '\.vue$': 'debugger;',
     \ }
 nmap <Leader>p :call AddDebugger("o")<cr>
