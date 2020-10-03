@@ -135,7 +135,7 @@ Plug 'vim-scripts/sudo.vim'
 "Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'JazzCore/ctrlp-cmatcher', { 'do': 'sh install.sh' }
 "Plug 'nixprime/cpsm', { 'do': './install.sh > /tmp/x 2>&1' } "はやいけどびるどが面倒
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf',  { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Plug 'mattn/benchvimrc-vim'
 
