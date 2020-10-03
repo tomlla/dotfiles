@@ -160,6 +160,7 @@ if $GIT_EXEC_PATH != ''
     finish
 endif
 
+let g:vue_pre_processors = ['pug', 'scss']
 
 highlight ALEWarning ctermbg=DarkMagenta
 let g:ale_list_window_size = 4
