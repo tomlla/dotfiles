@@ -47,56 +47,58 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/desertEx'
 Plug 'dracula/vim'
+Plug 'morhetz/gruvbox'
 
-" --- dev-support for specific language ---
+" === dev-support for specific language ===
+
+" --- Frontend Or JS/TS ---
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-icons'
-Plug 'keith/swift.vim', {'for': 'swift'}
-Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
-Plug 'wavded/vim-stylus', {'for': ['stylus', 'styl']}
-Plug 'digitaltoad/vim-jade', {'for': ['jade', 'pug']}
-Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
-Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 Plug 'leafgarland/typescript-vim', {'for':['typescript'] }
+Plug 'wavded/vim-stylus', {'for': ['stylus', 'styl']}
+Plug 'prettier/vim-prettier', { 'for': ['html', 'javascript']}
+Plug 'posva/vim-vue', {'for': 'vue'}
+Plug 'digitaltoad/vim-pug', {'for': ['pug', 'vue']}
 
-Plug 'mcasper/vim-infer-debugger'
-" Plug 'justmao945/vim-clang'
-" Plug 'Shougo/neoinclude.vim'
-Plug 'rust-lang/rust.vim', {'for': 'rust'}
-Plug 'racer-rust/vim-racer', {'for': 'rust'}
-Plug 'kovisoft/slimv', {'for': 'lisp'}
-Plug 'tpope/vim-classpath', { 'for': ['clojure','java']}
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-" Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-" 'vim-scripts/IndentAnything'
-Plug 'felixge/vim-nodejs-errorformat', {'for': ['javascript', 'coffee']}
-Plug 'tyru/open-browser.vim', {'for': [ 'html', 'xml', 'markdown', 'mkd' , 'textile']}
+" --- python ---
 "Plug 'mitsuhiko/vim-jinja', { 'for': ['htmljinja']}
 Plug 'davidhalter/jedi-vim', {'for' :['python']}
 Plug 'kevinw/pyflakes-vim', { 'for' :['python']}
 Plug 'nvie/vim-flake8', { 'for' :['python']}
+" Plug 'digitaltoad/vim-jade', {'for': ['jade', 'pug']}
 
+" --- ruby
 Plug 'ngmy/vim-rubocop', {'for': ['ruby', 'erb', 'haml', 'slim']}
 "Plug 'tpope/vim-haml', {'for' :['haml']}
 Plug 'slim-template/vim-slim', { 'for': ['slim'] }
 Plug 'tpope/vim-rails', {'for' :['ruby', 'haml', 'erb', 'slim']}
 "Plug 'tpope/vim-bundler', {'for' :['ruby', 'haml', 'erb']} "ruby file開くと遅い
-"Plug 'kchmck/vim-coffee-script', {'for' :['coffee']}
-Plug 'posva/vim-vue', {'for': 'vue'}
-Plug 'digitaltoad/vim-pug', {'for': ['pug', 'vue']}
+"
+" --- Other languages ---
+Plug 'justmao945/vim-clang', {'for': ['c', 'cpp'] }
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'racer-rust/vim-racer', {'for': 'rust'}
+Plug 'tpope/vim-classpath', { 'for': ['clojure','java']}
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
+Plug 'derekwyatt/vim-scala', {'for': ['scala']}
+Plug 'keith/swift.vim', {'for': 'swift'}
+Plug 'kovisoft/slimv', {'for': 'lisp'}
+Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
+
 
 " === general ===
-"Plug 'scrooloose/syntastic', {'for': ['javascript', 'ruby']}
-Plug 'w0rp/ale'
+Plug 'prabirshrestha/vim-lsp'
+"Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 
+Plug 'prabirshrestha/async.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite-outline'
 Plug 'sorah/unite-ghq'
+Plug 'mcasper/vim-infer-debugger' " Add debugge; or binding.pry
+" Plug 'scrooloose/syntastic', {'for': ['javascript', 'ruby']}
 
 " if has('nvim') || (has('lua') && (v:version >= 704))
 "     Plug 'Shougo/neocomplete'
@@ -105,12 +107,11 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
 
-" others
+" === others ===
+Plug 'tyru/open-browser.vim', {'for': [ 'html', 'xml', 'markdown', 'mkd' , 'textile']}
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.vim'
-" Plug 'suan/vim-instant-markdown'
-"Plug 'vim-voom/VOoM', { 'for': ['mkd','md','markdown']}
 
 Plug 'mattn/webapi-vim'
 Plug 'mattn/emmet-vim', {'for': ['html', 'xml', 'eruby']}
@@ -123,7 +124,6 @@ Plug 'thinca/vim-showtime'
 Plug 'lambdalisue/gina.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'cohama/agit.vim'
-Plug 'prettier/vim-prettier', { 'for': ['html', 'javascript']}
 
 "Plug 'scrooloose/nerdcommenter'
 
@@ -134,7 +134,7 @@ Plug 'vim-scripts/sudo.vim'
 "Plug 'nixprime/cpsm', { 'do': './install.sh > /tmp/x 2>&1' } "はやいけどびるどが面倒
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'mattn/benchvimrc-vim'
+" Plug 'mattn/benchvimrc-vim'
 
 "Plug  'majutsushi/tagbar'
 "Plug 'vim-scripts/gtags.vim'
@@ -142,7 +142,7 @@ Plug 'mattn/benchvimrc-vim'
 
 Plug 'itchyny/lightline.vim'
 "Plug 'lambdalisue/vim-gista'
-Plug 'mattn/gist-vim'
+" Plug 'mattn/gist-vim'
 "Plug 'mattn/vim-soundcloud'
 call plug#end()
 
@@ -171,10 +171,10 @@ let g:ale_linters = {
       \ 'go': ['gopls'],
       \}
 "   'ruby': ['rubocop', 'reek']
-let g:ale_fixers = {
-      \ 'javascript': ['prettier', 'eslint'],
-      \ 'typescript': ['prettier', 'eslint']
-      \}
+let g:ale_fixers = { 
+    \ 'javascript': ['prettier', 'eslint'],
+    \ 'typescript': ['prettier', 'eslint'],
+    \ }
 nnoremap <leader>f :ALEFix<cr>
 
 "let g:syntastic_javascript_checkers=['eslint']
@@ -198,9 +198,10 @@ set statusline+=%*
 set background=dark
 "set background=light
 "colorscheme solarized
-colorscheme jellybeans
+"colorscheme jellybeans
 "colorscheme desert
 "colorscheme default
+colorscheme gruvbox
 
 " ==== plugin settings ===
 
@@ -360,8 +361,6 @@ nnoremap qo :copen<CR>
 nnoremap j gj
 nnoremap k gk
 nnoremap J gJ
-nnoremap <C-a> <Home>
-nnoremap <C-e> <End>
 nnoremap <space>i  :update<CR>
 nnoremap <space>q  :quit<CR>
 nnoremap <space><space>  :update<CR>:quit<cr>
@@ -375,6 +374,8 @@ nnoremap <C-g><C-g> :LAg<space>
 set pastetoggle=<F2>
 nnoremap <F3> :set wrap!<cr>
 nnoremap <F9> :ALEToggle<cr>
+
+nnoremap RM :!rm %<cr>:bdelete<cr>
 
 inoremap <C-b> binding.pry
 
@@ -399,7 +400,7 @@ syntax enable
 " augroup END
 
 autocmd FileType vue syntax sync fromstart
-" autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
 if executable('solargraph')
     au User lsp_setup call lsp#register_server({
@@ -415,6 +416,45 @@ if executable('gopls')
         \ 'cmd': {server_info->['gopls']},
         \ 'whitelist': ['go'],
         \ })
+endif
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd']},
+        \ 'whitelist': ['c', 'cpp'],
+        \ })
+endif
+
+if executable('vls')
+  augroup LspVls
+    au!
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'vue-language-server',
+        \ 'cmd': {server_info->['vls']},
+        \ 'whitelist': ['vue'],
+        \ 'initialization_options': {
+        \         'config': {
+        \             'html': {},
+        \              'vetur': {
+        \                  'validation': {}
+        \              }
+        \         }
+        \     }
+        \ })
+
+    " omnifunc
+    au FileType vue setlocal omnifunc=lsp#complete
+    " map
+    au FileType vue nnoremap <buffer><silent> gd :<C-u>LspDefinition<CR>
+    au FileType vue nnoremap <buffer><silent> gD :<C-u>LspReferences<CR>
+    au FileType vue nnoremap <buffer><silent> gs :<C-u>LspDocumentSymbol<CR>
+    au FileType vue nnoremap <buffer><silent> gS :<C-u>LspWorkspaceSymbol<CR>
+    au FileType vue nnoremap <buffer><silent> gQ :<C-u>LspDocumentFormat<CR>
+    au FileType vue vnoremap <buffer><silent> gQ :LspDocumentRangeFormat<CR>
+    au FileType vue nnoremap <buffer><silent> K :<C-u>LspHover<CR>
+    au FileType vue nnoremap <buffer><silent> <F1> :<C-u>LspImplementation<CR>
+    au FileType vue nnoremap <buffer><silent> <F2> :<C-u>LspRename<CR>
+  augroup end
 endif
 
 function! s:on_lsp_buffer_enabled() abort

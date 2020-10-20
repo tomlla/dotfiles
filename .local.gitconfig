@@ -20,17 +20,19 @@
     root = ~/dev/src
 [core]
     excludesfile = ~/.gitignore_global
-    #pager = lv -c
+    pager = less
     editor = vim -c \"set fenc=utf-8\"
     quotepath = false
 [push]
     default = current
 [color]
     ui = auto
+[color "diff"]
+    whitespace = red reverse
 [merge]
     tool = vimdiff
 [diff]
-	wsErrorHighlight = all
+    wsErrorHighlight = all
 [fetch]
     prune = true
 [alias]
@@ -59,7 +61,8 @@
     lst = log --stat
     g = log --graph --date-order -C -M --pretty=format:'%h [%ar] [%an] %Cgreen%d%Creset %s' --all
     gl = log --graph --branches --not --remotes=* --date-order -C -M --pretty=format:'%h [%ar] [%an] %Cgreen%d%Creset %s'
-    m = merge
+    mD = merge origin/develop
+    mA = merge --abort
     rb = rebase
     rbi = rebase -i
     rld = log origin/master..master

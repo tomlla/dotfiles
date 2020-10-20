@@ -4,4 +4,10 @@ abbr        def initialize ... end
     ${0:TARGET}
   end
 
+snippet     tx
+abbr        ActiveRecord::Base.transaction ...
+  ActiveRecord::Base.transaction do
+    ${0:TARGET}
+  end
+
 # vim:set et ts=2 sts=2 sw=2 tw=0:
