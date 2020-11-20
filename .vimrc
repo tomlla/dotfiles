@@ -235,7 +235,7 @@ endif
 if s:os == 'Darwin'
     let g:previm_open_cmd = 'open -a Google\ Chrome'
 elseif s:os == 'Linux'
-    let g:previm_open_cmd = 'xdg-open -a Google\ Chrome'
+    let g:previm_open_cmd = 'google-chrome'
 endif
 
 "let NERDSpaceDelims = 1 " コメントした後に挿入するスペースの数

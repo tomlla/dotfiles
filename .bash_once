@@ -25,8 +25,9 @@ ${HOME}/flutter/bin:\
 /opt/sbt/bin:\
 /opt/platform-tools:\
 ${HOME}/.dotfiles/bin:\
-/usr/local/gobin:\
+/usr/local/go/bin:\
 /var/lib/snapd/snap/bin:\
+${HOME}/.kubectx:\
 ${PATH}" && export USER_PATH_ADDED=true
 fi
 
@@ -101,7 +102,6 @@ alias kn=kubens
 
 alias flux="xflux -l 35 -g 139"
 alias psysh=~/.config/composer/vendor/bin/psysh
-TML="${HOME}/dev/src/github.com/tomlla"
 
 showPath() {
     echo $PATH | sed 's/:/\n/g'
@@ -124,6 +124,7 @@ elif [ $uname_value = "Linux" ]; then
 
   load_if_exist /usr/share/git/completion/git-prompt.sh
 fi
+__git_complete g __git_main
 
 # GIT_PS1_SHOWDIRTYSTATE=1
 # GIT_PS1_SHOWUPSTREAM=auto
