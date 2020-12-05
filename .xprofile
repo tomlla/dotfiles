@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
 
-setxkbmap -option ctrl:nocaps
-# setxkbmap -option japan:hztg_escape
+# setxkbmap -option ctrl:nocaps
+# # setxkbmap -option japan:hztg_escape
+# 
+# xset r rate 160 100
+# xmodmap $HOME/dotfiles/.Xkeymap-for-minila-air-us
+# 
+# echo $(date) > /tmp/dot-xprofile-executed
 
-xset r rate 160 100
-xmodmap $HOME/dotfiles/.Xkeymap-for-minila-air-us
+xset r rate 160 60
 
-echo $(date) > /tmp/dot-xprofile-executed
+export DefaultImModule=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export LC_CTYPE=ja_JP.utf8
+fcitx -d
