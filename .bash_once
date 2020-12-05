@@ -49,7 +49,9 @@ fi
 type -p direnv > /dev/null && eval "$(direnv hook bash)"
 
 # export JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on, -Dswing.aatext=true'
-export JAVA_HOME=/opt/java/java-home-symlink
+if [ -e /opt/java/java-home-symlink ]; then
+    export JAVA_HOME=/opt/java/java-home-symlink
+fi
 export GOPATH=$HOME/dev
 
 alias sq='sudo shutdown -h now'
@@ -102,6 +104,8 @@ alias kn=kubens
 
 alias flux="xflux -l 35 -g 139"
 alias psysh=~/.config/composer/vendor/bin/psysh
+
+alias gr=gradle
 
 showPath() {
     echo $PATH | sed 's/:/\n/g'
