@@ -73,7 +73,7 @@ Plug 'nvie/vim-flake8', { 'for' :['python']}
 Plug 'ngmy/vim-rubocop', {'for': ['ruby', 'erb', 'haml', 'slim']}
 "Plug 'tpope/vim-haml', {'for' :['haml']}
 Plug 'slim-template/vim-slim', { 'for': ['slim'] }
-Plug 'tpope/vim-rails', {'for' :['ruby', 'haml', 'erb', 'slim']}
+Plug 'tpope/vim-rails', {'for' :['ruby', 'rake', 'haml', 'erb', 'slim']}
 "Plug 'tpope/vim-bundler', {'for' :['ruby', 'haml', 'erb']} "ruby file開くと遅い
 "
 " --- Other languages ---
@@ -90,6 +90,7 @@ Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
 
 
 " === general ===
+Plug 'previm/previm'
 Plug 'prabirshrestha/vim-lsp'
 "Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
@@ -173,6 +174,7 @@ let g:ale_open_list = 1
 let g:ale_linters = {
       \   'ruby': ['rubocop'],
       \ 'go': ['gopls'],
+      \ 'python': ['flake8'],
       \}
 "   'ruby': ['rubocop', 'reek']
 "
@@ -211,6 +213,7 @@ colorscheme jellybeans
 
 let g:user_debugger_dictionary = {
     \ '\.rb': 'binding.pry # rubocop:disable Lint/Debugger',
+    \ '\.py': 'import pdb; pdb.set_trace()',
     \ '\.rake': 'require "pry"; binding.pry',
     \ '\.js$': 'debugger;',
     \ '\.ts$': 'debugger;',
