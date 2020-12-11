@@ -107,7 +107,7 @@ alias kn=kubens
 alias flux="xflux -l 35 -g 139"
 alias psysh=~/.config/composer/vendor/bin/psysh
 
-alias gr=gradle
+alias gr=./gradlew
 
 showPath() {
     echo $PATH | sed 's/:/\n/g'
