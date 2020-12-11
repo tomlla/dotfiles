@@ -14,7 +14,7 @@ set $win Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -33,7 +33,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $win+Return exec i3-sensible-terminal
 
-bindsym $win+w exec i3-sensible-browser
+bindsym $win+w exec /home/nt/dotfiles/bin/i3-sensible-browser
 
 # kill focused window
 bindsym $mod+q kill
@@ -159,6 +159,7 @@ bindsym $win+Right exec sudo /home/nt/dev/bin/bl inc
 bindsym $win+Left exec sudo /home/nt/dev/bin/bl dec
 
 # screenshot
-bindsym $mod+Shift+F4 exec /home/nt/dotfiles/bin/scrot--select
+# bindsym $mod+Shift+F4 exec /home/nt/dotfiles/bin/scrot--select
+bindsym $mod+F4 exec deepin-screenshot
 
 new_window 1pixel

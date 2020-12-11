@@ -476,7 +476,7 @@ augroup lsp_install
 augroup END
 let g:lsp_diagnostics_enabled = 0
 let g:lsp_log_verbose = 1
-let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:lsp_log_file = expand('~/.vim-lsp.log')
 
 augroup VimGoSetup
     autocmd!
