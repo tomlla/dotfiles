@@ -55,6 +55,8 @@ fi
 export GOPATH=$HOME/dev
 
 alias sq='sudo shutdown -h now'
+alias ssp='sudo systemctl suspend'
+
 alias v='vim -u NONE'
 if [ $uname_value = 'Darwin' ]; then
   alias ls='ls -G -F' # Mac
