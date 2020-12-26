@@ -111,6 +111,7 @@ alias flux="xflux -l 35 -g 139"
 alias psysh=~/.config/composer/vendor/bin/psysh
 
 alias gr=./gradlew
+alias ca=cargo
 
 showPath() {
     echo $PATH | sed 's/:/\n/g'

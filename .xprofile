@@ -17,3 +17,4 @@ export XMODIFIERS=@im=fcitx
 export LC_CTYPE=ja_JP.utf8
 fcitx -d
 twmnd &
+nohup synergys -c ~/.synergy-setting --no-tray & 
