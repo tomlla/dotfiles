@@ -4,9 +4,11 @@ set eol
 set nocompatible
 set nu
 set incsearch
-set list
-set listchars=tab:»_,trail:-
-" set listchars=eol:$,tab:»_,trail:-
+
+"set listchars=tab:»_,trail:-
+"set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+"set list
+
 set laststatus=2
 "set cursorcolumn
 set nowrap
@@ -35,6 +37,7 @@ set backupdir=~/var/vim/backup
 set swapfile
 set directory=~/var/vim/swap
 set hlsearch
+set eol
 
 if has("nvim")
     call plug#begin('~/.config/nvim/plugged')
@@ -47,7 +50,6 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/desertEx'
 Plug 'dracula/vim'
-Plug 'morhetz/gruvbox'
 
 " === dev-support for specific language ===
 
@@ -58,11 +60,13 @@ Plug 'wavded/vim-stylus', {'for': ['stylus', 'styl']}
 Plug 'prettier/vim-prettier', { 'for': ['html', 'javascript']}
 Plug 'posva/vim-vue', {'for': 'vue'}
 Plug 'digitaltoad/vim-pug', {'for': ['pug', 'vue']}
+Plug 'cakebaker/scss-syntax.vim', {'for': ['css', 'scss', 'vue']}
+
 
 " --- python ---
 "Plug 'mitsuhiko/vim-jinja', { 'for': ['htmljinja']}
 Plug 'davidhalter/jedi-vim', {'for' :['python']}
-Plug 'kevinw/pyflakes-vim', { 'for' :['python']}
+" Plug 'kevinw/pyflakes-vim', { 'for' :['python']}
 Plug 'nvie/vim-flake8', { 'for' :['python']}
 " Plug 'digitaltoad/vim-jade', {'for': ['jade', 'pug']}
 
@@ -70,7 +74,7 @@ Plug 'nvie/vim-flake8', { 'for' :['python']}
 Plug 'ngmy/vim-rubocop', {'for': ['ruby', 'erb', 'haml', 'slim']}
 "Plug 'tpope/vim-haml', {'for' :['haml']}
 Plug 'slim-template/vim-slim', { 'for': ['slim'] }
-Plug 'tpope/vim-rails', {'for' :['ruby', 'haml', 'erb', 'slim']}
+Plug 'tpope/vim-rails', {'for' :['ruby', 'rake', 'haml', 'erb', 'slim']}
 "Plug 'tpope/vim-bundler', {'for' :['ruby', 'haml', 'erb']} "ruby file開くと遅い
 "
 " --- Other languages ---
@@ -87,8 +91,10 @@ Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
 
 
 " === general ===
+Plug 'previm/previm'
 Plug 'prabirshrestha/vim-lsp'
-"Plug 'dense-analysis/ale'
+Plug 'mattn/vim-lsp-settings'
+Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'prabirshrestha/async.vim'
@@ -98,11 +104,10 @@ Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite-outline'
 Plug 'sorah/unite-ghq'
 Plug 'mcasper/vim-infer-debugger' " Add debugge; or binding.pry
-" Plug 'scrooloose/syntastic', {'for': ['javascript', 'ruby']}
 
-" if has('nvim') || (has('lua') && (v:version >= 704))
-"     Plug 'Shougo/neocomplete'
-" endif
+Plug 'Shougo/deoplete.nvim'
+Plug 'lighttiger2505/deoplete-vim-lsp'
+
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
@@ -125,14 +130,14 @@ Plug 'lambdalisue/gina.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'cohama/agit.vim'
 
-"Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 Plug 'rking/ag.vim'
 Plug 'vim-scripts/sudo.vim'
 "Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'JazzCore/ctrlp-cmatcher', { 'do': 'sh install.sh' }
 "Plug 'nixprime/cpsm', { 'do': './install.sh > /tmp/x 2>&1' } "はやいけどびるどが面倒
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf',  { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Plug 'mattn/benchvimrc-vim'
 
@@ -157,6 +162,7 @@ if $GIT_EXEC_PATH != ''
     finish
 endif
 
+let g:vue_pre_processors = ['pug', 'scss']
 
 highlight ALEWarning ctermbg=DarkMagenta
 let g:ale_list_window_size = 4
@@ -169,9 +175,11 @@ let g:ale_open_list = 1
 let g:ale_linters = {
       \   'ruby': ['rubocop'],
       \ 'go': ['gopls'],
+      \ 'python': ['flake8'],
       \}
 "   'ruby': ['rubocop', 'reek']
-let g:ale_fixers = { 
+"
+let g:ale_fixers = {
     \ 'javascript': ['prettier', 'eslint'],
     \ 'typescript': ['prettier', 'eslint'],
     \ }
@@ -180,35 +188,24 @@ nnoremap <leader>f :ALEFix<cr>
 "let g:syntastic_javascript_checkers=['eslint']
 
 set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 0
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_ruby_checkers=['rubocop', 'mri']
-" let g:syntastic_ruby_checkers=['rubocop']
-" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
-" let g:syntastic_error_symbol='✗ '
-" let g:syntastic_style_error_symbol = '✗ '
-" let g:syntastic_warning_symbol = '⚠ '
-" let g:syntastic_style_warning_symbol = '⚠ '
 
 
 set background=dark
 "set background=light
 "colorscheme solarized
-"colorscheme jellybeans
+colorscheme jellybeans
 "colorscheme desert
 "colorscheme default
-colorscheme gruvbox
 
 " ==== plugin settings ===
 
 let g:user_debugger_dictionary = {
     \ '\.rb': 'binding.pry # rubocop:disable Lint/Debugger',
+    \ '\.py': 'import pdb; pdb.set_trace()',
     \ '\.rake': 'require "pry"; binding.pry',
     \ '\.js$': 'debugger;',
+    \ '\.ts$': 'debugger;',
     \ '\.vue$': 'debugger;',
     \ }
 nmap <Leader>p :call AddDebugger("o")<cr>
@@ -230,7 +227,7 @@ endif
 if s:os == 'Darwin'
     let g:previm_open_cmd = 'open -a Google\ Chrome'
 elseif s:os == 'Linux'
-    let g:previm_open_cmd = 'xdg-open -a Google\ Chrome'
+    let g:previm_open_cmd = 'google-chrome'
 endif
 
 "let NERDSpaceDelims = 1 " コメントした後に挿入するスペースの数
@@ -342,9 +339,7 @@ nnoremap <space>p :Gina push<CR>
 nnoremap <space>f :Gina fetch<CR>
 
 "=rust==
-set hidden
-let g:racer_cmd = '$HOME/.cargo/bin/racer'
-let $RUST_SRC_PATH="$HOME/src/rustc/src"
+" let $RUST_SRC_PATH="$HOME/src/rustc/src"
 
 "let g:rustfmt_autosave = 1
 let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
@@ -391,25 +386,17 @@ command! -nargs=+ -bang -complete=file Rename let pbnr=fnamemodify(bufname('%'),
 filetype plugin indent on
 syntax enable
 
-" augroup rbsyntaxcheck
-"   autocmd!
-"   autocmd BufWrite *.rb w !ruby -sc
-"   autocmd BufWrite *.rake w !ruby -sc
-"   autocmd BufWrite *.ru w !ruby -sc
-"   autocmd BufWrite *.ru w !ruby -sc
-" augroup END
-
 autocmd FileType vue syntax sync fromstart
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
-if executable('solargraph')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'solargraph',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
-        \ 'initialization_options': {"diagnostics": "true"},
-        \ 'whitelist': ['ruby'],
-        \ })
-endif
+" if executable('solargraph')
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'solargraph',
+"         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
+"         \ 'initialization_options': {"diagnostics": "true"},
+"         \ 'whitelist': ['ruby'],
+"         \ })
+" endif
 if executable('gopls')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'gopls',
@@ -417,61 +404,61 @@ if executable('gopls')
         \ 'whitelist': ['go'],
         \ })
 endif
-if executable('clangd')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'clangd',
-        \ 'cmd': {server_info->['clangd']},
-        \ 'whitelist': ['c', 'cpp'],
-        \ })
-endif
+" if executable('clangd')
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'clangd',
+"         \ 'cmd': {server_info->['clangd']},
+"         \ 'whitelist': ['c', 'cpp'],
+"         \ })
+" endif
 
-if executable('vls')
-  augroup LspVls
-    au!
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'vue-language-server',
-        \ 'cmd': {server_info->['vls']},
-        \ 'whitelist': ['vue'],
-        \ 'initialization_options': {
-        \         'config': {
-        \             'html': {},
-        \              'vetur': {
-        \                  'validation': {}
-        \              }
-        \         }
-        \     }
-        \ })
+" if executable('vls')
+"   augroup LspVls
+"     au!
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'vue-language-server',
+"         \ 'cmd': {server_info->['vls']},
+"         \ 'whitelist': ['vue'],
+"         \ 'initialization_options': {
+"         \         'config': {
+"         \             'html': {},
+"         \              'vetur': {
+"         \                  'validation': {}
+"         \              }
+"         \         }
+"         \     }
+"         \ })
+" 
+"     " omnifunc
+"     au FileType vue setlocal omnifunc=lsp#complete
+"     " map
+"     au FileType vue nnoremap <buffer><silent> gd :<C-u>LspDefinition<CR>
+"     au FileType vue nnoremap <buffer><silent> gD :<C-u>LspReferences<CR>
+"     au FileType vue nnoremap <buffer><silent> gs :<C-u>LspDocumentSymbol<CR>
+"     au FileType vue nnoremap <buffer><silent> gS :<C-u>LspWorkspaceSymbol<CR>
+"     au FileType vue nnoremap <buffer><silent> gQ :<C-u>LspDocumentFormat<CR>
+"     au FileType vue vnoremap <buffer><silent> gQ :LspDocumentRangeFormat<CR>
+"     au FileType vue nnoremap <buffer><silent> K :<C-u>LspHover<CR>
+"     au FileType vue nnoremap <buffer><silent> <F1> :<C-u>LspImplementation<CR>
+"     au FileType vue nnoremap <buffer><silent> <F2> :<C-u>LspRename<CR>
+"   augroup end
+" endif
 
-    " omnifunc
-    au FileType vue setlocal omnifunc=lsp#complete
-    " map
-    au FileType vue nnoremap <buffer><silent> gd :<C-u>LspDefinition<CR>
-    au FileType vue nnoremap <buffer><silent> gD :<C-u>LspReferences<CR>
-    au FileType vue nnoremap <buffer><silent> gs :<C-u>LspDocumentSymbol<CR>
-    au FileType vue nnoremap <buffer><silent> gS :<C-u>LspWorkspaceSymbol<CR>
-    au FileType vue nnoremap <buffer><silent> gQ :<C-u>LspDocumentFormat<CR>
-    au FileType vue vnoremap <buffer><silent> gQ :LspDocumentRangeFormat<CR>
-    au FileType vue nnoremap <buffer><silent> K :<C-u>LspHover<CR>
-    au FileType vue nnoremap <buffer><silent> <F1> :<C-u>LspImplementation<CR>
-    au FileType vue nnoremap <buffer><silent> <F2> :<C-u>LspRename<CR>
-  augroup end
-endif
-
-function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
-    nmap <buffer> <C-]> <plug>(lsp-definition)
-    nmap <buffer> <f2> <plug>(lsp-rename)
-    inoremap <expr> <cr> pumvisible() ? "\<c-y>\<cr>" : "\<cr>"
-endfunction
-augroup lsp_install
-    au!
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-    autocmd BufWritePre *.go LspDocumentFormatSync
-augroup END
+" function! s:on_lsp_buffer_enabled() abort
+"     setlocal omnifunc=lsp#complete
+"     setlocal signcolumn=yes
+"     nmap <buffer> <C-]> <plug>(lsp-definition)
+"     nmap <buffer> <f2> <plug>(lsp-rename)
+"     inoremap <expr> <cr> pumvisible() ? "\<c-y>\<cr>" : "\<cr>"
+" endfunction
+" augroup lsp_install
+"     au!
+"     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+"     autocmd BufWritePre *.go LspDocumentFormatSync
+" augroup END
 let g:lsp_diagnostics_enabled = 0
 let g:lsp_log_verbose = 1
-let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:lsp_log_file = expand('~/.vim-lsp.log')
 
 augroup VimGoSetup
     autocmd!
@@ -483,10 +470,7 @@ augroup END
 set updatetime=100
 let g:go_auto_type_info = 1
 
-set eol
-
 let s:localvimrc = expand("~/.local.vimrc")
 if file_readable(s:localvimrc)
     execute 'source '.s:localvimrc
 endif
-

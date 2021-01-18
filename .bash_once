@@ -25,8 +25,9 @@ ${HOME}/flutter/bin:\
 /opt/sbt/bin:\
 /opt/platform-tools:\
 ${HOME}/.dotfiles/bin:\
-/usr/local/gobin:\
+/usr/local/go/bin:\
 /var/lib/snapd/snap/bin:\
+${HOME}/.kubectx:\
 ${PATH}" && export USER_PATH_ADDED=true
 fi
 
@@ -48,10 +49,17 @@ fi
 type -p direnv > /dev/null && eval "$(direnv hook bash)"
 
 # export JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on, -Dswing.aatext=true'
-export JAVA_HOME=/opt/java/java-home-symlink
+if [ -e /opt/java/java-home-symlink ]; then
+    export JAVA_HOME=/opt/java/java-home-symlink
+fi
+if [ -e /usr/lib/jvm/default-runtime ]; then
+    export JAVA_HOME=/usr/lib/jvm/default-runtime
+fi
 export GOPATH=$HOME/dev
 
 alias sq='sudo shutdown -h now'
+alias ssp='sudo systemctl suspend'
+
 alias v='vim -u NONE'
 if [ $uname_value = 'Darwin' ]; then
   alias ls='ls -G -F' # Mac
@@ -101,7 +109,9 @@ alias kn=kubens
 
 alias flux="xflux -l 35 -g 139"
 alias psysh=~/.config/composer/vendor/bin/psysh
-TML="${HOME}/dev/src/github.com/tomlla"
+
+alias gr=./gradlew
+alias ca=cargo
 
 showPath() {
     echo $PATH | sed 's/:/\n/g'
@@ -110,6 +120,7 @@ showPath() {
 function load_if_exist {
     [ -e $1 ] && source $1
 }
+eval "`npm completion`"
 
 if [ $uname_value = "Darwin" ]; then
   load_if_exist /usr/local/etc/bash_completion.d/git-prompt.sh
@@ -123,6 +134,7 @@ elif [ $uname_value = "Linux" ]; then
 
   load_if_exist /usr/share/git/completion/git-prompt.sh
 fi
+__git_complete g __git_main
 
 # GIT_PS1_SHOWDIRTYSTATE=1
 # GIT_PS1_SHOWUPSTREAM=auto
@@ -136,6 +148,7 @@ export PS1='\n\w$(__git_ps1)\n\$ '
 # export PS1='\u@\h \w$(__git_ps1)\n\$ '
 
 export COMPOSE_DOCKER_CLI_BUILD=1 
+export FZF_DEFAULT_COMMAND='fd --type f'
 
 gcd() {
   local branches branch

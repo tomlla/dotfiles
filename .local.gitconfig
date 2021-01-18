@@ -38,6 +38,7 @@
 [alias]
     f = fetch
     c = checkout
+    sw = switch
     cb = checkout -b
     b = branch
     bd = branch -d
