@@ -173,7 +173,7 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format='[%linter%](%severity%) %code: %%s'
 let g:ale_open_list = 1
 let g:ale_linters = {
-      \   'ruby': ['rubocop'],
+      \ 'ruby': ['rubocop'],
       \ 'go': ['gopls'],
       \ 'python': ['flake8'],
       \}
@@ -318,7 +318,6 @@ let g:neocomplete#keyword_patterns['gosh-repl'] = "[[:alpha:]+*/@$_=.!?-][[:alnu
 
 "=== neosnippet ===
 let g:neosnippet#enable_snipmate_compatibility = 0
-let g:neosnippet#snippets_directory = '~/.vim/plugged/neosnippet-snippets'
 let g:neosnippet#snippets_directory = '~/.vim/mysnippets'
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)

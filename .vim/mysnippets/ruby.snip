@@ -1,0 +1,7 @@
+snippet     tx
+options     head
+    ActiveRecord::Base.transaction do
+      ${1}
+    end
+
+
