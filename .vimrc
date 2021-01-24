@@ -88,6 +88,7 @@ Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'kovisoft/slimv', {'for': 'lisp'}
 Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
+Plug 'cespare/vim-toml', {'for': 'toml' }
 
 
 " === general ===
@@ -119,7 +120,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.vim'
 
 Plug 'mattn/webapi-vim'
-Plug 'mattn/emmet-vim', {'for': ['html', 'xml', 'eruby']}
+Plug 'mattn/emmet-vim', {'for': ['html', 'xml', 'eruby', 'tsx', 'jsx', 'typescript']}
 Plug 'alvan/vim-closetag', {'for': ['html']}
 Plug 'ujihisa/quickrun'
 Plug 'vim-jp/vimdoc-ja'
