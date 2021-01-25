@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo $(date) > /tmp/.xprofile-was-called
+
 setxkbmap -option ctrl:nocaps
 # # setxkbmap -option japan:hztg_escape
 # 
@@ -16,5 +18,5 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export LC_CTYPE=ja_JP.utf8
 fcitx -d
-twmnd &
+# twmnd &
 nohup synergys -c ~/.synergy-setting --no-tray & 

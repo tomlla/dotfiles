@@ -88,6 +88,7 @@ Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'kovisoft/slimv', {'for': 'lisp'}
 Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
+Plug 'cespare/vim-toml', {'for': 'toml' }
 
 
 " === general ===
@@ -119,7 +120,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.vim'
 
 Plug 'mattn/webapi-vim'
-Plug 'mattn/emmet-vim', {'for': ['html', 'xml', 'eruby']}
+Plug 'mattn/emmet-vim', {'for': ['html', 'xml', 'eruby', 'tsx', 'jsx', 'typescript']}
 Plug 'alvan/vim-closetag', {'for': ['html']}
 Plug 'ujihisa/quickrun'
 Plug 'vim-jp/vimdoc-ja'
@@ -173,7 +174,7 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format='[%linter%](%severity%) %code: %%s'
 let g:ale_open_list = 1
 let g:ale_linters = {
-      \   'ruby': ['rubocop'],
+      \ 'ruby': ['rubocop'],
       \ 'go': ['gopls'],
       \ 'python': ['flake8'],
       \}
@@ -318,7 +319,6 @@ let g:neocomplete#keyword_patterns['gosh-repl'] = "[[:alpha:]+*/@$_=.!?-][[:alnu
 
 "=== neosnippet ===
 let g:neosnippet#enable_snipmate_compatibility = 0
-let g:neosnippet#snippets_directory = '~/.vim/plugged/neosnippet-snippets'
 let g:neosnippet#snippets_directory = '~/.vim/mysnippets'
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
