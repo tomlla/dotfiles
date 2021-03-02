@@ -28,6 +28,7 @@ ${HOME}/.dotfiles/bin:\
 /usr/local/go/bin:\
 /var/lib/snapd/snap/bin:\
 ${HOME}/.kubectx:\
+${HOME}/.poetry/bin:\
 ${PATH}" && export USER_PATH_ADDED=true
 fi
 
@@ -147,6 +148,7 @@ __git_complete g __git_main
 export PS1='\n\w$(__git_ps1)\n\$ '
 # export PS1='\u@\h \w$(__git_ps1)\n\$ '
 
+export DOCKER_BUILDKIT=1 
 export COMPOSE_DOCKER_CLI_BUILD=1 
 export FZF_DEFAULT_COMMAND='fd --type f'
 
