@@ -25,6 +25,8 @@
     quotepath = false
 [push]
     default = current
+[pull]
+	rebase = false
 [color]
     ui = auto
 [color "diff"]
