@@ -28,7 +28,6 @@ ${HOME}/.dotfiles/bin:\
 /usr/local/go/bin:\
 /var/lib/snapd/snap/bin:\
 ${HOME}/.kubectx:\
-${HOME}/.poetry/bin:\
 ${PATH}" && export USER_PATH_ADDED=true
 fi
 
@@ -113,6 +112,7 @@ alias psysh=~/.config/composer/vendor/bin/psysh
 
 alias gr=./gradlew
 alias ca=cargo
+alias caw='cargo watch -x'
 
 showPath() {
     echo $PATH | sed 's/:/\n/g'
@@ -215,3 +215,4 @@ xranup() {
     # xrandr --output DP1 --mode 2560x1440 --above eDP1
     xrandr --output DP1 --mode 2560x1440 --left-of eDP1
 }
+
