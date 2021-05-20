@@ -28,6 +28,7 @@ ${HOME}/.dotfiles/bin:\
 /usr/local/go/bin:\
 /var/lib/snapd/snap/bin:\
 ${HOME}/.kubectx:\
+${HOME}/google-cloud-sdk/bin:\
 ${PATH}" && export USER_PATH_ADDED=true
 fi
 
@@ -123,8 +124,15 @@ function load_if_exist {
 eval "`npm completion`"
 
 if [ $uname_value = "Darwin" ]; then
-  load_if_exist /usr/local/etc/bash_completion.d/git-prompt.sh
-  load_if_exist /usr/local/etc/bash_completion.d/git-completion.bash
+
+  # load_if_exist /usr/local/etc/bash_completion.d/git-prompt.sh
+  # load_if_exist /usr/local/etc/bash_completion.d/git-completion.bash
+  for f in /opt/homebrew/etc/bash_completion.d/*; do
+      . $f
+  done
+
+  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 elif [ $uname_value = "Linux" ]; then
   load_if_exist /usr/share/git/completion/git-completion.bash
   load_if_exist /usr/share/git/completion/git-prompt.sh
