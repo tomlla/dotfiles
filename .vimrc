@@ -16,10 +16,10 @@ set nowrap
 set expandtab 
 set tabstop=4 sw=4 sts=4
 set modeline
-"set showcmd "normal modeでの押したキーを表示してくれるやつ。いらないけど
+"set showcmd 
 
-set formatoptions+=mM    "日本語の行の連結時には空白を入力しない。
-set ambiwidth=double     "□や○の文字があってもカーソル位置がずれないようにする。
+set formatoptions+=mM  
+set ambiwidth=double  
 set encoding=utf-8
 " set fileencoding=utf-8
 " set fileencodings=utf-8,cp932
@@ -361,13 +361,13 @@ nnoremap <space>q  :quit<CR>
 nnoremap <space><space>  :update<CR>:quit<cr>
 nnoremap ,vr :edit $MYVIMRC<CR>
 nnoremap Y y$
-nnoremap <leader>d i<C-R>=strftime("%Y/%m/%d %H:%M")<CR><CR><Esc>
+nnoremap <space>d i<C-R>=strftime("%Y/%m/%d %H:%M")<CR><CR><Esc>
 nnoremap Fn :echo expand("%:p")<CR>
 nnoremap <C-g><C-r> :LAg<space><C-r><C-w><space>
 nnoremap <C-g><C-g> :LAg<space>
 
 set pastetoggle=<F2>
-nnoremap <F3> :set wrap!<cr>
+nnoremap <leader>3 :set wrap!<cr>
 nnoremap <F9> :ALEToggle<cr>
 
 nnoremap RM :!rm %<cr>:bdelete<cr>

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ $(git branch --merged  origin/HEAD| grep -v '^\*'| wc -l) = '0' ]; then
+    echo '(NOP) No merged branch without currenct branch.'
+else
+    git branch --merged  origin/HEAD| grep -v '^\*' | xargs git branch -d
+fi

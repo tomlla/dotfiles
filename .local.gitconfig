@@ -37,6 +37,8 @@
     wsErrorHighlight = all
 [fetch]
     prune = true
+[pull]
+    rebase = false
 [alias]
     f = fetch
     c = checkout
@@ -68,6 +70,7 @@
     rb = rebase
     rbi = rebase -i
     rld = log origin/master..master
+    r = reset
     rhh = reset --hard HEAD
     rhh1 = reset --hard HEAD^
     st = stash

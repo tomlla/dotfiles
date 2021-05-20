@@ -3,6 +3,11 @@
 set -u
 set -e
 
+if [ $# != 2 ]; then
+    echo "Usage: cp-and-login <k8s namespace> <relative file path from project root>" 1>&2;
+    exit 1;
+fi;
+
 namespace=$1
 srcpath=$2 # e.g.) lib/utils/
 
