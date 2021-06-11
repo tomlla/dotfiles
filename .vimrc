@@ -185,6 +185,9 @@ let g:ale_fixers = {
     \ 'typescript': ['prettier', 'eslint'],
     \ }
 nnoremap <leader>f :ALEFix<cr>
+nmap <F1> :echo<CR>
+imap <F1> <C-o>:echo<CR>
+
 
 "let g:syntastic_javascript_checkers=['eslint']
 
