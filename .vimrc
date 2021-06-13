@@ -375,7 +375,10 @@ nnoremap <F9> :ALEToggle<cr>
 
 nnoremap RM :!rm %<cr>:bdelete<cr>
 
-inoremap <C-b> binding.pry
+nnoremap <F1> gT
+inoremap <F1> <Esc>gTi
+nnoremap <F2> gt
+inoremap <F2> <Esc>gt<Insert>
 
 vnoremap z/ <ESC>/\%V
 function! Vgrep(str)
