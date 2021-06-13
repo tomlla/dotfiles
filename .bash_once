@@ -125,15 +125,39 @@ function load_if_exist {
 eval "`npm completion`"
 
 if [ $uname_value = "Darwin" ]; then
-
-  # load_if_exist /usr/local/etc/bash_completion.d/git-prompt.sh
-  # load_if_exist /usr/local/etc/bash_completion.d/git-completion.bash
-  for f in /opt/homebrew/etc/bash_completion.d/*; do
-      . $f
-  done
-
-  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-
+    if type brew &>/dev/null; then
+        HOMEBREW_PREFIX="$(brew --prefix)"
+        if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+              source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+        else
+            for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+                echo "Try: $COMPLETION"
+                if [[ -r "$COMPLETION" ]]; then
+                    echo "$COMPLETION"
+                    source "$COMPLETION"
+                fi
+            done
+        fi
+    fi
+    function _makefile_targets {
+        local curr_arg;
+        local targets;
+    
+        # Find makefile targets available in the current directory
+        targets=''
+        if [[ -e "$(pwd)/Makefile" ]]; then
+            targets=$( \
+                grep -oE '^[a-zA-Z0-9_-]+:' Makefile \
+                | sed 's/://' \
+                | tr '\n' ' ' \
+            )
+        fi
+    
+        # Filter targets based on user input to the bash completion
+        curr_arg=${COMP_WORDS[COMP_CWORD]}
+        COMPREPLY=( $(compgen -W "${targets[@]}" -- $curr_arg ) );
+    }
+    complete -F _makefile_targets make
 elif [ $uname_value = "Linux" ]; then
   load_if_exist /usr/share/git/completion/git-completion.bash
   load_if_exist /usr/share/git/completion/git-prompt.sh
