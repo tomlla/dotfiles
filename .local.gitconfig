@@ -86,3 +86,4 @@
     wtl = worktree list
     wta = worktree add
     wtp = worktree prune
+    emp = commit --allow-empty
