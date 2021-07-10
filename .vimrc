@@ -480,3 +480,5 @@ let s:localvimrc = expand("~/.local.vimrc")
 if file_readable(s:localvimrc)
     execute 'source '.s:localvimrc
 endif
+
+command CargoPlay !cargo play %
