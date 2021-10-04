@@ -65,7 +65,7 @@ Plug 'cakebaker/scss-syntax.vim', {'for': ['css', 'scss', 'vue']}
 
 " --- python ---
 "Plug 'mitsuhiko/vim-jinja', { 'for': ['htmljinja']}
-Plug 'davidhalter/jedi-vim', {'for' :['python']}
+"Plug 'davidhalter/jedi-vim', {'for' :['python']}
 " Plug 'kevinw/pyflakes-vim', { 'for' :['python']}
 Plug 'nvie/vim-flake8', { 'for' :['python']}
 " Plug 'digitaltoad/vim-jade', {'for': ['jade', 'pug']}
