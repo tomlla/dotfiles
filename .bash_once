@@ -22,7 +22,6 @@ ${HOME}/.local/bin:\
 ${HOME}/dev/bin:\
 ${HOME}/flutter/bin:\
 /opt/bin:\
-/opt/sbt/bin:\
 /opt/platform-tools:\
 ${HOME}/.dotfiles/bin:\
 /usr/local/go/bin:\
@@ -38,12 +37,12 @@ if [ -z "${ANYENV_EVALUATED}" -a  $? = 0 ]; then
     eval "$(anyenv init -)" && export ANYENV_EVALUATED=true
 fi
 
-if [ -z "${YARN_PATH_ADDED}" ]; then
-export PATH="\
-${HOME}/.config/yarn/global/node_modules/.bin:\
-${HOME}/.yarn/bin:\
-$PATH" && export YARN_PATH_ADDED=true
-fi
+# if [ -z "${YARN_PATH_ADDED}" ]; then
+# export PATH="\
+# ${HOME}/.config/yarn/global/node_modules/.bin:\
+# ${HOME}/.yarn/bin:\
+# $PATH" && export YARN_PATH_ADDED=true
+# fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -99,6 +98,7 @@ alias racs='bundle exec rails c --sandbox'
 alias ras='bundle exec rails s'
 alias rbo='bundle exec rubocop'
 
+
 # -- functions
 [ "$uname_value" = "Linux" ] && alias pbcopy='xsel --clipboard --input'
 
@@ -141,25 +141,6 @@ if [ $uname_value = "Darwin" ]; then
         export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
         export PATH="/opt/homebrew/bin:$PATH"
     fi
-    function _makefile_targets {
-        local curr_arg;
-        local targets;
-    
-        # Find makefile targets available in the current directory
-        targets=''
-        if [[ -e "$(pwd)/Makefile" ]]; then
-            targets=$( \
-                grep -oE '^[a-zA-Z0-9_-]+:' Makefile \
-                | sed 's/://' \
-                | tr '\n' ' ' \
-            )
-        fi
-    
-        # Filter targets based on user input to the bash completion
-        curr_arg=${COMP_WORDS[COMP_CWORD]}
-        COMPREPLY=( $(compgen -W "${targets[@]}" -- $curr_arg ) );
-    }
-    complete -F _makefile_targets make
 elif [ $uname_value = "Linux" ]; then
   load_if_exist /usr/share/git/completion/git-completion.bash
   load_if_exist /usr/share/git/completion/git-prompt.sh
@@ -226,7 +207,6 @@ function ignore-bidning-pry() {
     echo "Lint/Debugger:" >> ./.rubocop_todo.yml
     echo "  Enabled: false" >> ./.rubocop_todo.yml
 }
-
 function rec() {
   SEC=${1:-10}
   local filename="$HOME/screencast/$(date '+%Y-%m-%d_%H%M%S').gif"
@@ -250,3 +230,16 @@ xranup() {
     xrandr --output DP1 --mode 2560x1440 --left-of eDP1
 }
 
+if [ -x "$(which makefile-completion-go)" ]; then
+    function _makefile_targets_01 {
+        local curr_arg;
+        local targets;
+        targets=''
+        if [[ -e "$(pwd)/Makefile" ]]; then
+            targets=$(makefile-completion-go)
+        fi
+        curr_arg=${COMP_WORDS[COMP_CWORD]}
+        COMPREPLY=( $(compgen -W "${targets[@]}" -- $curr_arg ) );
+    }
+    complete -F _makefile_targets_01 make
+fi
