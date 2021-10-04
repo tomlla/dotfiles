@@ -138,6 +138,8 @@ if [ $uname_value = "Darwin" ]; then
                 fi
             done
         fi
+        export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+        export PATH="/opt/homebrew/bin:$PATH"
     fi
     function _makefile_targets {
         local curr_arg;
