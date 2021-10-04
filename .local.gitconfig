@@ -37,6 +37,7 @@
     wsErrorHighlight = all
 [fetch]
     prune = true
+    tags = true
 [pull]
     rebase = false
 [alias]
@@ -53,7 +54,7 @@
     cv = cherry -v
     cp = cherry-pick
     a = add
-    co = commit
+    first-commit = commit --allow-empty -m 'Initial empty commit'
     com = commit -m
     ca = commit -a
     cam = commit -a -m
@@ -71,6 +72,7 @@
     rbi = rebase -i
     rld = log origin/master..master
     r = reset
+    rh = reset --hard
     rhh = reset --hard HEAD
     rhh1 = reset --hard HEAD^
     st = stash
