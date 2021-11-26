@@ -69,12 +69,10 @@ else
 fi
 alias ll='ls -l'
 alias la='ls -a'
-alias wh=which
-alias ty=type
 alias s=sudo
 alias tm=tmux
-alias tl=tail
-alias tlf='tail -f'
+alias psg="ps aux | grep "
+
 
 alias p='sudo pacman'
 alias yao=yaourt
@@ -91,8 +89,6 @@ alias dkc=docker-compose
 alias cci=circleci
 alias ggl='w3m https://google.com'
 
-alias y=yarn
-alias r='rails'
 alias be='bundle exec'
 alias rac='bundle exec rails c'
 alias racs='bundle exec rails c --sandbox'
