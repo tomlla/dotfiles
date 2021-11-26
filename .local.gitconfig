@@ -55,6 +55,7 @@
     cp = cherry-pick
     a = add
     first-commit = commit --allow-empty -m 'Initial empty commit'
+    co = commit
     com = commit -m
     ca = commit -a
     cam = commit -a -m
