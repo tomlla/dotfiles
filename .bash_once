@@ -24,6 +24,7 @@ ${HOME}/flutter/bin:\
 /opt/bin:\
 /opt/platform-tools:\
 ${HOME}/.dotfiles/bin:\
+${HOME}/n/bin:\
 /usr/local/go/bin:\
 /var/lib/snapd/snap/bin:\
 ${HOME}/.kubectx:\
