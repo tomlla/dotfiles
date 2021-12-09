@@ -365,7 +365,8 @@ nnoremap <space><space>  :update<CR>:quit<cr>
 nnoremap ,vr :edit $MYVIMRC<CR>
 nnoremap Y y$
 nnoremap <space>d i<C-R>=strftime("%Y/%m/%d %H:%M")<CR><CR><Esc>
-nnoremap Fn :echo expand("%:p")<CR>
+nnoremap Fp :echo expand("%:p")<CR>
+nnoremap FP :echo expand("%:P")<CR>
 nnoremap <C-g><C-r> :LAg<space><C-r><C-w><space>
 nnoremap <C-g><C-g> :LAg<space>
 
