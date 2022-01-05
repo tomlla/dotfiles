@@ -137,6 +137,8 @@ if [ $uname_value = "Darwin" ]; then
         fi
         export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
         export PATH="/opt/homebrew/bin:$PATH"
+        export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+
     fi
 elif [ $uname_value = "Linux" ]; then
   load_if_exist /usr/share/git/completion/git-completion.bash
