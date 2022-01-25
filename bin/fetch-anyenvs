@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+PAT="$HOME/.anyenv/envs/*/plugins/*-build"
+x_build_dirs=$(find $PAT -maxdepth 0)
+
+echo "Found env's build dir(repo)"
+for dir in $x_build_dirs; do
+    echo '* '$dir
+done
+echo trying git fetch ....
+find $PAT -maxdepth 0 | xargs -P 10 -i git -C {} fetch > /dev/null
+find $PAT -maxdepth 0 | xargs -P 10 -i git -C {} reset --hard origin/HEAD > /dev/null
