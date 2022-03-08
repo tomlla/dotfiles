@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/ file:///usr/X11R6/share/openbox/menu.xsd">
 <menu id="root-menu" label="openbox3">
-    <item label="Terminal"><action name="Execute"><execute>lxterminal</execute></action></item>
+    <item label="terminator"><action name="Execute"><execute>terminator</execute></action></item>
     <item label="File Manager"><action name="Execute"><execute>thunar</execute></action></item>
-    <item label="Web Browser"><action name="Execute"><execute>firefox</execute></action></item>
-    <item label="Editor"><action name="Execute"><execute>lxterminal -e vim</execute></action></item>
+    <item label="Chrome"><action name="Execute"><execute>google-chrome</execute></action></item>
     <item label="Run Command"><action name="Execute"><execute>dmenu_run</execute></action></item>
     <separator />
     <menu id="client-list-combined-menu" />
@@ -18,22 +17,17 @@
         <item label="ドキュメント・ビューア"><action name="Execute"><execute>evince</execute></action></item>
         <item label="Comix"><action name="Execute"><execute>comix</execute></action></item>
         <item label="Feh"><action name="Execute"><execute>feh</execute></action></item>
-        <item label="GNU Image Manipulation Program"><action name="Execute"><execute>gimp-2.6</execute></action></item>
+        <item label="GIMP"><action name="Execute"><execute>gimp</execute></action></item>
         <item label="Inkscape"><action name="Execute"><execute>inkscape</execute></action></item>
         <item label="XSane Image scanning program"><action name="Execute"><execute>xsane</execute></action></item>
         <item label="gv"><action name="Execute"><execute>gv</execute></action></item>
         <item label="xpdf"><action name="Execute"><execute>xpdf</execute></action></item>
     </menu>
     <menu id="Audio &amp; Video" label="Audio &amp; Video">
-        <item label="サウンド・レコーダ"><action name="Execute"><execute>gnome-sound-recorder</execute></action></item>
-        <item label="動画プレイヤー"><action name="Execute"><execute>totem</execute></action></item>
-        <item label="Audacious (GTKui)"><action name="Execute"><execute>audacious2 -i gtkui</execute></action></item>
-        <item label="Audacious"><action name="Execute"><execute>audacious2</execute></action></item>
-        <item label="Gnash SWF ビューア"><action name="Execute"><execute>gtk-gnash</execute></action></item>
+        <item label="VLCメディアプレイヤー"><action name="Execute"><execute>vlc</execute></action></item>
         <item label="VLCメディアプレイヤー"><action name="Execute"><execute>vlc</execute></action></item>
     </menu>
     <menu id="Office" label="Office">
-        <item label="辞書"><action name="Execute"><execute>gnome-dictionary</execute></action></item>
         <item label="Evolution"><action name="Execute"><execute>evolution</execute></action></item>
         <item label="OpenOffice.org Base"><action name="Execute"><execute>ooffice -base</execute></action></item>
         <item label="OpenOffice.org Calc"><action name="Execute"><execute>ooffice -calc</execute></action></item>
@@ -44,37 +38,22 @@
         <item label="OpenOffice.org"><action name="Execute"><execute>ooffice</execute></action></item>
     </menu>
     <menu id="Network" label="Network">
-        <item label="Wicd Network Manager"><action name="Execute"><execute>wicd-gtk --no-tray</execute></action></item>
-    </menu>
-    <menu id="Development" label="Development">
-        <item label="GNU Emacs 23"><action name="Execute"><execute>/usr/bin/emacs23</execute></action></item>
-        <item label="Python (v2.6)"><action name="Execute"><execute>xterm -e /usr/bin/python2.6</execute></action></item>
     </menu>
     <menu id="Settings" label="Settings">
-        <item label="マルチメディア・システム・セレクタ"><action name="Execute"><execute>gstreamer-properties</execute></action></item>
-        <item label="メイン・メニュー"><action name="Execute"><execute>alacarte</execute></action></item>
-        <item label="入力メソッド切換器"><action name="Execute"><execute>im-switch</execute></action></item>
-        <item label="入力メソッド"><action name="Execute"><execute>uim-pref-gtk</execute></action></item>
-        <item label="Preferred Applications"><action name="Execute"><execute>libfm-pref-apps</execute></action></item>
+        <item label="fcitx"><action name="Execute"><execute>libfm-pref-apps</execute></action></item>
         <item label="Qt 4設定"><action name="Execute"><execute>/usr/bin/qtconfig-qt4</execute></action></item>
-    </menu>
-    <menu id="System Tools" label="System Tools">
-        <item label="ディスク・ユーティリティ"><action name="Execute"><execute>palimpsest</execute></action></item>
-        <item label="印刷ジョブを管理する"><action name="Execute"><execute>system-config-printer-applet --no-tray-icon</execute></action></item>
-        <item label="印刷"><action name="Execute"><execute>system-config-printer</execute></action></item>
-        <item label="HPLJ 10xx Replaced Paper"><action name="Execute"><execute>wish /usr/share/foo2zjs/hplj10xx_gui.tcl</execute></action></item>
-        <item label="Reportbug"><action name="Execute"><execute>reportbug --exit-prompt --ui gtk2</execute></action></item>
     </menu>
     <separator />
     <menu id="Openbox Settings" label="Openbox Settings">
         <item label="Reconfigure Openbox"><action name="Reconfigure" /></item>
-        <item label="Configure Autostarted Applications"><action name="Execute"><execute>xterm -e nano /home/nobuyasu/.config/openbox/autostart.sh</execute></action></item>
-        <item label="Edit rc.xml"><action name="Execute"><execute>xterm -e nano /home/nobuyasu/.config/openbox/rc.xml</execute></action></item>
+        <item label="Configure Autostart Applications"><action name="Execute"><execute>xterm -e nano /home/nobuyasu/.config/openbox/autostart.sh</execute></action></item>
+        <item label="Edit rc.xml"><action name="Execute"><execute>xterm -e vim /home/nobuyasu/.config/openbox/rc.xml</execute></action></item>
         <separator label="obmenugen settings"/>
         <item label="Edit obmenugen configuration"><action name="Execute"><execute>xterm -e nano /home/nobuyasu/.config/obmenugen/obmenugen.cfg</execute></action></item>
         <item label="Edit obmenugen exclusions"><action name="Execute"><execute>xterm -e nano /home/nobuyasu/.config/obmenugen/exclusions</execute></action></item>
         <item label="Edit obmenugen schema"><action name="Execute"><execute>xterm -e nano /home/nobuyasu/.config/obmenugen/obmenugen.schema</execute></action></item>
     </menu>
+    <item label="Reconfigure Openbox"><action name="Reconfigure" /></item>
     <separator />
     <item label="Lock Screen"><action name="Execute"><execute>xscreensaver-command -lock</execute></action></item>
     <item label="Exit"><action name="Exit" /></item>
