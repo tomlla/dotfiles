@@ -8,40 +8,28 @@
     <separator />
     <menu id="client-list-combined-menu" />
     <separator label="Applications"/>
-    <menu id="Accesories" label="Accesories">
-        <item label="システムターミナル・スーパーユーザーモード"><action name="Execute"><execute>gksu /usr/bin/x-terminal-emulator</execute></action></item>
-        <item label="ファイルマネージャ"><action name="Execute"><execute>thunar</execute></action></item>
-        <item label="Leafpad"><action name="Execute"><execute>leafpad</execute></action></item>
-    </menu>
     <menu id="Graphics" label="Graphics">
-        <item label="ドキュメント・ビューア"><action name="Execute"><execute>evince</execute></action></item>
-        <item label="Comix"><action name="Execute"><execute>comix</execute></action></item>
         <item label="Feh"><action name="Execute"><execute>feh</execute></action></item>
         <item label="GIMP"><action name="Execute"><execute>gimp</execute></action></item>
-        <item label="Inkscape"><action name="Execute"><execute>inkscape</execute></action></item>
-        <item label="XSane Image scanning program"><action name="Execute"><execute>xsane</execute></action></item>
-        <item label="gv"><action name="Execute"><execute>gv</execute></action></item>
-        <item label="xpdf"><action name="Execute"><execute>xpdf</execute></action></item>
     </menu>
     <menu id="Audio &amp; Video" label="Audio &amp; Video">
+        <item label="pavucontrol"><action name="Execute"><execute>pavucontrol</execute></action></item>
         <item label="VLCメディアプレイヤー"><action name="Execute"><execute>vlc</execute></action></item>
-        <item label="VLCメディアプレイヤー"><action name="Execute"><execute>vlc</execute></action></item>
+        <item label="Audacity"><action name="Execute"><execute>audacity</execute></action></item>
     </menu>
-    <menu id="Office" label="Office">
-        <item label="Evolution"><action name="Execute"><execute>evolution</execute></action></item>
-        <item label="OpenOffice.org Base"><action name="Execute"><execute>ooffice -base</execute></action></item>
-        <item label="OpenOffice.org Calc"><action name="Execute"><execute>ooffice -calc</execute></action></item>
-        <item label="OpenOffice.org Draw"><action name="Execute"><execute>ooffice -draw</execute></action></item>
-        <item label="OpenOffice.org Impress"><action name="Execute"><execute>ooffice -impress</execute></action></item>
-        <item label="OpenOffice.org Math"><action name="Execute"><execute>ooffice -math</execute></action></item>
-        <item label="OpenOffice.org Writer"><action name="Execute"><execute>ooffice -writer</execute></action></item>
-        <item label="OpenOffice.org"><action name="Execute"><execute>ooffice</execute></action></item>
-    </menu>
-    <menu id="Network" label="Network">
+    <menu id="Office" label="Doc and Office">
+        <item label="Evince"><action name="Execute"><execute>evince</execute></action></item>
+        <item label="LibreOffice"><action name="Execute"><execute>libreoffice</execute></action></item>
+        <item label="LibreOffice Writer"><action name="Execute"><execute>libreoffice -writer</execute></action></item>
+        <item label="LibreOffice Calc"><action name="Execute"><execute>libreoffice -calc</execute></action></item>
+        <item label="LibreOffice Base"><action name="Execute"><execute>libreoffice -base</execute></action></item>
+        <item label="LibreOffice Draw"><action name="Execute"><execute>libreoffice -draw</execute></action></item>
+        <item label="LibreOffice Impress"><action name="Execute"><execute>libreoffice -impress</execute></action></item>
+        <item label="LibreOffice Math"><action name="Execute"><execute>libreoffice -math</execute></action></item>
     </menu>
     <menu id="Settings" label="Settings">
-        <item label="fcitx"><action name="Execute"><execute>libfm-pref-apps</execute></action></item>
-        <item label="Qt 4設定"><action name="Execute"><execute>/usr/bin/qtconfig-qt4</execute></action></item>
+        <item label="fcitx"><action name="Execute"><execute>fcitx-configtool</execute></action></item>
+        <item label="blueberry"><action name="Execute"><execute>blueberry</execute></action></item>
     </menu>
     <separator />
     <menu id="Openbox Settings" label="Openbox Settings">

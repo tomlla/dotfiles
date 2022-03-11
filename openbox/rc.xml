@@ -228,6 +228,11 @@
         <execute>dmenu_run</execute>
       </action>
     </keybind>
+    <keybind key="W-Return">
+      <action name="Execute">
+        <execute>terminator</execute>
+      </action>
+    </keybind>
     <keybind key="W-w">
       <action name="Execute">
         <execute>google-chrome</execute>

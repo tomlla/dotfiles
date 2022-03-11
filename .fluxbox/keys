@@ -6,13 +6,11 @@ OnDesktop Mouse1 :HideMenus
 OnDesktop Mouse2 :WorkspaceMenu
 OnDesktop Mouse3 :RootMenu
 
-# scroll on the desktop to change workspaces
 OnDesktop Mouse4 :PrevWorkspace
 OnDesktop Mouse5 :NextWorkspace
 
-# scroll on the toolbar to change current window
-OnToolbar Mouse4 :PrevWindow {static groups} (iconhidden=no)
-OnToolbar Mouse5 :NextWindow {static groups} (iconhidden=no)
+OnToolbar Mouse4 :PrevWorkspace
+OnToolbar Mouse5 :NextWorkspace
 
 OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
 OnWindowBorder Move1 :StartMoving
@@ -55,14 +53,6 @@ Mod1 Shift 3 :SendToWorkspace 3
 Mod1 Shift 4 :SendToWorkspace 4
 Mod1 Shift 5 :SendToWorkspace 5
 Mod1 Shift 6 :SendToWorkspace 6
-
-# # send the current window and change to a specific workspace
-# Control Mod4 F1 :TakeToWorkspace 1
-# Control Mod4 F2 :TakeToWorkspace 2
-# Control Mod4 F3 :TakeToWorkspace 3
-# Control Mod4 F4 :TakeToWorkspace 4
-# Control Mod4 F5 :TakeToWorkspace 5
-# Control Mod4 F6 :TakeToWorkspace 6
 
 Mod4 w :Exec google-chrome
 Mod1 d :Exec dmenu_run
