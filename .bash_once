@@ -14,7 +14,6 @@ export HISTFILE=~/.bash_eternal_history
 # PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 if [ -z "${USER_PATH_ADDED}" ]; then
-echo "[add user path]"
 export PATH="\
 ${HOME}/.cargo/bin:\
 ${HOME}/.anyenv/bin:\
