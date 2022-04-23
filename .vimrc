@@ -47,6 +47,7 @@ end
 "--- color scheme ---
 Plug 'jdkanani/vim-material-theme'
 Plug 'nanotech/jellybeans.vim'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/desertEx'
 Plug 'dracula/vim'
@@ -92,6 +93,7 @@ Plug 'cespare/vim-toml', {'for': 'toml' }
 
 
 " === general ===
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'previm/previm'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
