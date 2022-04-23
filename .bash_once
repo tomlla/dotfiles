@@ -85,7 +85,7 @@ function sc() {
 alias mt=multitail
 alias g=git
 alias dk=docker
-alias dkc=docker-compose
+alias dkc='docker compose'
 alias cci=circleci
 alias ggl='w3m https://google.com'
 
