@@ -26,7 +26,7 @@ set encoding=utf-8
 
 set clipboard&
 set clipboard=unnamed
-set clipboard^=unnamedplus
+set clipboard+=unnamedplus
 
 set fdm=indent
 
@@ -194,12 +194,13 @@ set statusline+=%#warningmsg#
 set statusline+=%*
 
 
-set background=dark
-"set background=light
-"colorscheme solarized
-colorscheme jellybeans
-"colorscheme desert
+" set background=dark
+set background=light
 "colorscheme default
+"colorscheme solarized
+" colorscheme jellybeans
+" colorscheme desert
+colorscheme PaperColor
 
 " ==== plugin settings ===
 
