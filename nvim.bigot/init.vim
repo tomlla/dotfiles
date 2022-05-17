@@ -11,9 +11,9 @@ let g:coc_global_extensions = [
   \ 'coc-rust-analyzer',
   \ 'coc-snippets',
   \ 'coc-actions',
+  \ 'coc-jedi',
   \]
-" Plug 'junegunn/fzf',  { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf',  { 'do': { -> fzf#install() } }
 
 Plug 'joshdick/onedark.vim'
 
