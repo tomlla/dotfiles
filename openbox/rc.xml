@@ -261,16 +261,6 @@
         <execute>amixer set Master toggle</execute>
       </action>
     </keybind>
-    <keybind key="A-Up">
-      <action name="Execute">
-        <execute>amixer set Master 2+ </execute>
-      </action>
-    </keybind>
-    <keybind key="A-Down">
-      <action name="Execute">
-        <execute>amixer set Master 2- </execute>
-      </action>
-    </keybind>
     <keybind key="A-S-7">
       <action name="Execute">
         <execute>sleep 2;xset dpms force off</execute>
