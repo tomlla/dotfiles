@@ -12,6 +12,7 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-actions',
   \ 'coc-jedi',
+  \ 'coc-tsserver',
   \]
 Plug 'junegunn/fzf',  { 'do': { -> fzf#install() } }
 
