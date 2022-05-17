@@ -61,6 +61,7 @@ alias sq='sudo shutdown -h now'
 alias ssp='sudo systemctl suspend'
 
 alias v='vim -u NONE'
+alias nv='nvim'
 if [ $uname_value = 'Darwin' ]; then
   alias ls='ls -G -F' # Mac
 else
