@@ -17,6 +17,7 @@ let g:coc_global_extensions = [
 Plug 'junegunn/fzf',  { 'do': { -> fzf#install() } }
 
 Plug 'joshdick/onedark.vim'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
@@ -28,7 +29,7 @@ nnoremap ,vr :e<space>~/.config/nvim/init.vim<enter>
 nnoremap <space>i :w<enter>
 nnoremap <space>q :q<enter>
 nnoremap <C-p> :FZF<cr>
-nnoremap ,uo :History<cr>
+nnoremap ,um :History<cr>
 nnoremap ,ub :Buffer<cr>
 nnoremap ,gl :Commits<cr>
 nmap <ctrl>d <Plug>(coc-defination)
