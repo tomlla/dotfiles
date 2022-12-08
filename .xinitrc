@@ -9,7 +9,7 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export LC_CTYPE=ja_JP.utf8
-fcitx -d
+fcitx5 -d
 #  exec mate-session
 #  
 #  # for f in $(find ~/local.x.d -type f -o -type l); do
