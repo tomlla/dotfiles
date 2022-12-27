@@ -241,11 +241,18 @@
         <execute>dmenu_run</execute>
       </action>
     </keybind>
+
     <keybind key="W-Return">
       <action name="Execute">
-        <execute>terminator</execute>
+        <execute>ut</execute>
       </action>
     </keybind>
+    <keybind key="W-S-Return">
+      <action name="Execute">
+        <execute>alacritty</execute>
+      </action>
+    </keybind>
+
     <keybind key="W-w">
       <action name="Execute">
         <execute>google-chrome</execute>
@@ -694,9 +701,6 @@
       <decor>no</decor>
     </application>
     <application name="slack">
-      <decor>no</decor>
-    </application>
-    <application name="terminator">
       <decor>no</decor>
     </application>
     <application name="google-chrom">

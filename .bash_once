@@ -58,7 +58,7 @@ fi
 export GOPATH=$HOME/dev
 
 alias sq='sudo shutdown -h now'
-alias ssp='sudo systemctl suspend'
+# alias ssp='sudo systemctl suspend' # moved to ~/dotfiles/bin/ssp
 
 alias v='vim -u NONE'
 alias nv='nvim'

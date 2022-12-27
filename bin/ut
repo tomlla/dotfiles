@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+exec uxterm -fs 17 -fa 'Fira Code'
