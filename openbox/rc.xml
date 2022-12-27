@@ -242,12 +242,13 @@
       </action>
     </keybind>
 
-    <keybind key="W-Return">
+    <keybind key="W-S-Return">
       <action name="Execute">
         <execute>ut</execute>
       </action>
     </keybind>
-    <keybind key="W-S-Return">
+
+    <keybind key="W-Return">
       <action name="Execute">
         <execute>alacritty</execute>
       </action>
