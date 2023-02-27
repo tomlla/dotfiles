@@ -388,6 +388,7 @@ command! -nargs=+ -bang -complete=file Rename let pbnr=fnamemodify(bufname('%'),
 filetype plugin indent on
 syntax enable
 
+autocmd FileType make set noexpandtab
 autocmd FileType vue syntax sync fromstart
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
