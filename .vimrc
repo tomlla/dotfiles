@@ -197,10 +197,11 @@ set statusline+=%*
 " set background=dark
 set background=light
 "colorscheme default
-"colorscheme solarized
-" colorscheme jellybeans
+" colorscheme solarized
+colorscheme jellybeans
 " colorscheme desert
-colorscheme PaperColor
+" colorscheme desertEx
+" colorscheme PaperColor
 
 " ==== plugin settings ===
 
@@ -367,8 +368,8 @@ nnoremap Y y$
 nnoremap <space>d i<C-R>=strftime("%Y/%m/%d %H:%M")<CR><CR><Esc>
 nnoremap Fp :echo expand("%:p")<CR>
 nnoremap FP :echo expand("%:P")<CR>
-nnoremap <C-g><C-r> :LAg<space><C-r><C-w><space>
-nnoremap <C-g><C-g> :LAg<space>
+nnoremap <C-g><C-r> :Rg<space><C-r><C-w>
+nnoremap <C-g><C-g> :Rg<space>
 
 set pastetoggle=<F2>
 nnoremap <leader>3 :set wrap!<cr>
