@@ -32,10 +32,10 @@ ${PATH}" && export USER_PATH_ADDED=true
 fi
 
 type -p anyenv > /dev/null
-if [ -z "${ANYENV_EVALUATED}" -a  $? = 0 ]; then
+# if [ -z "${ANYENV_EVALUATED}" -a  $? = 0 ]; then
     echo -n "[init anyenv] ..."
     eval "$(anyenv init -)" && export ANYENV_EVALUATED=true
-fi
+# fi
 
 # if [ -z "${YARN_PATH_ADDED}" ]; then
 # export PATH="\
@@ -159,7 +159,13 @@ __git_complete g __git_main
 # export PS1='\n\$ '
 # export PS1='\u@\h \w\n\$ '
 # export PS1='$(__git_ps1)\n\$ '
-export PS1='\n$ '
+if [ $uname_value = 'Darwin' ]; then
+    export PS1='\n🍎 '
+elif [ $uname_value = "Linux" ]; then
+    export PS1='\n🐧 '
+else
+    export PS1='\n$ '
+fi
 # export PS1='\u@\h \w$(__git_ps1)\n\$ '
 
 export DOCKER_BUILDKIT=1 
