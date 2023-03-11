@@ -1,0 +1,7 @@
+# export DefaultImModule="fcitx5"
+GTK_IM_MODULE=fcitx5
+QT_IM_MODULE=fcitx5
+XMODIFIERS=@im=fcitx5
+
+# https://github.com/flameshot-org/flameshot/blob/master/docs/Sway%20and%20wlroots%20support.md
+XDG_CURRENT_DESKTOP=sway
