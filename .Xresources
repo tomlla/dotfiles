@@ -80,7 +80,7 @@
 
 !! font
 !!XTerm*VT100*faceName:Monospace
-XTerm*VT100*faceName:'Ricty'
-XTerm*VT100*faceNameDoublesize:'Ricty'
+XTerm*VT100*faceName:'Fire Code'
+XTerm*VT100*faceNameDoublesize:'Fira Code'
 !!XTerm*VT100*geometry:80x25+300+100
-XTerm*ximFont: -misc-fixed-medium-r-normal--14-130-75-75-c-140-jisx0208.1983-0
+!!XTerm*ximFont: -misc-fixed-medium-r-normal--16-130-75-75-c-140-jisx0208.1983-0
