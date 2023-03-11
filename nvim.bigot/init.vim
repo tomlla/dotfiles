@@ -15,6 +15,7 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \]
 Plug 'junegunn/fzf',  { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 Plug 'joshdick/onedark.vim'
 Plug 'mattn/emmet-vim'
