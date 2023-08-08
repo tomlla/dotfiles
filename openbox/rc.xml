@@ -631,6 +631,11 @@
       </mousebind>
     </context>
     <context name="Desktop">
+      <mousebind button="Down" action="Click">
+        <action name="Execute">
+          <execute>skippy-xd</execute>
+        </action>
+      </mousebind>
       <!--
       <mousebind button="Up" action="Click">
         <action name="DesktopPrevious"/>
