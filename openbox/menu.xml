@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/ file:///usr/X11R6/share/openbox/menu.xsd">
 <menu id="root-menu" label="openbox3">
-    <item label="uxterm"><action name="Execute"><execute>ut</execute></action></item>
-    <item label="alacritty"><action name="Execute"><execute>alacritty</execute></action></item>
-    <item label="terminator"><action name="Execute"><execute>terminator</execute></action></item>
-    <item label="Gnome Terminal"><action name="Execute"><execute>gnome-terminal</execute></action></item>
+    <item label="blueberry"><action name="Execute"><execute>blueberry</execute></action></item>
+    <item label="pavucontrol"><action name="Execute"><execute>pavucontrol</execute></action></item>
+    <separator />
+
     <item label="File Manager"><action name="Execute"><execute>thunar</execute></action></item>
     <item label="Chrome"><action name="Execute"><execute>google-chrome</execute></action></item>
     <item label="Run Command"><action name="Execute"><execute>dmenu_run</execute></action></item>
     <separator />
     <menu id="client-list-combined-menu" />
     <separator label="Applications"/>
+    <menu id="Terminal" label="Terminal">
+        <item label="uxterm"><action name="Execute"><execute>ut</execute></action></item>
+        <item label="alacritty"><action name="Execute"><execute>alacritty</execute></action></item>
+        <item label="terminator"><action name="Execute"><execute>terminator</execute></action></item>
+        <item label="Gnome Terminal"><action name="Execute"><execute>gnome-terminal</execute></action></item>
+    </menu>
     <menu id="Graphics" label="Graphics">
         <item label="Feh"><action name="Execute"><execute>feh</execute></action></item>
         <item label="GIMP"><action name="Execute"><execute>gimp</execute></action></item>
