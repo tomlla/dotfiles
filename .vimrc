@@ -366,8 +366,8 @@ nnoremap <space><space>  :update<CR>:quit<cr>
 nnoremap ,vr :edit $MYVIMRC<CR>
 nnoremap Y y$
 nnoremap <space>d i<C-R>=strftime("%Y/%m/%d %H:%M")<CR><CR><Esc>
-nnoremap Fp :echo expand("%:p")<CR>
-nnoremap FP :echo expand("%:P")<CR>
+nnoremap fp :echo expand("%:P")<CR>
+"nnoremap FP :echo expand("%:P")<CR>
 nnoremap <C-g><C-r> :Rg<space><C-r><C-w>
 nnoremap <C-g><C-g> :Rg<space>
 
@@ -385,6 +385,7 @@ endfunction
 command! -nargs=+ Vg :call Vgrep(<f-args>)
 
 command! -nargs=+ -bang -complete=file Rename let pbnr=fnamemodify(bufname('%'), ':p')|exec 'f '.escape(<q-args>, ' ')|w<bang>|call delete(pbnr)
+command! FullPath :echo expand("%:p")
 
 filetype plugin indent on
 syntax enable
