@@ -32,10 +32,11 @@ ${PATH}" && export USER_PATH_ADDED=true
 fi
 
 type -p anyenv > /dev/null
-# if [ -z "${ANYENV_EVALUATED}" -a  $? = 0 ]; then
+if [ -z "${ANYENV_EVALUATED}" -a  $? = 0 ]; then
     echo -n "[init anyenv] ..."
     eval "$(anyenv init -)" && export ANYENV_EVALUATED=true
-# fi
+fi
+# echo after anyenv init
 
 # if [ -z "${YARN_PATH_ADDED}" ]; then
 # export PATH="\
@@ -47,6 +48,7 @@ type -p anyenv > /dev/null
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 type -p direnv > /dev/null && eval "$(direnv hook bash)"
+
 
 # export JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on, -Dswing.aatext=true'
 if [ -e /opt/java/java-home-symlink ]; then
@@ -113,7 +115,7 @@ alias ca=cargo
 alias caw='cargo watch -x'
 
 showPath() {
-    echo $PATH | sed 's/:/\n/g'
+    echo $PATH | sed 's/:/\n/g' | sort
 }
 
 function load_if_exist {
@@ -169,7 +171,7 @@ fi
 # export PS1='\u@\h \w$(__git_ps1)\n\$ '
 
 export DOCKER_BUILDKIT=1 
-export COMPOSE_DOCKER_CLI_BUILD=1 
+# export COMPOSE_DOCKER_CLI_BUILD=1  from docker/compose 1.28.0, it is enabled by default.
 export FZF_DEFAULT_COMMAND='fd --type f'
 
 gcd() {
@@ -219,6 +221,7 @@ function rec() {
 }
 
 for f in $(find ~/localrc.d -type f -o -type l 2> /dev/null); do
+    echo 'source' $f
     source $f
 done
 
@@ -248,3 +251,4 @@ if [ -x "$(which makefile-completion-go 2>/dev/null)" ]; then
     }
     complete -F _makefile_targets_01 make
 fi
+
