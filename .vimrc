@@ -236,8 +236,8 @@ elseif s:os == 'Linux'
 endif
 
 "let NERDSpaceDelims = 1 " コメントした後に挿入するスペースの数
-"nmap <Leader>c <Plug>NERDCommenterToggle
-"vmap <Leader>c <Plug>NERDCommenterToggle
+nnoremap <leader>c <Plug>NERDCommenterToggle
+vnoremap <leader>c <Plug>NERDCommenterToggle
 
 " === quickrun ===
 nnoremap r :QuickRun<CR>
@@ -468,7 +468,7 @@ let g:lsp_log_file = expand('~/.vim-lsp.log')
 augroup VimGoSetup
     autocmd!
     autocmd FileType go nmap <leader>t  <Plug>(go-test)
-    autocmd FileType go nmap <leader>cv <Plug>(go-coverage-toggle)
+    "autocmd FileType go nmap <leader>cv <Plug>(go-coverage-toggle)
     autocmd FileType go nmap <leader>i <Plug>(go-info)
     autocmd FileType go nmap <leader>b <Plug>(go-build)
 augroup END
