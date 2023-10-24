@@ -64,6 +64,7 @@
     d = diff
     dc = diff --cached
     l = log
+    l1 = log --oneline
     lst = log --stat
     g = log --graph --date-order -C -M --pretty=format:'%h [%ar] [%an] %Cgreen%d%Creset %s' --all
     gl = log --graph --branches --not --remotes=* --date-order -C -M --pretty=format:'%h [%ar] [%an] %Cgreen%d%Creset %s'

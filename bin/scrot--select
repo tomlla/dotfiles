@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
+
+# This script needs these pacakge
+# * scrot (required)
+# * rnote (if use it as paint_tool)
+# * pinta (if use it as paint_tool)
+
 delay=${1:-0}
 echo "delay: $delay"
+mkdir -p $HOME/ss/
 filename=$HOME/ss/ss-$(date '+%Y%m%d-%H%M%S').png
 scrot --select $filename -d $delay
 
-nohup feh $filename -d > /dev/null 2>&1 &
+paint_tool=rnote # pinta rnote feh
+nohup bash -c "$paint_tool $filename" > /dev/null 2>&1 &

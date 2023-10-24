@@ -61,6 +61,7 @@ if [ -e /usr/lib/jvm/default-runtime ]; then
 fi
 export GOPATH=$HOME/dev
 
+alias f=flutter
 alias sq='sudo shutdown -h now'
 # alias ssp='sudo systemctl suspend' # moved to ~/dotfiles/bin/ssp
 

@@ -133,7 +133,7 @@ Plug 'lambdalisue/gina.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'cohama/agit.vim'
 
-Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 
 Plug 'rking/ag.vim'
 Plug 'vim-scripts/sudo.vim'
@@ -195,7 +195,7 @@ set statusline+=%*
 
 
 " set background=dark
-set background=light
+set background=dark
 "colorscheme default
 " colorscheme solarized
 colorscheme jellybeans
