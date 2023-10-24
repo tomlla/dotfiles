@@ -38,6 +38,8 @@ if [ -z "${ANYENV_EVALUATED}" -a  $? = 0 ]; then
 fi
 # echo after anyenv init
 
+test -d $HOME/.rye/env && source $HOME/.rye/env
+
 # if [ -z "${YARN_PATH_ADDED}" ]; then
 # export PATH="\
 # ${HOME}/.config/yarn/global/node_modules/.bin:\
