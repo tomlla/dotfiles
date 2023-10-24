@@ -226,19 +226,8 @@
       </action>
     </keybind>
     <keybind key="S-A-4">
-      <action name="SendToDesktop">
-        <to>4</to>
-      </action>
-    </keybind>
-
-    <keybind key="A-s">
       <action name="Execute">
-        <execute>deepin-screenshot -f</execute>
-      </action>
-    </keybind>
-    <keybind key="A-S-s">
-      <action name="Execute">
-        <execute>deepin-screenshot</execute>
+          <execute>flameshot gui</execute>
       </action>
     </keybind>
 
@@ -275,11 +264,6 @@
         <execute>amixer set Master toggle</execute>
       </action>
     </keybind>
-    <keybind key="A-S-7">
-      <action name="Execute">
-        <execute>sleep 2;xset dpms force off</execute>
-      </action>
-    </keybind>
     <keybind key="A-Return">
       <action name="ToggleMaximizeFull"/>
     </keybind>
@@ -308,9 +292,14 @@
     </keybind>
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
-      <action name="NextWindow"/>
+        <action name="NextWindow"/>
+        <!--
+        <action name="Execute">
+          <execute>rofi -show</execute>
+        </action>
+        -->
     </keybind>
-    <keybind key="A-S-Tab">
+    <keybind key="S-A-Tab">
       <action name="PreviousWindow"/>
     </keybind>
     <keybind key="C-A-Tab">
@@ -633,7 +622,8 @@
     <context name="Desktop">
       <mousebind button="Down" action="Click">
         <action name="Execute">
-          <execute>skippy-xd</execute>
+           <!--<execute>skippy-xd</execute> -->
+           <execute>xfdashboard</execute>
         </action>
       </mousebind>
       <!--
