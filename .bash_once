@@ -69,10 +69,8 @@ alias nv='nvim'
 if [ $uname_value = 'Darwin' ]; then
   alias ls='ls -G -F' # Mac
 else
-  alias ls='ls --color=auto -F' # Linux
+  alias ls='ls --color=auto -F --time-style=long-iso' # Linux
 fi
-alias ll='ls -l'
-alias la='ls -a'
 alias s=sudo
 alias tm=tmux
 alias psg="ps aux | grep "
