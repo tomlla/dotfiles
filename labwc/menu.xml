@@ -1,38 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/ file:///usr/X11R6/share/openbox/menu.xsd">
 <menu id="root-menu" label="openbox3">
+
     <item label="blueberry"><action name="Execute" command="blueberry"><execute>blueberry</execute></action></item>
-    <item label="uxterm"><action name="Execute" command="ut"><execute>ut</execute></action></item>
-    <item label="alacritty"><action name="Execute" command="alacritty"><execute>alacritty</execute></action></item>
-    <item label="terminator"><action name="Execute" command="terminator"><execute>terminator</execute></action></item>
-    <item label="File Manager"><action name="Execute" command="thunar"><execute>thunar</execute></action></item>
-    <item label="Chrome"><action name="Execute" command="google-chrome"><execute>google-chrome</execute></action></item>
-    <item label="Run Command"><action name="Execute" command="dmenu_run"><execute>dmenu_run</execute></action></item>
+    <item label="pavucontrol">
+        <action name="Execute" command="pavucontrol" />
+    </item>
+
     <separator />
-    <menu id="client-list-combined-menu" />
+    <item label="uxterm"><action name="Execute" command="ut" /></item>
+    <item label="alacritty"><action name="Execute" command="alacritty" /></item>
+    <item label="terminator"><action name="Execute" command="terminator" /></item>
+
+    <separator />
+    <item label="Chrome"><action name="Execute" command="google-chrome" /></item>
+    <item label="Slack"><action name="Execute" command="slack" /></item>
+    <item label="GIMP"><action name="Execute" command="gimp" /></item>
+
     <separator label="Applications"/>
-    <menu id="Graphics" label="Graphics">
-        <item label="Feh"><action name="Execute"><execute>feh</execute></action></item>
-        <item label="GIMP"><action name="Execute"><execute>gimp</execute></action></item>
-        <item label="pinta"><action name="Execute" command="pinta"><execute>pinta</execute></action></item>
-        <item label="deepin-screenshot"><action name="Execute" command="deepin-screenshot"><execute>deepin-screenshot</execute></action></item>
-    </menu>
-    <menu id="Audio &amp; Video" label="Audio &amp; Video">
-        <item label="blueberry"><action name="Execute" command="blueberry"><execute>blueberry</execute></action></item>
-        <item label="pavucontrol"><action name="Execute" command="pavucontrol"><execute>pavucontrol</execute></action></item>
-    </menu>
-    <separator />
-    <menu id="Openbox Settings" label="Openbox Settings">
-        <separator label="obmenugen settings"/>
-        <item label="Edit obmenugen configuration"><action name="Execute"><execute>xterm -e nano /home/nobuyasu/.config/obmenugen/obmenugen.cfg</execute></action></item>
-        <item label="Edit obmenugen exclusions"><action name="Execute"><execute>xterm -e nano /home/nobuyasu/.config/obmenugen/exclusions</execute></action></item>
-        <item label="Edit obmenugen schema"><action name="Execute"><execute>xterm -e nano /home/nobuyasu/.config/obmenugen/obmenugen.schema</execute></action></item>
-    </menu>
+    <item label="Run Command"><action name="Execute" command="dmenu_run"><execute>dmenu_run</execute></action></item>
     <item label="Labwc Reconfig">
         <action name="Execute" command="labwc-reconfigure" />
     </item>
+
     <separator />
-    <item label="Lock Screen"><action name="Execute"><execute>xscreensaver-command -lock</execute></action></item>
     <item label="Exit"><action name="Exit" /></item>
 </menu>
 </openbox_menu>
