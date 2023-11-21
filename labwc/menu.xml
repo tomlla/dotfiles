@@ -28,7 +28,9 @@
         <item label="Edit obmenugen exclusions"><action name="Execute"><execute>xterm -e nano /home/nobuyasu/.config/obmenugen/exclusions</execute></action></item>
         <item label="Edit obmenugen schema"><action name="Execute"><execute>xterm -e nano /home/nobuyasu/.config/obmenugen/obmenugen.schema</execute></action></item>
     </menu>
-    <item label="Reconfigure"><action name="Reconfigure" /></item>
+    <item label="Labwc Reconfig">
+        <action name="Execute" command="labwc-reconfigure" />
+    </item>
     <separator />
     <item label="Lock Screen"><action name="Execute"><execute>xscreensaver-command -lock</execute></action></item>
     <item label="Exit"><action name="Exit" /></item>

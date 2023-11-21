@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+export LABWC_PID=$(pgrep labwc)
+labwc --reconfigure
+

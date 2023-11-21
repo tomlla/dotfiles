@@ -196,14 +196,12 @@
       </action>
     </keybind>
     <keybind key="S-A-4">
-      <action name="SendToDesktop">
-        <to>4</to>
-      </action>
+        <action name="Execute" command="wayland-screen-shot" />
     </keybind>
 
     <keybind key="A-S-s">
       <action name="Execute">
-        <execute>flameshot gui</execute>
+        <execute>s</execute>
       </action>
     </keybind>
     <keybind key="A-d">
@@ -219,9 +217,7 @@
     </keybind>
 
     <keybind key="W-Return">
-        <action name="Execute" command="/home/nt/.dotfiles/bin/ut">
-        <execute>ut</execute>
-      </action>
+        <action name="Execute" command="terminator" />
     </keybind>
 
     <keybind key="W-w">

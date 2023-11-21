@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+filename=$HOME/Desktop/ss-$(date '+%Y%m%d-%H_%M_%S').png
+slurp | grim -g - $filename
+ksnip $filename
+
