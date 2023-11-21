@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openbox_config xmlns="http://openbox.org/3.4/rc">
+<labwc_config>
     <core>
         <decoration>server</decoration>
         <gap>0</gap>
         <adaptiveSync>no</adaptiveSync>
         <reuseOutputMode>no</reuseOutputMode>
     </core>
+
     <windowSwitcher show="yes" preview="yes" outlines="yes">
         <fields>
             <field content="identifier" width="30%" />
@@ -75,21 +76,9 @@
         <keybind key="A-3"><action name="GoToDesktop"><to>3</to></action></keybind>
         <keybind key="A-4"><action name="GoToDesktop"><to>3</to></action></keybind>
 
-        <keybind key="S-A-1">
-            <action name="SendToDesktop">
-                <to>1</to>
-            </action>
-        </keybind>
-        <keybind key="S-A-2">
-            <action name="SendToDesktop">
-                <to>2</to>
-            </action>
-        </keybind>
-        <keybind key="S-A-3">
-            <action name="SendToDesktop">
-                <to>3</to>
-            </action>
-        </keybind>
+        <keybind key="S-A-1"><action name="SendToDesktop"><to>1</to></action></keybind>
+        <keybind key="S-A-2"><action name="SendToDesktop"><to>2</to></action></keybind>
+        <keybind key="S-A-3"><action name="SendToDesktop"><to>3</to></action></keybind>
 
         <keybind key="S-A-4"><action name="Execute" command="wayland-screen-shot" /></keybind>
         <keybind key="A-d"><action name="Execute" command="dmenu_run" /></keybind>
@@ -105,9 +94,7 @@
             <action name="Close"/>
         </keybind>
         <keybind key="A-space">
-            <action name="ShowMenu">
-                <menu>client-menu</menu>
-            </action>
+            <action name="ShowMenu"><menu>client-menu</menu></action>
         </keybind>
 
         <!-- Keybindings for window switching -->
@@ -115,18 +102,20 @@
         <keybind key="A-S-Tab"><action name="PreviousWindow"/></keybind>
 
         <!-- Keybindings for window resizing -->
-        <keybind key="A-k">
-            <action name="ResizeRelative"><bottom>-20</bottom></action>
-        </keybind>
-        <keybind key="A-j">
-            <action name="ResizeRelative"><bottom>20</bottom></action>
-        </keybind>
-        <keybind key="A-h">
-            <action name="ResizeRelative"><right>-20</right></action>
-        </keybind>
-        <keybind key="A-l">
-            <action name="ResizeRelative"><right>20</right></action>
-        </keybind>
+        <keybind key="A-k"><action name="ResizeRelative"><bottom>-20</bottom></action></keybind>
+        <keybind key="A-j"><action name="ResizeRelative"><bottom>20</bottom></action></keybind>
+        <keybind key="A-h"><action name="ResizeRelative"><right>-20</right></action></keybind>
+        <keybind key="A-l"><action name="ResizeRelative"><right>20</right></action></keybind>
+
+        <keybind key="W-A-h"><action name="MoveToEdge" direction="left" /></keybind>
+        <keybind key="W-A-l"><action name="MoveToEdge" direction="right" /></keybind>
+        <keybind key="W-A-k"><action name="MoveToEdge" direction="up" /></keybind>
+        <keybind key="W-A-j"><action name="MoveToEdge" direction="down" /></keybind>
+
+        <keybind key="W-h"><action name="SnapToEdge" direction="left" /></keybind>
+        <keybind key="W-l"><action name="SnapToEdge" direction="right" /></keybind>
+        <keybind key="W-k"><action name="SnapToEdge" direction="up" /></keybind>
+        <keybind key="W-j"><action name="SnapToEdge" direction="down" /></keybind>
     </keyboard>
 
     <mouse>
@@ -173,4 +162,4 @@
             </mousebind>
         </context>
     </mouse>
-</openbox_config>
+</labwc_config>
