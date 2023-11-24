@@ -1,2 +1,3 @@
 waybar &
 fcitx5 -d
+swaybg -i ~/n/wallpapers/archlinux-purple-wallpaper-4k.png &

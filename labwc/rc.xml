@@ -22,7 +22,7 @@
     <focus>
         <followMouse>yes</followMouse>
         <followMouseRequiresMovement>yes</followMouseRequiresMovement>
-        <raiseOnFocus>yes</raiseOnFocus>
+        <raiseOnFocus>no</raiseOnFocus>
     </focus>
 
     <theme>
@@ -33,7 +33,7 @@
         <animateIconify>yes</animateIconify>
         <font place="ActiveWindow">
             <name>Fira Code</name>
-            <size>16</size>
+            <size>14</size>
             <weight>Normal</weight>
             <slant>Normal</slant>
         </font>
@@ -46,13 +46,18 @@
     </theme>
 
     <windowRules>
+        <!--
+        <windowRule identifier="*" serverDecoration="yes"/>
+        <windowRule identifier="google-chrome" serverDecoration="no"/>
+        -->
         <windowRule identifier="*" serverDecoration="no"/>
+        <windowRule identifier="terminator" serverDecoration="yes"/>
+        <windowRule identifier="uxterm" serverDecoration="yes"/>
+        <windowRule identifier="gnome-terminal" serverDecoration="yes"/>
     </windowRules>
 
     <desktops>
         <number>4</number>
-        <firstdesk>1</firstdesk>
-        <popupTime>875</popupTime>
     </desktops>
 
     <resize>
@@ -87,15 +92,9 @@
         <keybind key="W-w"><action name="Execute" command="google-chrome" /></keybind>
         <keybind key="W-s"><action name="Execute" command="slack" /></keybind>
 
-        <keybind key="A-Return">
-            <action name="ToggleMaximize"/>
-        </keybind>
-        <keybind key="A-q">
-            <action name="Close"/>
-        </keybind>
-        <keybind key="A-space">
-            <action name="ShowMenu"><menu>client-menu</menu></action>
-        </keybind>
+        <keybind key="A-Return"><action name="ToggleMaximize"/></keybind>
+        <keybind key="A-q"><action name="Close"/></keybind>
+        <keybind key="A-space"><action name="ShowMenu"><menu>client-menu</menu></action></keybind>
 
         <!-- Keybindings for window switching -->
         <keybind key="A-Tab"><action name="NextWindow"/></keybind>
@@ -107,6 +106,7 @@
         <keybind key="A-h"><action name="ResizeRelative"><right>-20</right></action></keybind>
         <keybind key="A-l"><action name="ResizeRelative"><right>20</right></action></keybind>
 
+        <!-- Keybindings for window moving -->
         <keybind key="W-A-h"><action name="MoveToEdge" direction="left" /></keybind>
         <keybind key="W-A-l"><action name="MoveToEdge" direction="right" /></keybind>
         <keybind key="W-A-k"><action name="MoveToEdge" direction="up" /></keybind>
@@ -141,6 +141,21 @@
             <mousebind button="A-Right" action="Drag">
                 <action name="Resize"/>
             </mousebind>
+        </context>
+
+        <!-- Keybindings for window resizing -->
+		<context name="Top"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+		<context name="Left"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+		<context name="Right"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+		<context name="Bottom"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+		<context name="TRCorner"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+		<context name="BRCorner"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+		<context name="TLCorner"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+		<context name="BLCorner"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+
+        <context name="Title">
+            <mousebind button="Left" action="Drag"><action name="Move" /></mousebind> <!-- Keybindings for window moving -->
+            <mousebind button="Left" action="DoubleClick"><action name="ToggleMaximize" /></mousebind>
         </context>
 
         <context name="Client">
