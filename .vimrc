@@ -93,7 +93,7 @@ Plug 'cespare/vim-toml', {'for': 'toml' }
 
 
 " === general ===
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'previm/previm'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
@@ -125,7 +125,7 @@ Plug 'mattn/webapi-vim'
 Plug 'mattn/emmet-vim', {'for': ['html', 'xml', 'eruby', 'tsx', 'jsx', 'typescript']}
 Plug 'alvan/vim-closetag', {'for': ['html']}
 Plug 'ujihisa/quickrun'
-Plug 'vim-jp/vimdoc-ja'
+" Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
 Plug 'thinca/vim-showtime'
 
@@ -194,13 +194,14 @@ set statusline+=%#warningmsg#
 set statusline+=%*
 
 
-" set background=dark
 set background=dark
-"colorscheme default
-" colorscheme solarized
 colorscheme jellybeans
 " colorscheme desert
 " colorscheme desertEx
+
+" set background=light
+" colorscheme default
+" colorscheme solarized
 " colorscheme PaperColor
 
 " ==== plugin settings ===
