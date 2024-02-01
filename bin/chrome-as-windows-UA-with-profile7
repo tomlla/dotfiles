@@ -1,0 +1,25 @@
+nohup google-chrome --user-agent='Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' --profile-directory="Profile 7" >/dev/null 2>&1 &
+
+# どのProfileディレクトリ(Profile ${n})がただしいのかはPreferencesというjson fileの このへんを参考にするとよい
+# ls ~/.config/google-chrome/Profile\ */Preferences
+# ```json
+# {
+#   ...
+#   "account_info": [
+#     {
+#       "account_id": "11373812....",
+#       "accountcapabilities": {
+#         ...
+#       },
+#       "email": "xxx@example.com",
+#       "full_name": "...",
+#       ...,
+#       "given_name": "...",
+#       "hd": "example.com",
+#       ...,
+#       "last_downloaded_image_url_with_size": "https://lh3.googleusercontent.com/a/...",
+#       "locale": "en",
+#       "picture_url": "..."
+#     }
+#   ],
+# ```
