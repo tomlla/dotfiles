@@ -206,8 +206,9 @@ colorscheme jellybeans
 
 " ==== plugin settings ===
 
+" \ '\.rb': 'binding.pry # rubocop:disable Lint/Debugger',
 let g:user_debugger_dictionary = {
-    \ '\.rb': 'binding.pry # rubocop:disable Lint/Debugger',
+    \ '\.rb': 'binding.irb',
     \ '\.py': 'import pdb; pdb.set_trace()',
     \ '\.rake': 'require "pry"; binding.pry',
     \ '\.js$': 'debugger;',
@@ -361,6 +362,7 @@ nnoremap qo :copen<CR>
 nnoremap j gj
 nnoremap k gk
 nnoremap J gJ
+nnoremap <space>w  :set wrap!<CR>
 nnoremap <space>i  :update<CR>
 nnoremap <space>q  :quit<CR>
 nnoremap <space><space>  :update<CR>:quit<cr>
