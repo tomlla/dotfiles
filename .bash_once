@@ -31,6 +31,8 @@ ${HOME}/google-cloud-sdk/bin:\
 ${PATH}" && export USER_PATH_ADDED=true
 fi
 
+
+source "$HOME/.rye/env"
 type -p anyenv > /dev/null
 if [ -z "${ANYENV_EVALUATED}" -a  $? = 0 ]; then
     echo -n "[init anyenv] ..."
