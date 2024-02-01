@@ -1,3 +1,7 @@
 waybar &
 fcitx5 -d
-swaybg -i ~/n/wallpapers/archlinux-purple-wallpaper-4k.png &
+
+#swaybg -i ~/n/wallpapers/arch-linux-wallpaper-orange-4k.jpg
+swaybg -i archlinux-raibow-wallpaper-4k.jpg
+
+nm-applet &
