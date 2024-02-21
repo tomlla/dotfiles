@@ -32,6 +32,7 @@ ${PATH}" && export USER_PATH_ADDED=true
 fi
 
 
+
 source "$HOME/.rye/env"
 type -p anyenv > /dev/null
 if [ -z "${ANYENV_EVALUATED}" -a  $? = 0 ]; then
@@ -125,6 +126,8 @@ showPath() {
 function load_if_exist {
     [ -e $1 ] && source $1
 }
+load_if_exist ~/.asdf/asdf.sh
+
 eval "`npm completion`"
 
 if [ $uname_value = "Darwin" ]; then
