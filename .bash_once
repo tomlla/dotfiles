@@ -19,7 +19,6 @@ ${HOME}/.cargo/bin:\
 ${HOME}/.anyenv/bin:\
 ${HOME}/.local/bin:\
 ${HOME}/dev/bin:\
-${HOME}/flutter/bin:\
 /opt/bin:\
 /opt/platform-tools:\
 ${HOME}/.dotfiles/bin:\
@@ -65,7 +64,6 @@ fi
 export GOPATH=$HOME/dev
 
 alias yay-Syuu-noconfirm="yay -Syuu --noconfirm"
-alias f=flutter
 alias sq='sudo shutdown -h now'
 # alias ssp='sudo systemctl suspend' # moved to ~/dotfiles/bin/ssp
 
