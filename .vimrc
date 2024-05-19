@@ -194,15 +194,15 @@ set statusline+=%#warningmsg#
 set statusline+=%*
 
 
-set background=dark
-colorscheme jellybeans
+" set background=dark
+" colorscheme jellybeans
 " colorscheme desert
 " colorscheme desertEx
 
-" set background=light
+set background=light
 " colorscheme default
 " colorscheme solarized
-" colorscheme PaperColor
+colorscheme PaperColor
 
 " ==== plugin settings ===
 
@@ -263,6 +263,10 @@ let g:quickrun_config['go'] = {
 let g:quickrun_config['rust'] = {
             \    'command': 'rust',
             \    'exec': ['rust-run %s',]
+            \}
+let g:quickrun_config['sql'] = {
+            \    'command': 'make',
+            \    'exec': ['make docker.db.query.byfile.dev SQL_FILE=%s',]
             \}
 
 " === slimv ===
