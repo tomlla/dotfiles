@@ -233,7 +233,7 @@
 
     <keybind key="A-d">
       <action name="Execute">
-        <execute>dmenu_run</execute>
+        <execute>dmenu_run -fn 'Monospace-48'</execute>
       </action>
     </keybind>
 
@@ -632,17 +632,14 @@
     <context name="Root">
       <mousebind button="Down" action="Click">
         <action name="Execute">
-           <!--<execute>skippy-xd</execute> -->
-           <execute>xfdashboard</execute>
+           <execute>skippy-xd</execute>
+           <!-- <execute>xfdashboard</execute> -->
         </action>
       </mousebind>
       <mousebind button="Up" action="Click">
-        <action name="Execute">
-            <execute>skippy-xd</execute>
+        <action name="ShowMenu">
+          <menu>client-list-combined-menu</menu>
         </action>
-        <!--<action name="ShowMenu">-->
-          <!--<menu>client-list-combined-menu</menu>-->
-        <!--</action>-->
       </mousebind>
       <mousebind button="Right" action="Press">
         <action name="ShowMenu">
