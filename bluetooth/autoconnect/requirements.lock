@@ -14,3 +14,5 @@ bleak==0.22.2
     # via autoconnect
 dbus-fast==2.22.1
     # via bleak
+loguru==0.7.2
+    # via autoconnect
