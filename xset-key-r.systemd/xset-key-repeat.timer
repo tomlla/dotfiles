@@ -1,0 +1,9 @@
+[Unit]
+Description="call xset-key-repeat.serice every 1min"
+
+[Timer]
+OnUnitActiveSec=1m
+Unit=xset-key-repeat.service
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+[Unit]
+Description="Set keyrepeat faster"
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/xset -display ":0" r rate 190 70
+
+[Install]
+WantedBy=multi-user.target
