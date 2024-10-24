@@ -92,6 +92,9 @@ Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
 Plug 'cespare/vim-toml', {'for': 'toml' }
 
 
+" === for wayland ===
+nnoremap <C-y> :call system("wl-copy --trim-newline", @")<CR>
+
 " === general ===
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'previm/previm'
