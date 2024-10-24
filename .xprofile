@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ~/.bashrc
+
 echo $(date) > /tmp/.xprofile-was-called
 
 setxkbmap -option ctrl:nocaps
@@ -24,5 +26,3 @@ fcitx5 -d
 tint2 &
 nm-applet &
 feh --bg-scale ~/n/wallpapers/archlinux-purple-wallpaper-4k.png &
-
-(sleep 5 ; synergy &)& 
