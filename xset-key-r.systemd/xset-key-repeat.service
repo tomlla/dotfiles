@@ -1,5 +1,7 @@
 [Unit]
 Description="Set keyrepeat faster"
+After="ly.service"
+Requires="ly.service"
 
 [Service]
 Type=oneshot

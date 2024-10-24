@@ -1,5 +1,7 @@
 [Unit]
 Description="call xset-key-repeat.serice every 1min"
+After="ly.service"
+Requires="ly.service"
 
 [Timer]
 OnUnitActiveSec=1m
