@@ -4,7 +4,8 @@ After="ly.service"
 Requires="ly.service"
 
 [Timer]
-OnUnitActiveSec=1m
+AccuracySec=1s
+OnUnitActiveSec=10s
 Unit=xset-key-repeat.service
 
 [Install]
