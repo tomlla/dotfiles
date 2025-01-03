@@ -1,2 +1,3 @@
 # allowing words for cspell
 RSSI
+loguru
