@@ -1,0 +1,8 @@
+font-size = 20
+
+window-width = 100
+window-height = 30
+
+cursor-style-blink = false
+
+keybind = ctrl+m=text:\n

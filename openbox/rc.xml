@@ -245,7 +245,8 @@
 
     <keybind key="W-Return">
       <action name="Execute">
-        <execute>alacritty</execute>
+        <!--<execute>alacritty</execute>-->
+        <execute>ghostty</execute>
       </action>
     </keybind>
 
