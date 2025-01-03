@@ -90,6 +90,7 @@ Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'kovisoft/slimv', {'for': 'lisp'}
 Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
 Plug 'cespare/vim-toml', {'for': 'toml' }
+Plug 'ionide/Ionide-vim'
 
 
 " === for wayland ===
