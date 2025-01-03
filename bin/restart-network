@@ -1,0 +1,6 @@
+# https://bbs.archlinux.org/viewtopic.php?pid=2204041#p2204041
+
+sudo rmmod iwlmvm iwlwifi
+sudo modprobe iwlmvm
+
+# See also
