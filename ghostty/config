@@ -3,6 +3,8 @@ font-size = 20
 window-width = 100
 window-height = 30
 
+cursor-style = block
 cursor-style-blink = false
+shell-integration-features = no-cursor
 
 keybind = ctrl+m=text:\n
