@@ -1,0 +1,8 @@
+# This file should be put ~/.config/dunst/dunstrc as symlink file
+#
+# How to test config file with process reloading
+# killall dunst; notify-send 'Hello world!' 'This is an example notification.☹️'
+
+[global]
+font = "Monospace 16"
+
