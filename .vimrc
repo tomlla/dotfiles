@@ -59,8 +59,8 @@ Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'leafgarland/typescript-vim', {'for':['typescript'] }
 Plug 'wavded/vim-stylus', {'for': ['stylus', 'styl']}
 Plug 'prettier/vim-prettier', { 'for': ['html', 'javascript']}
-Plug 'posva/vim-vue', {'for': 'vue'}
-Plug 'digitaltoad/vim-pug', {'for': ['pug', 'vue']}
+"Plug 'posva/vim-vue', {'for': 'vue'}
+"Plug 'digitaltoad/vim-pug', {'for': ['pug', 'vue']}
 Plug 'cakebaker/scss-syntax.vim', {'for': ['css', 'scss', 'vue']}
 
 
@@ -74,7 +74,7 @@ Plug 'nvie/vim-flake8', { 'for' :['python']}
 " --- ruby
 Plug 'ngmy/vim-rubocop', {'for': ['ruby', 'erb', 'haml', 'slim']}
 "Plug 'tpope/vim-haml', {'for' :['haml']}
-Plug 'slim-template/vim-slim', { 'for': ['slim'] }
+"Plug 'slim-template/vim-slim', { 'for': ['slim'] }
 Plug 'tpope/vim-rails', {'for' :['ruby', 'rake', 'haml', 'erb', 'slim']}
 "Plug 'tpope/vim-bundler', {'for' :['ruby', 'haml', 'erb']} "ruby file開くと遅い
 "
@@ -82,26 +82,22 @@ Plug 'tpope/vim-rails', {'for' :['ruby', 'rake', 'haml', 'erb', 'slim']}
 Plug 'justmao945/vim-clang', {'for': ['c', 'cpp'] }
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'racer-rust/vim-racer', {'for': 'rust'}
-Plug 'tpope/vim-classpath', { 'for': ['clojure','java']}
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
-Plug 'derekwyatt/vim-scala', {'for': ['scala']}
-Plug 'keith/swift.vim', {'for': 'swift'}
-Plug 'kovisoft/slimv', {'for': 'lisp'}
-Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
-Plug 'cespare/vim-toml', {'for': 'toml' }
+"Plug 'tpope/vim-classpath', { 'for': ['clojure','java']}
+"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+"Plug 'udalov/kotlin-vim', {'for': 'kotlin'}
+"Plug 'derekwyatt/vim-scala', {'for': ['scala']}
+"Plug 'keith/swift.vim', {'for': 'swift'}
+"Plug 'kovisoft/slimv', {'for': 'lisp'}
+"Plug 'kana/vim-filetype-haskell', {'for': 'haskell'}
+"Plug 'cespare/vim-toml', {'for': 'toml' }
 Plug 'ionide/Ionide-vim'
-
-
-" === for wayland ===
-nnoremap <C-y> :call system("wl-copy --trim-newline", @")<CR>
 
 " === general ===
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'previm/previm'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'prabirshrestha/async.vim'
@@ -121,7 +117,6 @@ Plug 'honza/vim-snippets'
 
 " === others ===
 Plug 'tyru/open-browser.vim', {'for': [ 'html', 'xml', 'markdown', 'mkd' , 'textile']}
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.vim'
 
@@ -131,7 +126,7 @@ Plug 'alvan/vim-closetag', {'for': ['html']}
 Plug 'ujihisa/quickrun'
 " Plug 'vim-jp/vimdoc-ja'
 Plug 'thinca/vim-ref'
-Plug 'thinca/vim-showtime'
+" Plug 'thinca/vim-showtime'
 
 Plug 'lambdalisue/gina.vim'
 Plug 'tpope/vim-fugitive'
@@ -158,6 +153,10 @@ Plug 'itchyny/lightline.vim'
 "Plug 'mattn/vim-soundcloud'
 call plug#end()
 
+
+" === for wayland ===
+nnoremap <C-y> :call system("wl-copy --trim-newline", @")<CR>
+
 function! IssueNumber()
     " e.g.) fix_#2090_change_xx_to_yy or feature_2090_implement_z --> return 2010
     let l:current_branch = vimproc#system2('git symbolic-ref --short HEAD')
@@ -181,12 +180,12 @@ let g:ale_linters = {
       \ 'go': ['gopls'],
       \ 'python': ['flake8'],
       \}
-"   'ruby': ['rubocop', 'reek']
-"
+
 let g:ale_fixers = {
     \ 'javascript': ['prettier', 'eslint'],
     \ 'typescript': ['prettier', 'eslint'],
     \ }
+
 nnoremap <leader>f :ALEFix<cr>
 nmap <F1> :echo<CR>
 imap <F1> <C-o>:echo<CR>
@@ -280,12 +279,6 @@ if has('mac')
     let g:slimv_swank_cmd='!osascript -e "tell application \"iTerm\"" -e "tell the first terminal" -e "set mysession to current session" -e "launch session \"Default Session\"" -e "tell the last session" -e "exec command \"/bin/bash\"" -e "write text \"sbcl --load ~/.vim/plugged/slimv/slime/start-swank.lisp\"" -e "end tell" -e "select mysession" -e "end tell" -e "end tell"'
 endif
 
-" use cpsm
-"let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
-
-" use ctrlp-cmatcher
-"let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
-
 " === neomru ===
 let g:neomru#follow_links = 1
 let g:neomru#file_mru_limit = 50
@@ -313,24 +306,6 @@ let g:neocomplete#sources#syntax#min_keyword_length = 2 " Set minimum syntax key
 let g:neocomplete#keyword_patterns = {}
 let g:neocomplete#keyword_patterns['gosh-repl'] = "[[:alpha:]+*/@$_=.!?-][[:alnum:]+*/@$_:=.!?-]*"
 
-" if !exists('g:neocomplete#omni_patterns')
-"     let g:neocomplete#omni_patterns = {}
-" endif
-" let g:neocomplete#omni_patterns.go = '\h\w*\.\?'
-
-" if !exists('g:neocomplete#force_omni_input_patterns')
-"     let g:neocomplete#force_omni_input_patterns = {}
-" endif
-" let g:neocomplete#force_omni_input_patterns.java = '\%(\h\w*\|)\)\.\w*'
-
-" if !exists('g:neocomplete#sources#omni#input_patterns')
-"     let g:neocomplete#sources#omni#input_patterns = {}
-" endif
-" "let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
-" let g:neocomplete#sources#omni#input_patterns.go = '\h\w\.\w*'
-
-"inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>"
-
 "=== neosnippet ===
 let g:neosnippet#enable_snipmate_compatibility = 0
 let g:neosnippet#snippets_directory = '~/.vim/mysnippets'
@@ -338,11 +313,7 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-"if has('conceal')
-"      set conceallevel=2 concealcursor=niv
-"endif
-"
-"# fzf
+
 nnoremap <C-p> :FZF<cr>
 
 "=== git plugin ===
@@ -354,7 +325,6 @@ nnoremap <space>f :Gina fetch<CR>
 
 "=rust==
 " let $RUST_SRC_PATH="$HOME/src/rustc/src"
-
 "let g:rustfmt_autosave = 1
 let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
 
@@ -405,14 +375,6 @@ autocmd FileType make set noexpandtab
 autocmd FileType vue syntax sync fromstart
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
-" if executable('solargraph')
-"     au User lsp_setup call lsp#register_server({
-"         \ 'name': 'solargraph',
-"         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
-"         \ 'initialization_options': {"diagnostics": "true"},
-"         \ 'whitelist': ['ruby'],
-"         \ })
-" endif
 if executable('gopls')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'gopls',
@@ -428,50 +390,6 @@ endif
 "         \ })
 " endif
 
-" if executable('vls')
-"   augroup LspVls
-"     au!
-"     au User lsp_setup call lsp#register_server({
-"         \ 'name': 'vue-language-server',
-"         \ 'cmd': {server_info->['vls']},
-"         \ 'whitelist': ['vue'],
-"         \ 'initialization_options': {
-"         \         'config': {
-"         \             'html': {},
-"         \              'vetur': {
-"         \                  'validation': {}
-"         \              }
-"         \         }
-"         \     }
-"         \ })
-" 
-"     " omnifunc
-"     au FileType vue setlocal omnifunc=lsp#complete
-"     " map
-"     au FileType vue nnoremap <buffer><silent> gd :<C-u>LspDefinition<CR>
-"     au FileType vue nnoremap <buffer><silent> gD :<C-u>LspReferences<CR>
-"     au FileType vue nnoremap <buffer><silent> gs :<C-u>LspDocumentSymbol<CR>
-"     au FileType vue nnoremap <buffer><silent> gS :<C-u>LspWorkspaceSymbol<CR>
-"     au FileType vue nnoremap <buffer><silent> gQ :<C-u>LspDocumentFormat<CR>
-"     au FileType vue vnoremap <buffer><silent> gQ :LspDocumentRangeFormat<CR>
-"     au FileType vue nnoremap <buffer><silent> K :<C-u>LspHover<CR>
-"     au FileType vue nnoremap <buffer><silent> <F1> :<C-u>LspImplementation<CR>
-"     au FileType vue nnoremap <buffer><silent> <F2> :<C-u>LspRename<CR>
-"   augroup end
-" endif
-
-" function! s:on_lsp_buffer_enabled() abort
-"     setlocal omnifunc=lsp#complete
-"     setlocal signcolumn=yes
-"     nmap <buffer> <C-]> <plug>(lsp-definition)
-"     nmap <buffer> <f2> <plug>(lsp-rename)
-"     inoremap <expr> <cr> pumvisible() ? "\<c-y>\<cr>" : "\<cr>"
-" endfunction
-" augroup lsp_install
-"     au!
-"     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-"     autocmd BufWritePre *.go LspDocumentFormatSync
-" augroup END
 let g:lsp_diagnostics_enabled = 0
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/.vim-lsp.log')
@@ -490,5 +408,3 @@ let s:localvimrc = expand("~/.local.vimrc")
 if file_readable(s:localvimrc)
     execute 'source '.s:localvimrc
 endif
-
-command CargoPlay !cargo play %
