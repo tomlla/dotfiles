@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Need to install
+# - zbarimg
+# - flameshot
+# - tresseract
+
+set -x
+image_file=$(mktemp).png
+text_file_by_QR=$(mktemp).txt
+text_file_by_OCR=$(mktemp).txt
+
+lang='jpn'
+# lang='osd'
+
+flameshot gui --path $image_file
+
+if zbarimg --raw --quiet PNG:"$image_file" > $text_file_by_QR; then
+    echo $text_file_by_QR
+    google-chrome $text_file_by_QR
+else
+    tesseract "$image_file" - -l $lang --oem 1 -c page_separator="-----" > $text_file_by_OCR
+    code $text_file_by_OCR
+fi
+

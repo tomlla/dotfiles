@@ -230,6 +230,12 @@
           <execute>flameshot gui</execute>
       </action>
     </keybind>
+    <keybind key="S-A-5">
+      <action name="Execute">
+          <execute>/home/nt/dotfiles/bin/screen-ocr</execute>
+      </action>
+    </keybind>
+
 
     <keybind key="A-d">
       <action name="Execute">
