@@ -8,3 +8,13 @@ cursor-style-blink = false
 shell-integration-features = no-cursor
 
 keybind = ctrl+m=text:\n
+
+# # https://ghostty.org/docs/config/reference#keybind
+keybind = ctrl+enter=unbind
+keybind = f11=toggle_fullscreen
+
+font-style = "Noto Sans Mono"
+
+# https://ghostty.org/docs/config/reference#font-feature
+# * -calt: disable Ligature
+font-feature = "-calt"
