@@ -639,7 +639,7 @@
     <context name="Root">
       <mousebind button="Down" action="Click">
         <action name="Execute">
-           <execute>skippy-xd</execute>
+            <!-- <execute>skippy-xd</execute> -->
            <!-- <execute>xfdashboard</execute> -->
         </action>
       </mousebind>
