@@ -13,117 +13,53 @@ export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE=~/.bash_eternal_history
 # PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-if [ -z "${USER_PATH_ADDED}" ]; then
-export PATH="\
-${HOME}/.cargo/bin:\
-${HOME}/.anyenv/bin:\
-${HOME}/.local/bin:\
-${HOME}/dev/bin:\
-/opt/bin:\
-/opt/platform-tools:\
-${HOME}/.dotfiles/bin:\
-${HOME}/n/bin:\
-/usr/local/go/bin:\
-/var/lib/snapd/snap/bin:\
-${HOME}/.kubectx:\
-${HOME}/google-cloud-sdk/bin:\
-${PATH}" && export USER_PATH_ADDED=true
-fi
-
-
-
-source "$HOME/.rye/env"
-type -p anyenv > /dev/null
-if [ -z "${ANYENV_EVALUATED}" -a  $? = 0 ]; then
-    echo -n "[init anyenv] ..."
-    eval "$(anyenv init -)" && export ANYENV_EVALUATED=true
-fi
-# echo after anyenv init
-
-test -d $HOME/.rye/env && source $HOME/.rye/env
-
-# if [ -z "${YARN_PATH_ADDED}" ]; then
-# export PATH="\
-# ${HOME}/.config/yarn/global/node_modules/.bin:\
-# ${HOME}/.yarn/bin:\
-# $PATH" && export YARN_PATH_ADDED=true
-# fi
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-type -p direnv > /dev/null && eval "$(direnv hook bash)"
-
-
-# export JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on, -Dswing.aatext=true'
-if [ -e /opt/java/java-home-symlink ]; then
-    export JAVA_HOME=/opt/java/java-home-symlink
-fi
-if [ -e /usr/lib/jvm/default-runtime ]; then
-    export JAVA_HOME=/usr/lib/jvm/default-runtime
-fi
-export GOPATH=$HOME/dev
-
-alias yay-Syuu-noconfirm="yay -Syuu --noconfirm"
-alias sq='sudo shutdown -h now'
-# alias ssp='sudo systemctl suspend' # moved to ~/dotfiles/bin/ssp
-
-alias v='vim -u NONE'
-alias nv='nvim'
-if [ $uname_value = 'Darwin' ]; then
-  alias ls='ls -G -F' # Mac
-else
-  alias ls='ls --color=auto -F --time-style=long-iso' # Linux
-fi
-alias s=sudo
-alias tm=tmux
-alias psg="ps aux | grep "
-
-
-alias p='sudo pacman'
-alias yao=yaourt
-function sc() {
-    service=${1}
-    action=${2:-status}
-    sudo systemctl $action $service
+addPath() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        export PATH="${PATH:+"$PATH:"}$1"
+    fi
 }
-
-alias mt=multitail
-alias g=git
-alias dk=docker
-alias dkc='docker compose'
-alias cci=circleci
-alias ggl='w3m https://google.com'
-
-alias be='bundle exec'
-alias rac='bundle exec rails c'
-alias racs='bundle exec rails c --sandbox'
-alias ras='bundle exec rails s'
-alias rbo='bundle exec rubocop'
-
-
-# -- functions
-[ "$uname_value" = "Linux" ] && alias pbcopy='xsel --clipboard --input'
-
-alias wa="/usr/bin/watch"
-
-alias k=kubectl
-alias h=heroku
-alias kn=kubens
-
-alias flux="xflux -l 35 -g 139"
-alias psysh=~/.config/composer/vendor/bin/psysh
-
-alias gr=./gradlew
-alias ca=cargo
-alias caw='cargo watch -x'
 
 showPath() {
     echo $PATH | sed 's/:/\n/g' | sort
 }
 
-function load_if_exist {
+load_if_exist() {
     [ -e $1 ] && source $1
 }
+
+executable() {
+    command -v $1 >/dev/null
+}
+
+addPath ${HOME}/.dotfiles/bin
+addPath ${HOME}/n/bin
+addPath ${HOME}/.local/bin
+addPath ${HOME}/dev/bin
+addPath ${HOME}/.cargo/bin
+addPath ${HOME}/.anyenv/bin
+addPath /opt/bin
+addPath /opt/platform-tools
+addPath /usr/local/go/bin
+addPath /var/lib/snapd/snap/bin
+addPath ${HOME}/.kubectx
+addPath ${HOME}/google-cloud-sdk/bin
+executable aqua && addPath $(aqua root-dir)/bin
+
+source ~/.dotfiles/shell.d/*.bash
+
+if [ -z "${ANYENV_EVALUATED}" -a  $? = 0 ]; then
+    echo -n "[init anyenv] ..."
+    eval "$(anyenv init -)" && export ANYENV_EVALUATED=true
+fi
+
+test -d $HOME/.rye/env && source $HOME/.rye/env
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+type -p direnv > /dev/null && eval "$(direnv hook bash)"
+
+export GOPATH=$HOME/dev
+
 load_if_exist ~/.asdf/asdf.sh
 
 eval "`npm completion`"
@@ -147,7 +83,8 @@ if [ $uname_value = "Darwin" ]; then
         export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
     fi
-elif [ $uname_value = "Linux" ]; then
+fi
+if [ $uname_value = "Linux" ]; then
   load_if_exist /usr/share/git/completion/git-completion.bash
   load_if_exist /usr/share/git/completion/git-prompt.sh
 
@@ -158,14 +95,6 @@ elif [ $uname_value = "Linux" ]; then
 fi
 __git_complete g __git_main
 
-# GIT_PS1_SHOWDIRTYSTATE=1
-# GIT_PS1_SHOWUPSTREAM=auto
-# GIT_PS1_SHOWUNTRACKEDFILES=1
-# GIT_PS1_SHOWSTASHSTATE=1
-
-# export PS1='\n\$ '
-# export PS1='\u@\h \w\n\$ '
-# export PS1='$(__git_ps1)\n\$ '
 if [ $uname_value = 'Darwin' ]; then
     export PS1='\n🍎 '
 elif [ $uname_value = "Linux" ]; then
@@ -175,11 +104,9 @@ else
 fi
 # export PS1='\u@\h \w$(__git_ps1)\n\$ '
 
-export DOCKER_BUILDKIT=1 
-# export COMPOSE_DOCKER_CLI_BUILD=1  from docker/compose 1.28.0, it is enabled by default.
 export FZF_DEFAULT_COMMAND='fd --type f'
 
-gcd() {
+git-switch-branch() {
   local branches branch
   branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
   branch=$(echo "$branches" |fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
@@ -187,7 +114,7 @@ gcd() {
 }
 
 http() {
-    cat ~/.dotfiles/http-status.txt | fzf-tmux
+    cat ~/.dotfiles/http-status.txt | fzf
 }
 
 fzf-ghq-widget () {
@@ -198,18 +125,6 @@ fzf-ghq-widget () {
 }
 bind -x '"\C-g": "fzf-ghq-widget"'
 
-# if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then
-#     source '/opt/google-cloud-sdk/completion.bash.inc'
-#     source '/opt/google-cloud-sdk/path.bash.inc'
-#     alias gcl-interactive="gcloud alpha interactive"
-# fi
-
-function kubectl-set-ns() {
-  kubectl config set-context $(kubectl config current-context) --namespace=$1
-}
-function kubectl-get-ns() {
-  kubectl config view | grep namespace
-}
 
 mkcd () {
     mkdir -p $1 && cd $1
@@ -219,24 +134,11 @@ function ignore-bidning-pry() {
     echo "Lint/Debugger:" >> ./.rubocop_todo.yml
     echo "  Enabled: false" >> ./.rubocop_todo.yml
 }
-function rec() {
-  SEC=${1:-10}
-  local filename="$HOME/screencast/$(date '+%Y-%m-%d_%H%M%S').gif"
-  byzanz-record $filename --cursor --x=1366 -d $SEC && google-chrome-stable $filename
-}
 
 for f in $(find ~/localrc.d -type f -o -type l 2> /dev/null); do
     echo 'source' $f
     source $f
 done
-
-function stopwatch() {
-    local date1=`date +%s`
-    while true; do
-        echo -ne "$(date -u --date @$((`date +%s` - ${date1})) +%H:%M:%S)\r"
-        sleep 0.1
-    done
-}
 
 xranup() {
     # xrandr --output DP1 --mode 2560x1440 --above eDP1
