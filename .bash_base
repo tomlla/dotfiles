@@ -27,7 +27,7 @@ load_if_exist() {
     [ -e $1 ] && source $1
 }
 
-executable() {
+can() {
     command -v $1 >/dev/null
 }
 
@@ -43,14 +43,11 @@ addPath /usr/local/go/bin
 addPath /var/lib/snapd/snap/bin
 addPath ${HOME}/.kubectx
 addPath ${HOME}/google-cloud-sdk/bin
-executable aqua && addPath $(aqua root-dir)/bin
+can aqua && addPath $(aqua root-dir)/bin
 
 source ~/.dotfiles/shell.d/*.bash
 
-if [ -z "${ANYENV_EVALUATED}" -a  $? = 0 ]; then
-    echo -n "[init anyenv] ..."
-    eval "$(anyenv init -)" && export ANYENV_EVALUATED=true
-fi
+can anyenv && eval "$(anyenv init -)" && export ANYENV_EVALUATED=true
 
 test -d $HOME/.rye/env && source $HOME/.rye/env
 
@@ -62,7 +59,7 @@ export GOPATH=$HOME/dev
 
 load_if_exist ~/.asdf/asdf.sh
 
-eval "`npm completion`"
+can npm && eval "`npm completion`"
 
 if [ $uname_value = "Darwin" ]; then
     if type brew &>/dev/null; then
