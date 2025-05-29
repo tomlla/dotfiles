@@ -26,3 +26,5 @@ fcitx5 -d
 tint2 &
 nm-applet &
 feh --bg-scale ~/n/wallpapers/archlinux-purple-wallpaper-4k.png &
+
+conky &
