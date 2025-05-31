@@ -14,8 +14,14 @@ export HISTFILE=~/.bash_eternal_history
 # PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 addPath() {
-    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+    if [ ! -d "$1" ]; then
+        # echo "[addPath()] No such directory ($1)"
+        return 1
+    fi
+    if [[ ":$PATH:" != *":$1:"* ]]; then
         export PATH="${PATH:+"$PATH:"}$1"
+    # else
+    #     echo "[addPath()] Already added ($1)"
     fi
 }
 
