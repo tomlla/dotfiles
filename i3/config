@@ -33,12 +33,13 @@ floating_modifier $mod
 # start a terminal
 bindsym $win+Return exec i3-sensible-terminal
 
-bindsym $win+w exec /home/nt/dotfiles/bin/i3-sensible-browser
+bindsym $win+w exec /home/nt/.dotfiles/bin/i3-sensible-browser
 
 # kill focused window
 bindsym $mod+q kill
 
-bindsym $mod+d exec dmenu_run 
+bindsym $mod+d exec dmenu_run -fn 'Monospace-24'
+
 # start dmenu (a program launcher)
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
