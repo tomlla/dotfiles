@@ -19,7 +19,7 @@ addPath() {
         return 1
     fi
     if [[ ":$PATH:" != *":$1:"* ]]; then
-        export PATH="${PATH:+"$PATH:"}$1"
+        export PATH="$1:${PATH:+"$PATH"}"
     # else
     #     echo "[addPath()] Already added ($1)"
     fi
@@ -49,6 +49,7 @@ addPath /usr/local/go/bin
 addPath /var/lib/snapd/snap/bin
 addPath ${HOME}/.kubectx
 addPath ${HOME}/google-cloud-sdk/bin
+addPath ${HOME}/.asdf/shims
 can aqua && addPath $(aqua root-dir)/bin
 
 source ~/.dotfiles/shell.d/*.bash
