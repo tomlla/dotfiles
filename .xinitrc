@@ -1,24 +1,27 @@
+#!/usr/bin/env bash
 
 setxkbmap -option ctrl:nocaps
 # setxkbmap -option japan:hztg_escape
 
 xset r rate 160 60
 
-export DefaultImModule=fcitx
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
+# Dsiable beep
+xset b off
+
+export DefaultImModule=fcitx5
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS=@im=fcitx5
 export LC_CTYPE=ja_JP.utf8
 fcitx5 -d
-#  exec mate-session
-#  
-#  # for f in $(find ~/local.x.d -type f -o -type l); do
-#  #     source $f
-#  # done
-#  
-xinput set-prop 12 279 1
-xinput set-prop 12 285 1
 
+polybar &
+nm-applet &
 
-amixer set Speaker mute
-exec i3
+load_if_exist() {
+    [ -e $1 ] && source $1
+}
+load_if_exist ~/.local.xinitrc
+
+# exec i3
+exec openbox
