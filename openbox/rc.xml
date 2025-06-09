@@ -258,7 +258,8 @@
 
     <keybind key="W-w">
       <action name="Execute">
-        <execute>i3-sensible-browser</execute>
+          <execute>~/.dotfiles/bin/i3-sensible-browser</execute> 
+        <!--<execute>gvim</execute>-->
       </action>
     </keybind>
     <keybind key="W-s">
