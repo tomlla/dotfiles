@@ -357,6 +357,8 @@ set pastetoggle=<F2>
 nnoremap <leader>3 :set wrap!<cr>
 nnoremap <F9> :ALEToggle<cr>
 
+nnoremap <leader>d :.!date +"\%Y-\%m-\%d"<cr>A
+
 nnoremap RM :!rm %<cr>:bdelete<cr>
 
 vnoremap z/ <ESC>/\%V

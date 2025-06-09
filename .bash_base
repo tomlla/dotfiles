@@ -46,6 +46,7 @@ addPath ${HOME}/.anyenv/bin
 addPath /opt/bin
 addPath /opt/platform-tools
 addPath /usr/local/go/bin
+addPath ${HOME}/dev/bin
 addPath /var/lib/snapd/snap/bin
 addPath ${HOME}/.kubectx
 addPath ${HOME}/google-cloud-sdk/bin
@@ -163,3 +164,7 @@ if [ -x "$(which makefile-completion-go 2>/dev/null)" ]; then
     complete -F _makefile_targets_01 make
 fi
 
+task >/dev/null 2>&1
+if [ $? = 0 ]; then
+    eval "$(task --completion bash)"
+fi
