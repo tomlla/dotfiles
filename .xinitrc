@@ -15,7 +15,9 @@ export XMODIFIERS=@im=fcitx5
 export LC_CTYPE=ja_JP.utf8
 fcitx5 -d
 
-polybar &
+# polybar &
+tint2 &
+
 nm-applet &
 
 load_if_exist() {
