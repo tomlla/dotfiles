@@ -1,0 +1,45 @@
+// put this file to ~/.config/waybar/config.jsonc
+{
+    "position": "top",
+    "height": 32,
+    "spacing": 4,
+    // Choose the order of the modules
+    "modules-left": [],
+    "modules-center": [],
+    "modules-right": ["disk", "battery", "network", "tray", "clock"],
+    
+    // Modules configuration
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 🔌",
+        "format-plugged": "{capacity}% 🔌", 
+        "format-alt": "{time} {icon}",
+        "format-icons": ["🪫", "🔋", "🔋", "🔋", "🔋"]
+    },
+    
+    "disk": {
+        "interval": 30,
+        "format": "💽 {percentage_used}%",
+        "path": "/"
+    },
+    
+    "network": {
+        "format-wifi": "📶 {essid}",
+        "format-ethernet": "🔗 Connected", 
+        "format-disconnected": "❌ Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}"
+    },
+    
+    "clock": {
+        "format": "{:%Y-%m-%d(%a) %H:%M}",
+        "tooltip-format": "<big>{:%Y年%B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    
+    "tray": {
+        "spacing": 10
+    }
+}
