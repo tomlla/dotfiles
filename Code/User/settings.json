@@ -1,0 +1,19 @@
+{
+    "vim.useSystemClipboard": true, // OS側とのクリップボードの共有
+    // 競合するショートカットを無効化
+    "vim.handleKeys": {
+        "<C-p>": false
+    },
+    "editor.fontFamily": "'FiraCode Nerd', 'Fira Code', 'Droid Sans Mono',  'monospace', monospace",
+    "git.blame.editorDecoration.enabled": true,
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Default Light Modern",
+    "go.toolsManagement.autoUpdate": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.wordWrap": "on",
+    "git.openRepositoryInParentFolders": "never",
+    "cSpell.userWords": [
+        "shree",
+        "wada"
+    ]
+}

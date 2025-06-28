@@ -354,6 +354,8 @@ nnoremap <C-g><C-r> :Rg<space><C-r><C-w>
 nnoremap <C-g><C-g> :Rg<space>
 
 set pastetoggle=<F2>
+
+nnoremap <F3> :set nu!<cr>
 nnoremap <leader>3 :set wrap!<cr>
 nnoremap <F9> :ALEToggle<cr>
 
