@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+chrome_family="x y z google-chrome google-chrome-stable"
+for chrome in $chrome_family; do
+    if command -v $chrome >/dev/null 2>&1; then
+        echo "chrome is $(which $chrome)"
+        echo $chrome $@
+        exec $chrome $@
+    fi
+done
+
+echo "executable chrome not found"
+exit 1
+

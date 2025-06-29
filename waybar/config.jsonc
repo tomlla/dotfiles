@@ -3,12 +3,14 @@
     "position": "top",
     "height": 32,
     "spacing": 4,
-    // Choose the order of the modules
+    
     "modules-left": [],
     "modules-center": [],
-    "modules-right": ["disk", "battery", "network", "tray", "clock"],
+    "modules-right": [
+        // "disk", 
+        "battery", "network", "tray", "clock"
+    ],
     
-    // Modules configuration
     "battery": {
         "states": {
             "warning": 30,
@@ -28,7 +30,7 @@
     },
     
     "network": {
-        "format-wifi": "📶 {essid}",
+        "format-wifi": "📶 {essid} {ipaddr}",
         "format-ethernet": "🔗 Connected", 
         "format-disconnected": "❌ Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}"

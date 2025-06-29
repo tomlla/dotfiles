@@ -5,3 +5,6 @@ XMODIFIERS=@im=fcitx5
 
 # https://github.com/flameshot-org/flameshot/blob/master/docs/Sway%20and%20wlroots%20support.md
 XDG_CURRENT_DESKTOP=sway
+
+# This will be used from i3-sensible-terminal
+TERMINAL=ghostty

@@ -22,7 +22,7 @@
     <focus>
         <followMouse>yes</followMouse>
         <followMouseRequiresMovement>yes</followMouseRequiresMovement>
-        <raiseOnFocus>no</raiseOnFocus>
+        <raiseOnFocus>yes</raiseOnFocus>
     </focus>
 
     <theme>
@@ -86,10 +86,10 @@
         <keybind key="S-A-3"><action name="SendToDesktop"><to>3</to></action></keybind>
 
         <keybind key="S-A-4"><action name="Execute" command="wayland-screen-shot" /></keybind>
-        <keybind key="A-d"><action name="Execute" command="dmenu_run" /></keybind>
+        <keybind key="A-d"><action name="Execute" command="dmenu_run -fn 'Monospace-32'" /></keybind>
         <keybind key="W-S-Return"><action name="Execute" command="ut" /></keybind>
-        <keybind key="W-Return"><action name="Execute" command="terminator" /></keybind>
-        <keybind key="W-w"><action name="Execute" command="google-chrome" /></keybind>
+        <keybind key="W-Return"><action name="Execute" command="i3-sensible-terminal" /></keybind>
+        <keybind key="W-w"><action name="Execute" command="chrome" /></keybind>
         <keybind key="W-s"><action name="Execute" command="slack" /></keybind>
 
         <keybind key="A-Return"><action name="ToggleMaximize"/></keybind>

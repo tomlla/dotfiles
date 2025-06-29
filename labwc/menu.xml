@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/ file:///usr/X11R6/share/openbox/menu.xsd">
+<openbox_menu 
+    xmlns="http://openbox.org/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://openbox.org/ file:///usr/X11R6/share/openbox/menu.xsd"
+>
 <menu id="root-menu" label="openbox3">
-
-    <item label="blueberry"><action name="Execute" command="blueberry"><execute>blueberry</execute></action></item>
+    <item label="blueberry">
+        <action name="Execute" command="blueberry" />
+    </item>
     <item label="pavucontrol">
         <action name="Execute" command="pavucontrol" />
     </item>
 
     <separator />
     <item label="uxterm"><action name="Execute" command="ut" /></item>
-    <item label="alacritty"><action name="Execute" command="alacritty" /></item>
-    <item label="terminator"><action name="Execute" command="terminator" /></item>
+    <item label="Ghostty"><action name="Execute" command="ghostty" /></item>
 
     <separator />
-    <item label="Chrome"><action name="Execute" command="google-chrome" /></item>
-    <item label="Slack"><action name="Execute" command="slack" /></item>
-    <item label="GIMP"><action name="Execute" command="gimp" /></item>
+    <item label="chrome">  <action name="Execute" command="chrome" />    </item>
+    <item label="firefox"> <action name="Execute" command="firefox" /> </item>
+    <item label="vivaldi"> <action name="Execute" command="vivaldi" /> </item>
+    <item label="slack">   <action name="Execute" command="slack" />   </item>
+    <item label="discord"> <action name="Execute" command="discord" /> </item>
 
     <separator label="Applications"/>
     <item label="Run Command"><action name="Execute" command="dmenu_run"><execute>dmenu_run</execute></action></item>
-    <item label="Labwc Reconfig">
+    <item label="Reconfigure">
         <action name="Execute" command="labwc-reconfigure" />
     </item>
 
