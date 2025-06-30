@@ -8,3 +8,9 @@ XDG_CURRENT_DESKTOP=sway
 
 # This will be used from i3-sensible-terminal
 TERMINAL=ghostty
+
+XCURSOR_SIZE=64
+
+# Map Caps Lock to Ctrl
+XKB_DEFAULT_OPTIONS=caps:ctrl_modifier
+

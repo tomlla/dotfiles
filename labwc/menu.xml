@@ -22,8 +22,10 @@
     <item label="vivaldi"> <action name="Execute" command="vivaldi" /> </item>
     <item label="slack">   <action name="Execute" command="slack" />   </item>
     <item label="discord"> <action name="Execute" command="discord" /> </item>
+    <separator />
+    <item label="wdisplays"> <action name="Execute" command="wdisplays" /> </item>
 
-    <separator label="Applications"/>
+    <separator />
     <item label="Run Command"><action name="Execute" command="dmenu_run"><execute>dmenu_run</execute></action></item>
     <item label="Reconfigure">
         <action name="Execute" command="labwc-reconfigure" />
