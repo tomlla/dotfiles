@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -xe
+timestamp=$(date '+%Y%m%d-%H_%M_%S')
+dir=~/Pictures
+image_file=${dir}/${timestamp}.png
+
+grim -g "$(slurp)" $image_file
+ksnip $image_file
+
+

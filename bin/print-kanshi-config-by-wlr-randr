@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+wlr-randr --json | jq -r '
+  "profile my_setup {",
+  (
+    map( # 各モニターの配列を処理
+      select(.enabled) | 
+      "    output " + .name +
+      " mode " + (.modes[] | select(.current) | "\(.width)x\(.height)@\(.refresh)Hz") +
+      " position " + "\(.position.x),\(.position.y)" +
+      (if .scale and .scale != 1 then " scale \(.scale)" else "" end) +
+      (if .transform and .transform != "normal" then " transform \(.transform)" else "" end)
+    ) | join("\n") 
+  ),
+  "}"
+'

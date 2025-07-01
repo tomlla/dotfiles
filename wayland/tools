@@ -1,0 +1,22 @@
+# pacman
+labwc
+waybar
+wdisplays # yay -S wdisplays-persistent
+
+# grim -g "$(slurp)" $image_file
+# ksnip $image_file
+slurp
+grim
+ksnip
+
+
+wdisplay # GUIでmonitor arrangeできるやつ
+kanshi # configからmonitor arrange設定をapplyするやつ
+# bin/print-kanshi-config-by-wlr-randr
+# ```
+# $ print-kanshi-config-by-wlr-randr
+# profile my_setup {
+#     output DP-1 mode 3840x2160@59.981998Hz position 12543,5587
+#     output eDP-1 mode 1920x1200@60.002998Hz position 16383,5406
+# }
+# ```
