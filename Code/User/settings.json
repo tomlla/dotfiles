@@ -7,13 +7,16 @@
     "editor.fontFamily": "'FiraCode Nerd', 'Fira Code', 'Droid Sans Mono',  'monospace', monospace",
     "git.blame.editorDecoration.enabled": true,
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Default Light Modern",
+    "workbench.colorTheme": "Visual Studio Light",
     "go.toolsManagement.autoUpdate": true,
     "security.workspace.trust.untrustedFiles": "open",
-    "editor.wordWrap": "on",
+    "editor.wordWrap": "off",
     "git.openRepositoryInParentFolders": "never",
     "cSpell.userWords": [
         "shree",
         "wada"
-    ]
+    ],
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "redhat.telemetry.enabled": true
 }

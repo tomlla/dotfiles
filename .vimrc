@@ -4,6 +4,7 @@ set eol
 set nocompatible
 set nu
 set incsearch
+set conceallevel=0
 
 "set listchars=tab:»_,trail:-
 "set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
@@ -355,7 +356,8 @@ nnoremap <C-g><C-g> :Rg<space>
 
 set pastetoggle=<F2>
 
-nnoremap <F3> :set nu!<cr>
+nnoremap <F3> :set nonumber<cr>:syntax off<cr>
+nnoremap <F4> :set number<cr>:syntax enable<cr>
 nnoremap <leader>3 :set wrap!<cr>
 nnoremap <F9> :ALEToggle<cr>
 

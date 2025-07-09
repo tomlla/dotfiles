@@ -77,7 +77,7 @@ border_color_hover = #45475a 60
 #==============================================================================
 panel_items = LTSCBE
 panel_monitor = all
-panel_position = top center horizontal
+panel_position = bottom center horizontal
 panel_size = 100% 42
 panel_margin = 0 0
 panel_padding = 8 4 8

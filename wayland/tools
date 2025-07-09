@@ -20,3 +20,10 @@ kanshi # configからmonitor arrange設定をapplyするやつ
 #     output eDP-1 mode 1920x1200@60.002998Hz position 16383,5406
 # }
 # ```
+#
+
+# https://wiki.archlinux.jp/index.php/XDG_%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97_%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB#xdg-desktop-portal-wlr_.E3.81.8C_sway_.E3.81.A7.E8.87.AA.E5.8B.95.E7.9A.84.E3.81.AB.E9.96.8B.E5.A7.8B.E3.81.97.E3.81.AA.E3.81.84
+# > xdg-desktop-portal と一つ以上のバックエンドをインストールします。パッケージには、D-Bus を通じて自動的に起動される systemd/ユーザー サービスが含まれています。
+xdg-desktop-portal
+xdg-desktop-portal-gtk
+

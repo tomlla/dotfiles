@@ -1,3 +1,4 @@
+alias cl=claude
 alias sq='sudo shutdown -h now'
 # alias ssp='sudo systemctl suspend' # moved to ~/dotfiles/bin/ssp
 alias v='vim -u NONE'
@@ -11,6 +12,7 @@ else
 fi
 alias ll='ls -l'
 alias la='ls -a'
+alias mkd=mkdir
 
 alias s=sudo
 alias tm=tmux

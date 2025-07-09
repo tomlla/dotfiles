@@ -1,4 +1,4 @@
-DOTFILE=/home/nt/dotfiles
+DOTFILE=/home/nt/.dotfiles
 DIST_SYSTEMD_DIR=/etc/systemd/system
 
 .DEFAULT_GOAL := all

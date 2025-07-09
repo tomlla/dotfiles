@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+for d in $(xrandr  |grep "HDMI\|Display" | awk '{print $1}'); do
+    cmd="xrandr --output $d --off"
+    echo $cmd
+    $cmd
+done

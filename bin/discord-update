@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -x -e
+
+curl -L -o /tmp/discord.tar.gz \
+  "https://discordapp.com/api/download?platform=linux&format=tar.gz"
+
+ls -l /tmp/discord.tar.gz
+mkdir -p ~/.local/share/discord
+tar -xf /tmp/discord.tar.gz -C ~/.local/share/discord/
+mkdir -p ~/.local/bin
+ln -sf ~/.local/share/discord/Discord/Discord ~/.local/bin/discord
