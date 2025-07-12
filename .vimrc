@@ -29,6 +29,12 @@ set clipboard&
 set clipboard=unnamed
 set clipboard+=unnamedplus
 
+function! s:CopyToTmuxClipboard()
+	call system('tmux load-buffer - ', getreg('"'))
+	" echo 'tmux load-buffer- ' . getreg('"')
+endfunction
+autocmd TextYankPost * call s:CopyToTmuxClipboard()
+
 set fdm=indent
 
 set autoindent
