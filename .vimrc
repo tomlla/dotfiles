@@ -40,9 +40,9 @@ set fdm=indent
 set autoindent
 
 set backup
-set backupdir=~/var/vim/backup
+set backupdir=~/.local/var/vim/backup
 set swapfile
-set directory=~/var/vim/swap
+set directory=~/.local/var/vim/swap
 set hlsearch
 set eol
 
