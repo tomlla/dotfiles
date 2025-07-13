@@ -23,7 +23,14 @@ nm-applet &
 load_if_exist() {
     [ -e $1 ] && source $1
 }
+
+# これで設定するよよいやつ
+# - TERMINAL # i3-sensible-terminalで使う
+# - BROWSER # i3-sensible-browser で使う
+# - WALLPAPER_FILE
 load_if_exist ~/.local.xinitrc
+
+[ -e $WALLPAPER_FILE ] && feh --bg-scale $WALLPAPER_FILE
 
 # exec i3
 exec openbox
