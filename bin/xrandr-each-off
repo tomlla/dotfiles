@@ -5,3 +5,5 @@ for d in $(xrandr  |grep "HDMI\|Display" | awk '{print $1}'); do
     echo $cmd
     $cmd
 done
+
+[ -e $WALLPAPER_FILE ] && feh --bg-scale $WALLPAPER_FILE
