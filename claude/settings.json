@@ -1,6 +1,7 @@
 {
   "permissions": {
     "allow": [
+      "Bash(echo:*)",
       "Bash(ls:*)",
       "Bash(grep:*)",
       "Bash(rg:*)",
@@ -10,8 +11,12 @@
       "Bash(xargs:*)",
       "Bash(go :*)",
       "Bash(tree:*)",
+      "Bash(lspci:*)",
+      "Bash(ps:*)",
+      "Bash(yay -Q:*)",
       "WebFetch(Domain:*)",
-      "WebFetch(domain:*)"
+      "WebFetch(domain:*)",
+      "WebFetch(domain:docs.anthropic.com)"
     ],
     "deny": []
   }

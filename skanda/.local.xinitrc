@@ -10,7 +10,8 @@
 export TERMINAL=alacritty
 
 # i3-sensible-browser follows $BROWSER variable
-export BROWSER=firefox
+# export BROWSER=firefox
+export BROWSER=google-chrome-stable
 
 export WALLPAPER_FILE=~/n/wallpapers/arch-linux-wallpaper-orange-4k.jpg
 

@@ -3,6 +3,7 @@ alias sq='sudo shutdown -h now'
 # alias ssp='sudo systemctl suspend' # moved to ~/dotfiles/bin/ssp
 alias v='vim -u NONE'
 alias nv='nvim'
+alias tf=terraform
 
 if [ $uname_value = 'Darwin' ]; then
   alias ls='ls -G -F' # Mac
@@ -38,11 +39,13 @@ alias g=git
 # alias cci=circleci
 alias dk=docker
 alias dkc='docker compose'
+alias dkc-ps='docker compose ps --format "table {{.Name}}\t{{.Status}}\t{{.Ports}}\t{{.ID}}"'
 alias h=heroku
 alias psysh=~/.config/composer/vendor/bin/psysh
 alias gr=./gradlew
 alias pn=pnpm
 alias aq=aqua
+alias t=task
 
 
 
