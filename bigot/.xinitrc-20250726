@@ -1,0 +1,47 @@
+#!/usr/bin/bash
+
+echo $(date) > /tmp/.xintrc-was-called
+
+. ~/.dotfiles/.bash_base
+
+# setxkbmap -option ctrl:nocaps
+xset r rate 160 70
+
+# export DefaultImModule=ibus
+# export GTK_IM_MODULE=ibus
+# export QT_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+
+export DefaultImModule=fcitx5
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS=@im=fcitx5
+export LC_CTYPE=ja_JP.utf8
+fcitx5 -d
+
+
+tint2 &
+nm-applet &
+
+# ibus-daemon -d
+
+# xinput set-prop 12 279 1
+# xinput set-prop 12 285 1
+
+speed=1.0 # -1.0 ~ 1.0 
+xinput set-prop "Logitech ERGO M575" "libinput Accel Speed" $speed
+
+# 
+
+# amixer set Speaker mute
+
+feh --bg-scale ~/n/wallpapers/archlinux-purple-wallpaper-4k.png &
+
+picom &
+
+(sleep 5 ; synergy &)& 
+
+# i3
+openbox
+
+
