@@ -7,8 +7,8 @@ decorations = "None"
 size = 14
 
 [font.normal]
-# family = "Fira Code Light"
-family = "FiraCode Nerd Font Mono"
+family = "Fira Code Light"
+# family = "FiraCode Nerd Font Mono"
 
 [general]
 # https://github.com/alacritty/alacritty-theme/blob/master/README.md
