@@ -28,3 +28,5 @@ nm-applet &
 feh --bg-scale ~/n/wallpapers/archlinux-purple-wallpaper-4k.png &
 
 conky &
+
+export TERMINAL=ghostty
