@@ -15,5 +15,24 @@
     {
         "key": "ctrl+w",
         "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+alt+t",
+        "command": "go.toggle.test.file"
+    },
+    {
+        "key": "ctrl+k ctrl+c",
+        "command": "copyRelativeFilePath",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+c",
+        "command": "-copyRelativeFilePath",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+c",
+        "command": "copyRelativeFilePath",
+        "when": "editorFocus"
     }
 ]
