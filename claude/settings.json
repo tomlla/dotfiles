@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
       "Bash(echo:*)",
@@ -19,5 +20,9 @@
       "WebFetch(domain:docs.anthropic.com)"
     ],
     "deny": []
-  }
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1754061270786
+  },
+  "model": "opus"
 }

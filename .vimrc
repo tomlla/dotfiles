@@ -5,6 +5,8 @@ set nocompatible
 set nu
 set incsearch
 set conceallevel=0
+au FileType markdown setlocal conceallevel=0
+
 
 "set listchars=tab:»_,trail:-
 "set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
@@ -160,6 +162,8 @@ Plug 'itchyny/lightline.vim'
 "Plug 'mattn/vim-soundcloud'
 call plug#end()
 
+
+nnoremap <C-e> :e <C-R>=expand('%')<CR>
 
 " === for wayland ===
 nnoremap <C-y> :call system("wl-copy --trim-newline", @")<CR>
