@@ -42,52 +42,46 @@
     rebase = false
 [alias]
     f = fetch
+
+    s = status
+    ss = status -s
+    cp = cherry-pick
+
+    a = add
+    co = commit
+    amd = commit --amend
+    emp-co = commit --allow-empty
+    first-commit = commit --allow-empty -m 'Initial empty commit'
+
     c = checkout
-    sw = switch
     cb = checkout -b
+
     b = branch
     bd = branch -d
     bdf = branch -D
     bm = branch -m
-    s = status
-    ss = status -s
-    cv = cherry -v
-    cp = cherry-pick
-    a = add
-    first-commit = commit --allow-empty -m 'Initial empty commit'
-    co = commit
-    com = commit -m
-    ca = commit -a
-    cam = commit -a -m
-    cm = commit -m
-    amd = commit --amend
+
     d = diff
     dc = diff --cached
+
     l = log
     l1 = log --oneline
     lst = log --stat
-    g = log --graph --date-order -C -M --pretty=format:'%h [%ar] [%an] %Cgreen%d%Creset %s' --all
-    gl = log --graph --branches --not --remotes=* --date-order -C -M --pretty=format:'%h [%ar] [%an] %Cgreen%d%Creset %s'
-    mD = merge origin/develop
-    mA = merge --abort
-    rb = rebase
-    rbi = rebase -i
-    rld = log origin/master..master
+
+    g0 = log --graph --all --oneline --decorate --date=format:'%Y.%m.%d %H:%M'
+    g = log --graph --date-order -C -M --pretty=format:'%h [%ar] [%an] %Cgreen%d%Creset%s' --all
+
     r = reset
     rh = reset --hard
-    rhh = reset --hard HEAD
-    rhh1 = reset --hard HEAD^
+
     st = stash
     stl = stash list
     sts = stash save
     stv = stash show -v
     stp = stash pop
     std = stash drop
-    ps = push
-    pl = pull
-    pr = pull --rebase
+
     wt = worktree
     wtl = worktree list
     wta = worktree add
     wtp = worktree prune
-    emp = commit --allow-empty
