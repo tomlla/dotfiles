@@ -15,14 +15,14 @@
       "Bash(lspci:*)",
       "Bash(ps:*)",
       "Bash(yay -Q:*)",
-      "WebFetch(Domain:*)",
+      "mcp__serena",
       "WebFetch(domain:*)",
       "WebFetch(domain:docs.anthropic.com)"
     ],
     "deny": []
   },
+  "alwaysThinkingEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754061270786
-  },
-  "model": "opus"
+  }
 }

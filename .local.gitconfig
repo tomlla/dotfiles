@@ -10,8 +10,6 @@
 [user]
     name = Nobuyasu Tomura
     email = ntomura92@gmail.com
-[branch "master"]
-    mergeoptions = --no-ff
 [credential]
 	helper = store
 [gpg]

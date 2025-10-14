@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+set -x
+claude mcp add --transport http notion https://mcp.notion.com/mcp
