@@ -1,5 +1,9 @@
 // vim: set ft=jsonc :
 {
+    "editor.rulers": [
+        100,
+        120
+    ],
     "editor.editContext": false, // これないとfcitxの変換確定してもひらがなのまま問題になるin 2025.07
     "vim.useSystemClipboard": true, // OS側とのクリップボードの共有
     // 競合するショートカットを無効化
