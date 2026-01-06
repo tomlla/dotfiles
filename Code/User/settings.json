@@ -1,5 +1,6 @@
 // vim: set ft=jsonc :
 {
+    "terminal.integrated.sendKeybindingsToShell": true,
     "editor.rulers": [
         100,
         120
