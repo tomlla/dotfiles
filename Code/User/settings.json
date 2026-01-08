@@ -9,6 +9,7 @@
     "vim.useSystemClipboard": true, // OS側とのクリップボードの共有
     // 競合するショートカットを無効化
     "vim.handleKeys": {
+        "<C-f>": false,
         "<C-p>": false
     },
     "editor.fontFamily": "'FiraCode Nerd', 'Fira Code', 'Droid Sans Mono',  'monospace', monospace",
@@ -26,4 +27,5 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
     "redhat.telemetry.enabled": true
+    "editor.lineNumbers": "on",
 }
