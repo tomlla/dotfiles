@@ -1,7 +1,7 @@
 [Unit]
-Description="Set keyrepeat faster"
-After="ly.service"
-Requires="ly.service"
+Description=Set keyrepeat faster
+After=ly@tty2.service
+Requires=ly@tty2.service
 
 [Service]
 Type=oneshot

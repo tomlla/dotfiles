@@ -7,7 +7,7 @@ echo $(date) > /tmp/.xprofile-was-called
 setxkbmap -option ctrl:nocaps
 # # setxkbmap -option japan:hztg_escape
 # 
-# xset r rate 160 100
+xset r rate 160 100
 # xmodmap $HOME/dotfiles/.Xkeymap-for-minila-air-us
 # 
 # echo $(date) > /tmp/dot-xprofile-executed
@@ -27,6 +27,6 @@ tint2 &
 nm-applet &
 feh --bg-scale ~/n/wallpapers/archlinux-purple-wallpaper-4k.png &
 
-conky &
+# conky &
 
-export TERMINAL=ghostty
+export TERMINAL=alacritty

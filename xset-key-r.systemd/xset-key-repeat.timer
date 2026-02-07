@@ -1,7 +1,7 @@
 [Unit]
-Description="call xset-key-repeat.serice every 1min"
-After="ly.service"
-Requires="ly.service"
+Description=Call xset-key-repeat.service every minute
+After=ly@tty2.service
+Requires=ly@tty2.service
 
 [Timer]
 AccuracySec=1s
