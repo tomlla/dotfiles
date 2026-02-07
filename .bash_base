@@ -101,6 +101,7 @@ if [ $uname_value = "Linux" ]; then
 fi
 __git_complete g __git_main
 
+
 if [ $uname_value = 'Darwin' ]; then
     export PS1='\n🍎 '
 elif [ $uname_value = "Linux" ]; then
@@ -173,7 +174,7 @@ if [ -x "$(which makefile-completion-go 2>/dev/null)" ]; then
     complete -F _makefile_targets_01 make
 fi
 
-task --help >/dev/null 2>&1
+task --version >/dev/null 2>&1
 if [ $? = 0 ]; then
     eval "$(task --completion bash)"
 fi
