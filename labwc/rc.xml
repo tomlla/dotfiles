@@ -45,11 +45,14 @@
     </focus>
 
     <theme>
-        <name>OB-glossy</name>
-        <cornerRadius>8</cornerRadius>
-        <keepBorder>yes</keepBorder>
-        <titleLayout>SNLIMC</titleLayout>
-        <animateIconify>yes</animateIconify>
+        <!--/usr/share/themes/README.md-->
+        <!--<name>OB-glossy</name>-->
+        <name>Arctic</name>
+
+        <!--<cornerRadius>8</cornerRadius>-->
+        <!--<keepBorder>yes</keepBorder>-->
+        <!--<titleLayout>SNLIMC</titleLayout>-->
+        <!--<animateIconify>yes</animateIconify>-->
         <font place="ActiveWindow">
             <name>Fira Code</name>
             <size>14</size>
@@ -71,14 +74,11 @@
     </theme>
 
     <windowRules>
-        <!--
-        <windowRule identifier="*" serverDecoration="yes"/>
+        <!--<windowRule identifier="*" serverDecoration="yes"/>-->
         <windowRule identifier="google-chrome" serverDecoration="no"/>
-        -->
-        <windowRule identifier="*" serverDecoration="no"/>
-        <windowRule identifier="terminator" serverDecoration="yes"/>
-        <windowRule identifier="uxterm" serverDecoration="yes"/>
-        <windowRule identifier="gnome-terminal" serverDecoration="yes"/>
+        <!--<windowRule identifier="terminator" serverDecoration="yes"/>-->
+        <!--<windowRule identifier="uxterm" serverDecoration="yes"/>-->
+        <!--<windowRule identifier="gnome-terminal" serverDecoration="yes"/>-->
     </windowRules>
 
     <desktops>

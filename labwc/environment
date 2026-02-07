@@ -7,7 +7,7 @@ XMODIFIERS=@im=fcitx5
 XDG_CURRENT_DESKTOP=sway
 
 # This will be used from i3-sensible-terminal
-TERMINAL=ghostty
+TERMINAL=alacritty
 
 XCURSOR_SIZE=32
 
