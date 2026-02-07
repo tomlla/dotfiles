@@ -9,10 +9,29 @@
 
     <windowSwitcher show="yes" preview="yes" outlines="yes">
         <fields>
+            <field content="icon" width="6%" />
             <field content="identifier" width="30%" />
             <field content="title" width="70%" />
         </fields>
     </windowSwitcher>
+    <windowSwitcher preview="yes" outlines="yes" unshade="yes">
+       <osd show="yes" style="classic" output="all" thumbnailLabelFormat="%T" />
+       <fields>
+         <field content="icon" width="5%" />
+         <field content="desktop_entry_name" width="30%" />
+         <field content="title" width="65%" />
+         <!--
+           Just as for window-rules, you can use 'identifier' or
+           'trimmed_identifier' to show the app_id for native wayland clients or
+           WM_CLASS for XWayland clients.
+   
+           <field content="trimmed_identifier" width="65%" />
+         -->
+       </fields>
+     </windowSwitcher>
+
+
+
 
     <resistance>
         <strength>10</strength>
@@ -43,6 +62,12 @@
             <weight>Normal</weight>
             <slant>Normal</slant>
         </font>
+        <font place="OnScreenDisplay">
+            <name>Sans</name>
+            <size>20</size>
+            <weight>Normal</weight>
+            <slant>Normal</slant>
+        </font>
     </theme>
 
     <windowRules>
@@ -57,6 +82,7 @@
     </windowRules>
 
     <desktops>
+        <popupTime>0</popupTime>
         <number>4</number>
     </desktops>
 
@@ -99,6 +125,11 @@
         <!-- Keybindings for window switching -->
         <keybind key="A-Tab"><action name="NextWindow"/></keybind>
         <keybind key="A-S-Tab"><action name="PreviousWindow"/></keybind>
+        <!--<keybind key="A-Tab">-->
+          <!--<action name="Execute">-->
+            <!--<command>rofi -show window -font "Fira Code 20" -show-icons</command>-->
+          <!--</action>-->
+        <!--</keybind>-->
 
         <!-- Keybindings for window resizing -->
         <keybind key="A-k"><action name="ResizeRelative"><bottom>-20</bottom></action></keybind>

@@ -6,7 +6,7 @@
 
 
 # i3-sensible-terminal follows $TERMINAL variable
-#export TERMINAL=ghostty
+# export TERMINAL=ghostty
 export TERMINAL=alacritty
 
 # i3-sensible-browser follows $BROWSER variable

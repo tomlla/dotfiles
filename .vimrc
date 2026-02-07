@@ -11,6 +11,7 @@ au FileType markdown setlocal conceallevel=0
 "set listchars=tab:»_,trail:-
 "set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 "set list
+"
 
 set laststatus=2
 "set cursorcolumn
@@ -108,6 +109,9 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 "Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ntpeters/vim-better-whitespace'
+
+
 
 Plug 'prabirshrestha/async.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
@@ -425,3 +429,6 @@ let s:localvimrc = expand("~/.local.vimrc")
 if file_readable(s:localvimrc)
     execute 'source '.s:localvimrc
 endif
+
+let g:better_whitespace_enabled=1
+
