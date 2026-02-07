@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <labwc_config>
     <core>
         <decoration>server</decoration>
@@ -175,18 +176,25 @@
         </context>
 
         <!-- Keybindings for window resizing -->
-		<context name="Top"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
-		<context name="Left"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
-		<context name="Right"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
-		<context name="Bottom"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
-		<context name="TRCorner"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
-		<context name="BRCorner"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
-		<context name="TLCorner"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
-		<context name="BLCorner"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+        <context name="Top"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+        <context name="Left"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+        <context name="Right"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+        <context name="Bottom"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+        <context name="TRCorner"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+        <context name="BRCorner"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+        <context name="TLCorner"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
+        <context name="BLCorner"><mousebind button="Left" action="Drag"><action name="Resize" /></mousebind></context>
 
         <context name="Title">
             <mousebind button="Left" action="Drag"><action name="Move" /></mousebind> <!-- Keybindings for window moving -->
             <mousebind button="Left" action="DoubleClick"><action name="ToggleMaximize" /></mousebind>
+        </context>
+        <context name="Desktop">
+            <mousebind button="Middle" action="Press">
+                <action name="Execute">
+                    <command>rofi -show window -font "Not Sans 24"</command>
+                </action>
+            </mousebind>
         </context>
 
         <context name="Client">
