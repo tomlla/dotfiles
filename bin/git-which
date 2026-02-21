@@ -1,20 +1,24 @@
 #!/usr/bin/env bash
 
-# Example 
+# Example
 # $ git which-alias amd
 # git commit --ammaned
 
 # Example of $ git config list
-# alias.wtl=worktree list
-# alias.wta=worktree add
+# alias.a=add
 # alias.wtp=worktree prune
 # alias.emp=commit --allow-empty
 if [ "$1" == "" ]; then
     echo "USAGE"
     echo "git which <git alias command>"
-    echo 
+    echo
     echo "EXAMPLE"
     echo "git which cb"
     exit 1
 fi
-git config list | grep $1 | sed 's/^alias.//' | sed -r 's/^(.*)=(.*)/git \1 = git \2/'
+
+if [ "$1" == "fzf" ]; then
+    git config list | grep alias | fzf
+else
+    git config list | grep alias | grep "alias\.$1="
+fi
