@@ -427,7 +427,7 @@ augroup VimGoSetup
     autocmd FileType go nmap <leader>b <Plug>(go-build)
 augroup END
 set updatetime=100
-let g:go_auto_type_info = 1
+let g:go_auto_type_info = 0
 
 let s:localvimrc = expand("~/.local.vimrc")
 if file_readable(s:localvimrc)
