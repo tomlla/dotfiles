@@ -400,13 +400,9 @@ autocmd FileType make set noexpandtab
 autocmd FileType vue syntax sync fromstart
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
-if executable('gopls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'gopls',
-        \ 'cmd': {server_info->['gopls']},
-        \ 'whitelist': ['go'],
-        \ })
-endif
+let g:go_gopls_enabled = 0
+let g:go_def_mapping_enabled = 0
+let g:go_doc_keywordprg_enabled = 0
 " if executable('clangd')
 "     au User lsp_setup call lsp#register_server({
 "         \ 'name': 'clangd',
@@ -425,6 +421,8 @@ augroup VimGoSetup
     "autocmd FileType go nmap <leader>cv <Plug>(go-coverage-toggle)
     autocmd FileType go nmap <leader>i <Plug>(go-info)
     autocmd FileType go nmap <leader>b <Plug>(go-build)
+    autocmd FileType go nmap <C-]> <plug>(lsp-definition)
+    autocmd FileType go nmap K <plug>(lsp-hover)
 augroup END
 set updatetime=100
 let g:go_auto_type_info = 0
