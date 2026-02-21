@@ -55,7 +55,11 @@ else
     call plug#begin('~/.vim/plugged')
 end
 "--- color scheme ---
-Plug 'jdkanani/vim-material-theme'
+" Plug 'Mofiqul/vscode.nvim'
+" Plug 'zefei/cake16'
+" Plug 'junegunn/seoul256.vim'
+" Plug 'morhetz/gruvbox'
+" Plug 'jdkanani/vim-material-theme'
 Plug 'nanotech/jellybeans.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'altercation/vim-colors-solarized'
@@ -219,8 +223,8 @@ set statusline+=%*
 
 set background=light
 " colorscheme default
-" colorscheme solarized
-colorscheme PaperColor
+colorscheme solarized
+" colorscheme PaperColor
 
 " ==== plugin settings ===
 
