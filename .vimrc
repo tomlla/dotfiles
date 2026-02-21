@@ -17,13 +17,13 @@ set laststatus=2
 "set cursorcolumn
 set nowrap
 
-set expandtab 
+set expandtab
 set tabstop=4 sw=4 sts=4
 set modeline
-"set showcmd 
+"set showcmd
 
-set formatoptions+=mM  
-set ambiwidth=double  
+set formatoptions+=mM
+set ambiwidth=double
 set encoding=utf-8
 " set fileencoding=utf-8
 " set fileencodings=utf-8,cp932
