@@ -139,7 +139,7 @@ fzf-git-worktree-cd() {
     fi
     cd $wt_dir
 }
-alias cd-g-wt=fzf-git-worktree-cd
+alias g-wt-fzf=fzf-git-worktree-cd
 
 mkcd () {
     mkdir -p $1 && cd $1

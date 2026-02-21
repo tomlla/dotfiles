@@ -34,5 +34,9 @@
         "key": "ctrl+k ctrl+c",
         "command": "copyRelativeFilePath",
         "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+enter",
+        "command": "workbench.action.toggleMaximizedPanel"
     }
 ]

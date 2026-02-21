@@ -115,9 +115,14 @@ alias vagd='vagrant destroy'
 #########################
 alias ta="tmux ls && tmux attach || echo 'tmux session not found, create new tmux session.'; tmux"
 #prefix をC-gに
-alias tpg='tmux set-option -ag prefix C-u'
+alias tm-pg='tmux set-option -ag prefix C-u'
 #prefix をC-bに
-alias tpb='tmux set-option -ag prefix C-b'
+alias tm-pb='tmux set-option -ag prefix C-b'
+
+#################
+# Screen aliases
+#################
+alias scr=screen
 
 ######################
 # vim alias

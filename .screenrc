@@ -1,0 +1,7 @@
+startup_message off
+
+hardstatus alwayslastline
+# hardstatus string "%{= kG}[%H] %-Lw%{= kW}%n*%t%{-}%+Lw %{= kG}%Y-%m-%d"
+hardstatus string "%{= kG}[%H] %-Lw%{= kW}%n*%{-}%+Lw %{= kG}"
+
+escape ^z^z
