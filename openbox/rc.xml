@@ -692,7 +692,7 @@
     <application name="slack">
       <decor>no</decor>
     </application>
-    <application name="google-chrom">
+    <application name="google-chrome">
       <decor>no</decor>
     </application>
     <application name="firefox">
