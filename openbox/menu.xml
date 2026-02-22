@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/ file:///usr/X11R6/share/openbox/menu.xsd">
 <menu id="root-menu" label="openbox3">
-    <item label="blueberry"><action name="Execute"><execute>blueberry</execute></action></item>
+    <item label="bluetooth"><action name="Execute"><execute>blueman-manager</execute></action></item>
     <item label="pavucontrol"><action name="Execute"><execute>pavucontrol</execute></action></item>
     <separator />
 
