@@ -26,6 +26,8 @@
     "pyright-lsp@claude-plugins-official": true,
     "example-skills@anthropic-agent-skills": true
   },
+  "_commentAbout: syntaxHighlightingDisabled=true": "alacritty solarized light でDisabledにしないとうすくてみにくかった */",
+  "syntaxHighlightingDisabled": true,  
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
