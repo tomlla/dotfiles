@@ -39,7 +39,7 @@
 [pull]
     rebase = false
 [alias]
-    # f = fetch
+    f = fetch
 
     s = status
     ss = status -s
