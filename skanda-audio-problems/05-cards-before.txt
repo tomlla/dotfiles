@@ -1,0 +1,4 @@
+0	alsa_card.pci-0000_04_00.1	module-alsa-card.c
+1	alsa_card.pci-0000_04_00.6	module-alsa-card.c
+6	alsa_card.usb-GENERAL_GENERAL_WEBCAM_JH0319_20200710_v012-02	module-alsa-card.c
+7	alsa_card.usb-MICE_MICROPHONE_USB_MICROPHONE_201308-00	module-alsa-card.c

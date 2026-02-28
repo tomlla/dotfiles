@@ -1,0 +1,12 @@
+pipewire 1:1.4.10-2
+pipewire-audio 1:1.4.10-2
+pulseaudio 17.0+r98+gb096704c0-1
+pulseaudio-alsa 1:1.2.12-5
+pulseaudio-bluetooth 17.0+r98+gb096704c0-1
+pulseaudio-ctl 1.70-2
+pulseaudio-equalizer 17.0+r98+gb096704c0-1
+pulseaudio-jack 17.0+r98+gb096704c0-1
+pulseaudio-lirc 17.0+r98+gb096704c0-1
+pulseaudio-rtp 17.0+r98+gb096704c0-1
+pulseaudio-zeroconf 17.0+r98+gb096704c0-1
+wireplumber 0.5.13-1

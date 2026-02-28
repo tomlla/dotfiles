@@ -11,6 +11,8 @@ export HISTFILESIZE=-1
 export HISTSIZE=-1
 export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE=~/.bash_eternal_history
+export EDITOR=vim
+
 # PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 export RIPGREP_CONFIG_PATH="$HOME/.dotfiles/.ripgreprc"

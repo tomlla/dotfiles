@@ -1,0 +1,15 @@
+	Active Profile: off
+	Ports:
+		[Out] HDMI3: HDMI / DisplayPort 3 Output (type: HDMI, priority: 1300, latency offset: 0 usec, availability group: HDMI/DP,pcm=8, not available)
+--
+	Active Profile: HiFi (Mic1, Mic2, Speaker)
+	Ports:
+		[Out] Speaker: Speaker (type: Speaker, priority: 100, latency offset: 0 usec, availability unknown)
+--
+	Active Profile: input:mono-fallback
+	Ports:
+		analog-input-mic: Microphone (type: Mic, priority: 8700, latency offset: 0 usec, availability unknown)
+--
+	Active Profile: input:mono-fallback
+	Ports:
+		analog-input-mic: Microphone (type: Mic, priority: 8700, latency offset: 0 usec, availability unknown)

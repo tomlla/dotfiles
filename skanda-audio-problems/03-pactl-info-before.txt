@@ -1,0 +1,15 @@
+Server String: /run/user/1000/pulse/native
+Library Protocol Version: 35
+Server Protocol Version: 35
+Is Local: yes
+Client Index: 11
+Tile Size: 65472
+User Name: nt
+Host Name: skanda
+Server Name: pulseaudio
+Server Version: 17.0-98-gb096
+Default Sample Specification: s16le 2ch 44100Hz
+Default Channel Map: front-left,front-right
+Default Sink: alsa_output.pci-0000_04_00.6.HiFi__Headphones__sink
+Default Source: alsa_input.usb-MICE_MICROPHONE_USB_MICROPHONE_201308-00.mono-fallback
+Cookie: 5930:9700

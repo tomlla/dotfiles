@@ -1,4 +1,5 @@
 alias cl=claude
+alias clD="claude  --allow-dangerously-skip-permissions --dangerously-skip-permissions"
 alias sq='sudo shutdown -h now'
 # alias ssp='sudo systemctl suspend' # moved to ~/dotfiles/bin/ssp
 alias v='vim -u NONE'

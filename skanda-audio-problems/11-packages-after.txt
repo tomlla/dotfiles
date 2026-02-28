@@ -1,0 +1,5 @@
+pipewire 1:1.4.10-2
+pipewire-audio 1:1.4.10-2
+pipewire-pulse 1:1.4.10-2
+pulseaudio-alsa 1:1.2.12-5
+wireplumber 0.5.13-1

@@ -21,7 +21,8 @@ applyTo: '**'
 
 - 英語で質問を投げることもありますが、日本語で回答してください。
 - LLMの回答文章内で、fileのpath:line を表示すると見にくいので、行を分けて.
-- テーブル形式の表示はなるべくさけて、もしやる場合特に線文字を使った独自表現ではなく、markdown table形式で書いて.
+- DO NOT USE TABLE IN YOUR ANSWER! DO NOT USE TABLE.
+  except I ask to use table style explicit.
 
 # コードの記述
 - 優秀なSenior Software Engineerの書くコードを書いてください

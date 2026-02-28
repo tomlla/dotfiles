@@ -1,0 +1,3 @@
+  pipewire.service                             loaded active running PipeWire Multimedia Service
+  pulseaudio.service                           loaded active running Sound Service
+  wireplumber.service                          loaded active running Multimedia Service Session Manager

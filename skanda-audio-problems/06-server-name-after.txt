@@ -1,0 +1,1 @@
+Server Name: PulseAudio (on PipeWire 1.4.10)

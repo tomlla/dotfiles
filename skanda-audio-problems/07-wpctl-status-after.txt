@@ -1,0 +1,51 @@
+PipeWire 'pipewire-0' [1.4.10, nt@skanda, cookie:1091291657]
+ └─ Clients:
+        32. WirePlumber                         [1.4.10, nt@skanda, pid:98741]
+        33. pipewire                            [1.4.10, nt@skanda, pid:98742]
+        46. WirePlumber [export]                [1.4.10, nt@skanda, pid:98741]
+        71. Google Chrome                       [1.4.10, nt@skanda, pid:90229]
+        81. Blueman                             [1.4.10, nt@skanda, pid:88514]
+        82. wpctl                               [1.4.10, nt@skanda, pid:98929]
+
+Audio
+ ├─ Devices:
+ │      47. Radeon High Definition Audio Controller [alsa]
+ │      48. Ryzen HD Audio Controller           [alsa]
+ │      49. GENERAL WEBCAM                      [alsa]
+ │      50. Blue Snowball                       [alsa]
+ │  
+ ├─ Sinks:
+ │  *   57. Ryzen HD Audio Controller Speaker   [vol: 0.40]
+ │  
+ ├─ Sources:
+ │  *   34. GENERAL WEBCAM Mono                 [vol: 1.00]
+ │      58. Ryzen HD Audio Controller Stereo Microphone [vol: 1.00]
+ │      59. Ryzen HD Audio Controller Digital Microphone [vol: 1.00]
+ │      60. Blue Snowball Mono                  [vol: 1.00]
+ │  
+ ├─ Filters:
+ │  
+ └─ Streams:
+        72. Google Chrome                                               
+             73. output_FL       > CX11880 Analog:playback_FL	[active]
+             74. output_FR       > CX11880 Analog:playback_FR	[active]
+
+Video
+ ├─ Devices:
+ │      42. GENERAL WEBCAM                      [v4l2]
+ │      43. Integrated Camera                   [v4l2]
+ │      44. GENERAL WEBCAM                      [v4l2]
+ │      45. Integrated Camera                   [v4l2]
+ │  
+ ├─ Sinks:
+ │  
+ ├─ Sources:
+ │  *   77. Integrated Camera (V4L2)           
+ │      79. GENERAL WEBCAM (V4L2)              
+ │  
+ ├─ Filters:
+ │  
+ └─ Streams:
+
+Settings
+ └─ Default Configured Devices:
