@@ -72,7 +72,7 @@ Plug 'dracula/vim'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'leafgarland/typescript-vim', {'for':['typescript'] }
 Plug 'wavded/vim-stylus', {'for': ['stylus', 'styl']}
-Plug 'prettier/vim-prettier', { 'for': ['html', 'javascript']}
+Plug 'prettier/vim-prettier', { 'for': ['html', 'javascript', 'typescript', 'typescriptreact']}
 "Plug 'posva/vim-vue', {'for': 'vue'}
 "Plug 'digitaltoad/vim-pug', {'for': ['pug', 'vue']}
 Plug 'cakebaker/scss-syntax.vim', {'for': ['css', 'scss', 'vue']}
@@ -186,26 +186,6 @@ nnoremap <leader>g :call setline('.', printf('[#%d]', IssueNumber()))<cr>A<space
 
 let g:vue_pre_processors = ['pug', 'scss']
 
-highlight ALEWarning ctermbg=DarkMagenta
-let g:ale_list_window_size = 4
-let g:ale_sign_error = '✖ '
-let g:ale_sign_warning = '⚠ '
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format='[%linter%](%severity%) %code: %%s'
-let g:ale_open_list = 1
-let g:ale_linters = {
-      \ 'ruby': ['rubocop'],
-      \ 'go': ['gopls'],
-      \ 'python': ['flake8'],
-      \}
-
-let g:ale_fixers = {
-    \ 'javascript': ['prettier', 'eslint'],
-    \ 'typescript': ['prettier', 'eslint'],
-    \ }
-
-nnoremap <leader>f :ALEFix<cr>
 nmap <F1> :echo<CR>
 imap <F1> <C-o>:echo<CR>
 
@@ -377,7 +357,6 @@ set pastetoggle=<F2>
 nnoremap <F3> :set nonumber<cr>:syntax off<cr>
 nnoremap <F4> :set number<cr>:syntax enable<cr>
 nnoremap <leader>3 :set wrap!<cr>
-nnoremap <F9> :ALEToggle<cr>
 
 nnoremap <leader>d :.!date +"\%Y-\%m-\%d"<cr>A
 
@@ -400,6 +379,11 @@ autocmd FileType make set noexpandtab
 autocmd FileType vue syntax sync fromstart
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
+" =====================================
+" TODO: in new environment
+" =====================================
+" :LspInstallServer typescript-language-server
+
 let g:go_gopls_enabled = 0
 let g:go_def_mapping_enabled = 0
 let g:go_doc_keywordprg_enabled = 0
@@ -411,7 +395,7 @@ let g:go_doc_keywordprg_enabled = 0
 "         \ })
 " endif
 
-let g:lsp_diagnostics_enabled = 0
+let g:lsp_diagnostics_enabled = 1
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/.vim-lsp.log')
 
@@ -424,6 +408,15 @@ augroup VimGoSetup
     autocmd FileType go nmap <C-]> <plug>(lsp-definition)
     autocmd FileType go nmap K <plug>(lsp-hover)
 augroup END
+
+augroup TypeScriptLspSetup
+    autocmd!
+    autocmd FileType typescript,typescriptreact,javascript,javascriptreact nmap <buffer> <C-]> <plug>(lsp-definition)
+    autocmd FileType typescript,typescriptreact,javascript,javascriptreact nmap <buffer> K <plug>(lsp-hover)
+    autocmd FileType typescript,typescriptreact,javascript,javascriptreact nmap <buffer> <leader>r <plug>(lsp-references)
+    autocmd FileType typescript,typescriptreact,javascript,javascriptreact nmap <buffer> <leader>rn <plug>(lsp-rename)
+augroup END
+
 set updatetime=100
 let g:go_auto_type_info = 0
 
