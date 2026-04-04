@@ -1,1 +1,9 @@
 --hidden
+--no-ignore-vcs
+--glob=!.git/
+--glob=!node_modules/
+--glob=!.venv/
+--glob=!__pycache__/
+--glob=!.mypy_cache/
+--glob=!dist/
+--glob=!.ruff_cache/

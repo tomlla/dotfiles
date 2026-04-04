@@ -115,7 +115,7 @@ else
 fi
 # export PS1='\u@\h \w$(__git_ps1)\n\$ '
 
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='rg --files'
 
 git-switch-branch() {
   local branches branch
