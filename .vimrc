@@ -125,8 +125,8 @@ Plug 'Shougo/unite-outline'
 Plug 'sorah/unite-ghq'
 Plug 'mcasper/vim-infer-debugger' " Add debugge; or binding.pry
 
-Plug 'Shougo/deoplete.nvim'
-Plug 'lighttiger2505/deoplete-vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
@@ -407,7 +407,16 @@ augroup VimGoSetup
     autocmd FileType go nmap <leader>b <Plug>(go-build)
     autocmd FileType go nmap <C-]> <plug>(lsp-definition)
     autocmd FileType go nmap K <plug>(lsp-hover)
+    autocmd FileType go nmap <leader>r <plug>(lsp-references)
+    autocmd FileType go nmap <leader>rn <plug>(lsp-rename)
+    autocmd FileType go nmap <leader>a <plug>(lsp-code-action)
 augroup END
+
+" === asyncomplete (LSP completion) ===
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <CR>    pumvisible() ? asyncomplete#close_popup() : "\<CR>"
+imap <C-Space> <Plug>(asyncomplete_force_refresh)
 
 augroup TypeScriptLspSetup
     autocmd!
