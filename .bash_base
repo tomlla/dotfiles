@@ -55,6 +55,7 @@ addPath /var/lib/snapd/snap/bin
 addPath ${HOME}/.kubectx
 addPath ${HOME}/google-cloud-sdk/bin
 addPath ${HOME}/.asdf/shims
+addPath ${HOME}/usr/local/go/bin
 can aqua && addPath $(aqua root-dir)/bin
 
 source ~/.dotfiles/shell.d/*.bash
