@@ -7,3 +7,4 @@
 --glob=!.mypy_cache/
 --glob=!dist/
 --glob=!.ruff_cache/
+--glob=!.pyright-results/

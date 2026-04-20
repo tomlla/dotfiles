@@ -17,20 +17,41 @@
       "Bash(yay -Q:*)",
       "mcp__serena",
       "WebFetch(domain:*)",
-      "WebFetch(domain:docs.anthropic.com)"
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebSearch",
+      "Bash(for pkg in el-common el-hems-common el-appserver el-ocppcs)",
+      "Bash(do)",
+      "Bash(done)",
+      "Bash(git log:*)",
+      "Bash(act:*)",
+      "WebFetch(domain:docs.stripe.com)",
+      "Bash(gh pr view:*)",
+      "Bash(gh issue view:*)",
+      "Bash(task ruff.format:*)",
+      "Bash(ruff format:*)",
+      "Bash(ruff check:*)",
+      "Bash(task dk.test:*)",
+      "Bash(git stash pop:*)",
+      "WebFetch(domain:firebase.google.com)"
     ],
-    "deny": []
+    "deny": [],
+    "ask": [],
+    "defaultMode": "auto"
   },
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
-    "example-skills@anthropic-agent-skills": true
+    "example-skills@anthropic-agent-skills": true,
+    "pipecat-mcp-server@pipecat-skills": false
   },
-  "_commentAbout: syntaxHighlightingDisabled=true": "alacritty solarized light でDisabledにしないとうすくてみにくかった */",
-  "syntaxHighlightingDisabled": true,  
+  "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
+  "skipAutoPermissionPrompt": true,
+  "_commentAbout: syntaxHighlightingDisabled=true": "alacritty solarized light でDisabledにしないとうすくてみにくかった */",
   "feedbackSurveyState": {
     "lastShownTime": 1754061270786
-  }
+  },
+  "theme": "light"
 }

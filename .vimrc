@@ -2,7 +2,7 @@
 set binary
 set eol
 set nocompatible
-set nu
+" set nu
 set incsearch
 set conceallevel=0
 au FileType markdown setlocal conceallevel=0
@@ -354,8 +354,7 @@ nnoremap <C-g><C-g> :Rg<space>
 
 set pastetoggle=<F2>
 
-nnoremap <F3> :set nonumber<cr>:syntax off<cr>
-nnoremap <F4> :set number<cr>:syntax enable<cr>
+nnoremap <F3> :set nu!<cr>
 nnoremap <leader>3 :set wrap!<cr>
 
 nnoremap <leader>d :.!date +"\%Y-\%m-\%d"<cr>A

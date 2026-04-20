@@ -20,3 +20,7 @@ font-size = 16
 # * -calt: disable Ligature
 font-feature = "-calt"
 font-feature = -dlig
+
+theme = iTerm2 Solarized Light
+
+

@@ -23,6 +23,8 @@ alias ggl='w3m https://google.com'
 alias flux="xflux -l 35 -g 139"
 alias wa="/usr/bin/watch"
 
+alias fd='fd -H --color=never'
+
 # === Archlinux ===
 alias yay-Syuu-noconfirm="yay -Syuu --noconfirm"
 alias p='sudo pacman'
@@ -71,3 +73,9 @@ alias rbo='bundle exec rubocop'
 alias ca=cargo
 alias caw='cargo watch -x'
 #     alias gcl-interactive="gcloud alpha interactive"
+
+# ===================
+
+
+alias table='mlr --json --opprint cat'
+

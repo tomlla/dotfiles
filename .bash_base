@@ -118,7 +118,7 @@ fi
 
 export FZF_DEFAULT_COMMAND='rg --files'
 
-git-switch-branch() {
+function swb() {
   local branches branch
   branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
   branch=$(echo "$branches" |fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
@@ -183,3 +183,9 @@ task --version >/dev/null 2>&1
 if [ $? = 0 ]; then
     eval "$(task --completion bash)"
 fi
+
+ta() {
+    local session
+    session=$(tmux ls 2>/dev/null | fzf --exit-0 --select-1 | cut -d: -f1) || return
+    tmux attach -t "$session"
+}

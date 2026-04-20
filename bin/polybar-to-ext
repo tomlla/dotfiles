@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+for m in $(polybar -m | cut -d":" -f1); do
+    if [ "$m" != "eDP" ]; then
+        echo "POLYBAR_MONITOR=$m polybar"
+        POLYBAR_MONITOR=$m polybar &
+    fi
+done

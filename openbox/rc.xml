@@ -252,7 +252,8 @@
     <keybind key="W-Return">
       <action name="Execute">
         <!--<execute>alacritty</execute>-->
-        <execute>i3-sensible-terminal</execute>
+        <execute>ghostty</execute>
+        <!--<execute>i3-sensible-terminal</execute>-->
       </action>
     </keybind>
 
