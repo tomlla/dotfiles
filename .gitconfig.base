@@ -82,6 +82,7 @@
     stv = stash show -v
     stp = stash pop
     std = stash drop
+    st-rename = stash-rename
 
     wt = worktree
     wtl = worktree list

@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+#
+# git-stash-rename: 既存の stash に付け直した名前(メッセージ)で stash し直す。
+#
+# NOTE: この script は `git stash -u` (untracked file を含む stash) を考慮できていない。
+#       untracked を含む stash を rename すると、pop 後の再 push で untracked 分を
+#       取りこぼす可能性がある。対応が必要になったら別途実装すること。
+
+set -euo pipefail
+
+usage() {
+    cat <<-EOF
+	Usage:
+	    git stash-rename <stash> <new name>
+
+	Example:
+	    git stash-rename stash@{0} tmp-fix-issue-901-validation
+
+	Current stashes:
+	EOF
+    git stash list || true
+}
+
+# git stash pop は対象を作業ツリーへ展開するため、元から変更がある状態だと
+# rename 対象の変更と混ざってしまう。安全のため clean な状態のみ許可する。
+working_dir_is_dirty() {
+    ! git diff --quiet || ! git diff --cached --quiet
+}
+
+main() {
+    if [[ -z "$(git stash list)" ]]; then
+        echo "no stashes" >&2
+        exit 1
+    fi
+
+    if [[ $# -lt 2 ]]; then
+        usage >&2
+        exit 1
+    fi
+
+    local stash_number="$1"
+    local new_name="$2"
+
+    # `stash@{1}` と bare number `1` の両形式を受け付ける。git stash 自体は
+    # bare number を解釈できるが、検証に使う git rev-parse は解釈しないため、
+    # ここで `stash@{N}` へ正規化する。
+    local stash_ref="$stash_number"
+    if [[ "$stash_number" =~ ^[0-9]+$ ]]; then
+        stash_ref="stash@{$stash_number}"
+    fi
+
+    if ! git rev-parse --verify --quiet "$stash_ref" >/dev/null; then
+        echo "no stash $stash_number" >&2
+        exit 1
+    fi
+
+    if working_dir_is_dirty; then
+        echo "working directory has uncommitted changes; cannot rename stash" >&2
+        exit 1
+    fi
+
+    git stash pop "$stash_ref"
+    git stash push -m "$new_name"
+}
+
+main "$@"
