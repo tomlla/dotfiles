@@ -355,6 +355,7 @@ nnoremap <C-g><C-g> :Rg<space>
 set pastetoggle=<F2>
 
 nnoremap <F3> :set nu!<cr>
+nnoremap <F4> :set wrap!<cr>
 nnoremap <leader>3 :set wrap!<cr>
 
 nnoremap <leader>d :.!date +"\%Y-\%m-\%d"<cr>A
