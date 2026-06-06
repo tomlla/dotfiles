@@ -202,8 +202,8 @@ set statusline+=%*
 " colorscheme desertEx
 
 set background=light
-" colorscheme default
-colorscheme solarized
+colorscheme default
+" colorscheme solarized
 " colorscheme PaperColor
 
 " ==== plugin settings ===

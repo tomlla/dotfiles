@@ -13,7 +13,7 @@ keybind = ctrl+m=text:\n
 keybind = ctrl+enter=unbind
 keybind = f11=toggle_fullscreen
 
-font-style = "Noto Sans Mono"
+# font-style = "Noto Sans Mono"
 font-size = 16
 
 # https://ghostty.org/docs/config/reference#font-feature
@@ -21,6 +21,8 @@ font-size = 16
 font-feature = "-calt"
 font-feature = -dlig
 
-theme = iTerm2 Solarized Light
+# theme = iTerm2 Solarized Light
+# theme = dark:Catppuccin Frappe,light:iTerm2 Solarized Light
+theme = dark:Catppuccin Frappe,light:Apple System Colors Light
 
 

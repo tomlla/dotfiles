@@ -6,13 +6,18 @@ echo $(date) > /tmp/.xprofile-was-called
 
 setxkbmap -option ctrl:nocaps
 # # setxkbmap -option japan:hztg_escape
-# 
+#
 xset r rate 160 100
 # xmodmap $HOME/dotfiles/.Xkeymap-for-minila-air-us
-# 
+#
 # echo $(date) > /tmp/dot-xprofile-executed
 
 xset r rate 160 60
+
+# screensever/画面off やらない設定
+xset s off
+xset s noblank
+xset -dpms
 
 export DefaultImModule=fcitx5
 export GTK_IM_MODULE=fcitx5
@@ -29,4 +34,5 @@ feh --bg-scale ~/n/wallpapers/archlinux-purple-wallpaper-4k.png &
 
 # conky &
 
-export TERMINAL=alacritty
+# export TERMINAL=alacritty
+export TERMINAL=ghostty
