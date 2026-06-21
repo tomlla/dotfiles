@@ -38,6 +38,10 @@
     "ask": [],
     "defaultMode": "auto"
   },
+  "statusLine": {
+    "type": "command",
+    "command": "printf 'CLAUDE_CONFIG_DIR=%s' \"${CLAUDE_CONFIG_DIR:-(unset)}\""
+  },
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
@@ -48,10 +52,10 @@
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
+  "theme": "light",
   "skipAutoPermissionPrompt": true,
   "_commentAbout: syntaxHighlightingDisabled=true": "alacritty solarized light でDisabledにしないとうすくてみにくかった */",
   "feedbackSurveyState": {
     "lastShownTime": 1754061270786
-  },
-  "theme": "light"
+  }
 }

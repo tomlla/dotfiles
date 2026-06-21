@@ -1,5 +1,11 @@
 // vim: set ft=jsonc :
 {
+    "editor.colorDecorators": false,
+    "[css]": { "editor.colorDecorators": true },
+    "[html]": { "editor.colorDecorators": true },
+    "[javascriptreact]": {    "editor.colorDecorators": true  },
+    "[typescriptreact]": { "editor.colorDecorators": true },
+
     "terminal.integrated.sendKeybindingsToShell": true,
     "editor.rulers": [
         100,
