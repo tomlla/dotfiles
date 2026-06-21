@@ -426,6 +426,22 @@ augroup TypeScriptLspSetup
     autocmd FileType typescript,typescriptreact,javascript,javascriptreact nmap <buffer> <leader>rn <plug>(lsp-rename)
 augroup END
 
+" jedi-vim は LSP に任せるので補完/定義ジャンプを無効化
+let g:jedi#completions_enabled = 0
+let g:jedi#goto_command = ""
+let g:jedi#goto_assignments_command = ""
+let g:jedi#documentation_command = ""
+let g:jedi#usages_command = ""
+
+augroup PythonLspSetup
+    autocmd!
+    autocmd FileType python nmap <buffer> <C-]> <plug>(lsp-definition)
+    autocmd FileType python nmap <buffer> K <plug>(lsp-hover)
+    autocmd FileType python nmap <buffer> <leader>r <plug>(lsp-references)
+    autocmd FileType python nmap <buffer> <leader>rn <plug>(lsp-rename)
+    autocmd FileType python nmap <buffer> <leader>a <plug>(lsp-code-action)
+augroup END
+
 set updatetime=100
 let g:go_auto_type_info = 0
 
