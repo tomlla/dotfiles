@@ -47,5 +47,10 @@ load_if_exist ~/.local.xinitrc
 
 [ -e $WALLPAPER_FILE ] && feh --bg-scale $WALLPAPER_FILE
 
+# なくてもportal,fcitx5などに問題がないならけしてしまいたい
+# dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
+
 # exec i3
 exec openbox
+
+
