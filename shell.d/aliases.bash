@@ -23,7 +23,7 @@ alias ggl='w3m https://google.com'
 alias flux="xflux -l 35 -g 139"
 alias wa="/usr/bin/watch"
 
-alias fd="fd -H -E=.git/ -E=.cache/ --color=never"
+alias fd="fd -H -E=.git/ -E=.cache/ -E=.wt/ --color=never"
 
 # === Archlinux ===
 alias yay-Syuu-noconfirm="yay -Syuu --noconfirm"
