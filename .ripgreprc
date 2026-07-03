@@ -1,5 +1,7 @@
 --hidden
 --no-ignore-vcs
+# --colors=path:fg:cyan
+# --color=never
 --glob=!.git/
 --glob=!node_modules/
 --glob=!.venv/

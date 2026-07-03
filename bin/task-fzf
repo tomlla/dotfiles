@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+task_line=$(task --list-all --json | jq -c '.tasks[] | "\(.name) \(.desc)"' | sed 's/"//g' | fzf)
+if [ "$task_line" == "" ]; then
+  exit 1
+fi
+
+task_name=$(echo $task_line | awk '{print $1}')
+echo task_name=$task_name
+exec task $task_name

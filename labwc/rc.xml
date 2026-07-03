@@ -8,7 +8,8 @@
         <reuseOutputMode>no</reuseOutputMode>
     </core>
 
-    <windowSwitcher show="yes" preview="yes" outlines="yes">
+    <windowSwitcher preview="yes" outlines="yes">
+        <osd show="yes" />
         <fields>
             <field content="icon" width="6%" />
             <field content="identifier" width="30%" />

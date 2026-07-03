@@ -1,1 +1,43 @@
 bind main R refresh
+
+# ghostty + Apple System Colors Light 前提
+# → cursor を「青背景に白文字」に固定
+color cursor		231	25	bold
+
+# --- 全体 ---
+color default		default	default
+color cursor		231	25	bold
+color status		default	default
+color title-focus	white	blue
+color title-blur	black	white
+color delimiter		default	default
+color line-number	244	default
+color id		33	default
+color date		244	default
+color mode		34	default
+color overflow		red	default
+
+# --- diff ---
+color diff-header	130	default	bold
+color diff-chunk	33	default
+color diff-add		28	default
+color diff-del		160	default
+color diff-stat		244	default
+color "Author: "	30	default
+color "Commit: "	30	default
+
+# --- main view (コミット一覧) ---
+color main-tag		160	default	bold
+color main-local-tag	160	default
+color main-remote	130	default
+color main-tracked	130	default	bold
+color main-ref		28	default
+color main-head		160	default	bold
+
+# --- graph (DAG) ---
+color graph-commit	33	default
+
+# --- status / stage ---
+color stat-staged	28	default
+color stat-unstaged	160	default
+color stat-untracked	244	default

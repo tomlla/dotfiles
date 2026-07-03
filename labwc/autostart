@@ -3,4 +3,5 @@ fcitx5 -d
 
 swaybg -i ~/n/wallpapers/archlinux-raibow-wallpaper-4k.jpg &
 
+kanshi &
 nm-applet &
