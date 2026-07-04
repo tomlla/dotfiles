@@ -51,6 +51,7 @@
   "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
+  "tui": "default",
   "skipDangerousModePermissionPrompt": true,
   "theme": "light",
   "skipAutoPermissionPrompt": true,
