@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# fzf で選択したgo-task のtaskを実行する。
+# 別shell functionもある. task選出だけしてshell prompt上で確認 or 編集後に実行する場合は task-fzf を使うとよい(shell.d/funcs.task-fzf.bash)
+
 task_line=$(task --list-all --json | jq -c '.tasks[] | "\(.name) \(.desc)"' | sed 's/"//g' | fzf)
 if [ "$task_line" == "" ]; then
   exit 1
@@ -7,4 +10,5 @@ fi
 
 task_name=$(echo $task_line | awk '{print $1}')
 echo task_name=$task_name
+history -s "task $task_name"
 exec task $task_name

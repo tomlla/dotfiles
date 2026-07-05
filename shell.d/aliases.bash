@@ -76,8 +76,4 @@ alias caw='cargo watch -x'
 
 # ===================
 
-
 alias table='mlr --json --opprint cat'
-
-
-alias tafz=task-fzf

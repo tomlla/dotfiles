@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+
+n=$(tmux ls 2>/dev/null | wc -l)
+echo n=$n
+if [ $n -eq 0 ]; then
+    exec tmux
+fi
+
+s=$(tmux ls 2>/dev/null | fzf --exit-0 --select-1 | cut -d: -f1)
+exec tmux attach -t "$s"
+
+
+

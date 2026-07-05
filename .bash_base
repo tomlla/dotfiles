@@ -58,7 +58,9 @@ addPath ${HOME}/.asdf/shims
 addPath ${HOME}/usr/local/go/bin
 can aqua && addPath $(aqua root-dir)/bin
 
-source ~/.dotfiles/shell.d/*.bash
+for f in ~/.dotfiles/shell.d/*.bash; do
+    source "$f"
+done
 
 can anyenv && eval "$(anyenv init -)" && export ANYENV_EVALUATED=true
 
@@ -183,13 +185,6 @@ task --version >/dev/null 2>&1
 if [ $? = 0 ]; then
     eval "$(task --completion bash)"
 fi
-
-ta() {
-    local session
-    session=$(tmux ls 2>/dev/null | fzf --exit-0 --select-1 | cut -d: -f1) || return
-    tmux attach -t "$session"
-}
-
 
 # https://starship.rs
 # curl -sS https://starship.rs/install.sh | sh

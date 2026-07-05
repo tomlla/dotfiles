@@ -113,7 +113,6 @@ alias vagd='vagrant destroy'
 #########################
 # tmux aliases
 #########################
-alias ta="tmux ls && tmux attach || echo 'tmux session not found, create new tmux session.'; tmux"
 #prefix をC-gに
 alias tm-pg='tmux set-option -ag prefix C-u'
 #prefix をC-bに
