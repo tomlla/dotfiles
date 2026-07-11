@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+type -p grim
+type -p ksnip
+
 set -xe
 dir=~/Pictures/screenshots
 mkdir -p $dir

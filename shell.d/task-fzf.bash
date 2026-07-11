@@ -2,7 +2,13 @@
 _task-fzf() {
   local task_line=$(
       task --list-all --json \
-      | jq -r '.tasks[] | "\(.name) \t # \(.desc)"' \
+      | jq -r '.tasks[] |
+              if (.desc|length) > 0 then
+                  "\(.name) \t # \(.desc)"
+              else
+                  .name
+              end
+              ' \
       | fzf
   )
   [ -z "$task_line" ] && return
