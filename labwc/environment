@@ -18,3 +18,5 @@ XCURSOR_SIZE=32
 # Map Caps Lock to Ctrl
 XKB_DEFAULT_OPTIONS=caps:ctrl_modifier
 
+PATH=$PATH:/home/nt/.dotfiles/bin
+

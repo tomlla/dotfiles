@@ -106,15 +106,7 @@
        and back in -->
     <number>8</number>
     <firstdesk>1</firstdesk>
-    <names>
-      <!-- set names up here if you want to, like this:
-    <name>desktop 1</name>
-    <name>desktop 2</name>
-    -->
-    </names>
     <popupTime>875</popupTime>
-    <!-- The number of milliseconds to show the popup for when switching
-       desktops.  Set this to 0 to disable the popup. -->
   </desktops>
   <resize>
     <drawContents>yes</drawContents>
@@ -191,7 +183,7 @@
 
     <keybind key="A-1">
       <action name="Desktop">
-        <desktop>1a</desktop>
+        <desktop>1</desktop>
       </action>
     </keybind>
     <keybind key="A-2">
@@ -225,17 +217,12 @@
         <to>3</to>
       </action>
     </keybind>
+
     <keybind key="S-A-4">
       <action name="Execute">
-          <execute>flameshot gui</execute>
+        <execute>flameshot gui</execute>
       </action>
     </keybind>
-    <keybind key="S-A-5">
-      <action name="Execute">
-          <execute>/home/nt/dotfiles/bin/screen-ocr</execute>
-      </action>
-    </keybind>
-
 
     <keybind key="A-d">
       <action name="Execute">
@@ -273,7 +260,7 @@
         <execute>amixer set Master toggle</execute>
       </action>
     </keybind>
-    <keybind key="A-Return">
+    <keybind key="S-A-Return">
       <action name="ToggleMaximizeFull"/>
     </keybind>
     <keybind key="A-q">
@@ -287,16 +274,6 @@
     <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
-      </action>
-    </keybind>
-    <keybind key="Print">
-      <action name="Execute">
-        <execute>gnome-screenshot</execute>
-      </action>
-    </keybind>
-    <keybind key="A-Print">
-      <action name="Execute">
-        <execute>gnome-screenshot -w</execute>
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
