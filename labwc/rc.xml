@@ -150,6 +150,13 @@
         <keybind key="W-l"><action name="SnapToEdge" direction="right" /></keybind>
         <keybind key="W-k"><action name="SnapToEdge" direction="up" /></keybind>
         <keybind key="W-j"><action name="SnapToEdge" direction="down" /></keybind>
+
+        <keybind key="W-v">
+            <action name="VirtualOutputAdd" output_name="ScreenCasting"/>
+        </keybind>
+        <keybind key="W-S-v">
+            <action name="VirtualOutputRemove" output_name="ScreenCasting"/>
+        </keybind>
     </keyboard>
 
     <mouse>
