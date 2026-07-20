@@ -5,24 +5,24 @@
     xsi:schemaLocation="http://openbox.org/ file:///usr/X11R6/share/openbox/menu.xsd"
 >
 <menu id="root-menu" label="openbox3">
-    <item label="blueberry">
-        <action name="Execute" command="blueberry" />
-    </item>
-    <item label="pavucontrol">
-        <action name="Execute" command="pavucontrol" />
-    </item>
+    <item label="Bluetooth"> <action name="Execute" command="blueman-manager" /> </item>
+    <item label="pavucontrol"> <action name="Execute" command="pavucontrol" /> </item>
 
     <separator />
+
     <item label="uxterm"><action name="Execute" command="ut" /></item>
     <item label="Ghostty"><action name="Execute" command="ghostty" /></item>
 
     <separator />
+
     <item label="chrome">  <action name="Execute" command="chrome" />    </item>
     <item label="firefox"> <action name="Execute" command="firefox" /> </item>
     <item label="vivaldi"> <action name="Execute" command="vivaldi" /> </item>
     <item label="slack">   <action name="Execute" command="slack" />   </item>
     <item label="discord"> <action name="Execute" command="discord" /> </item>
+
     <separator />
+
     <item label="wdisplays"> <action name="Execute" command="wdisplays" /> </item>
 
     <separator />
