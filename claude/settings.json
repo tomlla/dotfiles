@@ -38,15 +38,29 @@
     "ask": [],
     "defaultMode": "auto"
   },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/home/nt/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
   "statusLine": {
     "type": "command",
     "command": "printf 'CLAUDE_CONFIG_DIR=%s' \"${CLAUDE_CONFIG_DIR:-(unset)}\""
   },
   "enabledPlugins": {
-    "gopls-lsp@claude-plugins-official": true,
-    "pyright-lsp@claude-plugins-official": true,
     "example-skills@anthropic-agent-skills": true,
-    "pipecat-mcp-server@pipecat-skills": false
+    "gopls-lsp@claude-plugins-official": true,
+    "pipecat-mcp-server@pipecat-skills": false,
+    "pyright-lsp@claude-plugins-official": true
   },
   "syntaxHighlightingDisabled": true,
   "alwaysThinkingEnabled": true,

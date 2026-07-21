@@ -17,6 +17,8 @@ applyTo: '**'
   超える内容はまず60行以内でサマリーし、リアクションに応じて次turnで詳細。
   膨大になる内容は次パスへファイル出力し、TUIではpathを示す(ファイルは行数制限なし):
   `<project directory>/.local/claude.{yyyymmdd-hhmmss}.{topic-name}.md`
+- code review (/review, /code-review 等) の結果は、行数に関係なく必ず上記パスへファイル出力する。
+  TUIには要点サマリーとpathのみを出す。短く収まりそうでも例外にしない。
 
 # 用語・語彙
 * 造語や雰囲気語を使うな。
