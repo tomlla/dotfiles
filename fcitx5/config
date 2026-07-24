@@ -14,9 +14,11 @@ ModifierOnlyKeyTimeout=250
 
 [Hotkey/ActivateKeys]
 0=Alt+Alt_R
+1=Henkan
 
 [Hotkey/DeactivateKeys]
 0=Alt+Alt_L
+1=Muhenkan
 
 [Hotkey/AltTriggerKeys]
 0=Shift_L
