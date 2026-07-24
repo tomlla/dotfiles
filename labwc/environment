@@ -1,5 +1,7 @@
-# export DefaultImModule="fcitx5"
-GTK_IM_MODULE=fcitx5
+# GTK_IM_MODULE は設定しない:
+# wlroots系(labwc)ではtext-input-v3経由にして候補windowの配置をcompositorに任せる。
+# QT_IM_MODULE は必要: Qt5(VLC等)はtext-input-v3非対応でD-Busモジュール経由でないとIMEが効かない。
+# XMODIFIERS は Xwayland アプリ用。
 QT_IM_MODULE=fcitx5
 XMODIFIERS=@im=fcitx5
 

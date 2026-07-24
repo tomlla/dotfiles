@@ -3,13 +3,14 @@
 EnumerateWithTriggerKeys=True
 # Skip first input method while enumerating
 EnumerateSkipFirst=False
+# Enumerate Input Method Group Forward
+EnumerateGroupForwardKeys=
 # Time limit in milliseconds for triggering modifier key shortcuts
 ModifierOnlyKeyTimeout=250
 
 [Hotkey/TriggerKeys]
 0=Shift+space
 1=Zenkaku_Hankaku
-2=Hangul
 
 [Hotkey/ActivateKeys]
 0=Alt+Alt_R
@@ -25,9 +26,6 @@ ModifierOnlyKeyTimeout=250
 
 [Hotkey/EnumerateBackwardKeys]
 0=Control+Shift_R
-
-[Hotkey/EnumerateGroupForwardKeys]
-0=Alt+Alt_R
 
 [Hotkey/EnumerateGroupBackwardKeys]
 0=Alt+Alt_L
