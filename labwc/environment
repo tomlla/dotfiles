@@ -12,8 +12,9 @@ XMODIFIERS=@im=fcitx5
 XDG_CURRENT_DESKTOP=sway:labwc
 
 # === This will be used from i3-sensible-terminal ===
-TERMINAL=alacritty
-TERMINAL=ghostty
+#TERMINAL=alacritty
+#TERMINAL=ghostty
+TERMINAL=foot
 
 XCURSOR_SIZE=32
 
