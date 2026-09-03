@@ -3,5 +3,7 @@ fcitx5 -d
 
 swaybg -i ~/n/wallpapers/archlinux-raibow-wallpaper-4k.jpg &
 
+gsettings set org.gnome.desktop.interface font-name 'Noto Sans 18'
+
 kanshi &
 nm-applet &
