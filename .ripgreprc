@@ -10,4 +10,5 @@
 --glob=!dist/
 --glob=!.ruff_cache/
 --glob=!.pyright-results/
+--glob=!.pytest*
 --glob=!.wt/

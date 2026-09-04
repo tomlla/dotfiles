@@ -7,7 +7,7 @@
 [profiles]
   [[default]]
     background_color = "#1e1e1e"
-    font = FiraCode Nerd Font weight=450 12
+    font = CommitMono 12
     foreground_color = "#dbdbdb"
     show_titlebar = False
     scrollbar_position = hidden

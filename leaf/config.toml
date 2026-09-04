@@ -1,0 +1,3 @@
+# Built-in themes: arctic, forest, ocean, solarized-dark
+# arctic is the only light-background preset.
+theme = "arctic"

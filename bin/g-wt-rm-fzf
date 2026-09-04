@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+line=$(git worktree list | fzf )
+wtdir=$(echo $line | awk '{print $1}')
+set -x
+git worktree remove $wtdir

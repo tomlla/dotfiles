@@ -19,6 +19,8 @@ font-family = "Noto Sans CJK JP"
 font-family = "Karma"
 font-family = "Noto Sans Devanagari UI"
 
+# font-style = "CommitMono Nerd Font"
+
 font-size = 16
 
 # https://ghostty.org/docs/config/reference#font-feature

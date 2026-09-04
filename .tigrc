@@ -3,10 +3,12 @@ bind main R refresh
 # ghostty + Apple System Colors Light 前提
 # → cursor を「青背景に白文字」に固定
 color cursor		231	25	bold
+color cursor-blur	231	25
 
 # --- 全体 ---
 color default		default	default
 color cursor		231	25	bold
+color cursor-blur	231	25
 color status		default	default
 color title-focus	white	blue
 color title-blur	black	white

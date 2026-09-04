@@ -114,6 +114,7 @@ Plug 'mattn/vim-lsp-settings'
 "Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'junegunn/vim-easy-align'
 
 
 
@@ -136,6 +137,7 @@ Plug 'honza/vim-snippets'
 Plug 'tyru/open-browser.vim', {'for': [ 'html', 'xml', 'markdown', 'mkd' , 'textile']}
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.vim'
+Plug 'godlygeek/tabular'
 
 Plug 'mattn/webapi-vim'
 Plug 'mattn/emmet-vim', {'for': ['html', 'xml', 'eruby', 'tsx', 'jsx', 'typescript']}
@@ -236,7 +238,7 @@ endif
 if s:os == 'Darwin'
     let g:previm_open_cmd = 'open -a Google\ Chrome'
 elseif s:os == 'Linux'
-    let g:previm_open_cmd = 'google-chrome'
+    let g:previm_open_cmd = 'chrome'
 endif
 
 "let NERDSpaceDelims = 1 " コメントした後に挿入するスペースの数
@@ -359,6 +361,7 @@ nnoremap <F4> :set wrap!<cr>
 nnoremap <leader>3 :set wrap!<cr>
 
 nnoremap <leader>d :.!date +"\%Y-\%m-\%d"<cr>A
+nnoremap <leader>D :.!date +"\%Y-\%m-\%d \%H:\%M:\%S"<cr>A
 
 nnoremap RM :!rm %<cr>:bdelete<cr>
 
