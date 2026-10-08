@@ -396,8 +396,8 @@ let g:go_doc_keywordprg_enabled = 0
 " endif
 
 let g:lsp_diagnostics_enabled = 1
-let g:lsp_log_verbose = 1
-let g:lsp_log_file = expand('~/.vim-lsp.log')
+let g:lsp_log_verbose = 0
+let g:lsp_log_file = ''
 
 augroup VimGoSetup
     autocmd!
