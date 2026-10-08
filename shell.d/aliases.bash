@@ -15,6 +15,7 @@ fi
 alias ll='ls -l'
 alias la='ls -a'
 alias mkd=mkdir
+alias cx="chmod +x"
 
 alias s=sudo
 alias tm=tmux

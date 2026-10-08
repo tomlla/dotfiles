@@ -14,12 +14,19 @@ keybind = ctrl+enter=unbind
 keybind = f11=toggle_fullscreen
 
 # font-style = "Noto Sans Mono"
+font-family = "Noto Sans Mono"
+font-family = "Noto Sans CJK JP"
+font-family = "Karma"
+font-family = "Noto Sans Devanagari UI"
+
 font-size = 16
 
 # https://ghostty.org/docs/config/reference#font-feature
 # * -calt: disable Ligature
-font-feature = "-calt"
-font-feature = -dlig
+# font-feature = "-calt"
+#
+# disable Disable discretionary ligatures
+# font-feature = -dlig
 
 # theme = iTerm2 Solarized Light
 # theme = dark:Catppuccin Frappe,light:iTerm2 Solarized Light
