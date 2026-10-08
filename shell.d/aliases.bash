@@ -14,6 +14,7 @@ else
 fi
 alias ll='ls -l'
 alias la='ls -a'
+alias l1='ls -1'
 alias mkd=mkdir
 alias cx="chmod +x"
 
