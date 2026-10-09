@@ -21,7 +21,7 @@
     "editor.fontFamily": "'FiraCode Nerd', 'Fira Code', 'Droid Sans Mono',  'monospace', monospace",
     "git.blame.editorDecoration.enabled": true,
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Visual Studio Light",
+    "workbench.colorTheme": "Light 2026",
     "go.toolsManagement.autoUpdate": true,
     "security.workspace.trust.untrustedFiles": "open",
     "editor.wordWrap": "off",
@@ -34,6 +34,7 @@
     "explorer.confirmDelete": false,
     "redhat.telemetry.enabled": true,
     "editor.lineNumbers": "on",
+    "biome.suggestInstallingGlobally": false,
     "yaml.disableSchemaDetection": [
         "**/docker-compose.yml",
         "**/docker-compose.yaml",
